@@ -4,7 +4,7 @@ import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious
 import Image from "next/image";
 import Autoplay from "embla-carousel-autoplay";
 
-const items = [{ src: "/banner1.jpg" }, { src: "/banner2.jpg" }, { src: "/banner3.png" }, { src: "/banner4.png" }, { src: "/banner5.jpg" }];
+const items = [{ src: "./banner1.jpg" }, { src: "./banner2.jpg" }, { src: "./banner3.png" }, { src: "./banner4.png" }, { src: "/banner5.jpg" }];
 const HotProducts = () => {
   return (
     <Carousel

@@ -56,7 +56,7 @@ const Photo = () => {
         animate={{ strokeDasharray: ["15 120 25 105", "16 25 50 50", "4 250 50 50"], rotate: [120, 360] }}
         transition={{ duration: 18, repeat: Infinity, repeatType: "reverse" }}
       >
-        <Image src="/bannerImage.png" fill alt="" className="object-contain rounded-full p-2" priority quality={100} />
+        <Image src="./bannerImage.png" fill alt="" className="object-contain rounded-full p-2" priority quality={100} />
       </motion.div>
     </div>
   );
