@@ -1,29 +1,48 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+html{
+    overflow-x:hidden;
+}
+.sort-dock { 
+    @media screen and (max-width: 481px) {
+        display: none;
+    }
+}
+.custom-btn-carousel{
+    /* background:red!important; */
+    @media screen and (max-width: 1046px) {
+        display: none!important;
+    }
+}
 
 @layer base{
     html {
   scroll-behavior: smooth;
 }
     body{
-        @apply font-primary bg-primary text-white leading-loose;
+        /* @apply font-primary bg-primary text-white leading-loose; */
+        @apply font-primary text-black leading-loose;
     }
     .h1{
-        @apply text-[48px] xl:text-[80px] leading-[1.1] font-semibold;
+        @apply text-[38px] xl:text-[66px] leading-[1.1] font-semibold;
     }
     .h2{
-        @apply text-[36px] xl:text-[48px] leading-[1.1] font-semibold;
+        @apply text-[32px] xl:text-[40px] leading-[1.1] font-semibold;
     }
     .h3{
         @apply text-[20px] xl:text-[24px] leading-[1.1] font-semibold;
     }   
 
     .text-outline{
-        -webkit-text-stroke: 1px #ffffff;
+        -webkit-text-stroke: 1px #000000;
     }
     .text-outline-hover{
-        -webkit-text-stroke: 1px #FFF161;
+        -webkit-text-stroke: 1px #63b8eb;
     }
+
+
+ 
+   
 
 }

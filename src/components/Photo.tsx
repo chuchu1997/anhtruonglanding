@@ -43,7 +43,7 @@ const Photo = () => {
 
           borderRadius: "50%",
           //   backgroundColor: "#3498db",
-          border: "4px dashed  #FFF161", // Dashed border with a blue color
+          border: "4px dashed  #63b8eb", // Dashed border with a blue color
           borderStyle: "dashed double none",
           color: "#fff",
           fontSize: "24px",
@@ -51,12 +51,12 @@ const Photo = () => {
           textAlign: "center",
           lineHeight: "200px",
         }}
-        className=" w-[300px] h-[300px]   xl:w-[530px] xl:h-[530px]"
+        className=" w-[300px] h-[300px]   xl:w-[550px] xl:h-[550px] overflow-hidden"
         initial={{ strokeDasharray: "24 10 0 0" }}
         animate={{ strokeDasharray: ["15 120 25 105", "16 25 50 50", "4 250 50 50"], rotate: [120, 360] }}
-        transition={{ duration: 15, repeat: Infinity, repeatType: "loop" }}
+        transition={{ duration: 18, repeat: Infinity, repeatType: "reverse" }}
       >
-        <Image src="/bancatgach.png" fill alt="" className="object-contain p-4" priority quality={100} />
+        <Image src="/bannerImage.png" fill alt="" className="object-contain rounded-full p-2" priority quality={100} />
       </motion.div>
     </div>
   );

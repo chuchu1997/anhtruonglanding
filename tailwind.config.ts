@@ -21,10 +21,10 @@ const config = {
 
     extend: {
       colors: {
-        backgroundFullWeb: "#ffffff",
+        // backgroundFullWeb: "#ffffff",
         primary: "#1c1c22",
         accent: {
-          DEFAULT: "#FFF161",
+          DEFAULT: "#63b8eb",
           hover: "#fff266",
         },
       },
