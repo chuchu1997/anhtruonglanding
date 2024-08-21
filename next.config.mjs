@@ -2,10 +2,7 @@
 const nextConfig = {
     output:"export",
     reactStrictMode: true,
-    basePath:"/",
-    env: {
-      customKey: 'my-value',
-    },
+   
     images: {
       path: "/",
         remotePatterns: [
