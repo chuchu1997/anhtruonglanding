@@ -9,7 +9,7 @@ const Header = () => {
       <div className="container mx-auto flex justify-between items-center">
         <Link href="/">
           <div className="w-[80px] h-[80px] md:w-[100px] md:h-[100px] mix-blend-lighten relative">
-            <Image src="/logotuikhi.png" priority quality={100} fill alt="logo" className="object-contain"></Image>
+            <Image src="./logotuikhi.png" priority quality={100} fill alt="logo" className="object-contain"></Image>
           </div>
         </Link>
         <Nav />
