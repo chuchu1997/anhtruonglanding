@@ -6,14 +6,14 @@ import { AlignLeft, AlignRight } from "react-feather";
 const items = [
   {
     title: "Báo giá",
-    icon: "./baogia.png",
+    icon: "/baogia.png",
     fallback: () => {
       console.log("THIS IS ISI S");
     },
   },
-  { title: "Chat Zalo", icon: "./zalo.png" },
-  { title: "Gọi điện", icon: "./phonecall.png" },
-  { title: "Messager", icon: "./messager.jpg" },
+  { title: "Chat Zalo", icon: "/zalo.png" },
+  { title: "Gọi điện", icon: "/phonecall.png" },
+  { title: "Messager", icon: "/messager.jpg" },
 ];
 const BlockSidebar = () => {
   const [width, setWidth] = useState("100px");
