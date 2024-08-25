@@ -23,7 +23,7 @@ const CarouselProducts = (props:propsInterface) => {
         }),
       ]}
     >
-      <CarouselContent className="h-[200px] xl:h-[350px] ">
+      <CarouselContent className="h-[260px] xl:h-[350px] ">
         {listImages.map((item, index) => {
           return (
             <CarouselItem className="relative" key={index}>
