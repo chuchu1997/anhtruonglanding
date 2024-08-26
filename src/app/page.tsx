@@ -1,6 +1,3 @@
-
-
-
 import Image from "next/image";
 import { Button } from "@/components/ui/button";
 import { Package } from "react-feather";
@@ -13,136 +10,143 @@ import RenderContentForSection from "@/components/RenderContentForSection";
 import News from "@/components/News";
 import Link from "next/link";
 
-
-
 export default function Home() {
-  let listHotProductsImage = ["/sanphamnoibat/1.png","/sanphamnoibat/2.png","/sanphamnoibat/3.png","/sanphamnoibat/4.png","/sanphamnoibat/5.png","/sanphamnoibat/6.png"];
-let listDichVuChoThueImages  = ["/dichvuchothuetuikhi/7.png","/dichvuchothuetuikhi/8.png","/dichvuchothuetuikhi/9.png","/dichvuchothuetuikhi/10.png"]
-let tuikhihathuyItems = [
-  {
-    title: "Túi khí trục vớt tàu D 2m x 14m",
-    imageSrc: "/phaotuikhihathuy/13.png",
-    href: "https://tuikhibiendong.com/tui-khi-truc-vot-tau-d2m-14m/",
-  },
-  {
-    title: "Túi khí hạ thủy tàu D 2m x 10m",
-    imageSrc: "/phaotuikhihathuy/14.png",
-    href: "https://tuikhibiendong.com/tui-khi-ha-thuy-tau-d2m-10m/",
-  },
-  {
-    title: "Phao hạ thủy tàu D 1,8m x 18m",
-    imageSrc: "/phaotuikhihathuy/15.png",
-    href: "https://tuikhibiendong.com/phao-ha-thuy-tau-d1-8m-18m/",
-  },
-  {
-    title: "Túi khí nâng hạ tàu 1,8m x 13m",
-    imageSrc: "/phaotuikhihathuy/16.png",
-    href: "https://tuikhibiendong.com/tui-khi-nang-ha-tau-1-8m-13m/",
-  },
-  {
-    title: "Túi khí nâng hạ tàu 1,8m x 13m",
-    imageSrc: "/phaotuikhihathuy/17.png",
-    href: "https://tuikhibiendong.com/tui-khi-nang-ha-tau-1-8m-13m/",
-  },
-];
+  let listHotProductsImage = [
+    "/sanphamnoibat/1.png",
+    "/sanphamnoibat/2.png",
+    "/sanphamnoibat/3.png",
+    "/sanphamnoibat/4.png",
+    "/sanphamnoibat/5.png",
+    "/sanphamnoibat/6.png",
+  ];
+  let listDichVuChoThueImages = [
+    "/dichvuchothuetuikhi/7.png",
+    "/dichvuchothuetuikhi/8.png",
+    "/dichvuchothuetuikhi/9.png",
+    "/dichvuchothuetuikhi/10.png",
+  ];
+  let tuikhihathuyItems = [
+    {
+      title: "Túi khí trục vớt tàu D 2m x 14m",
+      imageSrc: "/phaotuikhihathuy/13.png",
+      href: "https://tuikhibiendong.com/tui-khi-truc-vot-tau-d2m-14m/",
+    },
+    {
+      title: "Túi khí hạ thủy tàu D 2m x 10m",
+      imageSrc: "/phaotuikhihathuy/14.png",
+      href: "https://tuikhibiendong.com/tui-khi-ha-thuy-tau-d2m-10m/",
+    },
+    {
+      title: "Phao hạ thủy tàu D 1,8m x 18m",
+      imageSrc: "/phaotuikhihathuy/15.png",
+      href: "https://tuikhibiendong.com/phao-ha-thuy-tau-d1-8m-18m/",
+    },
+    {
+      title: "Túi khí nâng hạ tàu 1,8m x 13m",
+      imageSrc: "/phaotuikhihathuy/16.png",
+      href: "https://tuikhibiendong.com/tui-khi-nang-ha-tau-1-8m-13m/",
+    },
+    {
+      title: "Túi khí nâng hạ tàu 1,8m x 13m",
+      imageSrc: "/phaotuikhihathuy/17.png",
+      href: "https://tuikhibiendong.com/tui-khi-nang-ha-tau-1-8m-13m/",
+    },
+  ];
 
-let demchongvacaucangItems = [
-  {
-    title: "Fender D & Vuông",
-    imageSrc: "/demchongvacaucang/9.png",
-    href: "https://tuikhibiendong.com/fender-d-vuong/",
-  },
-  {
-    title: "Fender kéo",
-    imageSrc: "/demchongvacaucang/10.png",
-    href: "https://tuikhibiendong.com/fender-keo/",
-  },
-  {
-    title: "Phụ kiện & sửa chữa",
-    imageSrc: "/demchongvacaucang/11.png",
-    href: "https://tuikhibiendong.com/phu-kien-sua-chua/",
-  },
-  {
-    title: "Fender hình trụ",
-    imageSrc: "/demchongvacaucang/12.png",
-    href: "https://tuikhibiendong.com/fender-hinh-tru/",
-  },
-];
+  let demchongvacaucangItems = [
+    {
+      title: "Fender D & Vuông",
+      imageSrc: "/demchongvacaucang/9.png",
+      href: "https://tuikhibiendong.com/fender-d-vuong/",
+    },
+    {
+      title: "Fender kéo",
+      imageSrc: "/demchongvacaucang/10.png",
+      href: "https://tuikhibiendong.com/fender-keo/",
+    },
+    {
+      title: "Phụ kiện & sửa chữa",
+      imageSrc: "/demchongvacaucang/11.png",
+      href: "https://tuikhibiendong.com/phu-kien-sua-chua/",
+    },
+    {
+      title: "Fender hình trụ",
+      imageSrc: "/demchongvacaucang/12.png",
+      href: "https://tuikhibiendong.com/fender-hinh-tru/",
+    },
+  ];
 
-let demchongvatauItems = [
-  {
-    title: "Đệm chống va",
-    imageSrc: "/demchongvatau/5.png",
-    href: "https://tuikhibiendong.com/dem-chong-va/",
-  },
-  {
-    title: "Đệm chống va Yokohama",
-    imageSrc: "/demchongvatau/6.png",
-    href: "https://tuikhibiendong.com/dem-chong-va-yokohama/",
-  },
-  {
-    title: "Đệm chống va chắn bùn",
-    imageSrc: "/demchongvatau/7.png",
-    href: "https://tuikhibiendong.com/dem-chong-va-chan-bun/",
-  },
-  {
-    title: "Đệm chống va đúc khuôn",
-    imageSrc: "/demchongvatau/8.png",
-    href: "https://tuikhibiendong.com/dem-chong-va-duc-khuon/",
-  },
-];
+  let demchongvatauItems = [
+    {
+      title: "Đệm chống va",
+      imageSrc: "/demchongvatau/5.png",
+      href: "https://tuikhibiendong.com/dem-chong-va/",
+    },
+    {
+      title: "Đệm chống va Yokohama",
+      imageSrc: "/demchongvatau/6.png",
+      href: "https://tuikhibiendong.com/dem-chong-va-yokohama/",
+    },
+    {
+      title: "Đệm chống va chắn bùn",
+      imageSrc: "/demchongvatau/7.png",
+      href: "https://tuikhibiendong.com/dem-chong-va-chan-bun/",
+    },
+    {
+      title: "Đệm chống va đúc khuôn",
+      imageSrc: "/demchongvatau/8.png",
+      href: "https://tuikhibiendong.com/dem-chong-va-duc-khuon/",
+    },
+  ];
 
-let mayphunxitapluccaoItems = [
-  {
-    title: "Showroom Densin",
-    imageSrc: "/mayphunxitapluccao/18.png",
-    href: "https://tuikhibiendong.com/showroom-densin/",
-  },
-  {
-    title: "Máy phun áp lực nước nóng DENSIN H200E",
-    imageSrc: "/mayphunxitapluccao/19.png",
-    href: "https://tuikhibiendong.com/may-phun-ap-luc-nuoc-nong-densin-h200e/",
-  },
-  {
-    title: "Máy phun áp lực nước nóng DENSIN H110E",
-    imageSrc: "/mayphunxitapluccao/20.png",
-    href: "https://tuikhibiendong.com/may-phun-ap-luc-nuoc-nong-densin-h110e/",
-  },
-  {
-    title: "Máy phun áp lực cao Densin Mermaid E-1100/16",
-    imageSrc: "/mayphunxitapluccao/21.png",
-    href: "https://tuikhibiendong.com/may-phun-ap-luc-cao-densin-mermaide-1100-16/",
-  },
-];
+  let mayphunxitapluccaoItems = [
+    {
+      title: "Showroom Densin",
+      imageSrc: "/mayphunxitapluccao/18.png",
+      href: "https://tuikhibiendong.com/showroom-densin/",
+    },
+    {
+      title: "Máy phun áp lực nước nóng DENSIN H200E",
+      imageSrc: "/mayphunxitapluccao/19.png",
+      href: "https://tuikhibiendong.com/may-phun-ap-luc-nuoc-nong-densin-h200e/",
+    },
+    {
+      title: "Máy phun áp lực nước nóng DENSIN H110E",
+      imageSrc: "/mayphunxitapluccao/20.png",
+      href: "https://tuikhibiendong.com/may-phun-ap-luc-nuoc-nong-densin-h110e/",
+    },
+    {
+      title: "Máy phun áp lực cao Densin Mermaid E-1100/16",
+      imageSrc: "/mayphunxitapluccao/21.png",
+      href: "https://tuikhibiendong.com/may-phun-ap-luc-cao-densin-mermaide-1100-16/",
+    },
+  ];
 
-
-let neotauItems = [
-  {
-    title: "Neo tàu",
-    imageSrc: "/neo/26.png",
-    href: "https://tuikhibiendong.com/neo-tau-5/",
-  },
-  {
-    title: "Neo tàu",
-    imageSrc: "/neo/27.png",
-    href: "https://tuikhibiendong.com/neo-tau-5/",
-  },
-  {
-    title: "Neo tàu",
-    imageSrc: "/neo/28.png",
-    href: "https://tuikhibiendong.com/neo-tau-5/",
-  },
-  {
-    title: "Neo tàu",
-    imageSrc: "/neo/29.png",
-    href: "https://tuikhibiendong.com/neo-tau-5/",
-  },
-];
-
+  let neotauItems = [
+    {
+      title: "Neo tàu",
+      imageSrc: "/neo/26.png",
+      href: "https://tuikhibiendong.com/neo-tau-5/",
+    },
+    {
+      title: "Neo tàu",
+      imageSrc: "/neo/27.png",
+      href: "https://tuikhibiendong.com/neo-tau-5/",
+    },
+    {
+      title: "Neo tàu",
+      imageSrc: "/neo/28.png",
+      href: "https://tuikhibiendong.com/neo-tau-5/",
+    },
+    {
+      title: "Neo tàu",
+      imageSrc: "/neo/29.png",
+      href: "https://tuikhibiendong.com/neo-tau-5/",
+    },
+  ];
 
   return (
     <main className="landing-page">
-     
       <section className="container my-4 h-full mx-auto ">
         <div className="gap-4 flex flex-col md:flex-row justify-between items-center xl:pt-8 xl:pb-24">
           <div className="text-center xl:text-left order-2 xl:order-none pb-4">
@@ -150,20 +154,17 @@ let neotauItems = [
               Công ty TNHH TM XNK
               <br />
               <span className="text-accent ">Biển Đông</span>
-
             </h1>
             <p className="max-w-[500px] mb-8 text-black/80">
-            Nhà cung cấp giải pháp Phao túi khí hạ thuỷ
-            Đệm chống va (Fender) – Đệm chống va cầu cảng cho ngành Đóng tàu và Hàng hải Việt Nam.
+              Nhà cung cấp giải pháp Phao túi khí hạ thuỷ Đệm chống va (Fender) – Đệm chống va cầu cảng cho ngành Đóng tàu và Hàng hải Việt Nam.
             </p>
             <div className="action-btn flex flex-col xl:flex-row items-center gap-8">
-              <Link href = "tel:0869229639">
-              <Button variant={"outline"} size={"lg"} className="uppercase flex items-center gap-2">
-                <span>Tư vấn</span>
-                <Package />
-              </Button>
+              <Link href="tel:0869229639">
+                <Button variant={"outline"} size={"lg"} className="uppercase flex items-center gap-2">
+                  <span>Tư vấn</span>
+                  <Package />
+                </Button>
               </Link>
-            
             </div>
           </div>
           <div className="order-1 xl:order-none mb-8 xl:mb-0">
@@ -171,23 +172,21 @@ let neotauItems = [
           </div>
         </div>
 
-
-
         <section className="container my-8 h-full mx-auto mt-[20px] xl:mt-[80px] ">
-        <SectionTitle title="Các Chứng Chỉ Và Đối Tác " />
-        <div className = "ccs relative h-[120px] w-full ">
-          <Image src = "/ccs/ccs.jpg" alt = "ccs" fill objectFit="contain" quality={100} priority ></Image>
-        </div>
-        <div className = "certicate relative h-[300px] xl:h-[500px] w-full ">
-          <Image src = "/certicate/certicate.jpg" alt = "ccs" fill objectFit="contain" quality={100} priority ></Image>
-        </div>
-      </section>
-     
+          <SectionTitle title="Các Chứng Chỉ Và Đối Tác " />
+          <div className="certicate relative h-[300px] xl:h-[500px] w-full mt-[20px] ">
+            <Image src="/certicate/certicate.jpg" alt="ccs" fill objectFit="contain" quality={60} priority></Image>
+          </div>
+          <div className="ccs relative h-[120px] w-full ">
+            <Image src="/ccs/ccs.jpg" alt="ccs" fill objectFit="contain" quality={60} priority></Image>
+          </div>
+        </section>
+
         {/* <div className="shortDescription">
           <ShortDescriptionWithCount />
         </div> */}
       </section>
-      <section  className=" container my-8 h-full mx-auto mt-[40px] xl:mt-[80px] ">
+      <section className=" container my-8 h-full mx-auto mt-[40px] xl:mt-[80px] ">
         <SectionTitle title="Các Sản Phẩm Chủ Đạo Của Công Ty " />
         <Services />
       </section>
@@ -195,46 +194,43 @@ let neotauItems = [
         <SectionTitle title="Các Sản Phẩm Nổi Bật " />
         <CarouselProducts listImages={listHotProductsImage} />
       </section>
-   
-      <section id = "phaohathuy" className="container my-8 h-full mx-auto mt-[40px] xl:mt-[80px] " >
+
+      <section id="phaohathuy" className="container my-8 h-full mx-auto mt-[40px] xl:mt-[80px] ">
         <SectionTitle title="Phao Túi Khí Hạ Thủy " />
         <RenderContentForSection listItems={tuikhihathuyItems} />
       </section>
-      <section id = "demchongvacau" className="container my-8 h-full mx-auto mt-[40px] xl:mt-[80px] ">
+      <section id="demchongvacau" className="container my-8 h-full mx-auto mt-[40px] xl:mt-[80px] ">
         <SectionTitle title="Đệm Chống Va Cầu Cảng " />
         <RenderContentForSection listItems={demchongvacaucangItems} />
       </section>
 
-      <section id = "rubberfender" className="container my-8 h-full mx-auto mt-[40px] xl:mt-[80px] ">
+      <section id="rubberfender" className="container my-8 h-full mx-auto mt-[40px] xl:mt-[80px] ">
         <SectionTitle title="Đệm Chống Va Tàu " />
         <RenderContentForSection listItems={demchongvatauItems} />
       </section>
-      <section id = "mayphunxitapluccao" className="container my-8 h-full mx-auto mt-[40px] xl:mt-[80px] ">
+      <section id="mayphunxitapluccao" className="container my-8 h-full mx-auto mt-[40px] xl:mt-[80px] ">
         <SectionTitle title="Máy Phun Xịt Áp Lực Cao " />
         <RenderContentForSection listItems={mayphunxitapluccaoItems} />
       </section>
-          {/* THAY = CHO THUE  */}
+      {/* THAY = CHO THUE  */}
       {/* <section className="container my-8 h-full mx-auto mt-[40px] xl:mt-[80px] ">
         <SectionTitle title="Hộp Số Tàu Thủy" />
         <RenderContentForSection listItems={hopsotauthuyItems} />
       </section> */}
 
-
-    <section className="container my-8 h-full mx-auto mt-[40px] xl:mt-[80px] ">
+      <section className="container my-8 h-full mx-auto mt-[40px] xl:mt-[80px] ">
         <SectionTitle title="Dịch Vụ Cho Thuê Túi Khí" />
         <CarouselProducts listImages={listDichVuChoThueImages} />
-      
+
         {/* <RenderContentForSection listItems={neotauItems} /> */}
       </section>
 
-
-
-      <section  id = "neo"className="container my-8 h-full mx-auto mt-[40px] xl:mt-[80px] ">
+      <section id="neo" className="container my-8 h-full mx-auto mt-[40px] xl:mt-[80px] ">
         <SectionTitle title="Neo Và Xích Neo Tàu Thủy" />
         <RenderContentForSection listItems={neotauItems} />
       </section>
 
-      <section className="container my-8 h-full mx-auto mt-[40px] xl:mt-[80px] ">
+      {/* <section className="container my-8 h-full mx-auto mt-[40px] xl:mt-[80px] ">
         <SectionTitle title="Video Sản Phẩm" />
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mt-10 px-4 xl:px-0">
           <iframe
@@ -255,7 +251,7 @@ let neotauItems = [
             allowFullScreen
           ></iframe>
         </div>
-      </section>
+      </section> */}
 
       <section className="container my-8 h-full mx-auto mt-[40px] xl:mt-[80px] ">
         <SectionTitle title="Các dự án tiêu biểu" />
