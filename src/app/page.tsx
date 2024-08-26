@@ -29,7 +29,7 @@ export default function Home() {
         <div className="gap-4 flex flex-col md:flex-row justify-between items-center xl:pt-8 xl:pb-24">
           <div className="text-center xl:text-left order-2 xl:order-none pb-4">
             <h1 className="h2 mb-6 ">
-              Công ty TNHH TM XNK
+              Công ty TNHH TM XNK 11
               <br />
               <span className="text-accent ">Biển Đông</span>
             </h1>
