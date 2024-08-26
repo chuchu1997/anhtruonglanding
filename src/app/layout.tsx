@@ -44,10 +44,8 @@ export default function RootLayout({
         <Header />
         <BlockSidebar />
         {/* <StairEffect /> */}
-
-        <div>{children}</div>
-
         {/* <PageTransition></PageTransition> */}
+        <div>{children}</div>
         <Footer />
       </body>
     </html>
