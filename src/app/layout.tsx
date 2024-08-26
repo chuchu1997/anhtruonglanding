@@ -23,11 +23,24 @@ const jetbrains = JetBrains_Mono({
 <meta property="og:type" content="website"></meta> */
 }
 export const metadata: Metadata = {
-  title: "Nhà phân phối phao hạ thủy trên toàn quốc   ",
+  title: "Nhà phân phối phao hạ thủy trên toàn quốc",
   description:
     "Công ty TNHH TM XNK Biển Đông - Túi khí Biển Đông là nhà cung cấp giải pháp Phao túi khí hạ thuỷ – Đệm chống va (Fender) – Đệm chống va cầu cảng cho ngành Đóng tàu và Hàng hải Việt Nam.",
   openGraph: {
-    title: "sdsq",
+    title: "Công ty TNHH TM XNK Biển Đông",
+    locale: "vi_VN",
+    type: "website",
+    url: "https://phaohathuy.com",
+    description:
+      "Công ty TNHH TM XNK Biển Đông - Túi khí Biển Đông là nhà cung cấp giải pháp Phao túi khí hạ thuỷ – Đệm chống va (Fender) – Đệm chống va cầu cảng  - Linh kiện tàu thủy - xà lang cho ngành Đóng tàu và Hàng hải Việt Nam.",
+    siteName: "Phao hạ thủy",
+  },
+  robots: {
+    index: true,
+    follow: true,
+    "max-image-preview": "standard",
+    "max-snippet": 1,
+    "max-video-preview": -1,
   },
   keywords: [
     "phao hạ thủy ",
