@@ -10,6 +10,18 @@ import RenderContentForSection from "@/components/RenderContentForSection";
 import News from "@/components/News";
 import Link from "next/link";
 
+import dynamic from "next/dynamic";
+
+const DynamicSectionTitle = dynamic(() => import("@/components/SectionTitle"), {});
+const DynamicPhoto = dynamic(() => import("@/components/Photo"), {});
+
+const DynamicServices = dynamic(() => import("@/components/Services"), {});
+
+const DynamicCarouselProducts = dynamic(() => import("@/components/CarouselProducts"), {});
+
+const DynamicRenderContentForSection = dynamic(() => import("@/components/RenderContentForSection"), {});
+const DynamicNews = dynamic(() => import("@/components/News"), {});
+
 export default function Home() {
   let listHotProductsImage = [
     "/sanphamnoibat/1.png",
@@ -168,12 +180,12 @@ export default function Home() {
             </div>
           </div>
           <div className="order-1 xl:order-none mb-8 xl:mb-0">
-            <Photo />
+            <DynamicPhoto />
           </div>
         </div>
 
         <section className="container my-8 h-full mx-auto mt-[20px] xl:mt-[80px] ">
-          <SectionTitle title="Các Chứng Chỉ Và Đối Tác " />
+          <DynamicSectionTitle title="Các Chứng Chỉ Và Đối Tác " />
           <div className="certicate relative h-[300px] xl:h-[500px] w-full mt-[20px] ">
             <Image src="/certicate/certicate.jpg" alt="ccs" fill objectFit="contain" quality={60} priority></Image>
           </div>
@@ -187,30 +199,30 @@ export default function Home() {
         </div> */}
       </section>
       <section className=" container my-8 h-full mx-auto mt-[40px] xl:mt-[80px] ">
-        <SectionTitle title="Các Sản Phẩm Chủ Đạo Của Công Ty " />
-        <Services />
+        <DynamicSectionTitle title="Các Sản Phẩm Chủ Đạo Của Công Ty " />
+        <DynamicServices />
       </section>
       <section className="container my-8 h-full mx-auto mt-[40px] xl:mt-[80px] ">
-        <SectionTitle title="Các Sản Phẩm Nổi Bật " />
-        <CarouselProducts listImages={listHotProductsImage} />
+        <DynamicSectionTitle title="Các Sản Phẩm Nổi Bật " />
+        <DynamicCarouselProducts listImages={listHotProductsImage} />
       </section>
 
       <section id="phaohathuy" className="container my-8 h-full mx-auto mt-[40px] xl:mt-[80px] ">
-        <SectionTitle title="Phao Túi Khí Hạ Thủy " />
-        <RenderContentForSection listItems={tuikhihathuyItems} />
+        <DynamicSectionTitle title="Phao Túi Khí Hạ Thủy " />
+        <DynamicRenderContentForSection listItems={tuikhihathuyItems} />
       </section>
       <section id="demchongvacau" className="container my-8 h-full mx-auto mt-[40px] xl:mt-[80px] ">
-        <SectionTitle title="Đệm Chống Va Cầu Cảng " />
-        <RenderContentForSection listItems={demchongvacaucangItems} />
+        <DynamicSectionTitle title="Đệm Chống Va Cầu Cảng " />
+        <DynamicRenderContentForSection listItems={demchongvacaucangItems} />
       </section>
 
       <section id="rubberfender" className="container my-8 h-full mx-auto mt-[40px] xl:mt-[80px] ">
-        <SectionTitle title="Đệm Chống Va Tàu " />
-        <RenderContentForSection listItems={demchongvatauItems} />
+        <DynamicSectionTitle title="Đệm Chống Va Tàu " />
+        <DynamicRenderContentForSection listItems={demchongvatauItems} />
       </section>
       <section id="mayphunxitapluccao" className="container my-8 h-full mx-auto mt-[40px] xl:mt-[80px] ">
-        <SectionTitle title="Máy Phun Xịt Áp Lực Cao " />
-        <RenderContentForSection listItems={mayphunxitapluccaoItems} />
+        <DynamicSectionTitle title="Máy Phun Xịt Áp Lực Cao " />
+        <DynamicRenderContentForSection listItems={mayphunxitapluccaoItems} />
       </section>
       {/* THAY = CHO THUE  */}
       {/* <section className="container my-8 h-full mx-auto mt-[40px] xl:mt-[80px] ">
@@ -219,15 +231,15 @@ export default function Home() {
       </section> */}
 
       <section className="container my-8 h-full mx-auto mt-[40px] xl:mt-[80px] ">
-        <SectionTitle title="Dịch Vụ Cho Thuê Túi Khí" />
-        <CarouselProducts listImages={listDichVuChoThueImages} />
+        <DynamicSectionTitle title="Dịch Vụ Cho Thuê Túi Khí" />
+        <DynamicCarouselProducts listImages={listDichVuChoThueImages} />
 
         {/* <RenderContentForSection listItems={neotauItems} /> */}
       </section>
 
       <section id="neo" className="container my-8 h-full mx-auto mt-[40px] xl:mt-[80px] ">
-        <SectionTitle title="Neo Và Xích Neo Tàu Thủy" />
-        <RenderContentForSection listItems={neotauItems} />
+        <DynamicSectionTitle title="Neo Và Xích Neo Tàu Thủy" />
+        <DynamicRenderContentForSection listItems={neotauItems} />
       </section>
 
       {/* <section className="container my-8 h-full mx-auto mt-[40px] xl:mt-[80px] ">
@@ -254,8 +266,8 @@ export default function Home() {
       </section> */}
 
       <section className="container my-8 h-full mx-auto mt-[40px] xl:mt-[80px] ">
-        <SectionTitle title="Các dự án tiêu biểu" />
-        <News />
+        <DynamicSectionTitle title="Các dự án tiêu biểu" />
+        <DynamicNews />
       </section>
     </main>
   );
