@@ -30,6 +30,10 @@ export const metadata: Metadata = {
     "neo và xích neo tàu thủy",
     "linh kiện tàu",
     "linh kiện tàu thủy",
+    "xưởng đóng tàu",
+    "đóng xà lan",
+    "đóng tàu",
+    "xưởng đóng xà lan",
   ],
 };
 
