@@ -43,8 +43,11 @@ export default function RootLayout({
       <body className={jetbrains.variable} suppressHydrationWarning={true}>
         <Header />
         <BlockSidebar />
-        <StairEffect />
-        <PageTransition>{children}</PageTransition>
+        {/* <StairEffect /> */}
+
+        <div>{children}</div>
+
+        {/* <PageTransition></PageTransition> */}
         <Footer />
       </body>
     </html>

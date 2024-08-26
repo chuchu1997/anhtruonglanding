@@ -1,11 +1,10 @@
-"use client";
 import React from "react";
 import { motion } from "framer-motion";
 import Image from "next/image";
 const Photo = () => {
   return (
     <div className="w-full h-full relative">
-      <motion.div
+      {/* <motion.div
         style={{
           display: "flex",
           justifyContent: "center",
@@ -26,8 +25,22 @@ const Photo = () => {
         animate={{ strokeDasharray: ["15 120 25 105", "16 25 50 50", "4 250 50 50"], rotate: [120, 360] }}
         transition={{ duration: 18, repeat: Infinity, repeatType: "reverse" }}
       >
-        <Image src="/bannerphoto.png" fill alt="" className="object-contain rounded-full p-2" priority quality={45} />
-      </motion.div>
+
+      
+      
+      </motion.div> */}
+
+      <div className="w-[300px] h-[300px]   xl:w-[550px] xl:h-[550px] overflow-hidden">
+        <Image
+          src="/bannerphoto.png"
+          sizes="(max-width: 768px) 100vw,(max-width:1200px) 50vw,33vw"
+          fill
+          alt=""
+          className="object-contain rounded-full p-2"
+          priority
+          quality={45}
+        />
+      </div>
     </div>
   );
 };
