@@ -33,12 +33,12 @@ const Photo = () => {
       <div className="w-[300px] h-[300px]   xl:w-[550px] xl:h-[550px] overflow-hidden">
         <Image
           src="/bannerphoto.png"
-          sizes="(max-width: 768px) 100vw,(max-width:1200px) 50vw,33vw"
+          // sizes="(max-width: 768px) 100vw,(max-width:1200px) 50vw,33vw"
           fill
           alt=""
           className="object-contain rounded-full p-2"
           priority
-          quality={45}
+          quality={35}
         />
       </div>
     </div>
