@@ -6,6 +6,7 @@ import PageTransition from "@/components/PageTransition";
 import StairEffect from "@/components/StairEffect";
 import BlockSidebar from "@/components/BlockSidebar";
 import Footer from "@/components/Footer";
+import { title } from "process";
 
 const jetbrains = JetBrains_Mono({
   subsets: ["latin"],
@@ -14,11 +15,20 @@ const jetbrains = JetBrains_Mono({
   variable: "--font-jetbrainsMono",
 });
 
+{
+  /* <meta name="description" content="Add a shopping cart to your site in minutes. Works with any site builder, CMS, and framework. 20 000+ merchants trust our e-commerce solution for their website. Join them!">
+<meta property="og:title" content="Add a Shopping Cart to Any Website in Minutes - Snipcart">
+<meta property="og:description" content="Add a shopping cart to your site in minutes. Works with any site builder, CMS, and framework. 20 000+ merchants trust our e-commerce solution for their website. Join them!">
+<meta property="og:url" content="https://snipcart.com/">
+<meta property="og:type" content="website"></meta> */
+}
 export const metadata: Metadata = {
   title: "Nhà phân phối phao hạ thủy trên toàn quốc   ",
   description:
     "Công ty TNHH TM XNK Biển Đông - Túi khí Biển Đông là nhà cung cấp giải pháp Phao túi khí hạ thuỷ – Đệm chống va (Fender) – Đệm chống va cầu cảng cho ngành Đóng tàu và Hàng hải Việt Nam.",
-
+  openGraph: {
+    title: "sdsq",
+  },
   keywords: [
     "phao hạ thủy ",
     "rubberfender",
