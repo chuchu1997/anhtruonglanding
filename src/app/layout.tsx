@@ -1,17 +1,14 @@
 import type { Metadata } from "next";
-import { JetBrains_Mono } from "next/font/google";
+import { Open_Sans } from "next/font/google";
 import "./globals.css";
 import Header from "@/components/Header";
-import PageTransition from "@/components/PageTransition";
-import StairEffect from "@/components/StairEffect";
+// import PageTransition from "@/components/PageTransition";
+// import StairEffect from "@/components/StairEffect";
 import BlockSidebar from "@/components/BlockSidebar";
 import Footer from "@/components/Footer";
-import { title } from "process";
 
-const jetbrains = JetBrains_Mono({
+const jetbrains = Open_Sans({
   subsets: ["latin"],
-  weight: ["100", "200", "300", "400", "500", "600", "700", "800"],
-
   variable: "--font-jetbrainsMono",
 });
 

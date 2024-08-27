@@ -1,33 +1,30 @@
-"use client";
+// "use client";
 import React from "react";
 import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious } from "./ui/carousel";
 import Image from "next/image";
-import Autoplay from "embla-carousel-autoplay";
-
-
-
+// import Autoplay from "embla-carousel-autoplay";
 
 interface propsInterface {
-  listImages:string[]
+  listImages: string[];
 }
 
-const CarouselProducts = (props:propsInterface) => {
-  const {listImages} = props;
+const CarouselProducts = (props: propsInterface) => {
+  const { listImages } = props;
 
   return (
     <Carousel
-      className="pt-10"
-      plugins={[
-        Autoplay({
-          delay: 4000,
-        }),
-      ]}
+      className=""
+      // plugins={[
+      //   Autoplay({
+      //     delay: 4000,
+      //   }),
+      // ]}
     >
-      <CarouselContent className="h-[260px] xl:h-[350px] ">
+      <CarouselContent className="h-[160px] xl:h-[350px] ">
         {listImages.map((item, index) => {
           return (
             <CarouselItem className="relative" key={index}>
-              <Image alt="s" src={item} fill className="object-cover" quality={100} priority></Image>
+              <Image alt="s" src={item} fill className="object-contain" quality={90} priority></Image>
             </CarouselItem>
           );
         })}

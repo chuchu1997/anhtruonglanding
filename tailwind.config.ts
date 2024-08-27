@@ -20,6 +20,9 @@ const config = {
     },
 
     extend: {
+      backgroundImage: {
+        "header-image": "url('/header/2.jpg')",
+      },
       colors: {
         // backgroundFullWeb: "#ffffff",
         primary: "#1c1c22",

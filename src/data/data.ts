@@ -1,4 +1,5 @@
 export const data = {
+  listBannerImages: ["/mainBanner/2.png", "/mainBanner/4.png", "/mainBanner/6.png", "/mainBanner/7.png", "/mainBanner/8.png", "/mainBanner/9.png"],
   listHotProductsImage: [
     "/sanphamnoibat/1.png",
     "/sanphamnoibat/2.png",
@@ -29,11 +30,11 @@ export const data = {
       imageSrc: "/phaotuikhihathuy/16.png",
       href: "https://tuikhibiendong.com/tui-khi-nang-ha-tau-1-8m-13m/",
     },
-    {
-      title: "Túi khí nâng hạ tàu 1,8m x 13m",
-      imageSrc: "/phaotuikhihathuy/17.png",
-      href: "https://tuikhibiendong.com/tui-khi-nang-ha-tau-1-8m-13m/",
-    },
+    // {
+    //   title: "Túi khí nâng hạ tàu 1,8m x 13m",
+    //   imageSrc: "/phaotuikhihathuy/17.png",
+    //   href: "https://tuikhibiendong.com/tui-khi-nang-ha-tau-1-8m-13m/",
+    // },
   ],
 
   demchongvacaucangItems: [
@@ -107,22 +108,22 @@ export const data = {
   neotauItems: [
     {
       title: "Neo tàu",
-      imageSrc: "/neo/26.png",
+      imageSrc: "/neo/39.png",
       href: "https://tuikhibiendong.com/neo-tau-5/",
     },
     {
       title: "Neo tàu",
-      imageSrc: "/neo/27.png",
+      imageSrc: "/neo/40.png",
       href: "https://tuikhibiendong.com/neo-tau-5/",
     },
     {
       title: "Neo tàu",
-      imageSrc: "/neo/28.png",
+      imageSrc: "/neo/41.png",
       href: "https://tuikhibiendong.com/neo-tau-5/",
     },
     {
       title: "Neo tàu",
-      imageSrc: "/neo/29.png",
+      imageSrc: "/neo/42.png",
       href: "https://tuikhibiendong.com/neo-tau-5/",
     },
   ],

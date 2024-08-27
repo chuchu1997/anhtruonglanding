@@ -18,6 +18,7 @@ const DynamicPhoto = dynamic(() => import("@/components/Photo"), {});
 const DynamicServices = dynamic(() => import("@/components/Services"), {});
 
 const DynamicCarouselProducts = dynamic(() => import("@/components/CarouselProducts"), {});
+const DynamicCarouselBanner = dynamic(() => import("@/components/CarouselBanner"));
 
 const DynamicRenderContentForSection = dynamic(() => import("@/components/RenderContentForSection"), {});
 const DynamicNews = dynamic(() => import("@/components/News"), {});
@@ -26,7 +27,7 @@ export default function Home() {
   return (
     <main className="landing-page">
       <section className="container my-4 h-full mx-auto ">
-        <div className="gap-4 flex flex-col md:flex-row justify-between items-center xl:pt-8 xl:pb-24">
+        {/* <div className="gap-4 flex flex-col md:flex-row justify-between items-center xl:pt-8 xl:pb-24">
           <div className="text-center xl:text-left order-2 xl:order-none pb-4">
             <h1 className="h2 mb-6 ">
               Công ty TNHH TM XNK 11
@@ -48,14 +49,21 @@ export default function Home() {
           <div className="order-1 xl:order-none mb-8 xl:mb-0">
             <DynamicPhoto />
           </div>
-        </div>
+        </div> */}
+        <section className="container my-8 h-full mx-auto  ">
+          <DynamicCarouselBanner listImages={data.listBannerImages} />
+        </section>
 
         <section className="container my-8 h-full mx-auto mt-[20px] xl:mt-[80px] ">
           <DynamicSectionTitle title="Các Chứng Chỉ Và Đối Tác " />
+
           <div className="certicate relative h-[300px] xl:h-[500px] w-full mt-[20px] ">
             <Image src="/certicate/certicate.jpg" alt="ccs" fill objectFit="contain" quality={60} priority></Image>
           </div>
-          <div className="ccs relative h-[120px] w-full ">
+          <div className="certicate relative h-[180px] xl:h-[300px] w-full mt-[20px] ">
+            <Image src="/certicate/2.jpg" alt="ccs" fill objectFit="contain" quality={80} priority></Image>
+          </div>
+          <div className="ccs relative h-[80px] w-full ">
             <Image src="/ccs/ccs.jpg" alt="ccs" fill objectFit="contain" quality={60} priority></Image>
           </div>
         </section>
@@ -96,9 +104,9 @@ export default function Home() {
         <RenderContentForSection listItems={hopsotauthuyItems} />
       </section> */}
 
-      <section className="container my-8 h-full mx-auto mt-[40px] xl:mt-[80px] ">
+      <section id="dichvuchothue" className="container my-8 h-full mx-auto mt-[40px] xl:mt-[80px] ">
         <DynamicSectionTitle title="Dịch Vụ Cho Thuê Túi Khí" />
-        <DynamicCarouselProducts listImages={data.listDichVuChoThueImages} />
+        <DynamicCarouselBanner listImages={data.listDichVuChoThueImages} />
 
         {/* <RenderContentForSection listItems={neotauItems} /> */}
       </section>
@@ -108,28 +116,18 @@ export default function Home() {
         <DynamicRenderContentForSection listItems={data.neotauItems} />
       </section>
 
-      {/* <section className="container my-8 h-full mx-auto mt-[40px] xl:mt-[80px] ">
-        <SectionTitle title="Video Sản Phẩm" />
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mt-10 px-4 xl:px-0">
-          <iframe
-            className="w-full h-[300px]"
-            src="https://www.youtube.com/embed/V66Lc_RrWOE"
-            title="Phao túi khí hạ thủy tàu | Công đoạn bàn giao túi khí hạ thuỷ D1.8 x 13m tại xưởng đóng tàu"
-            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-            referrerPolicy="strict-origin-when-cross-origin"
-            allowFullScreen
-          ></iframe>
-
-          <iframe
-            className="w-full h-[300px]"
-            src="https://www.youtube.com/embed/WpySAlW6IpQ"
-            title="Quy trình sản xuất phần chóp của Túi khí Biển Đông"
-            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-            referrerPolicy="strict-origin-when-cross-origin"
-            allowFullScreen
-          ></iframe>
+      <section className="container my-8 h-full mx-auto mt-[40px] xl:mt-[80px] ">
+        <DynamicSectionTitle title="Video sản phẩm" />
+        <div className="grid grid-cols-1 xl:grid-cols-2 gap-4 mt-[18px]">
+          <video controls aria-label="Video player">
+            <source src={"/youtubeVideo/1.mp4"} type="video/mp4" />
+          </video>
+          <video controls aria-label="Video player">
+            <source src={"/youtubeVideo/2.mp4"} type="video/mp4" />
+          </video>
         </div>
-      </section> */}
+        {/* <DynamicNews /> */}
+      </section>
 
       <section className="container my-8 h-full mx-auto mt-[40px] xl:mt-[80px] ">
         <DynamicSectionTitle title="Các dự án tiêu biểu" />
