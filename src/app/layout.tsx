@@ -23,6 +23,9 @@ export const metadata: Metadata = {
   title: "Nhà phân phối phao hạ thủy trên toàn quốc",
   description:
     "Công ty TNHH TM XNK Biển Đông - Túi khí Biển Đông là nhà cung cấp giải pháp Phao túi khí hạ thuỷ – Đệm chống va (Fender) – Đệm chống va cầu cảng cho ngành Đóng tàu và Hàng hải Việt Nam.",
+  verification: {
+    google: "google-site-verification=QDbAh8EHR6zGyysSsEgdHt97muEmEf56VYCaAV3HtKI",
+  },
   openGraph: {
     title: "Công ty TNHH TM XNK Biển Đông",
     locale: "vi_VN",
