@@ -104,7 +104,10 @@ export default function Home() {
         <SectionTitle title="Hộp Số Tàu Thủy" />
         <RenderContentForSection listItems={hopsotauthuyItems} />
       </section> */}
-
+      <section id="neo" className="container my-8 h-full mx-auto mt-[40px] xl:mt-[80px] ">
+        <DynamicSectionTitle title="Neo Và Xích Neo Tàu Thủy" />
+        <DynamicRenderContentForSection listItems={data.neotauItems} />
+      </section>
       <section id="dichvuchothue" className="container my-8 h-full mx-auto mt-[40px] xl:mt-[80px] ">
         <DynamicSectionTitle title="Dịch Vụ Cho Thuê Túi Khí" />
         <DynamicCarouselBanner listImages={data.listDichVuChoThueImages} />
@@ -112,18 +115,13 @@ export default function Home() {
         {/* <RenderContentForSection listItems={neotauItems} /> */}
       </section>
 
-      <section id="neo" className="container my-8 h-full mx-auto mt-[40px] xl:mt-[80px] ">
-        <DynamicSectionTitle title="Neo Và Xích Neo Tàu Thủy" />
-        <DynamicRenderContentForSection listItems={data.neotauItems} />
-      </section>
-
       <section className="container my-8 h-full mx-auto mt-[40px] xl:mt-[80px] ">
         <DynamicSectionTitle title="Video sản phẩm" />
         <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mt-[18px]">
-          <video controls aria-label="Video player">
+          <video controls aria-label="Video player" className="h-full w-full">
             <source src={"/youtubeVideo/1.mp4"} type="video/mp4" />
           </video>
-          <video controls aria-label="Video player">
+          <video controls aria-label="Video player" className="h-full w-full">
             <source src={"/youtubeVideo/2.mp4"} type="video/mp4" />
           </video>
         </div>

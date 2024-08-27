@@ -14,6 +14,7 @@ const Footer = () => {
             <div className="text-[12px] xl:text-[14px]">
               <li>Là nhà cung cấp phao túi khí hạ thuỷ – Đệm chống va (Fender) – Đệm chống va cầu cảng </li>
               <li>Là Đại Diện Phân Phối Độc Quyền Túi Khí Hạ Thuỷ và Đệm chống va của Shandong Longao Rubber tại Việt Nam.</li>
+              <li>MST: 0315791531</li>
             </div>
           </div>
         </div>
@@ -26,7 +27,6 @@ const Footer = () => {
               <li>Phone: 086 9229 639 (Zalo).</li>
               <li>Website: https://phaohathuy.com</li>
               <li>Email: phaohathuy@gmail.com</li>
-              <li>MST: 0315791531</li>
             </div>
           </div>
         </div>
@@ -36,9 +36,9 @@ const Footer = () => {
         </div> */}
       </div>
       <div className="footer-bottom bg-[#45526E] text-sm py-2 border-t border-[#cccc]  ">
-        <div className="container mx-auto flex flex-col xl:flex-row items-start xl:items-center justify-between gap-2">
+        <div className="container mx-auto flex flex-col xl:flex-row items-start xl:items-center  gap-2">
           <div className="text-[12px]"> Copyright 2024 © Phao Hạ Thủy.</div>
-          <div className="flex items-center gap-4">
+          <div className="flex-1  flex items-center gap-4 justify-center ">
             <Link href="https://www.facebook.com/phaohathuybiendong">
               <Image src="/socials/facebook.png" alt="social" width={28} height={28}></Image>
             </Link>

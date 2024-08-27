@@ -3,6 +3,7 @@ import Image from "next/image";
 
 import { Button } from "./ui/button";
 import Link from "next/link";
+import PhoneCall from "./PhoneCall";
 interface itemInterface {
   imageSrc: string;
   title: string;
@@ -38,7 +39,7 @@ const RenderContentForSection = (props: propsInterface) => {
               />
             </div>
 
-            <Link
+            {/* <Link
               href="tel:0869229639"
               className="absolute top-[320px] transition-all duration-500 group-hover:top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2"
             >
@@ -52,7 +53,8 @@ const RenderContentForSection = (props: propsInterface) => {
                   className="group-hover:scale-125 scale-100 transition-all duration-400"
                 />
               </Button>
-            </Link>
+            </Link> */}
+            <PhoneCall />
           </div>
         );
       })}
