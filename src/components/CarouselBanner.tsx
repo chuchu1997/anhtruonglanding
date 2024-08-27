@@ -1,4 +1,5 @@
 // "use client";
+
 import React from "react";
 import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious } from "./ui/carousel";
 import Image from "next/image";
@@ -24,7 +25,7 @@ const CarouselBanner = (props: propsInterface) => {
         {listImages.map((item, index) => {
           return (
             <CarouselItem className="relative" key={index}>
-              <Image alt="s" src={item} fill className="object-contain" quality={90} priority></Image>
+              <Image alt="bannerImage" src={item} fill className="object-contain" quality={50} priority></Image>
             </CarouselItem>
           );
         })}

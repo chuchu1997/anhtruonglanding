@@ -1,5 +1,5 @@
 export const data = {
-  listBannerImages: ["/mainBanner/2.png", "/mainBanner/4.png", "/mainBanner/6.png", "/mainBanner/7.png", "/mainBanner/8.png", "/mainBanner/9.png"],
+  listBannerImages: ["/mainBanner/3.png", "/mainBanner/4.png", "/mainBanner/6.png", "/mainBanner/7.png", "/mainBanner/8.png", "/mainBanner/9.png"],
   listHotProductsImage: [
     "/sanphamnoibat/1.png",
     "/sanphamnoibat/2.png",

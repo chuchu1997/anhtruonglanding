@@ -23,6 +23,7 @@ const DynamicCarouselBanner = dynamic(() => import("@/components/CarouselBanner"
 const DynamicRenderContentForSection = dynamic(() => import("@/components/RenderContentForSection"), {});
 const DynamicNews = dynamic(() => import("@/components/News"), {});
 import { data } from "@/data/data";
+import CarouselBanner from "@/components/CarouselBanner";
 export default function Home() {
   return (
     <main className="landing-page">
@@ -51,7 +52,7 @@ export default function Home() {
           </div>
         </div> */}
         <section className="container my-8 h-full mx-auto  ">
-          <DynamicCarouselBanner listImages={data.listBannerImages} />
+          <CarouselBanner listImages={data.listBannerImages} />
         </section>
 
         <section className="container my-8 h-full mx-auto mt-[20px] xl:mt-[80px] ">
