@@ -119,7 +119,7 @@ export default function Home() {
 
       <section className="container my-8 h-full mx-auto mt-[40px] xl:mt-[80px] ">
         <DynamicSectionTitle title="Video sản phẩm" />
-        <div className="grid grid-cols-1 xl:grid-cols-2 gap-4 mt-[18px]">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mt-[18px]">
           <video controls aria-label="Video player">
             <source src={"/youtubeVideo/1.mp4"} type="video/mp4" />
           </video>

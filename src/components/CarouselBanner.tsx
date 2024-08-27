@@ -21,7 +21,7 @@ const CarouselBanner = (props: propsInterface) => {
       //   }),
       // ]}
     >
-      <CarouselContent className="h-[260px] xl:h-[780px] ">
+      <CarouselContent className="h-[260px] md:h-[780px] ">
         {listImages.map((item, index) => {
           return (
             <CarouselItem className="relative" key={index}>
