@@ -8,7 +8,7 @@ const Footer = () => {
     <div className="bg-[#45526E] text-white">
       <div className="footer-top bg-red grid grid-cols-1 md:grid-cols-2 xl:grid-cols-2 container mx-auto py-10 gap-8 items-start">
         <div className="flex flex-col md:flex-row items-center gap-4 text-[14px] gap-4  ">
-          <Image src="/logotuikhi.png" width={140} height={140} alt="logo-footer" objectFit="contain" quality={60} priority></Image>
+          <Image src="/logotuikhi.png" width={140} height={140} alt="logo-footer" style={{ objectFit: "contain" }} quality={60} priority></Image>
           <div>
             <div className="text-[14px] xl:text-[16px]">CÔNG TY TNHH TM XNK BIỂN ĐÔNG</div>
             <div className="text-[12px] xl:text-[14px]">

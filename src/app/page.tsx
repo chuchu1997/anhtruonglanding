@@ -59,13 +59,13 @@ export default function Home() {
           <DynamicSectionTitle title="Các Chứng Chỉ Và Đối Tác " />
 
           <div className="certicate relative h-[300px] xl:h-[500px] w-full mt-[20px] ">
-            <Image src="/certicate/certicate.jpg" alt="ccs" fill objectFit="contain" quality={60} priority></Image>
+            <Image src="/certicate/certicate.jpg" alt="ccs" fill style={{ objectFit: "contain" }} quality={60} priority></Image>
           </div>
           <div className="certicate relative h-[180px] xl:h-[300px] w-full mt-[20px] ">
-            <Image src="/certicate/2.jpg" alt="ccs" fill objectFit="contain" quality={80} priority></Image>
+            <Image src="/certicate/2.jpg" alt="ccs" fill style={{ objectFit: "contain" }} quality={80} priority></Image>
           </div>
           <div className="ccs relative h-[80px] w-full ">
-            <Image src="/ccs/ccs.jpg" alt="ccs" fill objectFit="contain" quality={60} priority></Image>
+            <Image src="/ccs/ccs.jpg" alt="ccs" fill style={{ objectFit: "contain" }} quality={60} priority></Image>
           </div>
         </section>
 

@@ -9,7 +9,15 @@ const Header = () => {
       <div className="container mx-auto flex justify-between items-center">
         <Link href="/" className="flex flex-col justify-center  gap-4 ">
           <div className="w-[80px] h-[80px] md:w-[100px] md:h-[100px] mix-blend-lighten relative">
-            <Image src="/logotuikhi.png" priority quality={100} fill alt="logo" className="object-contain"></Image>
+            <Image
+              src="/logotuikhi.png"
+              priority
+              quality={100}
+              fill
+              alt="logo"
+              style={{ objectFit: "contain" }}
+              sizes="(max-width: 768px) 100vw,(max-width:1200px) 50vw,33vw"
+            ></Image>
           </div>
 
           {/* <div className="w-[80px] h-[80px] md:w-[350px] md:h-[350px] mix-blend-lighten relative">
