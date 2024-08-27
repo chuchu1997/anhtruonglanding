@@ -13,7 +13,7 @@ const CarouselProducts = (props: propsInterface) => {
 
   return (
     <Carousel
-      className=""
+      className="mt-[14px]"
       // plugins={[
       //   Autoplay({
       //     delay: 4000,
@@ -24,7 +24,7 @@ const CarouselProducts = (props: propsInterface) => {
         {listImages.map((item, index) => {
           return (
             <CarouselItem className="relative" key={index}>
-              <Image  alt="s" src={item} fill className="object-contain" quality={90} priority></Image>
+              <Image alt="s" src={item} fill className="object-contain" quality={90} priority></Image>
             </CarouselItem>
           );
         })}
