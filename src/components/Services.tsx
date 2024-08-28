@@ -50,7 +50,7 @@ const items = [
     num: "06",
     title: "Cho thuê phao hạ thủy ",
     description: "lorem ipsum dolor sit amet",
-    image: "/sanphamchudao/sanphamnoibat6.png",
+    image: "/sanphamchudao/sanphamnoibat7.png",
     href: "",
     idTarget: "dichvuchothue",
   },
@@ -58,9 +58,9 @@ const items = [
 const Services = () => {
   return (
     <div className="grid grid-cols-1 xl:grid-cols-2  gap-8 py-[50px]">
-      {items.map((item, index) => {
+      {items.map((item) => {
         return (
-          <div key={index} className="flex-1 flex-col justify-center gap-6 group">
+          <div key={item.num} className="flex-1 flex-col justify-center gap-6 group">
             <div className="w-full flex justify-between items-center ">
               <div className="text-5xl font-extrabold text-transparent text-outline group-hover:text-outline-hover  ">{item.num}</div>
               <div className="wrapper-image relative w-[80px] h-[80px] xl:w-[100px] xl:h-[100px]">
@@ -69,7 +69,6 @@ const Services = () => {
                   alt={item.title}
                   fill={true}
                   className="rounded-md object-contain"
-                  // objectFit={"cover"}
                   quality={100}
                   priority
                   sizes="(max-width: 768px) 100vw,(max-width:1200px) 50vw,33vw"
