@@ -24,7 +24,7 @@ const Nav = () => {
               document.getElementById(item.idTarget)!.scrollIntoView({ behavior: "smooth" });
             }}
             key={index}
-            className={`cursor-pointer hover:text-accent text-white hover:border-b-4 border-accent capitalize transition-all duration-400`}
+            className={`cursor-pointer hover:text-accent hover:border-b-4 border-accent capitalize transition-all duration-400`}
           >
             {item.title}
           </div>
