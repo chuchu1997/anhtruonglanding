@@ -18,7 +18,7 @@ const DockBottomContact = () => {
         <Button
           className="flex-1 uppercase font-bold"
           onClick={() => {
-            window.location.href = "http://zalo.me/0869229639";
+            window.location.href = "https://zalo.me/0869229639";
           }}
         >
           <Image src="/zalo.png" alt="zalo" width={30} height={30} quality={40} priority />
