@@ -13,7 +13,7 @@ const DockBottomContact = () => {
           }}
         >
           <Image src="/phonecall.png" alt="phone" width={30} height={30} quality={40} priority />
-          <span className="ml-4"> 0869 229 639</span>
+          <span className="ml-4"> 086 9229 639</span>
         </Button>
         <Button
           className="flex-1 uppercase font-bold"
