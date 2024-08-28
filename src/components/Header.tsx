@@ -21,9 +21,10 @@ const Header = () => {
           </div>
         </Link>
         <div className="hidden lg:block text-white text-center  p-4 ">
-          <h1 className="font-bold  leading-8 text-[14px] xl:text-[16px] lg:w-[340px] xl:w-[380px]">
+          {/* <h1 className="font-bold  leading-8 text-[14px] xl:text-[16px] lg:w-[340px] xl:w-[380px]">
             Đại Diện Độc Quyền Shandong Longao Rubber Tại Việt Nam
-          </h1>
+          </h1> */}
+          <h1 className="font-bold  leading-8 text-[16px] xl:text-[18px] ">Đại Diện Độc Quyền Shandong Longao Rubber Tại Việt Nam</h1>
           {/* <p className="text-[12px] md:text-[14px]">Đại Diện Phân Phối Độc Quyền Shandong Longao Rubber Tại Việt Nam</p> */}
         </div>
         <Nav />
