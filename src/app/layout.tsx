@@ -6,6 +6,7 @@ import Header from "@/components/Header";
 // import StairEffect from "@/components/StairEffect";
 import BlockSidebar from "@/components/BlockSidebar";
 import Footer from "@/components/Footer";
+import DockBottomContact from "@/components/DockBottomContact";
 
 const jetbrains = Open_Sans({
   subsets: ["latin"],
@@ -74,6 +75,7 @@ export default function RootLayout({
       <body className={jetbrains.variable} suppressHydrationWarning={true}>
         <Header />
         <BlockSidebar />
+        <DockBottomContact />
         {/* <StairEffect /> */}
         {/* <PageTransition></PageTransition> */}
         <div>{children}</div>
