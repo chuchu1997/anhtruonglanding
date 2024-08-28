@@ -21,8 +21,8 @@ const Header = () => {
           </div>
         </Link>
         <div className="hidden lg:block text-white text-center  p-4 ">
-          <h4 className="h3 mb-2 font-bold">CÔNG TY TNHH TM XNK BIỂN ĐÔNG</h4>
-          <p className="text-[12px] md:text-[14px]">Đại Diện Phân Phối Độc Quyền Shandong Longgao Rubber Tại Việt Nam</p>
+          <h4 className="h3 mb-2 font-bold  lg:w-[400px] xl:w-[550px] leading-8">Đại Diện Phân Phối Độc Quyền Shandong Longao Rubber Tại Việt Nam</h4>
+          {/* <p className="text-[12px] md:text-[14px]">Đại Diện Phân Phối Độc Quyền Shandong Longao Rubber Tại Việt Nam</p> */}
         </div>
         <Nav />
         {/* <Button className="hidden md:block">0325805893</Button> */}
