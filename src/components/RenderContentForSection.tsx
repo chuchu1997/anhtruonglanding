@@ -30,7 +30,7 @@ const RenderContentForSection = (props: propsInterface) => {
             <div className="h-[260px]  relative ">
               <Image
                 src={item.imageSrc}
-                alt=""
+                alt={item.title}
                 fill
                 className="object-contain"
                 quality={100}

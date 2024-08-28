@@ -66,7 +66,7 @@ const Services = () => {
               <div className="wrapper-image relative w-[80px] h-[80px] xl:w-[100px] xl:h-[100px]">
                 <Image
                   src={item.image}
-                  alt="ss"
+                  alt={item.title}
                   fill={true}
                   className="rounded-md object-contain"
                   // objectFit={"cover"}
