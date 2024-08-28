@@ -11,23 +11,23 @@ const Footer = () => {
           <Image src="/logotuikhi.png" width={140} height={140} alt="logo-footer" style={{ objectFit: "contain" }} quality={60} priority></Image>
           <div>
             <div className="text-[14px] xl:text-[16px]">CÔNG TY TNHH TM XNK BIỂN ĐÔNG</div>
-            <div className="text-[12px] xl:text-[14px]">
+            <ul className="text-[12px] xl:text-[14px] list-disc ml-4">
               <li>Là nhà cung cấp phao túi khí hạ thuỷ – Đệm chống va (Fender) – Đệm chống va cầu cảng </li>
               <li>Là Đại Diện Phân Phối Độc Quyền Túi Khí Hạ Thuỷ và Đệm chống va của Shandong Longao Rubber tại Việt Nam.</li>
               <li>MST: 0315791531</li>
-            </div>
+            </ul>
           </div>
         </div>
         <div className="text-[14px] ">
           <div>
             <div className="text-[14px] xl:text-[16px]">LIÊN HỆ PHAO HẠ THỦY BIỂN ĐÔNG</div>
-            <div className="text-[12px] xl:text-[14px]">
+            <ul className="text-[12px] xl:text-[14px] list-disc ml-4">
               <li>Trụ sở: 625/31 Trần Xuân Soạn, Phường Tân Hưng Quận 7, TP.HCM.</li>
               <li>Văn phòng: 287 Tây Thạnh, Phường Tây Thạnh, Quận Tân Phú, TP.HCM.</li>
               <li>Phone: 086 9229 639 (Zalo).</li>
               <li>Website: https://phaohathuy.com</li>
               <li>Email: phaohathuy@gmail.com</li>
-            </div>
+            </ul>
           </div>
         </div>
         {/* <div className="text-[14px] text-black/80">
