@@ -91,7 +91,7 @@ const Header = () => {
           <div className=" hidden md:flex items-center gap-6 text-[14px] font-semibold">
             {navResponsive.map((item, index) => {
               return (
-                <Link key={index} href={item.href} className="hover:text-accent transition-all duration-200">
+                <Link target="_blank" key={index} href={item.href} className="hover:text-accent transition-all duration-200">
                   {item.title}
                 </Link>
               );
@@ -157,7 +157,7 @@ const Header = () => {
       >
         {navResponsive.map((item, index) => {
           return (
-            <Link key={index} href={item.href} className="hover:text-accent transition-all duration-200">
+            <Link target="_blank" key={index} href={item.href} className="hover:text-accent transition-all duration-200">
               {item.title}
             </Link>
           );
@@ -186,7 +186,6 @@ const Header = () => {
             </div>
           );
         })}
-
         <Button>Nhận Tư Vấn</Button>
       </div>
 

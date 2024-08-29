@@ -23,6 +23,8 @@ const DynamicCarouselBanner = dynamic(() => import("@/components/CarouselBanner"
 const DynamicRenderContentForSection = dynamic(() => import("@/components/RenderContentForSection"), {});
 const DynamicNews = dynamic(() => import("@/components/News"), {});
 const DynamicShapeSale = dynamic(() => import("@/components/ShapeSale"));
+const DynamicCarouselMayCatGach = dynamic(() => import("@/components/CarouselDisplay3Items"));
+
 import { data } from "@/data/data";
 import CarouselBanner from "@/components/CarouselBanner";
 import ThongSoKyThuat from "@/components/ThongSoKyThuat";
@@ -30,18 +32,18 @@ import FormTuVan from "@/components/FormTuVan";
 export default function Home() {
   return (
     <main className="landing-page">
-      <section className="main-banner h-[200px] lg:h-[600px] md:h-[400px] relative rounded-md">
+      <section className="main-banner h-[200px] lg:h-[800px] md:h-[400px] relative rounded-md">
         <Image
           className="rounded-md"
           src="/banner/1.png"
           fill
           alt="bancatgachdemcaosu "
-          style={{ objectFit: "contain" }}
-          quality={60}
+          style={{ objectFit: "cover" }}
+          quality={100}
           priority
         ></Image>
       </section>
-      <section className=" container my-8 h-full mx-auto mt-[40px] xl:mt-[80px] " id="gioithieu">
+      <section id="giaban" className=" container my-8 h-full mx-auto mt-[40px] xl:mt-[80px] ">
         <DynamicSectionTitle title="Giá bán " />
         <div className="grid grid-cols-2 gap-4 ">
           <div className="flex flex-col">
@@ -174,7 +176,7 @@ export default function Home() {
         <Button>Đặt Hàng Ngay</Button>
       </section>
 
-      <section className="bg-[#E7EFFE] py-8">
+      <section className="bg-[#E7EFFE] py-8" id="thongsokythuat">
         <section className="container mx-auto relative">
           <DynamicSectionTitle title="Thông Số Kỹ Thuật Sản Phẩm PANAPRO" />
           <ThongSoKyThuat />
@@ -196,12 +198,13 @@ export default function Home() {
           <FormTuVan />
         </section>
       </section>
-      <section className="py-[100px]">
+      <section className="py-[100px]" id="panaprokhac">
         <section className="container mx-auto relative">
           <DynamicSectionTitle title="Các sản phẩm PANAPRO khác" />
-          <DynamicCarouselProducts listImages={data.listHotProductsImage}></DynamicCarouselProducts>
+          <DynamicCarouselMayCatGach />
         </section>
       </section>
+
       {/* <section className="container my-4 h-full mx-auto ">
     
         <section className="container my-8 h-full mx-auto  ">

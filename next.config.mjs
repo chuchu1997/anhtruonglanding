@@ -10,7 +10,10 @@ const nextConfig = {
           {
             protocol: 'https',
             hostname: 'tuikhibiendong.com',
-          
+          },
+          {
+            protocol: 'https',
+            hostname: 'mayxaydungmoi.com',
           },
         ],
       },
