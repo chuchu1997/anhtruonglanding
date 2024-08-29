@@ -24,7 +24,7 @@ const Footer = () => {
             <div className="text-[14px] xl:text-[16px]">LIÊN HỆ PHAO HẠ THỦY BIỂN ĐÔNG</div>
             <ul className="text-[12px] xl:text-[14px] list-disc ml-4">
               <li>PGD Tại HCM: 287 Tây Thạnh, Phường Tây Thạnh, Quận Tân Phú, TP.HCM.</li>
-              <li>PGD Tại Hà Nội: 55 Nguyễn An Ninh Quận Hoàng Hai TP. Hà Nội.</li>
+              <li>PGD Tại Hà Nội: 55 Nguyễn An Ninh Quận Hoàng Hai , TP. Hà Nội.</li>
               <li>Phone: 086 9229 639 (Zalo).</li>
               <li>Website: https://phaohathuy.com</li>
               <li>Email: phaohathuy@gmail.com</li>
