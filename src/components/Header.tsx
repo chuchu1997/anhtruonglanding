@@ -4,10 +4,14 @@ import Link from "next/link";
 import React from "react";
 import { Button } from "./ui/button";
 import Image from "next/image";
+import { Menu, X } from "react-feather";
 
 const Header = () => {
   const [lastScrollY, setLastScrollY] = useState(0);
   const [showNavbarWhenScrolling, setShowNavbarWhenScrolling] = useState(false);
+  const [showMobileNavbarOne, setShowMobileNavbarOne] = useState(false);
+  const [showMobileNavbarSecond, setShowMobileNavbarSecond] = useState(false);
+
   const controlNavbar = () => {
     if (window.scrollY > lastScrollY && !showNavbarWhenScrolling) {
       // if scroll down hide the navbar
@@ -27,6 +31,23 @@ const Header = () => {
       window.removeEventListener("scroll", controlNavbar);
     };
   }, [lastScrollY]);
+
+  const handleSetShowNavBarOne = () => {
+    setShowMobileNavbarOne(!showMobileNavbarOne);
+    if (!showMobileNavbarOne) {
+      document.body.classList.add("overflow-y-hidden");
+    } else {
+      document.body.classList.remove("overflow-y-hidden");
+    }
+  };
+  const handleSetShowNavBarSecond = () => {
+    setShowMobileNavbarSecond(!showMobileNavbarSecond);
+    if (!showMobileNavbarSecond) {
+      document.body.classList.add("overflow-y-hidden");
+    } else {
+      document.body.classList.remove("overflow-y-hidden");
+    }
+  };
 
   const navResponsive = [
     {
@@ -67,7 +88,7 @@ const Header = () => {
           <Link href={"/"}>
             <Image src="/logobancatgach/1.png" alt="logo" width={160} height={160} quality={100} priority></Image>
           </Link>
-          <div className="flex items-center gap-6 text-[14px] font-semibold">
+          <div className=" hidden md:flex items-center gap-6 text-[14px] font-semibold">
             {navResponsive.map((item, index) => {
               return (
                 <Link key={index} href={item.href} className="hover:text-accent transition-all duration-200">
@@ -76,8 +97,17 @@ const Header = () => {
               );
             })}
           </div>
-          <div>
+          <div className="hidden md:block">
             <Button>Nhận Tư Vấn</Button>
+          </div>
+
+          <div
+            className="cursor-pointer block md:hidden"
+            onClick={() => {
+              handleSetShowNavBarOne();
+            }}
+          >
+            {showMobileNavbarOne ? <X></X> : <Menu />}
           </div>
         </div>
       </div>
@@ -91,7 +121,7 @@ const Header = () => {
           <Link href={"/"}>
             <Image src="/logobancatgach/1.png" alt="logo" width={160} height={160} quality={100} priority></Image>
           </Link>
-          <div className="flex items-center gap-6 text-[14px] font-semibold">
+          <div className="hidden md:flex  items-center gap-6 text-[14px] font-semibold">
             {navFixed.map((item, index) => {
               return (
                 <div
@@ -106,48 +136,78 @@ const Header = () => {
               );
             })}
           </div>
-          <div>
+          <div className="hidden md:block">
             <Button>Nhận Tư Vấn</Button>
           </div>
-        </div>
-      </div>
-      {/* <div
-        className={`shape1 text-black relative ${showNavbarWhenScrolling ? "h-0" : "h-auto"} ${showNavbarWhenScrolling ? "top-[-200px]" : "top-0"}`}
-      >
-        SHAPE1
-      </div>
-      <div className={`shape2 text-black `}>SHAPE2</div> */}
-      {/* <Link href="/" className="flex flex-col justify-center  gap-4 bg-white">
-        <div className="w-[80px] h-[80px] md:w-[100px] md:h-[100px]  relative">
-          <Image
-            src="/logotuikhi.png"
-            priority
-            quality={100}
-            fill
-            alt="logo"
-            style={{ objectFit: "contain" }}
-            sizes="(max-width: 768px) 100vw,(max-width:1200px) 50vw,33vw"
-          ></Image>
-        </div>
-      </Link> */}
-      {/* <div className={`container mx-auto flex justify-between items-center gap-10 py-4 }`}>
-        <Link href="/" className="flex flex-col justify-center  gap-4 ">
-          <div className="w-[80px] h-[80px] md:w-[100px] md:h-[100px] mix-blend-lighten relative">
-            <Image
-              src="/logotuikhi.png"
-              priority
-              quality={100}
-              fill
-              alt="logo"
-              style={{ objectFit: "contain" }}
-              sizes="(max-width: 768px) 100vw,(max-width:1200px) 50vw,33vw"
-            ></Image>
+          <div
+            className="cursor-pointer block md:hidden"
+            onClick={() => {
+              handleSetShowNavBarSecond();
+            }}
+          >
+            {showMobileNavbarSecond ? <X></X> : <Menu />}
           </div>
-        </Link>
-        <div className="hidden lg:block text-white text-center  p-4 ">
-          <h1 className="font-bold  leading-8 text-[16px] xl:text-[18px] ">Đại Diện Độc Quyền Shandong Longao Rubber Tại Việt Nam</h1>
         </div>
-        <Nav />
+      </div>
+
+      <div
+        className={`transition-all duration-500 fixed  bg-white border-t border-[#ccc] shadow-md mobile-navbar-1 ${
+          showMobileNavbarOne ? "left-0 right-0 h-screen " : "left-[-200px] "
+        } p-4 flex flex-col gap-2`}
+      >
+        {navResponsive.map((item, index) => {
+          return (
+            <Link key={index} href={item.href} className="hover:text-accent transition-all duration-200">
+              {item.title}
+            </Link>
+          );
+        })}
+
+        <Button>Nhận Tư Vấn</Button>
+      </div>
+
+      <div
+        className={`transition-all duration-500 fixed  bg-white border-t border-[#ccc] shadow-md mobile-navbar-1 ${
+          showMobileNavbarSecond ? "left-0 right-0 h-screen " : "left-[-300px] "
+        } p-4 flex flex-col gap-2`}
+      >
+        {navFixed.map((item, index) => {
+          return (
+            <div
+              key={index}
+              className="hover:text-accent transition-all duration-200 cursor-pointer"
+              onClick={() => {
+                handleSetShowNavBarSecond();
+
+                document.getElementById(item.scrollTargetID)?.scrollIntoView({ behavior: "smooth" });
+              }}
+            >
+              {item.title}
+            </div>
+          );
+        })}
+
+        <Button>Nhận Tư Vấn</Button>
+      </div>
+
+      {/* <div
+        className={`transition-all duration-500 absolute  bg-white shadow-md mobile-navbar-1 ${
+          showMobileNavbarSecond ? "left-0 right-0" : "left-[-300px] "
+        } p-4 flex flex-col`}
+      >
+        {navFixed.map((item, index) => {
+          return (
+            <div
+              key={index}
+              className="hover:text-accent transition-all duration-200 cursor-pointer"
+              onClick={() => {
+                document.getElementById(item.scrollTargetID)?.scrollIntoView({ behavior: "smooth" });
+              }}
+            >
+              {item.title}
+            </div>
+          );
+        })}
       </div> */}
     </header>
   );

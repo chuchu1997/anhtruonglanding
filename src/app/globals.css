@@ -1,9 +1,9 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
-html{
+/* html{
     overflow-x:hidden;
-}
+} */
 .sort-dock { 
     @media screen and (max-width: 481px) {
         display: none;

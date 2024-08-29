@@ -1,6 +1,13 @@
 import React from "react";
 import { Tag } from "react-feather";
-const ShapeSale = () => {
+
+interface props {
+  saleOff: number;
+  price: number;
+}
+const ShapeSale = (props: props) => {
+  const { saleOff, price } = props;
+
   return (
     <div className="my-4 h-[100px] w-[400px] bg-gradient-to-r from-cyan-500 to-blue-500 rounded-md flex py-4 gap-4 px-2 ">
       <Tag color="white"></Tag>

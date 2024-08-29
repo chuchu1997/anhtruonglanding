@@ -5,7 +5,7 @@ import Link from "next/link";
 
 const Footer = () => {
   return (
-    <div className="bg-[#45526E] text-white">
+    <div className="bg-[#ccc]/50 text-black py-[60px]">
       <div className="footer-top bg-red grid grid-cols-1 md:grid-cols-2 xl:grid-cols-2 container mx-auto py-10 gap-8 items-start">
         <div className="flex flex-col md:flex-row items-center gap-4 text-[14px] gap-4  ">
           <Image src="/logotuikhi.png" width={140} height={140} alt="logo-footer" style={{ objectFit: "contain" }} quality={60} priority></Image>
@@ -35,7 +35,7 @@ const Footer = () => {
           <div className="flex gap-4"></div>
         </div> */}
       </div>
-      <div className="footer-bottom bg-[#45526E] text-sm py-2 border-t border-[#cccc]  ">
+      {/* <div className="footer-bottom bg-[#45526E] text-sm py-2 border-t border-[#cccc]  ">
         <div className="container mx-auto flex flex-col xl:flex-row items-start xl:items-center  gap-2">
           <div className="text-[12px]"> Copyright 2024 © Phao Hạ Thủy.</div>
           <div className="flex-1  flex items-center gap-4 justify-center ">
@@ -50,7 +50,7 @@ const Footer = () => {
             </Link>
           </div>
         </div>
-      </div>
+      </div> */}
     </div>
   );
 };
