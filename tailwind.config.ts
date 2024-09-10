@@ -15,10 +15,15 @@ const config = {
         xl: "1200px",
       },
     },
+    fontSize: {
+      mobile: "0.6rem",
+      tablet: "0.8rem",
+      laptop: "1rem",
+      pc: "1.25rem",
+    },
     fontFamily: {
       primary: "var(--font-jetbrainsMono)",
     },
-
     extend: {
       backgroundImage: {
         "header-image": "url('/header/2.jpg')",
