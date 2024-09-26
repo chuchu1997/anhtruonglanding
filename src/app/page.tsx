@@ -29,6 +29,7 @@ import { data } from "@/data/data";
 import CarouselBanner from "@/components/CarouselBanner";
 import ThongSoKyThuat from "@/components/ThongSoKyThuat";
 import FormTuVan from "@/components/FormTuVan";
+import CarouselDisplay3Items from "@/components/CarouselDisplay3Items";
 export default function Home() {
   return (
     <main className="landing-page">
@@ -43,55 +44,13 @@ export default function Home() {
           priority
         ></Image>
       </section>
-      <section id="giaban" className=" container my-8 h-full mx-auto mt-[40px] xl:mt-[80px] ">
-        <DynamicSectionTitle title="Giá bán " />
-        <div className="grid grid-cols-2 gap-4 ">
-          <div className="flex flex-col">
-            <div className="relative min-h-[300px] w-full mt-8 ">
-              <Image
-                src="/bancatgach/bancatgachdemcaosu.png"
-                fill
-                alt="bancatgachdemcaosu"
-                style={{ objectFit: "contain" }}
-                quality={60}
-                priority
-                className="shadow-md"
-              ></Image>
-            </div>
-            <DynamicShapeSale saleOff={10} price={2199000}></DynamicShapeSale>
-          </div>
-
-          <div className="flex flex-col">
-            <div className="relative min-h-[300px] w-full mt-8 ">
-              <Image
-                src="/bancatgach/bancatgachdemcaosu.png"
-                fill
-                alt="bancatgachdemcaosu"
-                style={{ objectFit: "contain" }}
-                quality={60}
-                priority
-                className="shadow-md"
-              ></Image>
-            </div>
-            <DynamicShapeSale saleOff={10} price={2199000}></DynamicShapeSale>
-          </div>
-        </div>
-        {/* <div className="my-[40px] text-[15px] text-black/80">
-          <span className="font-semibold text-[16px]"> Bàn cắt gạch PANAPRO </span>
-          là loại bàn cắt gạch bằng tay , giúp bạn cắt gạch men , gạch lát , gạch nền cực nhanh chỉ sau vài phút , đường cắt cực chuẩn và mịn đẹp .Bàn
-          cắt gạch PANOPRO có độ dày cắt tối đa 14mm , có thể cắt theo đường thẳng , đường chéo tùy theo mục đích sử dụng của người sử dụng .
-        </div>
-        <div className="video-review">
-          <video controls muted autoPlay className="w-full ">
-            <source src={"/videobancatgach/1.mp4"} type="video/mp4" />
-          </video>
-        </div> */}
-
-        {/* <DynamicServices /> */}
+      <section id="sanphamchudao" className=" container my-8 h-full mx-auto mt-[40px] xl:mt-[80px] ">
+        <DynamicSectionTitle title="sản phẩm chủ đạo" />
+        <DynamicRenderContentForSection listItems={data.tuikhihathuyItems} />
       </section>
 
       <section className=" container my-8 h-full mx-auto mt-[40px] xl:mt-[80px] " id="gioithieu">
-        <DynamicSectionTitle title="Giới Thiệu Về Sản Phẩm " />
+        <DynamicSectionTitle title="video bàn cắt gạch " />
         <div className="my-[40px] text-[15px] text-black/80">
           <span className="font-semibold text-[16px]"> Bàn cắt gạch PANAPRO </span>
           là loại bàn cắt gạch bằng tay , giúp bạn cắt gạch men , gạch lát , gạch nền cực nhanh chỉ sau vài phút , đường cắt cực chuẩn và mịn đẹp .Bàn
@@ -102,43 +61,74 @@ export default function Home() {
             <source src={"/videobancatgach/1.mp4"} type="video/mp4" />
           </video>
         </div>
-
-        {/* <DynamicServices /> */}
+      </section>
+      <section className=" container my-8 h-full mx-auto mt-[40px] xl:mt-[80px] " id="gioithieu">
+        <DynamicSectionTitle title="sản phẩm bàn nổi bật " />
       </section>
 
-      <section className="my-[40px] container mx-auto">
-        <DynamicSectionTitle title="Bàn Cắt Gạch Có Đệm" />
-        <div className="wrapper-image relative h-[400px] lg:h-[700px] mt-[10px] shadow-xl rounded-md ">
-          <Image
-            src="/bancatgach/bancatgachdemcaosu.png"
-            fill
-            alt="bancatgachdemcaosu"
-            style={{ objectFit: "contain" }}
-            quality={60}
-            priority
-          ></Image>
-        </div>
-        <div className="mt-[20px] congdung">
-          <h2 className="font-semibold">Công dụng</h2>
-          <ul className="list-decimal ml-4 text-[14px]">
-            <li>Đệm cao su tiêu chuẩn Japan</li>
-            <li>Bàn cắt gạch nhôm nguyên khối cao cấp</li>
-            <li>Tiêu chuẩn Japan</li>
-            <li>Chuyên dụng: Gạch men – Gạch bóng kiếng – Gạch xương cá – Gạch bông – Gạch granite – Gạch ceramic – Gạch giả gỗ</li>
-          </ul>
-        </div>
+      <section className=" container my-8 h-full mx-auto mt-[40px] xl:mt-[80px] " id="gioithieu">
+        <DynamicSectionTitle title="bàn cắt gạch panapro " />
+      </section>
 
-        <div className="mt-[20px] uudiem">
-          <h2 className="font-semibold">Ưu điểm</h2>
-          <ul className="list-decimal ml-4 text-[14px]">
-            <li>Đệm cao su nguyên khối khi đặt gạch không bị trơn trượt</li>
-            <li>Cụm trợ lực để tách gạch dày dặn giúp giữ chắc chắn 2 cần trợ lực</li>
-            <li>Thước đo kèm theo máy </li>
-            <li>3 lưỡi dao cắt có thể cắt thằng , chéo tùy ý nhu cầu người sử dụng</li>
-          </ul>
+      <section className=" container my-8 h-full mx-auto mt-[40px] xl:mt-[80px] " id="gioithieu">
+        <DynamicSectionTitle title="bàn cắt gạch ryobipro" />
+      </section>
+
+      <section className=" container my-8 h-full mx-auto mt-[40px] xl:mt-[80px] " id="gioithieu">
+        <DynamicSectionTitle title="phụ kiện bàn cắt gạch" />
+      </section>
+
+      <section className=" container my-8 h-full mx-auto mt-[40px] xl:mt-[80px] " id="gioithieu">
+        <DynamicSectionTitle title="phụ kiện ốp lát gạch" />
+      </section>
+
+      <section className=" container my-8 h-full mx-auto mt-[40px] xl:mt-[80px] " id="gioithieu">
+        <DynamicSectionTitle title="máy tia laser" />
+      </section>
+
+      <section className=" container my-8 h-full mx-auto mt-[40px] xl:mt-[80px] " id="gioithieu">
+        <DynamicSectionTitle title="dụng cụ cầm tay pin" />
+      </section>
+
+      <section className="my-8  container mx-auto  mt-[40px] xl:mt-[120px]">
+        <DynamicSectionTitle title="Bàn Cắt Gạch Có Đệm" />
+        <div className="grid grid-cols-1 gap-10 mt-[20px] md:grid-cols-2 ">
+          <div className="wrapper-image relative h-full w-full mt-[10px] shadow-xl rounded-md ">
+            <Image
+              src="/bancatgach/bancatgachdemcaosu.png"
+              fill
+              alt="bancatgachdemcaosu"
+              style={{ objectFit: "contain" }}
+              quality={60}
+              priority
+            ></Image>
+          </div>
+
+          <div className="right-content">
+            <div className="mt-[20px] congdung">
+              <h2 className="font-semibold">Công dụng</h2>
+              <ul className="list-decimal ml-4 text-[14px]">
+                <li>Đệm cao su tiêu chuẩn Japan</li>
+                <li>Bàn cắt gạch nhôm nguyên khối cao cấp</li>
+                <li>Tiêu chuẩn Japan</li>
+                <li>Chuyên dụng: Gạch men – Gạch bóng kiếng – Gạch xương cá – Gạch bông – Gạch granite – Gạch ceramic – Gạch giả gỗ</li>
+              </ul>
+            </div>
+
+            <div className="mt-[20px] uudiem ">
+              <h2 className="font-semibold">Ưu điểm</h2>
+              <ul className="list-decimal ml-4 text-[14px]">
+                <li>Đệm cao su nguyên khối khi đặt gạch không bị trơn trượt</li>
+                <li>Cụm trợ lực để tách gạch dày dặn giúp giữ chắc chắn 2 cần trợ lực</li>
+                <li>Thước đo kèm theo máy </li>
+                <li>3 lưỡi dao cắt có thể cắt thằng , chéo tùy ý nhu cầu người sử dụng</li>
+              </ul>
+            </div>
+
+            <DynamicShapeSale saleOff={10} price={2199000}></DynamicShapeSale>
+            <Button>Đặt Hàng Ngay</Button>
+          </div>
         </div>
-        <DynamicShapeSale saleOff={10} price={2199000}></DynamicShapeSale>
-        <Button>Đặt Hàng Ngay</Button>
       </section>
 
       <section className="my-[40px] container mx-auto">
