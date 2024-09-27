@@ -17,12 +17,6 @@ const RenderContentForSection = (props: propsInterface) => {
   const { listItems } = props;
 
   return (
-    // <div>
-    //   {listItems.map((item, index) => {
-    //     return <div key={index}>{item.title}</div>;
-    //   })}
-    // </div>
-
     <div className="grid grd-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4  gap-8 mt-10 px-10 xl:px-0">
       {listItems.map((item, index) => {
         return (
@@ -38,8 +32,8 @@ const RenderContentForSection = (props: propsInterface) => {
                 sizes="(max-width: 768px) 100vw,(max-width:1200px) 50vw,33vw"
               />
             </div>
-
-            {/* <Link
+            {/* 
+            <Link
               href="tel:0869229639"
               className="absolute top-[320px] transition-all duration-500 group-hover:top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2"
             >

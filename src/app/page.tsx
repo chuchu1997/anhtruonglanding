@@ -25,11 +25,18 @@ const DynamicNews = dynamic(() => import("@/components/News"), {});
 const DynamicShapeSale = dynamic(() => import("@/components/ShapeSale"));
 const DynamicCarouselMayCatGach = dynamic(() => import("@/components/CarouselDisplay3Items"));
 
+const DynamicSectionWrapper = dynamic(() => import("@/components/Section"));
+
+const DynamicGridLayout = dynamic(() => import("@/components/GridLayout"));
+
+const DynamicProduct = dynamic(() => import("@/components/Product"));
+
 import { data } from "@/data/data";
 import CarouselBanner from "@/components/CarouselBanner";
 import ThongSoKyThuat from "@/components/ThongSoKyThuat";
 import FormTuVan from "@/components/FormTuVan";
 import CarouselDisplay3Items from "@/components/CarouselDisplay3Items";
+import SectionComponent from "@/components/Section";
 export default function Home() {
   return (
     <main className="landing-page">
@@ -44,13 +51,20 @@ export default function Home() {
           priority
         ></Image>
       </section>
-      <section id="sanphamchudao" className=" container my-8 h-full mx-auto mt-[40px] xl:mt-[80px] ">
-        <DynamicSectionTitle title="sản phẩm chủ đạo" />
-        <DynamicRenderContentForSection listItems={data.tuikhihathuyItems} />
-      </section>
 
-      <section className=" container my-8 h-full mx-auto mt-[40px] xl:mt-[80px] " id="gioithieu">
-        <DynamicSectionTitle title="video bàn cắt gạch " />
+      <DynamicSectionWrapper id="sanphamchudao">
+        <DynamicSectionTitle title="sản phẩm chủ đạo" />
+        <DynamicGridLayout>
+          {data.demchongvacaucangItems.map((item, index) => (
+            <DynamicProduct key={index} title={item.title} imageSrc={item.imageSrc} linkHref={item.href}></DynamicProduct>
+          ))}
+        </DynamicGridLayout>
+
+        {/* <DynamicRenderContentForSection listItems={data.tuikhihathuyItems} /> */}
+      </DynamicSectionWrapper>
+
+      <DynamicSectionWrapper id="videobancatgach">
+        <DynamicSectionTitle title="Video bàn cắt gạch" />
         <div className="my-[40px] text-[15px] text-black/80">
           <span className="font-semibold text-[16px]"> Bàn cắt gạch PANAPRO </span>
           là loại bàn cắt gạch bằng tay , giúp bạn cắt gạch men , gạch lát , gạch nền cực nhanh chỉ sau vài phút , đường cắt cực chuẩn và mịn đẹp .Bàn
@@ -61,35 +75,28 @@ export default function Home() {
             <source src={"/videobancatgach/1.mp4"} type="video/mp4" />
           </video>
         </div>
-      </section>
+      </DynamicSectionWrapper>
       <section className=" container my-8 h-full mx-auto mt-[40px] xl:mt-[80px] " id="gioithieu">
         <DynamicSectionTitle title="sản phẩm bàn nổi bật " />
       </section>
-
       <section className=" container my-8 h-full mx-auto mt-[40px] xl:mt-[80px] " id="gioithieu">
         <DynamicSectionTitle title="bàn cắt gạch panapro " />
       </section>
-
       <section className=" container my-8 h-full mx-auto mt-[40px] xl:mt-[80px] " id="gioithieu">
         <DynamicSectionTitle title="bàn cắt gạch ryobipro" />
       </section>
-
       <section className=" container my-8 h-full mx-auto mt-[40px] xl:mt-[80px] " id="gioithieu">
         <DynamicSectionTitle title="phụ kiện bàn cắt gạch" />
       </section>
-
       <section className=" container my-8 h-full mx-auto mt-[40px] xl:mt-[80px] " id="gioithieu">
         <DynamicSectionTitle title="phụ kiện ốp lát gạch" />
       </section>
-
       <section className=" container my-8 h-full mx-auto mt-[40px] xl:mt-[80px] " id="gioithieu">
         <DynamicSectionTitle title="máy tia laser" />
       </section>
-
       <section className=" container my-8 h-full mx-auto mt-[40px] xl:mt-[80px] " id="gioithieu">
         <DynamicSectionTitle title="dụng cụ cầm tay pin" />
       </section>
-
       <section className="my-8  container mx-auto  mt-[40px] xl:mt-[120px]">
         <DynamicSectionTitle title="Bàn Cắt Gạch Có Đệm" />
         <div className="grid grid-cols-1 gap-10 mt-[20px] md:grid-cols-2 ">
@@ -130,7 +137,6 @@ export default function Home() {
           </div>
         </div>
       </section>
-
       <section className="my-[40px] container mx-auto">
         <DynamicSectionTitle title="Bàn Cắt Gạch Không Đệm" />
         <div className="wrapper-image relative h-[400px] lg:h-[700px] mt-[10px] shadow-xl rounded-md ">
@@ -165,7 +171,6 @@ export default function Home() {
         <DynamicShapeSale saleOff={10} price={1999000}></DynamicShapeSale>
         <Button>Đặt Hàng Ngay</Button>
       </section>
-
       <section className="bg-[#E7EFFE] py-8" id="thongsokythuat">
         <section className="container mx-auto relative">
           <DynamicSectionTitle title="Thông Số Kỹ Thuật Sản Phẩm PANAPRO" />
@@ -194,7 +199,6 @@ export default function Home() {
           <DynamicCarouselMayCatGach />
         </section>
       </section>
-
       {/* <section className="container my-4 h-full mx-auto ">
     
         <section className="container my-8 h-full mx-auto  ">
