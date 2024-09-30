@@ -88,7 +88,7 @@ const Header = () => {
           <Link href={"/"}>
             <Image src="/logobancatgach/1.png" alt="logo" width={160} height={160} quality={100} priority></Image>
           </Link>
-          <div className=" hidden md:flex items-center gap-6 text-[14px] font-semibold">
+          <div className=" hidden md:flex items-center gap-6 text-[14px] font-semibold flex-1  justify-center">
             {navResponsive.map((item, index) => {
               return (
                 <Link target="_blank" key={index} href={item.href} className="hover:text-accent transition-all duration-200">
@@ -97,9 +97,9 @@ const Header = () => {
               );
             })}
           </div>
-          <div className="hidden md:block">
-            <Button>Nhận Tư Vấn</Button>
-          </div>
+          {/* <div className="hidden md:block">
+              <Button>Nhận Tư Vấn</Button>
+            </div> */}
 
           <div
             className="cursor-pointer block md:hidden"
@@ -121,7 +121,7 @@ const Header = () => {
           <Link href={"/"}>
             <Image src="/logobancatgach/1.png" alt="logo" width={160} height={160} quality={100} priority></Image>
           </Link>
-          <div className="hidden md:flex  items-center gap-6 text-[14px] font-semibold">
+          <div className="hidden md:flex flex-1 justify-center  items-center gap-6 text-[14px] font-semibold">
             {navFixed.map((item, index) => {
               return (
                 <div
@@ -136,9 +136,9 @@ const Header = () => {
               );
             })}
           </div>
-          <div className="hidden md:block">
+          {/* <div className="hidden md:block">
             <Button>Nhận Tư Vấn</Button>
-          </div>
+          </div> */}
           <div
             className="cursor-pointer block md:hidden"
             onClick={() => {

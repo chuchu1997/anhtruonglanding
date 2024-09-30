@@ -2,29 +2,24 @@
 import React from "react";
 import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious } from "./ui/carousel";
 import Image from "next/image";
+import dynamic from "next/dynamic";
 // import Autoplay from "embla-carousel-autoplay";
+const DynamicProduct = dynamic(() => import("@/components/Product"));
 
 interface propsInterface {
-  listImages: string[];
+  listProduct: any[];
 }
 
 const CarouselProducts = (props: propsInterface) => {
-  const { listImages } = props;
+  const { listProduct } = props;
 
   return (
-    <Carousel
-      className="mt-[14px]"
-      // plugins={[
-      //   Autoplay({
-      //     delay: 4000,
-      //   }),
-      // ]}
-    >
-      <CarouselContent className="h-[160px] xl:h-[350px] ">
-        {listImages.map((item, index) => {
+    <Carousel className="mt-[14px] overflow-auto">
+      <CarouselContent className="w-full">
+        {listProduct.map((item, index) => {
           return (
-            <CarouselItem className="relative" key={index}>
-              <Image alt="s" src={item} fill className="object-contain" quality={90} priority></Image>
+            <CarouselItem className="" key={index}>
+              <DynamicProduct key={index} title={item.title} imageSrc={item.imageSrc} linkHref={item.href}></DynamicProduct>
             </CarouselItem>
           );
         })}

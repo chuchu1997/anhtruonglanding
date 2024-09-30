@@ -1,5 +1,23 @@
 export const data = {
-  listBannerImages: ["/mainBanner/3.png", "/mainBanner/4.png", "/mainBanner/6.png", "/mainBanner/7.png", "/mainBanner/8.png", "/mainBanner/9.png"],
+  listBannerImages: [
+    "/bancatgach/banner/17.png",
+    "/bancatgach/banner/11.png",
+    "/bancatgach/banner/12.png",
+    "/bancatgach/banner/13.png",
+    "/bancatgach/banner/14.png",
+    "/bancatgach/banner/18.png",
+  ],
+
+  listSanPhamChuDaoImages: [
+    "/bancatgach/sanphamchudao/7.png",
+    "/bancatgach/sanphamchudao/8.png",
+
+    "/bancatgach/sanphamchudao/9.png",
+
+    "/bancatgach/sanphamchudao/10.png",
+
+    "/bancatgach/sanphamchudao/11.png",
+  ],
   listHotProductsImage: [
     "/sanphamnoibat/1.png",
     "/sanphamnoibat/2.png",
@@ -35,6 +53,39 @@ export const data = {
     //   imageSrc: "/phaotuikhihathuy/17.png",
     //   href: "https://tuikhibiendong.com/tui-khi-nang-ha-tau-1-8m-13m/",
     // },
+  ],
+
+  sanphamnoibatItems: [
+    {
+      title: "Bàn cắt gạch panapro",
+      imageSrc: "/bancatgach/sanphamnoibat/1.png",
+      href: "https://tuikhibiendong.com/fender-d-vuong/",
+    },
+    {
+      title: "Bàn cắt gạch Ryobi",
+      imageSrc: "/bancatgach/sanphamnoibat/2.png",
+      href: "https://tuikhibiendong.com/fender-d-vuong/",
+    },
+    {
+      title: "Dụng cụ điện dùng pin",
+      imageSrc: "/bancatgach/sanphamnoibat/3.png",
+      href: "https://tuikhibiendong.com/fender-d-vuong/",
+    },
+    {
+      title: "Máy tia laser",
+      imageSrc: "/bancatgach/sanphamnoibat/4.png",
+      href: "https://tuikhibiendong.com/fender-d-vuong/",
+    },
+    {
+      title: "Phụ kiện bàn cắt gạch",
+      imageSrc: "/bancatgach/sanphamnoibat/5.png",
+      href: "https://tuikhibiendong.com/fender-d-vuong/",
+    },
+    {
+      title: "Phụ kiện ốp lát",
+      imageSrc: "/bancatgach/sanphamnoibat/6.png",
+      href: "https://tuikhibiendong.com/fender-d-vuong/",
+    },
   ],
 
   demchongvacaucangItems: [

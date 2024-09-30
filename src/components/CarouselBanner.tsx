@@ -13,19 +13,12 @@ const CarouselBanner = (props: propsInterface) => {
   const { listImages } = props;
 
   return (
-    <Carousel
-      className=""
-      // plugins={[
-      //   Autoplay({
-      //     delay: 4000,
-      //   }),
-      // ]}
-    >
-      <CarouselContent className="h-[260px] md:h-[780px] ">
+    <Carousel className="mx-2">
+      <CarouselContent className="h-[280px] md:h-[350px] lg:h-[600px] xl:h-[780px]  w-screen ">
         {listImages.map((item, index) => {
           return (
             <CarouselItem className="relative" key={index}>
-              <Image alt="bannerImage" src={item} fill className="object-contain" quality={50} priority></Image>
+              <Image alt="bannerImage" src={item} fill className="lg:object-fill md:object-contain object-cover" quality={100} priority></Image>
             </CarouselItem>
           );
         })}

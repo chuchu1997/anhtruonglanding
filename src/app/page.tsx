@@ -40,19 +40,29 @@ import SectionComponent from "@/components/Section";
 export default function Home() {
   return (
     <main className="landing-page">
-      <section className="main-banner h-[200px] lg:h-[800px] md:h-[400px] relative rounded-md">
-        <Image
-          className="rounded-md"
-          src="/banner/1.png"
-          fill
-          alt="bancatgachdemcaosu "
-          style={{ objectFit: "cover" }}
-          quality={100}
-          priority
-        ></Image>
+      <section className="main-banner relative rounded-md overflow-hidden">
+        <DynamicCarouselBanner listImages={data.listBannerImages}></DynamicCarouselBanner>
       </section>
 
-      <DynamicSectionWrapper id="sanphamchudao">
+      <DynamicSectionWrapper id="sanphamnoibat">
+        <DynamicSectionTitle title="sản phẩm nổi bật" />
+        <div className="pc-version hidden sm:block">
+          <DynamicGridLayout>
+            {data.sanphamnoibatItems.map((item, index) => (
+              <DynamicProduct key={index} title={item.title} imageSrc={item.imageSrc} linkHref={item.href}></DynamicProduct>
+            ))}
+          </DynamicGridLayout>
+        </div>
+
+        <div className="mobile-version block sm:hidden">
+          <DynamicCarouselProducts listProduct={data.sanphamnoibatItems}></DynamicCarouselProducts>
+        </div>
+      </DynamicSectionWrapper>
+
+      {/* <div className="container mx-auto">
+        <CarouselDisplay3Items></CarouselDisplay3Items>
+      </div> */}
+      {/* <DynamicSectionWrapper id="sanphamchudao">
         <DynamicSectionTitle title="sản phẩm chủ đạo" />
         <DynamicGridLayout>
           {data.demchongvacaucangItems.map((item, index) => (
@@ -60,8 +70,7 @@ export default function Home() {
           ))}
         </DynamicGridLayout>
 
-        {/* <DynamicRenderContentForSection listItems={data.tuikhihathuyItems} /> */}
-      </DynamicSectionWrapper>
+      </DynamicSectionWrapper> */}
 
       <DynamicSectionWrapper id="videobancatgach">
         <DynamicSectionTitle title="Video bàn cắt gạch" />
@@ -76,31 +85,16 @@ export default function Home() {
           </video>
         </div>
       </DynamicSectionWrapper>
-      <section className=" container my-8 h-full mx-auto mt-[40px] xl:mt-[80px] " id="gioithieu">
-        <DynamicSectionTitle title="sản phẩm bàn nổi bật " />
-      </section>
-      <section className=" container my-8 h-full mx-auto mt-[40px] xl:mt-[80px] " id="gioithieu">
-        <DynamicSectionTitle title="bàn cắt gạch panapro " />
-      </section>
-      <section className=" container my-8 h-full mx-auto mt-[40px] xl:mt-[80px] " id="gioithieu">
-        <DynamicSectionTitle title="bàn cắt gạch ryobipro" />
-      </section>
-      <section className=" container my-8 h-full mx-auto mt-[40px] xl:mt-[80px] " id="gioithieu">
-        <DynamicSectionTitle title="phụ kiện bàn cắt gạch" />
-      </section>
-      <section className=" container my-8 h-full mx-auto mt-[40px] xl:mt-[80px] " id="gioithieu">
-        <DynamicSectionTitle title="phụ kiện ốp lát gạch" />
-      </section>
-      <section className=" container my-8 h-full mx-auto mt-[40px] xl:mt-[80px] " id="gioithieu">
-        <DynamicSectionTitle title="máy tia laser" />
-      </section>
-      <section className=" container my-8 h-full mx-auto mt-[40px] xl:mt-[80px] " id="gioithieu">
-        <DynamicSectionTitle title="dụng cụ cầm tay pin" />
+
+      <section className="main-banner  relative rounded-md overflow-hidden">
+        <DynamicSectionTitle title="sản phẩm chủ đạo" />
+
+        <DynamicCarouselBanner listImages={data.listSanPhamChuDaoImages}></DynamicCarouselBanner>
       </section>
       <section className="my-8  container mx-auto  mt-[40px] xl:mt-[120px]">
         <DynamicSectionTitle title="Bàn Cắt Gạch Có Đệm" />
         <div className="grid grid-cols-1 gap-10 mt-[20px] md:grid-cols-2 ">
-          <div className="wrapper-image relative h-full w-full mt-[10px] shadow-xl rounded-md ">
+          <div className="wrapper-image relative h-[300px] md:h-full w-full mt-[10px] rounded-md ">
             <Image
               src="/bancatgach/bancatgachdemcaosu.png"
               fill
@@ -111,7 +105,7 @@ export default function Home() {
             ></Image>
           </div>
 
-          <div className="right-content">
+          <div className="right-content  ">
             <div className="mt-[20px] congdung">
               <h2 className="font-semibold">Công dụng</h2>
               <ul className="list-decimal ml-4 text-[14px]">
@@ -136,46 +130,65 @@ export default function Home() {
             <Button>Đặt Hàng Ngay</Button>
           </div>
         </div>
+
+        <DynamicGridLayout>
+          {data.sanphamnoibatItems.map((item, index) => (
+            <DynamicProduct key={index} title={item.title} imageSrc={item.imageSrc} linkHref={item.href}></DynamicProduct>
+          ))}
+        </DynamicGridLayout>
       </section>
-      <section className="my-[40px] container mx-auto">
-        <DynamicSectionTitle title="Bàn Cắt Gạch Không Đệm" />
-        <div className="wrapper-image relative h-[400px] lg:h-[700px] mt-[10px] shadow-xl rounded-md ">
-          <Image
-            src="/bancatgach/bancatgachdemcaosu.png"
-            fill
-            alt="bancatgachdemcaosu"
-            style={{ objectFit: "contain" }}
-            quality={60}
-            priority
-          ></Image>
-        </div>
-        <div className="mt-[20px] congdung">
-          <h2 className="font-semibold">Công dụng</h2>
-          <ul className="list-decimal ml-4 text-[14px]">
-            <li>Bàn cắt gạch nhôm nguyên khối cao cấp</li>
-            <li>Tiêu chuẩn Japan</li>
-            <li>Chuyên dụng: Gạch men – Gạch bóng kiếng – Gạch xương cá – Gạch bông – Gạch granite – Gạch ceramic – Gạch giả gỗ</li>
-          </ul>
+      <section className="my-8  container mx-auto  mt-[40px] xl:mt-[120px]">
+        <DynamicSectionTitle title="Bàn Cắt Gạch Có Đệm" />
+        <div className="grid grid-cols-1 gap-10 mt-[20px] md:grid-cols-2 ">
+          <div className="wrapper-image relative h-[300px] md:h-full w-full mt-[10px] rounded-md ">
+            <Image
+              src="/bancatgach/bancatgachdemcaosu.png"
+              fill
+              alt="bancatgachdemcaosu"
+              style={{ objectFit: "contain" }}
+              quality={60}
+              priority
+            ></Image>
+          </div>
+
+          <div className="right-content  ">
+            <div className="mt-[20px] congdung">
+              <h2 className="font-semibold">Công dụng</h2>
+              <ul className="list-decimal ml-4 text-[14px]">
+                <li>Đệm cao su tiêu chuẩn Japan</li>
+                <li>Bàn cắt gạch nhôm nguyên khối cao cấp</li>
+                <li>Tiêu chuẩn Japan</li>
+                <li>Chuyên dụng: Gạch men – Gạch bóng kiếng – Gạch xương cá – Gạch bông – Gạch granite – Gạch ceramic – Gạch giả gỗ</li>
+              </ul>
+            </div>
+
+            <div className="mt-[20px] uudiem ">
+              <h2 className="font-semibold">Ưu điểm</h2>
+              <ul className="list-decimal ml-4 text-[14px]">
+                <li>Đệm cao su nguyên khối khi đặt gạch không bị trơn trượt</li>
+                <li>Cụm trợ lực để tách gạch dày dặn giúp giữ chắc chắn 2 cần trợ lực</li>
+                <li>Thước đo kèm theo máy </li>
+                <li>3 lưỡi dao cắt có thể cắt thằng , chéo tùy ý nhu cầu người sử dụng</li>
+              </ul>
+            </div>
+
+            <DynamicShapeSale saleOff={10} price={2199000}></DynamicShapeSale>
+            <Button>Đặt Hàng Ngay</Button>
+          </div>
         </div>
 
-        <div className="mt-[20px] uudiem">
-          <h2 className="font-semibold">Ưu điểm</h2>
-          <ul className="list-decimal ml-4 text-[14px]">
-            <li>2 đầu máy có chân đế thép nguyên khối dày , cứng cáp hơn rất nhiều sản phẩm cùng công dụng ngoài thị trường</li>
-            <li>Cụm trợ lực để tách gạch dày dặn giúp giữ chắc chắn 2 cần trợ lực</li>
-            <li>2 Thanh trượt bằng thép đặc 100% giúp giữ dao cắt gạch chắc chắn khi cắt</li>
-            <li>Thước đo kèm theo máy </li>
-            <li>3 lưỡi dao cắt có thể cắt thằng , chéo tùy ý nhu cầu người sử dụng</li>
-          </ul>
-        </div>
-        <DynamicShapeSale saleOff={10} price={1999000}></DynamicShapeSale>
-        <Button>Đặt Hàng Ngay</Button>
+        <DynamicGridLayout>
+          {data.sanphamnoibatItems.map((item, index) => (
+            <DynamicProduct key={index} title={item.title} imageSrc={item.imageSrc} linkHref={item.href}></DynamicProduct>
+          ))}
+        </DynamicGridLayout>
       </section>
+
       <section className="bg-[#E7EFFE] py-8" id="thongsokythuat">
         <section className="container mx-auto relative">
-          <DynamicSectionTitle title="Thông Số Kỹ Thuật Sản Phẩm PANAPRO" />
+          <DynamicSectionTitle title="Thông Số Kỹ Thuật " />
           <ThongSoKyThuat />
-          <div className="wrapper-image absolute md:top-[605px] lg:top-[600px] left-1/2 transform -translate-x-1/2 -translate-y-1/2  w-[350px] h-[350px]  md:w-[500px]  md:h-[550px]  mt-[10px]  ">
+          <div className="wrapper-image absolute md:top-[605px] lg:top-[650px] left-1/2 transform -translate-x-1/2 -translate-y-1/2  w-[350px] h-[350px]  md:w-[350px]  md:h-[400px]  mt-[10px]  ">
             <Image
               src="/bancatgach/bancatgachwithoutbackground.png"
               fill
@@ -187,97 +200,80 @@ export default function Home() {
           </div>
         </section>
       </section>
-      <section className="py-[140px] bg-[#ccc]/30">
-        <section className="container mx-auto relative">
-          <DynamicSectionTitle title="ĐĂNG KÝ TƯ VẤN" />
-          <FormTuVan />
-        </section>
-      </section>
-      <section className="py-[100px]" id="panaprokhac">
-        <section className="container mx-auto relative">
-          <DynamicSectionTitle title="Các sản phẩm PANAPRO khác" />
-          <DynamicCarouselMayCatGach />
-        </section>
-      </section>
-      {/* <section className="container my-4 h-full mx-auto ">
-    
-        <section className="container my-8 h-full mx-auto  ">
-          <CarouselBanner listImages={data.listBannerImages} />
-        </section>
 
-        <section className="container my-8 h-full mx-auto mt-[20px] xl:mt-[80px] ">
-          <DynamicSectionTitle title="Các Chứng Chỉ Và Đối Tác " />
-
-          <div className="certicate relative h-[300px] xl:h-[500px] w-full mt-[20px] ">
-            <Image src="/certicate/certicate.jpg" alt="ccs" fill style={{ objectFit: "contain" }} quality={60} priority></Image>
-          </div>
-          <div className="certicate relative h-[180px] xl:h-[300px] w-full mt-[20px] ">
-            <Image src="/certicate/2.jpg" alt="ccs" fill style={{ objectFit: "contain" }} quality={80} priority></Image>
-          </div>
-          <div className="ccs relative h-[80px] w-full ">
-            <Image src="/ccs/ccs.jpg" alt="ccs" fill style={{ objectFit: "contain" }} quality={60} priority></Image>
-          </div>
-        </section>
-
-      </section>
-      <section className=" container my-8 h-full mx-auto mt-[40px] xl:mt-[80px] ">
-        <DynamicSectionTitle title="Các Sản Phẩm Chủ Đạo Của Công Ty " />
-        <DynamicServices />
-      </section>
-      <section className="container my-8 h-full mx-auto mt-[40px] xl:mt-[80px] ">
-        <DynamicSectionTitle title="Các Sản Phẩm Nổi Bật " />
-        <DynamicCarouselProducts listImages={data.listHotProductsImage} />
-      </section>
-
-      <section id="phaohathuy" className="container my-8 h-full mx-auto mt-[40px] xl:mt-[80px] ">
-        <DynamicSectionTitle title="Phao Túi Khí Hạ Thủy " />
-        <DynamicRenderContentForSection listItems={data.tuikhihathuyItems} />
-      </section>
-      <section id="demchongvacau" className="container my-8 h-full mx-auto mt-[40px] xl:mt-[80px] ">
-        <DynamicSectionTitle title="Đệm Chống Va Cầu Cảng " />
-        <DynamicRenderContentForSection listItems={data.demchongvacaucangItems} />
-      </section>
-
-      <section id="rubberfender" className="container my-8 h-full mx-auto mt-[40px] xl:mt-[80px] ">
-        <DynamicSectionTitle title="Đệm Chống Va Tàu " />
-        <DynamicRenderContentForSection listItems={data.demchongvatauItems} />
-      </section>
-      <section id="mayphunxitapluccao" className="container my-8 h-full mx-auto mt-[40px] xl:mt-[80px] ">
-        <DynamicSectionTitle title="Máy Phun Xịt Áp Lực Cao " />
-        <DynamicRenderContentForSection listItems={data.mayphunxitapluccaoItems} />
-      </section>
-
-      <section id="neo" className="container my-8 h-full mx-auto mt-[40px] xl:mt-[80px] ">
-        <DynamicSectionTitle title="Neo Và Xích Neo Tàu Thủy" />
-        <DynamicRenderContentForSection listItems={data.neotauItems} />
-      </section>
-      <section id="dichvuchothue" className="container my-8 h-full mx-auto mt-[40px] xl:mt-[80px] ">
-        <DynamicSectionTitle title="Dịch Vụ Cho Thuê Túi Khí" />
-        <DynamicCarouselBanner listImages={data.listDichVuChoThueImages} />
-
-    
-      </section>
-
-      <section className="container my-8 h-full mx-auto mt-[40px] xl:mt-[80px] ">
-        <DynamicSectionTitle title="Video sản phẩm" />
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mt-[18px]">
-          <video controls aria-label="Video player" className="h-full w-full">
-            <source src={"/youtubeVideo/1.mp4"} type="video/mp4" />
-          </video>
-          <video controls aria-label="Video player" className="h-full w-full">
-            <source src={"/youtubeVideo/2.mp4"} type="video/mp4" />
-          </video>
+      <DynamicSectionWrapper id="bancatgachryobipro">
+        <DynamicSectionTitle title="bàn cắt gạch ryobipro" />
+        <div className="pc-version hidden sm:block">
+          <DynamicGridLayout>
+            {data.sanphamnoibatItems.map((item, index) => (
+              <DynamicProduct key={index} title={item.title} imageSrc={item.imageSrc} linkHref={item.href}></DynamicProduct>
+            ))}
+          </DynamicGridLayout>
         </div>
-    
-      </section>
 
-      <section className="container my-8 h-full mx-auto mt-[40px] xl:mt-[80px] ">
-        <DynamicSectionTitle title="Các dự án tiêu biểu" />
-        <DynamicNews />
-      </section> */}
-      {/* <section id="gioithieu" className="min-h-screen">
-        TEST
-      </section> */}
+        <div className="mobile-version block sm:hidden">
+          <DynamicCarouselProducts listProduct={data.sanphamnoibatItems}></DynamicCarouselProducts>
+        </div>
+      </DynamicSectionWrapper>
+      <DynamicSectionWrapper id="phukienbancatgach">
+        <DynamicSectionTitle title="phụ kiện bàn cắt gạch" />
+        <div className="pc-version hidden sm:block">
+          <DynamicGridLayout>
+            {data.sanphamnoibatItems.map((item, index) => (
+              <DynamicProduct key={index} title={item.title} imageSrc={item.imageSrc} linkHref={item.href}></DynamicProduct>
+            ))}
+          </DynamicGridLayout>
+        </div>
+
+        <div className="mobile-version block sm:hidden">
+          <DynamicCarouselProducts listProduct={data.sanphamnoibatItems}></DynamicCarouselProducts>
+        </div>
+      </DynamicSectionWrapper>
+
+      <DynamicSectionWrapper id="phukienoplatgach">
+        <DynamicSectionTitle title="phụ kiện ốp lát gạch" />
+        <div className="pc-version hidden sm:block">
+          <DynamicGridLayout>
+            {data.sanphamnoibatItems.map((item, index) => (
+              <DynamicProduct key={index} title={item.title} imageSrc={item.imageSrc} linkHref={item.href}></DynamicProduct>
+            ))}
+          </DynamicGridLayout>
+        </div>
+
+        <div className="mobile-version block sm:hidden">
+          <DynamicCarouselProducts listProduct={data.sanphamnoibatItems}></DynamicCarouselProducts>
+        </div>
+      </DynamicSectionWrapper>
+
+      <DynamicSectionWrapper id="maytialaser">
+        <DynamicSectionTitle title="máy tia laser" />
+        <div className="pc-version hidden sm:block">
+          <DynamicGridLayout>
+            {data.sanphamnoibatItems.map((item, index) => (
+              <DynamicProduct key={index} title={item.title} imageSrc={item.imageSrc} linkHref={item.href}></DynamicProduct>
+            ))}
+          </DynamicGridLayout>
+        </div>
+
+        <div className="mobile-version block sm:hidden">
+          <DynamicCarouselProducts listProduct={data.sanphamnoibatItems}></DynamicCarouselProducts>
+        </div>
+      </DynamicSectionWrapper>
+
+      <DynamicSectionWrapper id="dungcucamtaypin">
+        <DynamicSectionTitle title="dụng cụ cầm tay pin" />
+        <div className="pc-version hidden sm:block">
+          <DynamicGridLayout>
+            {data.sanphamnoibatItems.map((item, index) => (
+              <DynamicProduct key={index} title={item.title} imageSrc={item.imageSrc} linkHref={item.href}></DynamicProduct>
+            ))}
+          </DynamicGridLayout>
+        </div>
+
+        <div className="mobile-version block sm:hidden">
+          <DynamicCarouselProducts listProduct={data.sanphamnoibatItems}></DynamicCarouselProducts>
+        </div>
+      </DynamicSectionWrapper>
     </main>
   );
 }
