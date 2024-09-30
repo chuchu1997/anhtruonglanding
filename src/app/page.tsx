@@ -31,6 +31,8 @@ const DynamicGridLayout = dynamic(() => import("@/components/GridLayout"));
 
 const DynamicProduct = dynamic(() => import("@/components/Product"));
 
+const DynamicImageWithPreview = dynamic(() => import("@/components/ImageWithPreview"));
+
 import { data } from "@/data/data";
 import CarouselBanner from "@/components/CarouselBanner";
 import ThongSoKyThuat from "@/components/ThongSoKyThuat";
@@ -91,18 +93,64 @@ export default function Home() {
 
         <DynamicCarouselBanner listImages={data.listSanPhamChuDaoImages}></DynamicCarouselBanner>
       </section>
-      <section className="my-8  container mx-auto  mt-[40px] xl:mt-[120px]">
+      <section className="container mx-auto py-20">
+        <DynamicSectionTitle title="bàn cắt gạch panapro (có đệm)" />
+
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mt-[40px]">
+          <div className="left-content ">
+            <div className="image-preview-main rounded-md relative w-full">
+              {/* <Image alt="Giá líp cắt gạch" src={"/bancatgach/sanphamchudao/7.png"} fill className="object-cover" quality={90} priority></Image> */}
+              <DynamicImageWithPreview listImages={data.previewOneImages} />
+            </div>
+          </div>
+          <div className="right-content">
+            <div className="text-[14px]">
+              <span className="font-semibold text-[15px]"> Bàn cắt gạch PANAPRO </span>
+              là loại bàn cắt gạch bằng tay , giúp bạn cắt gạch men , gạch lát , gạch nền cực nhanh chỉ sau vài phút , đường cắt cực chuẩn và mịn đẹp
+              .Bàn cắt gạch PANOPRO có độ dày cắt tối đa 14mm , có thể cắt theo đường thẳng , đường chéo tùy theo mục đích sử dụng của người sử dụng .
+            </div>
+
+            <div className="mt-[20px] congdung">
+              <h2 className="font-semibold text-[15px]">Công dụng</h2>
+              <ul className="list-decimal ml-4 text-[14px]">
+                <li>Đệm cao su tiêu chuẩn Japan</li>
+                <li>Bàn cắt gạch nhôm nguyên khối cao cấp</li>
+                <li>Tiêu chuẩn Japan</li>
+                <li>Chuyên dụng: Gạch men – Gạch bóng kiếng – Gạch xương cá – Gạch bông – Gạch granite – Gạch ceramic – Gạch giả gỗ</li>
+              </ul>
+            </div>
+
+            <div className="mt-[20px] uudiem ">
+              <h2 className="font-semibold text-[15px]">Ưu điểm</h2>
+              <ul className="list-decimal ml-4 text-[14px]">
+                <li>Đệm cao su nguyên khối khi đặt gạch không bị trơn trượt</li>
+                <li>Cụm trợ lực để tách gạch dày dặn giúp giữ chắc chắn 2 cần trợ lực</li>
+                <li>Thước đo kèm theo máy </li>
+                <li>3 lưỡi dao cắt có thể cắt thằng , chéo tùy ý nhu cầu người sử dụng</li>
+              </ul>
+            </div>
+
+            <DynamicShapeSale saleOff={10} price={2199000}></DynamicShapeSale>
+            <Button>Đặt Hàng Ngay</Button>
+          </div>
+        </div>
+        <div className="pc-version hidden sm:block">
+          <DynamicGridLayout>
+            {data.bancatgachpanaprocodem.map((item, index) => (
+              <DynamicProduct key={index} title={item.title} imageSrc={item.imageSrc} linkHref={item.href}></DynamicProduct>
+            ))}
+          </DynamicGridLayout>
+        </div>
+
+        <div className="mobile-version block sm:hidden">
+          <DynamicCarouselProducts listProduct={data.sanphamnoibatItems}></DynamicCarouselProducts>
+        </div>
+      </section>
+      {/* <section className="my-8  container mx-auto  mt-[40px] xl:mt-[120px]">
         <DynamicSectionTitle title="Bàn Cắt Gạch Có Đệm" />
         <div className="grid grid-cols-1 gap-10 mt-[20px] md:grid-cols-2 ">
           <div className="wrapper-image relative h-[300px] md:h-full w-full mt-[10px] rounded-md ">
-            <Image
-              src="/bancatgach/bancatgachdemcaosu.png"
-              fill
-              alt="bancatgachdemcaosu"
-              style={{ objectFit: "contain" }}
-              quality={60}
-              priority
-            ></Image>
+            <DynamicImageWithPreview />
           </div>
 
           <div className="right-content  ">
@@ -136,53 +184,7 @@ export default function Home() {
             <DynamicProduct key={index} title={item.title} imageSrc={item.imageSrc} linkHref={item.href}></DynamicProduct>
           ))}
         </DynamicGridLayout>
-      </section>
-      <section className="my-8  container mx-auto  mt-[40px] xl:mt-[120px]">
-        <DynamicSectionTitle title="Bàn Cắt Gạch Có Đệm" />
-        <div className="grid grid-cols-1 gap-10 mt-[20px] md:grid-cols-2 ">
-          <div className="wrapper-image relative h-[300px] md:h-full w-full mt-[10px] rounded-md ">
-            <Image
-              src="/bancatgach/bancatgachdemcaosu.png"
-              fill
-              alt="bancatgachdemcaosu"
-              style={{ objectFit: "contain" }}
-              quality={60}
-              priority
-            ></Image>
-          </div>
-
-          <div className="right-content  ">
-            <div className="mt-[20px] congdung">
-              <h2 className="font-semibold">Công dụng</h2>
-              <ul className="list-decimal ml-4 text-[14px]">
-                <li>Đệm cao su tiêu chuẩn Japan</li>
-                <li>Bàn cắt gạch nhôm nguyên khối cao cấp</li>
-                <li>Tiêu chuẩn Japan</li>
-                <li>Chuyên dụng: Gạch men – Gạch bóng kiếng – Gạch xương cá – Gạch bông – Gạch granite – Gạch ceramic – Gạch giả gỗ</li>
-              </ul>
-            </div>
-
-            <div className="mt-[20px] uudiem ">
-              <h2 className="font-semibold">Ưu điểm</h2>
-              <ul className="list-decimal ml-4 text-[14px]">
-                <li>Đệm cao su nguyên khối khi đặt gạch không bị trơn trượt</li>
-                <li>Cụm trợ lực để tách gạch dày dặn giúp giữ chắc chắn 2 cần trợ lực</li>
-                <li>Thước đo kèm theo máy </li>
-                <li>3 lưỡi dao cắt có thể cắt thằng , chéo tùy ý nhu cầu người sử dụng</li>
-              </ul>
-            </div>
-
-            <DynamicShapeSale saleOff={10} price={2199000}></DynamicShapeSale>
-            <Button>Đặt Hàng Ngay</Button>
-          </div>
-        </div>
-
-        <DynamicGridLayout>
-          {data.sanphamnoibatItems.map((item, index) => (
-            <DynamicProduct key={index} title={item.title} imageSrc={item.imageSrc} linkHref={item.href}></DynamicProduct>
-          ))}
-        </DynamicGridLayout>
-      </section>
+      </section> */}
 
       <section className="bg-[#E7EFFE] py-8" id="thongsokythuat">
         <section className="container mx-auto relative">

@@ -33,7 +33,7 @@ const ProductComponent: React.FC<Props> = ({ id, title, description, price, link
 
     //   {/* <PhoneCall /> */}
     // </div>
-    <div className="relative group  border border-gray rounded-lg  group w-full flex flex-col gap-4 bg-white">
+    <div className="scale-100 transition-scale duration-200 ease-in-out  hover:scale-[1.05] transform-gpu  mt-[5px] relative  border border-gray rounded-lg  group w-full flex flex-col gap-4 bg-white w-[290px] mx-auto md:w-full">
       {/* <div className="bg-gradient-to-b from-blue-500 rounded-b-md  to-cyan-400   absolute top-0 right-[20px] z-50 overflow-hidden w-[65px] h-[30px] text-[12px] text-center">
         <div className="pt-[4px] text-white font-semibold">HS</div>
       </div> */}
@@ -53,7 +53,11 @@ const ProductComponent: React.FC<Props> = ({ id, title, description, price, link
         <h4 className="text-[20px] mx-[15px] text-[#2b95f3] cursor-default pt-[4px] font-bold">{title}</h4>
         {/* <div className="mx-[15px] font-extrabold">$45</div> */}
       </div>
-      <Link href="/" className=" absolute bottom-0 left-0 right-0 bg-[#2b95f3] py-[4px] text-[14px] text-center text-white font-bold rounded-lg   ">
+      <Link
+        target="_blank"
+        href={linkHref}
+        className=" absolute bottom-0 left-0 right-0 bg-[#2b95f3] py-[4px] text-[14px] text-center text-white font-bold rounded-lg   "
+      >
         Xem Sản Phẩm
       </Link>
       {/* <div className="h-[50px] w-full bg-[#ddc01b] text-center flex justify-center items-center text-[14px] font-semibold">Xem sản phẩm</div> */}

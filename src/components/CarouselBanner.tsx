@@ -14,7 +14,7 @@ const CarouselBanner = (props: propsInterface) => {
 
   return (
     <Carousel className="mx-2">
-      <CarouselContent className="h-[280px] md:h-[350px] lg:h-[600px] xl:h-[780px]  w-screen ">
+      <CarouselContent className="h-[280px] md:h-[350px] lg:h-[600px] xl:h-[780px]  w-screen  ">
         {listImages.map((item, index) => {
           return (
             <CarouselItem className="relative" key={index}>
@@ -22,9 +22,12 @@ const CarouselBanner = (props: propsInterface) => {
             </CarouselItem>
           );
         })}
+        {/* <CarouselPrevious />
+        <CarouselNext /> */}
       </CarouselContent>
-      <CarouselPrevious />
-      <CarouselNext />
+
+      <CarouselPrevious className="left-[10px]" />
+      <CarouselNext className="right-[10px]" />
     </Carousel>
   );
 };
