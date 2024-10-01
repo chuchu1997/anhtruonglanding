@@ -95,6 +95,11 @@ export const data = {
       href: "https://mayxaydungmoi.com/ban-cat-gach-day-tay-panapro-ntp-800/",
     },
     {
+      title: "Bàn cắt gạch Panapro NTP 1200 ",
+      imageSrc: "https://mayxaydungmoi.com/wp-content/uploads/2021/05/Ban-cat-gach-PanaPRO-NTP-1.2M.jpg",
+      href: "https://mayxaydungmoi.com/ban-cat-gach-panapro-ntp-1-2m/",
+    },
+    {
       title: "Bàn cắt gạch Panapro NTP 1000 ",
       imageSrc: "/bancatgach/khongdem/ntp1000.png",
       href: "https://mayxaydungmoi.com/ban-cat-gach-panapro-ntp-1m/",
@@ -131,6 +136,11 @@ export const data = {
       title: "Bàn cắt gạch Panapro NTP-1200P",
       imageSrc: "/bancatgach/codem/5.png",
       href: "https://mayxaydungmoi.com/ban-cat-gach-panapro-ntp-1-2m-dem-cao-su/",
+    },
+    {
+      title: "Bàn cắt gạch Panapro NTP-1500P",
+      imageSrc: "https://mayxaydungmoi.com/wp-content/uploads/2023/12/Ban-cat-gach-PanaPRO-NTP-1.5M-P-scaled.jpg",
+      href: "https://mayxaydungmoi.com/ban-cat-gach-panapro-ntp-1m5-co-dem/",
     },
   ],
   bancatgachryobipro: [

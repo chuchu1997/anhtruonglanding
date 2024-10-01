@@ -19,7 +19,7 @@ const Footer = () => {
               className="mb-4"
               priority
             ></Image>
-            <div className="text-[14px] xl:text-[16px] font-semibold ">CÔNG TY TNHH Máy Xây Dựng Mới</div>
+            <div className="text-[14px] xl:text-[16px] font-semibold ">Công Ty TNHH TM Dụng Cụ Tổng Hợp</div>
             <ul className="text-[12px] xl:text-[14px] list-disc ml-4">
               <li>Trụ sở: 287 Tây Thạnh , Phường Tây Thạnh , Quận Tân Phú , TPHCM.</li>
               <li>Là nhà cung cấp bàn cắt gạch số 1 tại việt nam </li>

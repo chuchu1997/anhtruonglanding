@@ -44,18 +44,18 @@ import DatHang from "@/components/DatHang";
 export default function Home() {
   return (
     <main className="landing-page">
-      <section className="main-banner relative rounded-md py-[80px]">
+      <section className="main-banner relative rounded-md pt-[80px]">
         <div className="relative">
           <DynamicCarouselBanner listImages={data.listBannerImages}></DynamicCarouselBanner>
-          <div className="container mx-auto relative lg:absolute  lg:left-1/2 lg:-translate-x-1/2 lg:-translate-y-1/2">
-            <DynamicCarouselSubBanner images={data.subBannerImages} />
+        </div>
+        <div className="container mx-auto">
+          <DynamicCarouselSubBanner images={data.subBannerImages} />
 
-            <DynamicDatHang className="relative left-1/2 -translate-x-1/2 mt-[20px]" />
-          </div>
+          <DynamicDatHang className="relative left-1/2 -translate-x-1/2 mt-[20px]" />
         </div>
       </section>
 
-      <DynamicSectionWrapper id="chungnhan" className="mt-0 lg:mt-[120px]">
+      <DynamicSectionWrapper id="chungnhan" className="mt-[15px] lg:mt-[80px]">
         <DynamicSectionTitle title="chứng nhận phân phối" />
         <Image
           src="/bancatgach/chungnhan/1.png"
