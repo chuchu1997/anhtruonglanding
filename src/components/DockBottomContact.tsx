@@ -6,19 +6,28 @@ const DockBottomContact = () => {
   return (
     <div className="bg-transparent fixed bottom-0 left-0 right-0 z-50  block sm:hidden ">
       <div className="container mx-auto p-2 flex justify-between items-center gap-8">
+        {/* <Button
+          className="flex-1 uppercase font-bold"
+          onClick={() => {
+            window.location.href = "https://www.facebook.com/mayxaydungmoi/";
+          }}
+        >
+          <Image src="/messenger.png" alt="messenger" width={30} height={30} quality={40} priority />
+          <span className="ml-4">Fanpage</span>
+        </Button> */}
         <Button
           className="flex-1 uppercase font-bold"
           onClick={() => {
-            window.location.href = "tel://0869229639";
+            window.location.href = "tel://0973926139";
           }}
         >
           <Image src="/phonecall.png" alt="phone" width={30} height={30} quality={40} priority />
-          <span className="ml-4"> 086 9229 639</span>
+          <span className="ml-4"> 0973926139</span>
         </Button>
         <Button
           className="flex-1 uppercase font-bold"
           onClick={() => {
-            window.location.href = "https://zalo.me/0869229639";
+            window.location.href = "https://zalo.me/0973926139";
           }}
         >
           <Image src="/zalo.png" alt="zalo" width={30} height={30} quality={40} priority />

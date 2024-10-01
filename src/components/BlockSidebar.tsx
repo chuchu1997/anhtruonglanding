@@ -6,8 +6,15 @@ import { AlignLeft, AlignRight } from "react-feather";
 
 const items = [
   // },
-  { title: "Chat Zalo", icon: "/zalo.png", href: "http://zalo.me/0869229639" },
-  { title: "Gọi điện", icon: "/phonecall.png", href: "tel:0869229639" },
+  {
+    title: "Fanpage",
+    icon: "/messenger.png",
+    href: "https://www.facebook.com/mayxaydungmoi/",
+  },
+
+  { title: "Chat Zalo", icon: "/zalo.png", href: "http://zalo.me/0973926139" },
+  { title: "Gọi điện", icon: "/phonecall.png", href: "tel:0973926139" },
+
   // { title: "Messager", icon: "/messager.jpg" },
 ];
 const BlockSidebar = () => {
@@ -17,7 +24,7 @@ const BlockSidebar = () => {
   return (
     <div
       className={`sort-dock bg-red fixed right-0 top-40 ${
-        sort ? "w-[60px]" : "w-[120px]"
+        sort ? "w-[60px]" : "w-[100px]"
       } px-2 pt-10 pb-4 z-50 bg-[#cccccc] rounded-md flex flex-col gap-4 text-black transition-width duration-500 overflow-hidden`}
     >
       <div
@@ -38,13 +45,14 @@ const BlockSidebar = () => {
             <Image
               src={item.icon}
               alt="icon"
-              width={40}
-              height={40}
+              width={20}
+              height={20}
+              style={{ height: "auto", width: "auto" }}
               priority
               quality={40}
               className="group-hover:scale-125 scale-100 transition-all duration-400"
             />
-            <p className={`${sort ? "hidden" : "text-black/80 text-center text-sm group-hover:text-accent "}`}> {item.title}</p>
+            <p className={`${sort ? "hidden" : "text-black/80 text-center text-[12px] group-hover:text-accent "}`}> {item.title}</p>
           </Link>
         );
       })}

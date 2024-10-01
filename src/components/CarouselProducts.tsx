@@ -14,8 +14,8 @@ const CarouselProducts = (props: propsInterface) => {
   const { listProduct } = props;
 
   return (
-    <Carousel className="mt-[14px] overflow-auto">
-      <CarouselContent className="w-full">
+    <Carousel className="mt-[14px] overflow-auto  w-[320px] mx-auto">
+      <CarouselContent className="w-full mx-auto">
         {listProduct.map((item, index) => {
           return (
             <CarouselItem className="" key={index}>

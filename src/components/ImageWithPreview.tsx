@@ -12,7 +12,6 @@ const ImageWithPreview = (props: propsType) => {
   const { listImages } = props;
 
   const onHandleChangeImageDisplay = (imageChangeSRC: string) => {
-    console.log("CALL", imageChangeSRC);
     setImageSelect(imageChangeSRC);
   };
   const [imageSelect, setImageSelect] = useState(listImages[0]);
@@ -20,7 +19,15 @@ const ImageWithPreview = (props: propsType) => {
   return (
     <div>
       <div className="relative h-[300px] md:h-[500px] rounded-lg">
-        <Image alt="bàn cắt gạch" src={imageSelect} fill className="object-cover rounded-lg" quality={90} priority></Image>
+        <Image
+          alt="bàn cắt gạch"
+          src={imageSelect}
+          fill
+          className="object-cover rounded-lg"
+          sizes="(max-width: 768px) 100vw,(max-width:1200px) 50vw,33vw"
+          quality={90}
+          priority
+        ></Image>
       </div>
 
       <Carousel className="mt-[14px] ">
@@ -33,7 +40,15 @@ const ImageWithPreview = (props: propsType) => {
                 onHandleChangeImageDisplay(image);
               }}
             >
-              <Image alt="bàn cắt gạch" src={image} fill className="object-cover rounded-lg" quality={90} priority></Image>
+              <Image
+                alt="bàn cắt gạch"
+                src={image}
+                fill
+                className="object-cover rounded-lg"
+                quality={90}
+                priority
+                sizes="(max-width: 768px) 100vw,(max-width:1200px) 50vw,33vw"
+              ></Image>
             </CarouselItem>
           ))}
         </CarouselContent>

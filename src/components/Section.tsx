@@ -7,10 +7,11 @@ import React, { ReactNode } from "react";
 type Props = {
   children: React.ReactNode;
   id: string;
+  className?: string;
 };
-const SectionComponent: React.FC<Props> = ({ children, id }) => {
+const SectionComponent: React.FC<Props> = ({ children, id, className }) => {
   return (
-    <section className="my-[80px] container mx-auto" id={id}>
+    <section className={`my-[80px] container mx-auto ${className}`} id={id}>
       {children}
     </section>
   );

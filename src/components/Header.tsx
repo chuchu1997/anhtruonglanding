@@ -12,34 +12,42 @@ const Header = () => {
   const [showMobileNavbarOne, setShowMobileNavbarOne] = useState(false);
   const [showMobileNavbarSecond, setShowMobileNavbarSecond] = useState(false);
 
-  const controlNavbar = () => {
-    if (window.scrollY > lastScrollY && !showNavbarWhenScrolling) {
-      // if scroll down hide the navbar
-      setShowNavbarWhenScrolling(true);
-      console.log("CALL TIME");
-    } else if (window.scrollY == 0) {
-      setShowNavbarWhenScrolling(false);
-    }
+  // const controlNavbar = () => {
+  //   if (window.scrollY > lastScrollY && !showNavbarWhenScrolling) {
+  //     // if scroll down hide the navbar
+  //     setShowNavbarWhenScrolling(true);
+  //   } else if (window.scrollY == 0) {
+  //     setShowNavbarWhenScrolling(false);
+  //   }
 
-    // remember current page location to use in the next move
-    setLastScrollY(window.scrollY);
-  };
-  useEffect(() => {
-    window.addEventListener("scroll", controlNavbar);
-    // cleanup function
-    return () => {
-      window.removeEventListener("scroll", controlNavbar);
-    };
-  }, [lastScrollY]);
-
-  const handleSetShowNavBarOne = () => {
-    setShowMobileNavbarOne(!showMobileNavbarOne);
-    if (!showMobileNavbarOne) {
-      document.body.classList.add("overflow-y-hidden");
-    } else {
+  //   // remember current page location to use in the next move
+  //   setLastScrollY(window.scrollY);
+  // };
+  function handleResize() {
+    if (window.innerWidth > 600 && showMobileNavbarSecond == true) {
+      setShowMobileNavbarSecond(false);
       document.body.classList.remove("overflow-y-hidden");
     }
-  };
+  }
+  useEffect(() => {
+    // window.addEventListener("scroll", controlNavbar);
+    // cleanup function
+
+    window.addEventListener("resize", handleResize);
+    // return () => {
+    //   window.removeEventListener("scroll", controlNavbar);
+    // };
+  }, [showMobileNavbarSecond]);
+  // lastScrollY
+
+  // const handleSetShowNavBarOne = () => {
+  //   setShowMobileNavbarOne(!showMobileNavbarOne);
+  //   if (!showMobileNavbarOne) {
+  //     document.body.classList.add("overflow-y-hidden");
+  //   } else {
+  //     document.body.classList.remove("overflow-y-hidden");
+  //   }
+  // };
   const handleSetShowNavBarSecond = () => {
     setShowMobileNavbarSecond(!showMobileNavbarSecond);
     if (!showMobileNavbarSecond) {
@@ -65,28 +73,28 @@ const Header = () => {
   ];
   const navFixed = [
     {
-      title: "Giá Bán",
-      scrollTargetID: "giaban",
+      title: "Đại lý phân phối Panapro",
+      scrollTargetID: "bancatgachpanapro",
     },
     {
-      title: "Giới Thiệu",
-      scrollTargetID: "gioithieu",
+      title: "Đại lý phân phối Ryobipro",
+      scrollTargetID: "bancatgachryobipro",
     },
-    {
-      title: "Thông Số Kỹ Thuật",
-      scrollTargetID: "thongsokythuat",
-    },
-    {
-      title: "Các Sản Phẩm Panapro Khác",
-      scrollTargetID: "panaprokhac",
-    },
+    // {
+    //   title: "Thông Số Kỹ Thuật",
+    //   scrollTargetID: "thongsokythuat",
+    // },
+    // {
+    //   title: "Các Sản Phẩm Panapro Khác",
+    //   scrollTargetID: "panaprokhac",
+    // },
   ];
   return (
     <header className=" bg-[#fff] z-50 relative left-0 top-0 right-0 ">
-      <div className={`px-4 py-4 header-without-scroll relative ${showNavbarWhenScrolling ? "top-[-150px]" : "top-0"} transition-all duration-500`}>
+      {/* <div className={`px-4 py-4 header-without-scroll relative ${showNavbarWhenScrolling ? "top-[-150px]" : "top-0"} transition-all duration-500`}>
         <div className="content flex justify-between items-center">
           <Link href={"/"}>
-            <Image src="/logobancatgach/1.png" alt="logo" width={160} height={160} quality={100} priority></Image>
+            <Image alt="logo" src="/logobancatgach/1.png" width={110} height={65} style={{ width: "auto", height: "auto" }} quality={100} priority />
           </Link>
           <div className=" hidden md:flex items-center gap-6 text-[14px] font-semibold flex-1  justify-center">
             {navResponsive.map((item, index) => {
@@ -97,9 +105,6 @@ const Header = () => {
               );
             })}
           </div>
-          {/* <div className="hidden md:block">
-              <Button>Nhận Tư Vấn</Button>
-            </div> */}
 
           <div
             className="cursor-pointer block md:hidden"
@@ -110,16 +115,16 @@ const Header = () => {
             {showMobileNavbarOne ? <X></X> : <Menu />}
           </div>
         </div>
-      </div>
-
+      </div> */}
+      {/* ${showNavbarWhenScrolling ? "top-0" : "top-[-150px]"} */}
       <div
-        className={`px-4 py-4 header-scroll transition-all duration-500 fixed left-0 right-0  bg-[#fff] ${
-          showNavbarWhenScrolling ? "top-0" : "top-[-150px]"
-        }`}
+        className={`px-4 py-4 header-scroll transition-all duration-500 fixed left-0 right-0  bg-[#fff] 
+        
+        `}
       >
         <div className="content flex justify-between items-center">
           <Link href={"/"}>
-            <Image src="/logobancatgach/1.png" alt="logo" width={160} height={160} quality={100} priority></Image>
+            <Image alt="logo" src="/logobancatgach/1.png" width={110} height={65} style={{ width: "auto", height: "auto" }} quality={100} priority />
           </Link>
           <div className="hidden md:flex flex-1 justify-center  items-center gap-6 text-[14px] font-semibold">
             {navFixed.map((item, index) => {
@@ -136,9 +141,7 @@ const Header = () => {
               );
             })}
           </div>
-          {/* <div className="hidden md:block">
-            <Button>Nhận Tư Vấn</Button>
-          </div> */}
+
           <div
             className="cursor-pointer block md:hidden"
             onClick={() => {
@@ -171,6 +174,14 @@ const Header = () => {
           showMobileNavbarSecond ? "left-0 right-0 h-screen " : "left-[-300px] "
         } p-4 flex flex-col gap-2`}
       >
+        <div className="flex justify-end  cursor-pointer d-block">
+          <X
+            className=""
+            onClick={() => {
+              handleSetShowNavBarSecond();
+            }}
+          ></X>
+        </div>
         {navFixed.map((item, index) => {
           return (
             <div
@@ -186,7 +197,6 @@ const Header = () => {
             </div>
           );
         })}
-        <Button>Nhận Tư Vấn</Button>
       </div>
 
       {/* <div

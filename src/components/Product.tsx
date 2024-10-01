@@ -33,13 +33,13 @@ const ProductComponent: React.FC<Props> = ({ id, title, description, price, link
 
     //   {/* <PhoneCall /> */}
     // </div>
-    <div className="scale-100 transition-scale duration-200 ease-in-out  hover:scale-[1.05] transform-gpu  mt-[5px] relative  border border-gray rounded-lg  group w-full flex flex-col gap-4 bg-white w-[290px] mx-auto md:w-full">
+    <div className="scale-100 transition-scale duration-200 ease-in-out  hover:scale-[1.05] transform-gpu  mt-[5px] relative  border border-gray rounded-lg  group w-full flex flex-col gap-4 bg-white w-[290px] mx-auto md:w-full min-h-[450px]">
       {/* <div className="bg-gradient-to-b from-blue-500 rounded-b-md  to-cyan-400   absolute top-0 right-[20px] z-50 overflow-hidden w-[65px] h-[30px] text-[12px] text-center">
         <div className="pt-[4px] text-white font-semibold">HS</div>
       </div> */}
       <div className="w-full h-[50px] bg-[#2b95f3] z-20 relative "></div>
       <div className="product-content mb-[30px] relative bg-white top-[-40px] rounded-tr-[35px] rounded-tl-[35px] z-30">
-        <div className="h-[250px]  relative mx-[15px] mt-[14px] ">
+        <div className="h-[250px]  relative mx-[15px] mt-[14px]  ">
           <Image
             src={imageSrc}
             alt={title}

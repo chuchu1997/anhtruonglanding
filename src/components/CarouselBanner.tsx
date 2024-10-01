@@ -14,11 +14,11 @@ const CarouselBanner = (props: propsInterface) => {
 
   return (
     <Carousel className="mx-2">
-      <CarouselContent className="h-[280px] md:h-[350px] lg:h-[600px] xl:h-[780px]  w-screen  ">
+      <CarouselContent className="h-[220px] md:h-[350px] lg:h-[500px] xl:h-[650px]  w-screen  ">
         {listImages.map((item, index) => {
           return (
             <CarouselItem className="relative" key={index}>
-              <Image alt="bannerImage" src={item} fill className="lg:object-fill md:object-contain object-cover" quality={100} priority></Image>
+              <Image alt="bannerImage" src={item} fill className="lg:object-fill md:object-contain object-contain" quality={100} priority></Image>
             </CarouselItem>
           );
         })}

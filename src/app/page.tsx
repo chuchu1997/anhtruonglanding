@@ -23,7 +23,7 @@ const DynamicCarouselBanner = dynamic(() => import("@/components/CarouselBanner"
 const DynamicRenderContentForSection = dynamic(() => import("@/components/RenderContentForSection"), {});
 const DynamicNews = dynamic(() => import("@/components/News"), {});
 const DynamicShapeSale = dynamic(() => import("@/components/ShapeSale"));
-const DynamicCarouselMayCatGach = dynamic(() => import("@/components/CarouselDisplay3Items"));
+const DynamicCarouselSubBanner = dynamic(() => import("@/components/CarouselDisplay2Items"));
 
 const DynamicSectionWrapper = dynamic(() => import("@/components/Section"));
 
@@ -32,21 +32,45 @@ const DynamicGridLayout = dynamic(() => import("@/components/GridLayout"));
 const DynamicProduct = dynamic(() => import("@/components/Product"));
 
 const DynamicImageWithPreview = dynamic(() => import("@/components/ImageWithPreview"));
-
+const DynamicDatHang = dynamic(() => import("@/components/DatHang"));
 import { data } from "@/data/data";
 import CarouselBanner from "@/components/CarouselBanner";
 import ThongSoKyThuat from "@/components/ThongSoKyThuat";
 import FormTuVan from "@/components/FormTuVan";
-import CarouselDisplay3Items from "@/components/CarouselDisplay3Items";
+import CarouselDisplay3Items from "@/components/CarouselDisplay2Items";
 import SectionComponent from "@/components/Section";
+import DatHang from "@/components/DatHang";
 export default function Home() {
   return (
     <main className="landing-page">
-      <section className="main-banner relative rounded-md overflow-hidden">
-        <DynamicCarouselBanner listImages={data.listBannerImages}></DynamicCarouselBanner>
+      <section className="main-banner relative rounded-md py-[80px]">
+        <div className="relative">
+          <DynamicCarouselBanner listImages={data.listBannerImages}></DynamicCarouselBanner>
+          <div className="container mx-auto relative lg:absolute  lg:left-1/2 lg:-translate-x-1/2 lg:-translate-y-1/2">
+            <DynamicCarouselSubBanner images={data.subBannerImages} />
+
+            {/* <Button className=" ">Đặt hàng ngay</Button> */}
+
+            <DynamicDatHang className="relative left-1/2 -translate-x-1/2 mt-[20px]" />
+          </div>
+        </div>
       </section>
 
-      <DynamicSectionWrapper id="sanphamnoibat">
+      <DynamicSectionWrapper id="chungnhan" className="mt-[40px] md:mt-[80px] lg:mt-[200px]">
+        <DynamicSectionTitle title="chứng nhận phân phối" />
+        <Image
+          src="/bancatgach/chungnhan/1.png"
+          alt="giấy chứng nhận phân phối máy cắt gạch panapro"
+          // width={300}
+          // height={300}
+
+          width={300}
+          height={300}
+          className="border border-red text-center mx-auto"
+        ></Image>
+      </DynamicSectionWrapper>
+
+      <DynamicSectionWrapper id="sanphamnoibat" className="mt-[40px]">
         <DynamicSectionTitle title="sản phẩm nổi bật" />
         <div className="pc-version hidden sm:block">
           <DynamicGridLayout>
@@ -93,7 +117,7 @@ export default function Home() {
 
         <DynamicCarouselBanner listImages={data.listSanPhamChuDaoImages}></DynamicCarouselBanner>
       </section>
-      <section className="container mx-auto py-20">
+      <section className="container mx-auto py-20" id="bancatgachpanapro">
         <DynamicSectionTitle title="bàn cắt gạch panapro (có đệm)" />
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mt-[40px]">
@@ -131,7 +155,8 @@ export default function Home() {
             </div>
 
             <DynamicShapeSale saleOff={10} price={2199000}></DynamicShapeSale>
-            <Button>Đặt Hàng Ngay</Button>
+
+            <DynamicDatHang />
           </div>
         </div>
         <div className="pc-version hidden sm:block">
@@ -143,7 +168,7 @@ export default function Home() {
         </div>
 
         <div className="mobile-version block sm:hidden">
-          <DynamicCarouselProducts listProduct={data.sanphamnoibatItems}></DynamicCarouselProducts>
+          <DynamicCarouselProducts listProduct={data.bancatgachpanaprocodem}></DynamicCarouselProducts>
         </div>
       </section>
 
@@ -154,7 +179,7 @@ export default function Home() {
           <div className="left-content ">
             <div className="image-preview-main rounded-md relative w-full">
               {/* <Image alt="Giá líp cắt gạch" src={"/bancatgach/sanphamchudao/7.png"} fill className="object-cover" quality={90} priority></Image> */}
-              <DynamicImageWithPreview listImages={data.previewOneImages} />
+              <DynamicImageWithPreview listImages={data.previewTwoImages} />
             </div>
           </div>
           <div className="right-content">
@@ -187,19 +212,19 @@ export default function Home() {
             </div>
 
             <DynamicShapeSale saleOff={10} price={1999999}></DynamicShapeSale>
-            <Button>Đặt Hàng Ngay</Button>
+            <DynamicDatHang />
           </div>
         </div>
         <div className="pc-version hidden sm:block">
           <DynamicGridLayout>
-            {data.bancatgachpanaprocodem.map((item, index) => (
+            {data.bancatgachpanaprokhongdem.map((item, index) => (
               <DynamicProduct key={index} title={item.title} imageSrc={item.imageSrc} linkHref={item.href}></DynamicProduct>
             ))}
           </DynamicGridLayout>
         </div>
 
         <div className="mobile-version block sm:hidden">
-          <DynamicCarouselProducts listProduct={data.sanphamnoibatItems}></DynamicCarouselProducts>
+          <DynamicCarouselProducts listProduct={data.bancatgachpanaprokhongdem}></DynamicCarouselProducts>
         </div>
       </section>
 
@@ -215,6 +240,7 @@ export default function Home() {
               style={{ objectFit: "contain" }}
               quality={60}
               priority
+              sizes="(max-width: 768px) 100vw,(max-width:1200px) 50vw,33vw"
             ></Image>
           </div>
         </section>
@@ -224,28 +250,28 @@ export default function Home() {
         <DynamicSectionTitle title="bàn cắt gạch ryobipro" />
         <div className="pc-version hidden sm:block">
           <DynamicGridLayout>
-            {data.sanphamnoibatItems.map((item, index) => (
+            {data.bancatgachryobipro.map((item, index) => (
               <DynamicProduct key={index} title={item.title} imageSrc={item.imageSrc} linkHref={item.href}></DynamicProduct>
             ))}
           </DynamicGridLayout>
         </div>
 
         <div className="mobile-version block sm:hidden">
-          <DynamicCarouselProducts listProduct={data.sanphamnoibatItems}></DynamicCarouselProducts>
+          <DynamicCarouselProducts listProduct={data.bancatgachryobipro}></DynamicCarouselProducts>
         </div>
       </DynamicSectionWrapper>
       <DynamicSectionWrapper id="phukienbancatgach">
         <DynamicSectionTitle title="phụ kiện bàn cắt gạch" />
         <div className="pc-version hidden sm:block">
           <DynamicGridLayout>
-            {data.sanphamnoibatItems.map((item, index) => (
+            {data.phukienbancatgach.map((item, index) => (
               <DynamicProduct key={index} title={item.title} imageSrc={item.imageSrc} linkHref={item.href}></DynamicProduct>
             ))}
           </DynamicGridLayout>
         </div>
 
         <div className="mobile-version block sm:hidden">
-          <DynamicCarouselProducts listProduct={data.sanphamnoibatItems}></DynamicCarouselProducts>
+          <DynamicCarouselProducts listProduct={data.phukienbancatgach}></DynamicCarouselProducts>
         </div>
       </DynamicSectionWrapper>
 
@@ -253,14 +279,14 @@ export default function Home() {
         <DynamicSectionTitle title="phụ kiện ốp lát gạch" />
         <div className="pc-version hidden sm:block">
           <DynamicGridLayout>
-            {data.sanphamnoibatItems.map((item, index) => (
+            {data.phukienoplatgach.map((item, index) => (
               <DynamicProduct key={index} title={item.title} imageSrc={item.imageSrc} linkHref={item.href}></DynamicProduct>
             ))}
           </DynamicGridLayout>
         </div>
 
         <div className="mobile-version block sm:hidden">
-          <DynamicCarouselProducts listProduct={data.sanphamnoibatItems}></DynamicCarouselProducts>
+          <DynamicCarouselProducts listProduct={data.phukienoplatgach}></DynamicCarouselProducts>
         </div>
       </DynamicSectionWrapper>
 
@@ -268,14 +294,14 @@ export default function Home() {
         <DynamicSectionTitle title="máy tia laser" />
         <div className="pc-version hidden sm:block">
           <DynamicGridLayout>
-            {data.sanphamnoibatItems.map((item, index) => (
+            {data.maycanbanglaser.map((item, index) => (
               <DynamicProduct key={index} title={item.title} imageSrc={item.imageSrc} linkHref={item.href}></DynamicProduct>
             ))}
           </DynamicGridLayout>
         </div>
 
         <div className="mobile-version block sm:hidden">
-          <DynamicCarouselProducts listProduct={data.sanphamnoibatItems}></DynamicCarouselProducts>
+          <DynamicCarouselProducts listProduct={data.maycanbanglaser}></DynamicCarouselProducts>
         </div>
       </DynamicSectionWrapper>
 
@@ -283,14 +309,14 @@ export default function Home() {
         <DynamicSectionTitle title="dụng cụ cầm tay pin" />
         <div className="pc-version hidden sm:block">
           <DynamicGridLayout>
-            {data.sanphamnoibatItems.map((item, index) => (
+            {data.dungcucamtaypin.map((item, index) => (
               <DynamicProduct key={index} title={item.title} imageSrc={item.imageSrc} linkHref={item.href}></DynamicProduct>
             ))}
           </DynamicGridLayout>
         </div>
 
         <div className="mobile-version block sm:hidden">
-          <DynamicCarouselProducts listProduct={data.sanphamnoibatItems}></DynamicCarouselProducts>
+          <DynamicCarouselProducts listProduct={data.dungcucamtaypin}></DynamicCarouselProducts>
         </div>
       </DynamicSectionWrapper>
     </main>
