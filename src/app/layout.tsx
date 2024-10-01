@@ -24,17 +24,17 @@ export const metadata: Metadata = {
   title: "Bàn Cắt Gạch PanaPro - Bàn Cắt Gạch số 1 tại việt nam .",
   description:
     "Công ty TNHH Máy Xây Dựng Mới là công ty cung cấp các loại máy cắt gạch , dụng cụ cầm tay , và các dụng cụ hỗ trợ xây dựng số 1 tại việt nam",
-  // verification: {
-  //   google: "google-site-verification=QDbAh8EHR6zGyysSsEgdHt97muEmEf56VYCaAV3HtKI",
-  // },
+  verification: {
+    google: "google-site-verification=s3Gv5MqWmRlLv82jIT0U54-8KIepgNzaFL1EVzzW74g",
+  },
   openGraph: {
     title: "Bàn Cắt Gạch PanaPro - Bàn Cắt Gạch số 1 tại việt nam",
     locale: "vi_VN",
     type: "website",
-    // url: "https://phaohathuy.com",
+    url: "https://bancatgach.com",
     description:
       "Công ty TNHH Máy Xây Dựng Mới là công ty cung cấp các loại máy cắt gạch , dụng cụ cầm tay , và các dụng cụ hỗ trợ xây dựng số 1 tại việt nam",
-    siteName: "Máy Cắt Gạch",
+    siteName: "Bàn cắt gạch",
   },
   robots: {
     index: true,
