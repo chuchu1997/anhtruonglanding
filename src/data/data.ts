@@ -9,7 +9,7 @@ export const data = {
     "/bancatgach/preview1/6.jpg",
   ],
   previewTwoImages: [
-    "/bancatgach/preview1/22.jpg",
+    "/bancatgach/preview1/33.jpg",
     "/bancatgach/preview1/1.jpg",
     "/bancatgach/preview1/2.jpg",
     "/bancatgach/preview1/3.jpg",
