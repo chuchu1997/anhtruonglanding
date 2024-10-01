@@ -12,14 +12,14 @@ const CarouselDisplay2Items = (props: propsType) => {
 
   return (
     <Carousel className="mt-[14px]">
-      <CarouselContent className="h-[120px] xl:h-[180px] w-full  ">
+      <CarouselContent className="h-[100px] xl:h-[150px] w-full  ">
         {images.map((image, index) => (
           <CarouselItem className="relative basis-1/2 mr-4" key={index}>
             <Image
               alt="sub_banner"
               src={image}
               fill
-              className="object-cover rounded-md "
+              className="contain rounded-lg "
               quality={90}
               priority
               sizes="(max-width: 768px) 100vw,(max-width:1200px) 50vw,33vw"

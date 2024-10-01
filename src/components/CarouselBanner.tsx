@@ -18,7 +18,7 @@ const CarouselBanner = (props: propsInterface) => {
         {listImages.map((item, index) => {
           return (
             <CarouselItem className="relative" key={index}>
-              <Image alt="bannerImage" src={item} fill className="lg:object-fill md:object-contain object-contain" quality={100} priority></Image>
+              <Image alt="bannerImage" src={item} fill className="lg:object-fill md:object-contain object-cover" quality={100} priority></Image>
             </CarouselItem>
           );
         })}

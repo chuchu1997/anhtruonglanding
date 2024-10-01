@@ -16,7 +16,7 @@ const DatHang = (props: propsType) => {
   };
   return (
     <div
-      className={`${className} px-4 py-2 bg-[red] max-w-[200px] text-center cursor-pointer rounded-lg text-white scale-100 transition-scale duration-200 ease-in-out hover:scale-[1.05]`}
+      className={`${className} text-[12px] md:text-[14px] px-4 py-2 font-semibold   bg-[red] max-w-[150px] text-center cursor-pointer rounded-lg text-white scale-100 transition-scale duration-200 ease-in-out hover:scale-[1.05]`}
       onClick={handleOrder}
     >
       Đặt hàng ngay

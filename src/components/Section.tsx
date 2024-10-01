@@ -11,7 +11,7 @@ type Props = {
 };
 const SectionComponent: React.FC<Props> = ({ children, id, className }) => {
   return (
-    <section className={`my-[80px] container mx-auto ${className}`} id={id}>
+    <section className={`my-[40px] container mx-auto ${className}`} id={id}>
       {children}
     </section>
   );

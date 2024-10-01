@@ -32,6 +32,7 @@ const DynamicGridLayout = dynamic(() => import("@/components/GridLayout"));
 const DynamicProduct = dynamic(() => import("@/components/Product"));
 
 const DynamicImageWithPreview = dynamic(() => import("@/components/ImageWithPreview"));
+
 const DynamicDatHang = dynamic(() => import("@/components/DatHang"));
 import { data } from "@/data/data";
 import CarouselBanner from "@/components/CarouselBanner";
@@ -49,14 +50,12 @@ export default function Home() {
           <div className="container mx-auto relative lg:absolute  lg:left-1/2 lg:-translate-x-1/2 lg:-translate-y-1/2">
             <DynamicCarouselSubBanner images={data.subBannerImages} />
 
-            {/* <Button className=" ">Đặt hàng ngay</Button> */}
-
             <DynamicDatHang className="relative left-1/2 -translate-x-1/2 mt-[20px]" />
           </div>
         </div>
       </section>
 
-      <DynamicSectionWrapper id="chungnhan" className="mt-[40px] md:mt-[80px] lg:mt-[200px]">
+      <DynamicSectionWrapper id="chungnhan" className="mt-0 lg:mt-[120px]">
         <DynamicSectionTitle title="chứng nhận phân phối" />
         <Image
           src="/bancatgach/chungnhan/1.png"
@@ -117,7 +116,7 @@ export default function Home() {
 
         <DynamicCarouselBanner listImages={data.listSanPhamChuDaoImages}></DynamicCarouselBanner>
       </section>
-      <section className="container mx-auto py-20" id="bancatgachpanapro">
+      <section className="container mx-auto mt-[20px]" id="bancatgachpanapro">
         <DynamicSectionTitle title="bàn cắt gạch panapro (có đệm)" />
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mt-[40px]">
@@ -172,7 +171,7 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="container mx-auto py-20">
+      <section className="container mx-auto mt-[20px]">
         <DynamicSectionTitle title="bàn cắt gạch panapro (không đệm)" />
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mt-[40px]">
@@ -227,7 +226,7 @@ export default function Home() {
           <DynamicCarouselProducts listProduct={data.bancatgachpanaprokhongdem}></DynamicCarouselProducts>
         </div>
       </section>
-
+      {/* 
       <section className="bg-[#E7EFFE] py-8" id="thongsokythuat">
         <section className="container mx-auto relative">
           <DynamicSectionTitle title="Thông Số Kỹ Thuật " />
@@ -244,7 +243,7 @@ export default function Home() {
             ></Image>
           </div>
         </section>
-      </section>
+      </section> */}
 
       <DynamicSectionWrapper id="bancatgachryobipro">
         <DynamicSectionTitle title="bàn cắt gạch ryobipro" />
