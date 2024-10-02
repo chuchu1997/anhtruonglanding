@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Open_Sans } from "next/font/google";
+import { Open_Sans, Pacifico, Roboto_Mono } from "next/font/google";
 import "./globals.css";
 import Header from "@/components/Header";
 // import PageTransition from "@/components/PageTransition";
@@ -11,6 +11,12 @@ import DockBottomContact from "@/components/DockBottomContact";
 const jetbrains = Open_Sans({
   subsets: ["latin"],
   variable: "--font-jetbrainsMono",
+});
+
+const pacifico = Pacifico({
+  weight: "400",
+  subsets: ["vietnamese"],
+  variable: "--font-pacifico",
 });
 
 {
@@ -88,14 +94,14 @@ export default function RootLayout({
       <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
       <link rel="icon" href="/favicon.ico" sizes="any" />
 
-      <body className={jetbrains.variable} suppressHydrationWarning={true}>
+      <body className={`${jetbrains.variable} ${pacifico.variable}`} suppressHydrationWarning={true}>
         <Header />
-        <BlockSidebar />
-        <DockBottomContact />
+        {/* <BlockSidebar />
+        <DockBottomContact /> */}
         {/* <StairEffect /> */}
         {/* <PageTransition></PageTransition> */}
         <div>{children}</div>
-        <Footer />
+        {/* <Footer /> */}
       </body>
     </html>
   );

@@ -24,15 +24,15 @@
         /* @apply font-primary bg-primary text-white leading-loose; */
         @apply font-primary text-black leading-loose;
     }
-    .h1{
+    /* .h1{
         @apply text-[38px] xl:text-[66px] leading-[1.1] font-semibold;
     }
     .h2{
-        @apply text-[32px] xl:text-[40px] leading-[1.1] font-semibold;
+        @apply text-[32px] xl:text-[40px] leading-[1.1]     ;
     }
     .h3{
         @apply text-[20px] xl:text-[24px] leading-[1.1] font-semibold;
-    }   
+    }    */
 
     .text-outline{
         -webkit-text-stroke: 1px #000000;

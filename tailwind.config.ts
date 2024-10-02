@@ -27,6 +27,7 @@ const config = {
     },
     fontFamily: {
       primary: "var(--font-jetbrainsMono)",
+      accent: "var(--font-pacifico)",
     },
     extend: {
       backgroundImage: {
