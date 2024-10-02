@@ -99,10 +99,16 @@ export default function Home() {
 
       <DynamicSectionWrapper id="videobancatgach">
         <DynamicSectionTitle title="Video bàn cắt gạch" />
-        <div className="my-[40px] text-[15px] text-black/80">
-          <span className="font-semibold text-[16px]"> Bàn cắt gạch PANAPRO </span>
+
+        <div className="my-[20px] text-[15px] text-black/80">
+          <h1 className="font-semibold text-[18px]">Bàn Cắt Gạch Chất Lượng Cao - Giải Pháp Tốt Nhất Cho Công Trình Của Bạn</h1>
+          <p>
+            Bàn cắt gạch <strong>PanaPro</strong> là loại bàn cắt gạch chất lượng cao với giá cả cạnh tranh. Với nhiều năm kinh nghiệm trong ngành,
+            chúng tôi cam kết mang đến sản phẩm đáp ứng mọi nhu cầu cắt gạch của bạn.
+          </p>
+          {/* <span className="font-semibold text-[16px]"> Bàn cắt gạch PANAPRO </span>
           là loại bàn cắt gạch bằng tay , giúp bạn cắt gạch men , gạch lát , gạch nền cực nhanh chỉ sau vài phút , đường cắt cực chuẩn và mịn đẹp .Bàn
-          cắt gạch PANOPRO có độ dày cắt tối đa 14mm , có thể cắt theo đường thẳng , đường chéo tùy theo mục đích sử dụng của người sử dụng .
+          cắt gạch PANOPRO có độ dày cắt tối đa 14mm , có thể cắt theo đường thẳng , đường chéo tùy theo mục đích sử dụng của người sử dụng . */}
         </div>
         <div className="video-review">
           <video controls muted autoPlay className="w-full ">
