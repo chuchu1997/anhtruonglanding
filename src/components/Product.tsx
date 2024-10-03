@@ -47,8 +47,16 @@ const ProductComponent: React.FC<Props> = ({ id, title, description, price, link
       href="/"
       className="overflow-hidden hover:scale-[1.05] relative border border-[#ededed] mb-[30px] group hover:shadow-xl shadow-none transition-all duration-300 ease-in-out rounded-md "
     >
-      <div className="product-image relative h-[240px] md:h-[300px]   w-full">
-        <Image src={imageSrc} fill alt="productimage" quality={100} className="object-contain "></Image>
+      <div className="product-image relative h-[240px] md:h-[280px]   w-full">
+        <Image
+          placeholder="blur"
+          blurDataURL={"/image_placeholder/1.png"}
+          src={imageSrc}
+          fill
+          alt="productimage"
+          quality={100}
+          className="object-contain "
+        ></Image>
       </div>
 
       <div className=" font-cuprum product-info bg-[#cccccc]/30 group-hover:bg-[#86be4c] text-center transform translate-y-[60px] p-4 group-hover:translate-y-[0px] transition-all duration-300 ease-in-out ">
