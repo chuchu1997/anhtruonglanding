@@ -214,4 +214,45 @@ const CarouselNext = React.forwardRef<HTMLButtonElement, React.ComponentProps<ty
 );
 CarouselNext.displayName = "CarouselNext";
 
-export { type CarouselApi, Carousel, CarouselContent, CarouselItem, CarouselPrevious, CarouselNext };
+const CarouselDots = React.forwardRef<HTMLDivElement, React.HTMLAttributes<HTMLDivElement>>((props, ref) => {
+  const { api } = useCarousel();
+  const [updateState, setUpdateState] = React.useState(false);
+  const toggleUpdateState = React.useCallback(() => setUpdateState((prevState) => !prevState), []);
+
+  React.useEffect(() => {
+    if (api) {
+      api.on("select", toggleUpdateState);
+      api.on("reInit", toggleUpdateState);
+
+      return () => {
+        api.off("select", toggleUpdateState);
+        api.off("reInit", toggleUpdateState);
+      };
+    }
+  }, [api, toggleUpdateState]);
+
+  const numberOfSlides = api?.scrollSnapList().length || 0;
+  const currentSlide = api?.selectedScrollSnap() || 0;
+
+  if (numberOfSlides > 1) {
+    return (
+      <div ref={ref} className={`flex justify-center absolute left-1/2 transform -translate-x-1/2 bottom-[20px] gap-1 ${props.className}`}>
+        {Array.from({ length: numberOfSlides }, (_, i) => (
+          <Button
+            key={i}
+            className={`mx-1 h-2.5 w-2.5 md:h-3 md:w-3 rounded-full p-0 ${
+              i === currentSlide ? "transform bg-[#86be4c] " : "bg-gray-300 hover:bg-[#86be4c]"
+            }`}
+            aria-label={`Go to slide ${i + 1}`}
+            onClick={() => api?.scrollTo(i)}
+          />
+        ))}
+      </div>
+    );
+  } else {
+    return <></>;
+  }
+});
+CarouselDots.displayName = "CarouselDots";
+
+export { type CarouselApi, CarouselDots, Carousel, CarouselContent, CarouselItem, CarouselPrevious, CarouselNext };

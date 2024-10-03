@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Open_Sans, Pacifico, Roboto_Mono } from "next/font/google";
+import { Open_Sans, Pacifico, Roboto_Mono, Cuprum } from "next/font/google";
 import "./globals.css";
 import Header from "@/components/Header";
 // import PageTransition from "@/components/PageTransition";
@@ -17,6 +17,11 @@ const pacifico = Pacifico({
   weight: "400",
   subsets: ["vietnamese"],
   variable: "--font-pacifico",
+});
+
+const cuprum = Cuprum({
+  subsets: ["vietnamese"],
+  variable: "--font-cuprum",
 });
 
 {
@@ -94,7 +99,7 @@ export default function RootLayout({
       <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
       <link rel="icon" href="/favicon.ico" sizes="any" />
 
-      <body className={`${jetbrains.variable} ${pacifico.variable}`} suppressHydrationWarning={true}>
+      <body className={`${jetbrains.variable} ${pacifico.variable}  ${cuprum.variable}`} suppressHydrationWarning={true}>
         <Header />
         {/* <BlockSidebar />
         <DockBottomContact /> */}

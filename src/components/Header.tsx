@@ -1,39 +1,43 @@
 "use client";
 import { useEffect, useState } from "react";
 import React from "react";
-import { Button } from "./ui/button";
+
 import Image from "next/image";
 import { Menu, X, Phone, Mail, Clock, Icon } from "react-feather";
 import Link from "next/link";
 import LinkComponentCustom from "./LinkCustom";
+import { Button } from "@/components/ui/button";
+import { Input } from "@/components/ui/input";
+import { Label } from "@/components/ui/label";
+import { Sheet, SheetClose, SheetContent, SheetDescription, SheetFooter, SheetHeader, SheetTitle, SheetTrigger } from "@/components/ui/sheet";
 
 const dataMenus = [
   {
     title: "Trang chủ",
-    href: "#",
+    href: "/",
   },
   {
     title: "giới thiệu",
-    href: "#",
+    href: "/",
   },
   {
     title: "sản phẩm",
-    href: "#",
+    href: "/",
   },
   {
     title: "liên hệ",
-    href: "#",
+    href: "/",
   },
   {
     title: "hướng dẫn",
-    href: "#",
+    href: "/",
   },
 ];
 const Header = () => {
   return (
     <header>
       <div className="header-top-absolute absolute left-0 top-0 right-0 z-30  text-white text-[12px]">
-        <div className="container mx-auto py-2 flex justify-between items-center text-[#e3e3e3]">
+        <div className="container mx-auto py-2 hidden md:flex justify-between items-center text-[#e3e3e3]">
           <div className="header-top-left flex items-center gap-4">
             <LinkComponentCustom icon={Phone} href="#" title="0123.456.789" />
             <LinkComponentCustom icon={Mail} href="#" title="0123.456.789" />
@@ -43,7 +47,7 @@ const Header = () => {
             <LinkComponentCustom icon={Clock} href="#" title="Nhận tư vấn" />
           </div>
         </div>
-        <div className="border-b border-[grey]/60"></div>
+        <div className="hidden md:block border-b border-[grey]/60"></div>
 
         {/* HEADER BOTTOM */}
         <div className="container  mt-[20px] flex justify-between items-center">
@@ -60,6 +64,23 @@ const Header = () => {
               ></LinkComponentCustom>
             ))}
           </div>
+          <Sheet>
+            <SheetTrigger asChild>
+              <Menu className="block md:hidden cursor-pointer"></Menu>
+            </SheetTrigger>
+            <SheetContent>
+              <div className="mt-[14px]">
+                {dataMenus.map((menuItem, index) => (
+                  <LinkComponentCustom
+                    key={index}
+                    title={menuItem.title}
+                    href={menuItem.href}
+                    className="text-[14px] font-semibold uppercase my-2"
+                  ></LinkComponentCustom>
+                ))}
+              </div>
+            </SheetContent>
+          </Sheet>
         </div>
       </div>
 

@@ -28,6 +28,7 @@ const config = {
     fontFamily: {
       primary: "var(--font-jetbrainsMono)",
       accent: "var(--font-pacifico)",
+      cuprum: "var(--font-cuprum)",
     },
     extend: {
       backgroundImage: {

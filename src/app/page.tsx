@@ -1,59 +1,156 @@
-import Image from "next/image";
-import { Button } from "@/components/ui/button";
-import { Package } from "react-feather";
-import Photo from "@/components/Photo";
-import Services from "@/components/Services";
-import SectionTitle from "@/components/SectionTitle";
-import CarouselProducts from "@/components/CarouselProducts";
-
-import RenderContentForSection from "@/components/RenderContentForSection";
-import News from "@/components/News";
-import Link from "next/link";
-
 import dynamic from "next/dynamic";
 
-const DynamicSectionTitle = dynamic(() => import("@/components/SectionTitle"), {});
-const DynamicPhoto = dynamic(() => import("@/components/Photo"), {});
+const DynamicSectionWrapper = dynamic(() => import("@/components/Section"), {});
 
-const DynamicServices = dynamic(() => import("@/components/Services"), {});
-
-const DynamicCarouselProducts = dynamic(() => import("@/components/CarouselProducts"), {});
-const DynamicCarouselBanner = dynamic(() => import("@/components/CarouselBanner"));
-
-const DynamicRenderContentForSection = dynamic(() => import("@/components/RenderContentForSection"), {});
-const DynamicNews = dynamic(() => import("@/components/News"), {});
-const DynamicShapeSale = dynamic(() => import("@/components/ShapeSale"));
-const DynamicCarouselSubBanner = dynamic(() => import("@/components/CarouselDisplay2Items"));
-
-const DynamicSectionWrapper = dynamic(() => import("@/components/Section"));
-
-const DynamicGridLayout = dynamic(() => import("@/components/GridLayout"));
-
-const DynamicProduct = dynamic(() => import("@/components/Product"));
-
-const DynamicImageWithPreview = dynamic(() => import("@/components/ImageWithPreview"));
-
-const DynamicDatHang = dynamic(() => import("@/components/DatHang"));
 import { data } from "@/data/data";
 import CarouselBanner from "@/components/CarouselBanner";
-import ThongSoKyThuat from "@/components/ThongSoKyThuat";
-import FormTuVan from "@/components/FormTuVan";
-import CarouselDisplay3Items from "@/components/CarouselDisplay2Items";
-import SectionComponent from "@/components/Section";
-import DatHang from "@/components/DatHang";
+import Image from "next/image";
+
+import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
+import ProductComponent from "@/components/Product";
+import Link from "next/link";
+
 export default function Home() {
   return (
     <div className="page-container">
       <main className="main">
-        <section className="hero-section relative ">
-          {/* <div className="background-opacity absolute border-2 border-[red] z-20 w-full h-full bg-black bg-opacity-25"></div> */}
-          {/* <div className="relative z-10">
-          
-          </div> */}
-          <CarouselBanner listImages={data.banner} />
-     
+        {/* <section className="hero-section relative "> */}
+        <CarouselBanner listImages={data.banner} className="h-[450px] md:h-[650px]" />
+        {/* </section> */}
+        <DynamicSectionWrapper titleSection="giới thiệu" className="bg-[white] py-[100px]">
+          <div className="grid md:grid-cols-4 gap-2 font-cuprum">
+            <div className="grid grid-cols-2 md:grid-cols-1 gap-4">
+              <div className="flex flex-col gap-2 items-center">
+                <Image
+                  className="object-contain border border-gray-300 rounded-full"
+                  src="/landingpage1source/section1/subicon1.png"
+                  alt="subicon"
+                  width={70}
+                  height={70}
+                />
+
+                <h3 className="font-bold text-[20px] text-[#000000]">100% Tự Nhiên</h3>
+                <p className="text-center text-[16px] text-[#333333]">
+                  We care about what you eat. We want to produce food which nourishes your body and tastes delicious.
+                </p>
+              </div>
+
+              <div className="flex flex-col gap-2 items-center">
+                <Image
+                  className="object-contain border border-gray-300 rounded-full"
+                  src="/landingpage1source/section1/subicon1.png"
+                  alt="subicon"
+                  width={70}
+                  height={70}
+                />
+
+                <h3 className="font-bold  text-[20px] text-[#000000]">100% Tự Nhiên</h3>
+                <p className="text-center text-[16px] text-[#333333]">
+                  We care about what you eat. We want to produce food which nourishes your body and tastes delicious.
+                </p>
+              </div>
+            </div>
+            <div className="col-span-1 md:col-span-2">
+              <div className="h-[350px] md:h-[500px] relative">
+                <Image alt="section_1_images" src="/landingpage1source/section1/1.jpg" quality={100} priority className="object-contain" fill></Image>
+              </div>
+            </div>
+            <div className="grid grid-cols-2 md:grid-cols-1 gap-4">
+              <div className="flex flex-col gap-2 items-center">
+                <Image
+                  className="object-contain border border-gray-300 rounded-full"
+                  src="/landingpage1source/section1/subicon1.png"
+                  alt="subicon"
+                  width={70}
+                  height={70}
+                />
+
+                <h3 className="font-bold  text-[20px] text-[#000000]">100% Tự Nhiên</h3>
+                <p className="text-center text-[16px] text-[#333333]">
+                  We care about what you eat. We want to produce food which nourishes your body and tastes delicious.
+                </p>
+              </div>
+
+              <div className="flex flex-col gap-2 items-center">
+                <Image
+                  className="object-contain border border-gray-300 rounded-full"
+                  src="/landingpage1source/section1/subicon1.png"
+                  alt="subicon"
+                  width={70}
+                  height={70}
+                />
+
+                <h3 className="font-bold  text-[20px] text-[#000000]">100% Tự Nhiên</h3>
+                <p className="text-center text-[16px] text-[#333333]">
+                  We care about what you eat. We want to produce food which nourishes your body and tastes delicious.
+                </p>
+              </div>
+            </div>
+          </div>
+        </DynamicSectionWrapper>
+        <section className="">
+          <CarouselBanner listImages={data.banner} className="h-[300px] md:h-[500px]" />
         </section>
-        <section>HEHE</section>
+        <DynamicSectionWrapper titleSection="sản phẩm của chúng tôi" className="py-[100px]">
+          <Tabs defaultValue="account">
+            <div className="  flex justify-center item-center py-4">
+              <TabsList className="bg-transparent">
+                <TabsTrigger value="account" className="font-cuprum ">
+                  This is item 1
+                </TabsTrigger>
+                <TabsTrigger value="password" className="font-cuprum">
+                  This is item 2
+                </TabsTrigger>
+              </TabsList>
+            </div>
+
+            <TabsContent value="account">
+              <div className="grid mx-auto w-4/6 md:w-full grid-cols-1 md:grid-cols-2 lg-grid-cols-3 xl:grid-cols-4 gap-8">
+                <ProductComponent title="cà chua" linkHref="#" imageSrc="/landingpage1source/section1/subicon1.png" />
+                <ProductComponent title="cà chua" linkHref="#" imageSrc="/landingpage1source/section1/subicon1.png" />
+                <ProductComponent title="cà chua" linkHref="#" imageSrc="/landingpage1source/section1/subicon1.png" />
+                <ProductComponent title="cà chua" linkHref="#" imageSrc="/landingpage1source/section1/subicon1.png" />
+              </div>
+            </TabsContent>
+            <TabsContent value="password">
+              <div className="grid mx-auto w-4/6  grid-cols-1  md:grid-cols-2 lg-grid-cols-3 xl:grid-cols-4 gap-8">
+                <ProductComponent title="cà chua" linkHref="#" imageSrc="/landingpage1source/section1/subicon1.png" />
+                <ProductComponent title="cà chua" linkHref="#" imageSrc="/landingpage1source/section1/subicon1.png" />
+                <ProductComponent title="cà chua" linkHref="#" imageSrc="/landingpage1source/section1/subicon1.png" />
+                <ProductComponent title="cà chua" linkHref="#" imageSrc="/landingpage1source/section1/subicon1.png" />
+              </div>
+            </TabsContent>
+          </Tabs>
+        </DynamicSectionWrapper>
+
+        <DynamicSectionWrapper titleSection="sản phẩm nổi bật" className="py-[100px] bg-[#fbfbfb]">
+          <div className="grid md:grid-cols-3 gap-8 font-cuprum">
+            <div className="col-span-2">
+              <div className="h-[350px] md:h-[450px] relative">
+                <Image
+                  alt="section_1_images"
+                  src="/landingpage1source/section1/subicon2.png"
+                  quality={100}
+                  priority
+                  className="object-contain"
+                  fill
+                ></Image>
+              </div>
+            </div>
+            <div className="flex flex-col gap-4">
+              {/* <div>123</div> */}
+              <h3 className="text-[30px] uppercase">Mùng tơi</h3>
+              <p className="text-[16px] font-extralight	text-[#595959]">
+                Rau cải bắp hữu cơ (Brassica oleracea nhóm Capitata) là loại rau chủ lực trong họ Cải (còn gọi là họ Thập tự -
+                Brassicaceae/Cruciferae),có xuất xứ từ vùng Địa Trung Hải. Nó là cây thân thảo, sống hai năm, và là một thực vật có hoa thuộc nhóm hai
+                lá mầm với các lá tạo thành một cụm đặc hình gần như hình cầu.Là một loại rau hữu cơ rất dễ nhận biết,khó có thể nhầm lẫn
+              </p>
+              <Link href="/" className="px-2 py-1 w-[100px] text-center rounded-lg text-white bg-[#86be4c]">
+                Xem chi tiết
+              </Link>
+            </div>
+          </div>
+        </DynamicSectionWrapper>
       </main>
     </div>
   );

@@ -1,16 +1,16 @@
 // "use client";
 
 import React from "react";
-import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious } from "./ui/carousel";
+import { Carousel, CarouselContent, CarouselDots, CarouselItem, CarouselNext, CarouselPrevious } from "./ui/carousel";
 import Image from "next/image";
 // import Autoplay from "embla-carousel-autoplay";
 
 interface propsInterface {
   listImages: string[];
+  className?: string;
 }
 
-const CarouselBanner = (props: propsInterface) => {
-  const { listImages } = props;
+const CarouselBanner = ({ listImages, className }: propsInterface) => {
   const items = [
     { image: "https://via.placeholder.com/600x300?text=Slide+1", alt: "Slide 1" },
     { image: "https://via.placeholder.com/600x300?text=Slide+2", alt: "Slide 2" },
@@ -18,7 +18,7 @@ const CarouselBanner = (props: propsInterface) => {
   ];
   return (
     <Carousel className="relative">
-      <CarouselContent className="h-[450px] md:h-[650px]   ">
+      <CarouselContent className={`${className}`}>
         {listImages.map((item, index) => {
           return (
             <CarouselItem className="relative" key={index}>
@@ -30,18 +30,11 @@ const CarouselBanner = (props: propsInterface) => {
             </CarouselItem>
           );
         })}
-        {/* <CarouselPrevious />
-        <CarouselNext /> */}
       </CarouselContent>
+      <CarouselDots />
 
-      <div className="thumbdot relative bottom-[40px]  transform  flex justify-center py-2 gap-2">
-        {listImages.map((item, index) => (
-          <div key={index} className="w-6 h-3 bg-[red] rounded-lg bg-grey-300 cursor-pointer"></div>
-        ))}
-      </div>
-
-      <CarouselPrevious className="left-[10px]" />
-      <CarouselNext className="right-[10px]" />
+      {/* <CarouselPrevious className="left-[10px]" />
+      <CarouselNext className="right-[10px]" /> */}
     </Carousel>
   );
 };
