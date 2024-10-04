@@ -106,7 +106,7 @@ export default function RootLayout({
         {/* <StairEffect /> */}
         {/* <PageTransition></PageTransition> */}
         <div>{children}</div>
-        {/* <Footer /> */}
+        <Footer />
       </body>
     </html>
   );

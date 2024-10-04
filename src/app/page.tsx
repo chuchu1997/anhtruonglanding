@@ -151,6 +151,10 @@ export default function Home() {
             </div>
           </div>
         </DynamicSectionWrapper>
+
+        <section className="">
+          <CarouselBanner listImages={data.banner} className="h-[300px] md:h-[500px]" />
+        </section>
       </main>
     </div>
   );
