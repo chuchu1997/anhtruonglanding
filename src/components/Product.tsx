@@ -7,16 +7,9 @@ import Image from "next/image";
 import PhoneCall from "./PhoneCall";
 import Link from "next/link";
 import { Button } from "./ui/button";
+import { ProductProps } from "@/interfaces";
 
-type Props = {
-  id?: string;
-  title: string;
-  description?: string;
-  price?: string;
-  linkHref: string;
-  imageSrc: string;
-};
-const ProductComponent: React.FC<Props> = ({ id, title, description, price, linkHref, imageSrc }) => {
+const ProductComponent: React.FC<ProductProps> = ({ id, title, description, price, linkHref, imageSrc }) => {
   return (
     // <div className="scale-100 transition-scale duration-200 ease-in-out  hover:scale-[1.05] transform-gpu  mt-[5px] relative  border border-gray rounded-lg  group w-full flex flex-col gap-4 bg-white w-[290px] mx-auto md:w-full min-h-[450px]">
     //   <div className="w-full h-[50px] bg-[#2b95f3] z-20 relative "></div>
@@ -60,9 +53,7 @@ const ProductComponent: React.FC<Props> = ({ id, title, description, price, link
       </div>
 
       <div className=" font-cuprum product-info bg-[#cccccc]/30 group-hover:bg-[#86be4c] text-center transform translate-y-[60px] p-4 group-hover:translate-y-[0px] transition-all duration-300 ease-in-out ">
-        <h3 className="uppercase text-[16px] mb-[20px] hover:text-white transition-color duration-200 ease-in-out">
-          Bút cắt gạch ryobi pro dùng cho bàn cắt gạch
-        </h3>
+        <h3 className="uppercase text-[16px] mb-[20px] hover:text-white transition-color duration-200 ease-in-out">{title}</h3>
 
         <div className="capitalize px-2 py-1 rounded-lg border border-[white] text-white text-wrap w-1/2 mx-auto">Xem chi tiết</div>
       </div>
