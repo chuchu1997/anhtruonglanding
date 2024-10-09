@@ -1,5 +1,85 @@
+import { ProductProps } from "@/interfaces";
 export const data = {
-  banner: ["/landingpage1source/banner1.jpg", "/landingpage1source/banner2.jpg", "/landingpage1source/banner3.jpg"],
+  // banner: ["/landingpage1source/banner1.jpg", "/landingpage1source/banner2.jpg", "/landingpage1source/banner3.jpg"],
+
+  listSanPhamChuDaoImages: [
+    "/bancatgach/sanphamchudao/7.png",
+    "/bancatgach/sanphamchudao/8.png",
+
+    "/bancatgach/sanphamchudao/9.png",
+
+    "/bancatgach/sanphamchudao/10.png",
+
+    "/bancatgach/sanphamchudao/11.png",
+  ],
+  sanphamnoibatItems: [
+    {
+      title: "Bàn cắt gạch panapro",
+      imageSrc: "/bancatgach/sanphamnoibat/1.png",
+      href: "https://mayxaydungmoi.com/ban-cat-gach/",
+    },
+    {
+      title: "Bàn cắt gạch Ryobi",
+      imageSrc: "/bancatgach/sanphamnoibat/2.png",
+      href: "https://mayxaydungmoi.com/ban-cat-gach-ryobiqc/",
+    },
+    {
+      title: "Dụng cụ điện dùng pin",
+      imageSrc: "/bancatgach/sanphamnoibat/3.png",
+      href: "https://mayxaydungmoi.com/dung-cu-dien-cam-tay/",
+    },
+    {
+      title: "Máy tia laser",
+      imageSrc: "/bancatgach/sanphamnoibat/4.png",
+      href: "https://mayxaydungmoi.com/may-can-bang-laser-laisai-lsg686spd-tia-xanh/",
+    },
+    {
+      title: "Phụ kiện bàn cắt gạch",
+      imageSrc: "/bancatgach/sanphamnoibat/5.png",
+      href: "https://mayxaydungmoi.com/phu-kien-ban-cat-gach/",
+    },
+    {
+      title: "Phụ kiện ốp lát",
+      imageSrc: "/bancatgach/sanphamnoibat/6.png",
+      href: "https://mayxaydungmoi.com/dung-cu-op-lat-gach/",
+    },
+  ],
+  productNoibat: [
+    {
+      title: "Bàn cắt gạch panapro",
+      linkHref: "https://mayxaydungmoi.com/ban-cat-gach/",
+      imageSrc: "/bancatgach/sanphamnoibat/1.png",
+    },
+    {
+      title: "Bàn cắt gạch Ryobi",
+      linkHref: "#",
+      imageSrc: "/bancatgach/sanphamchudao/8.png",
+    },
+    {
+      title: "cà chua",
+      linkHref: "#",
+      imageSrc: "/bancatgach/sanphamchudao/9.png",
+    },
+    {
+      title: "cà chua",
+      linkHref: "#",
+      imageSrc: "/bancatgach/sanphamchudao/10.png",
+    },
+    {
+      title: "cà chua",
+      linkHref: "#",
+      imageSrc: "/bancatgach/sanphamchudao/11.png",
+    },
+  ],
+
+  banner: [
+    "/bancatgach/banner/11.png",
+    "/bancatgach/banner/12.png",
+    "/bancatgach/banner/13.png",
+    "/bancatgach/banner/14.png",
+    "/bancatgach/banner/17.png",
+    "/bancatgach/banner/18.png",
+  ],
 
   previewOneImages: [
     "/bancatgach/preview1/11.jpg",
@@ -193,16 +273,6 @@ export const data = {
     "/bancatgach/banner/18.png",
   ],
 
-  listSanPhamChuDaoImages: [
-    "/bancatgach/sanphamchudao/7.png",
-    "/bancatgach/sanphamchudao/8.png",
-
-    "/bancatgach/sanphamchudao/9.png",
-
-    "/bancatgach/sanphamchudao/10.png",
-
-    "/bancatgach/sanphamchudao/11.png",
-  ],
   listHotProductsImage: [
     "/sanphamnoibat/1.png",
     "/sanphamnoibat/2.png",
@@ -212,37 +282,4 @@ export const data = {
     "/sanphamnoibat/6.png",
   ],
   listDichVuChoThueImages: ["/dichvuchothuetuikhi/7.png", "/dichvuchothuetuikhi/8.png", "/dichvuchothuetuikhi/9.png", "/dichvuchothuetuikhi/10.png"],
-
-  sanphamnoibatItems: [
-    {
-      title: "Bàn cắt gạch panapro",
-      imageSrc: "/bancatgach/sanphamnoibat/1.png",
-      href: "https://mayxaydungmoi.com/ban-cat-gach/",
-    },
-    {
-      title: "Bàn cắt gạch Ryobi",
-      imageSrc: "/bancatgach/sanphamnoibat/2.png",
-      href: "https://mayxaydungmoi.com/ban-cat-gach-ryobiqc/",
-    },
-    {
-      title: "Dụng cụ điện dùng pin",
-      imageSrc: "/bancatgach/sanphamnoibat/3.png",
-      href: "https://mayxaydungmoi.com/dung-cu-dien-cam-tay/",
-    },
-    {
-      title: "Máy tia laser",
-      imageSrc: "/bancatgach/sanphamnoibat/4.png",
-      href: "https://mayxaydungmoi.com/may-can-bang-laser-laisai-lsg686spd-tia-xanh/",
-    },
-    {
-      title: "Phụ kiện bàn cắt gạch",
-      imageSrc: "/bancatgach/sanphamnoibat/5.png",
-      href: "https://mayxaydungmoi.com/phu-kien-ban-cat-gach/",
-    },
-    {
-      title: "Phụ kiện ốp lát",
-      imageSrc: "/bancatgach/sanphamnoibat/6.png",
-      href: "https://mayxaydungmoi.com/dung-cu-op-lat-gach/",
-    },
-  ],
 };

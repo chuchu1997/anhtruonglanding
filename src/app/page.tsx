@@ -39,83 +39,28 @@ export default function Home() {
     <div className="page-container">
       <main className="main">
         {/* <section className="hero-section relative "> */}
-        <CarouselBanner listImages={data.banner} className="h-[450px] md:h-[650px]" />
+        <CarouselBanner listImages={data.banner} className="h-[400px] md:h-[800px] pt-[80px]" />
         {/* </section> */}
-        <DynamicSectionWrapper titleSection="giới thiệu" className="bg-[white] ">
-          <div className="grid md:grid-cols-4 gap-2 font-cuprum">
-            <div className="grid grid-cols-2 md:grid-cols-1 gap-4">
-              <div className="flex flex-col gap-2 items-center">
-                <Image
-                  className="object-contain border border-gray-300 rounded-full"
-                  src="/landingpage1source/section1/subicon1.png"
-                  alt="subicon"
-                  width={70}
-                  height={70}
-                />
-
-                <h3 className="font-bold text-[20px] text-[#000000]">100% Tự Nhiên</h3>
-                <p className="text-center text-[16px] text-[#333333]">
-                  We care about what you eat. We want to produce food which nourishes your body and tastes delicious.
-                </p>
-              </div>
-
-              <div className="flex flex-col gap-2 items-center">
-                <Image
-                  className="object-contain border border-gray-300 rounded-full"
-                  src="/landingpage1source/section1/subicon1.png"
-                  alt="subicon"
-                  width={70}
-                  height={70}
-                />
-
-                <h3 className="font-bold  text-[20px] text-[#000000]">100% Tự Nhiên</h3>
-                <p className="text-center text-[16px] text-[#333333]">
-                  We care about what you eat. We want to produce food which nourishes your body and tastes delicious.
-                </p>
-              </div>
-            </div>
-            <div className="col-span-1 md:col-span-2">
-              <div className="h-[350px] md:h-[500px] relative">
-                <Image alt="section_1_images" src="/landingpage1source/section1/1.jpg" quality={100} priority className="object-contain" fill></Image>
-              </div>
-            </div>
-            <div className="grid grid-cols-2 md:grid-cols-1 gap-4">
-              <div className="flex flex-col gap-2 items-center">
-                <Image
-                  className="object-contain border border-gray-300 rounded-full"
-                  src="/landingpage1source/section1/subicon1.png"
-                  alt="subicon"
-                  width={70}
-                  height={70}
-                />
-
-                <h3 className="font-bold  text-[20px] text-[#000000]">100% Tự Nhiên</h3>
-                <p className="text-center text-[16px] text-[#333333]">
-                  We care about what you eat. We want to produce food which nourishes your body and tastes delicious.
-                </p>
-              </div>
-
-              <div className="flex flex-col gap-2 items-center">
-                <Image
-                  className="object-contain border border-gray-300 rounded-full"
-                  src="/landingpage1source/section1/subicon1.png"
-                  alt="subicon"
-                  width={70}
-                  height={70}
-                />
-
-                <h3 className="font-bold  text-[20px] text-[#000000]">100% Tự Nhiên</h3>
-                <p className="text-center text-[16px] text-[#333333]">
-                  We care about what you eat. We want to produce food which nourishes your body and tastes delicious.
-                </p>
-              </div>
-            </div>
+        <DynamicSectionWrapper titleSection="chứng nhận phân phối" className="bg-[white] ">
+          <div className="h-[350px] md:h-[600px] relative">
+            <Image alt="section_1_images" src="/bancatgach/chungnhan/1.png" quality={100} priority className="object-contain" fill></Image>
           </div>
         </DynamicSectionWrapper>
-        <section className="">
-          <CarouselBanner listImages={data.banner} className="h-[300px] md:h-[500px]" />
-        </section>
-        <DynamicSectionWrapper titleSection="sản phẩm của chúng tôi">
+
+        <DynamicSectionWrapper titleSection="sản phẩm chủ đạo">
+          <div className="pc-view hidden md:block">
+            <div className="grid mx-auto w-4/6 md:w-full  md:grid-cols-3 lg:grid-cols-4 gap-8">
+              {data.productNoibat.map((product, index) => (
+                <ProductComponent key={index} title={product.title} linkHref={product.linkHref} imageSrc={product.imageSrc} />
+              ))}
+            </div>
+          </div>
+          <div className="mobile-view block md:hidden">
+            <CarouselForProductsMobile products={data.productNoibat} />
+          </div>
+        </DynamicSectionWrapper>
+        {/* 
+        <DynamicSectionWrapper titleSection="sản phẩm chủ đạo">
           <Tabs defaultValue="account">
             <div className="  flex justify-center item-center py-4">
               <TabsList className="bg-transparent">
@@ -153,7 +98,7 @@ export default function Home() {
               </div>
             </TabsContent>
           </Tabs>
-        </DynamicSectionWrapper>
+        </DynamicSectionWrapper> */}
 
         <DynamicSectionWrapper titleSection="sản phẩm nổi bật" className=" bg-[#fbfbfb]">
           <div className="grid md:grid-cols-3 gap-8 font-cuprum">

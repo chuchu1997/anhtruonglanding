@@ -17,11 +17,11 @@ const CarouselBanner = ({ listImages, className }: propsInterface) => {
         {listImages.map((item, index) => {
           return (
             <CarouselItem className="relative" key={index}>
-              <div className="hidden md:block  text-banner absolute text-center text-white z-10 top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2">
+              {/* <div className="hidden md:block  text-banner absolute text-center text-white z-10 top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2">
                 <div className="main-title mb-[15px] font-accent h2 text-[60px] tracking-wide">Thực phẩm hữu cơ {index + 1}</div>
                 <div className="sub-title text-[22px] uppercase tracking-wide ">tốt cho sức khỏe , tốt cho cuộc sống</div>
-              </div>
-              <Image alt="bannerImage" src={item} fill className="object-cover object-top " quality={100} priority></Image>
+              </div> */}
+              <Image alt="bannerImage" src={item} fill className="object-cover object-center md:object-top " quality={100} priority></Image>
             </CarouselItem>
           );
         })}
