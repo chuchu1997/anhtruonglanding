@@ -1,5 +1,6 @@
 export const data = {
   banner: ["/landingpage1source/banner1.jpg", "/landingpage1source/banner2.jpg", "/landingpage1source/banner3.jpg"],
+
   previewOneImages: [
     "/bancatgach/preview1/11.jpg",
     "/bancatgach/preview1/1.jpg",

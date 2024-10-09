@@ -11,11 +11,6 @@ interface propsInterface {
 }
 
 const CarouselBanner = ({ listImages, className }: propsInterface) => {
-  const items = [
-    { image: "https://via.placeholder.com/600x300?text=Slide+1", alt: "Slide 1" },
-    { image: "https://via.placeholder.com/600x300?text=Slide+2", alt: "Slide 2" },
-    { image: "https://via.placeholder.com/600x300?text=Slide+3", alt: "Slide 3" },
-  ];
   return (
     <Carousel className="relative">
       <CarouselContent className={`${className}`}>
@@ -26,7 +21,7 @@ const CarouselBanner = ({ listImages, className }: propsInterface) => {
                 <div className="main-title mb-[15px] font-accent h2 text-[60px] tracking-wide">Thực phẩm hữu cơ {index + 1}</div>
                 <div className="sub-title text-[22px] uppercase tracking-wide ">tốt cho sức khỏe , tốt cho cuộc sống</div>
               </div>
-              <Image alt="bannerImage" src={item} fill className="object-cover object-bottom " quality={100} priority></Image>
+              <Image alt="bannerImage" src={item} fill className="object-cover object-top " quality={100} priority></Image>
             </CarouselItem>
           );
         })}
