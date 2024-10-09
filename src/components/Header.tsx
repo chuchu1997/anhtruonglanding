@@ -34,6 +34,31 @@ const dataMenus = [
   },
 ];
 const Header = () => {
+  const [showNavbarOnScroll, setShowNavbarOnScroll] = useState(false);
+  const [lastScrollY, setLastScrollY] = useState(0);
+
+  const handleScroll = () => {
+    if (typeof window !== "undefined") {
+      const scrollY = window.scrollY;
+      // setShowNavbarOnScroll(scrollY < lastScrollY || scrollY < 50);
+      // setLastScrollY(scrollY);
+      console.log("SCROLL Y ", scrollY);
+      if (scrollY > 120) {
+        setShowNavbarOnScroll(true);
+        setLastScrollY(scrollY);
+      } else {
+        setShowNavbarOnScroll(false);
+        setLastScrollY(scrollY);
+      }
+    }
+  };
+
+  useEffect(() => {
+    window.addEventListener("scroll", handleScroll);
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, [lastScrollY]);
   return (
     <header>
       <div className="header-top-absolute absolute left-0 top-0 right-0 z-30  text-white text-[12px]">
@@ -83,9 +108,48 @@ const Header = () => {
           </Sheet>
         </div>
       </div>
-
-      <div></div>
-      <div className="header-onscroll hidden"></div>
+      {/* THIS IS NAVBAR ONSCROLLL  */}
+      {/* THIS IS NAVBAR ONSCROLLL  */}
+      <div
+        className={`fixed z-50 top-0 left-0 w-full bg-[#333333] shadow-md transition-transform duration-300 ${
+          showNavbarOnScroll ? "translate-y-0" : "-translate-y-full"
+        }`}
+      >
+        <div className="container mx-auto p-2 flex justify-between items-center">
+          <Link href="/">
+            <Image src="/landingpage1source/logo/logo.png" width={120} height={120} quality={100} alt="logo"></Image>
+          </Link>
+          <div className="gap-4 hidden md:flex">
+            {dataMenus.map((menuItem, index) => (
+              <LinkComponentCustom
+                key={index}
+                title={menuItem.title}
+                href={menuItem.href}
+                className="text-[14px] font-semibold uppercase text-white"
+              ></LinkComponentCustom>
+            ))}
+          </div>
+          <Sheet>
+            <SheetTrigger asChild>
+              <Menu className="block md:hidden cursor-pointer text-white"></Menu>
+            </SheetTrigger>
+            <SheetContent>
+              <div className="mt-[14px]">
+                {dataMenus.map((menuItem, index) => (
+                  <LinkComponentCustom
+                    key={index}
+                    title={menuItem.title}
+                    href={menuItem.href}
+                    className="text-[14px] font-semibold uppercase my-2"
+                  ></LinkComponentCustom>
+                ))}
+              </div>
+            </SheetContent>
+          </Sheet>
+        </div>
+      </div>
+      {/* THIS IS NAVBAR ONSCROLLL  */}
+      {/* THIS IS NAVBAR ONSCROLLL  */}
     </header>
   );
 };

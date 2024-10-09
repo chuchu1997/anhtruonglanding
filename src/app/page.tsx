@@ -130,7 +130,7 @@ export default function Home() {
 
             <TabsContent value="account">
               <div className="pc-view hidden md:block">
-                <div className="grid mx-auto w-4/6 md:w-full  md:grid-cols-3 gap-8">
+                <div className="grid mx-auto w-4/6 md:w-full  md:grid-cols-3 lg:grid-cols-4 gap-8">
                   {products.map((product, index) => (
                     <ProductComponent key={index} title={product.title} linkHref={product.linkHref} imageSrc={product.imageSrc} />
                   ))}
@@ -142,7 +142,7 @@ export default function Home() {
             </TabsContent>
             <TabsContent value="password">
               <div className="pc-view hidden md:block">
-                <div className="grid mx-auto w-4/6 md:w-full  md:grid-cols-3 gap-8">
+                <div className="grid mx-auto w-4/6 md:w-full  md:grid-cols-3 lg:grid-cols-4 gap-8">
                   {products.map((product, index) => (
                     <ProductComponent key={index} title={product.title} linkHref={product.linkHref} imageSrc={product.imageSrc} />
                   ))}

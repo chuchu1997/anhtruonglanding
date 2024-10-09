@@ -175,19 +175,12 @@ const Footer = () => {
             ))}
           </div>
         </div>
-        <div className="footer-center flex flex-col md:flex-row items-start   gap-6 justify-between  ">
+        <div className="footer-center grid grid-cols-1 md:grid-cols-2 gap-8 ">
           {footerCenterItems2.map((item, index) => (
-            <ul key={index}>
+            <ul key={index} className=" ">
               <h3 className="uppercase font-semibold mb-[20px]"> {item.title}</h3>
               {item.description.map((descriptionItem, index2) => (
                 <li key={index2} className="mb-[2px] ">
-                  {/* <Link
-                    href={descriptionItem.link ? descriptionItem.link : "/"}
-                    className="text-[14px] flex items-center gap-2 text-[#cccccc] hover:text-white"
-                  >
-                    {descriptionItem.icon && <descriptionItem.icon size={16} />}
-                    <span> {descriptionItem.content}</span>
-                  </Link> */}
                   <div className="text-[16px] flex items-center gap-4 justify-between text-[#ccccc] hover:text-white ">
                     {descriptionItem.icon && <descriptionItem.icon size={16} />}
                     <span> {descriptionItem.content}</span>
