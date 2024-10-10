@@ -52,15 +52,15 @@ export default function Home() {
         </DynamicSectionWrapper>
 
         <DynamicSectionWrapper titleSection="bàn cắt gạch panapro (có đệm)" className=" bg-[#fbfbfb]">
-          <div className="grid md:grid-cols-2 gap-10 font-cuprum">
+          <div className="grid sm:grid-cols-1  md:grid-cols-1 lg:grid-cols-2 gap-10 font-cuprum">
             <div className="">
-              <div className="h-[350px] md:h-full relative">
+              <div className="h-[350px] md:h-[500px] lg:h-full relative">
                 <Image
                   alt="section_1_images"
                   src="/bancatgach/preview1/11.jpg"
                   quality={100}
                   sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
-                  className="object-cover object-center"
+                  className="object-cover object-center rounded-xl shadow-lg"
                   fill
                 ></Image>
               </div>
@@ -93,7 +93,7 @@ export default function Home() {
         </DynamicSectionWrapper>
 
         <DynamicSectionWrapper titleSection="bàn cắt gạch panapro (không đệm)" className=" bg-white">
-          <div className="grid md:grid-cols-2 gap-10 font-cuprum">
+          <div className="grid sm:grid-cols-1  md:grid-cols-1 lg:grid-cols-2 gap-10 font-cuprum">
             <div className="flex flex-col gap-2 text-[16px] md:text-[18px] font-extralight	">
               {/* <div>123</div> */}
               <h3 className="text-[24px] md:text-[30px]  font-bold uppercase">Bàn cắt gạch PANAPRO (không đệm)</h3>
@@ -119,13 +119,13 @@ export default function Home() {
               </Link>
             </div>
             <div className="">
-              <div className="h-[350px] md:h-full relative">
+              <div className="h-[350px] md:h-[500px] lg:h-full relative">
                 <Image
                   alt="section_1_images"
                   src="/bancatgach/preview1/33.jpg"
                   quality={100}
                   sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
-                  className="object-cover object-center"
+                  className="object-cover object-center rounded-xl shadow-lg"
                   fill
                 ></Image>
               </div>
