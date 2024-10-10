@@ -31,8 +31,8 @@ const CarouselForProductsMobile = (props: propsType) => {
                   className="object-cover object-center"
                 ></Image>
               </div>
-              <div className="relative left-0 bottom-[0] right-0  font-cuprum product-info bg-[#cccccc]/30 py-[6px]    ">
-                <h3 className="uppercase  text-center">{product.title}</h3>
+              <div className="font-cuprum product-info text-center mt-[20px] bg-[#cecece]/40 p-4 overflow-hidden h-[90px] group-hover:bg-[#86be4c] transition-all duration-300 ease-in-out">
+                <h3 className="uppercase text-[16px]  ">{product.title}</h3>
               </div>
             </Link>
           </CarouselItem>

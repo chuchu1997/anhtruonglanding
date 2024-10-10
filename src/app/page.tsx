@@ -136,7 +136,7 @@ export default function Home() {
         <DynamicSectionWrapper titleSection="Bàn cắt gạch" className="bg-[#fbfbfb]" id="bancatgach">
           <Tabs defaultValue="panapro-codem">
             <div className="flex  justify-center item-center py-4">
-              <TabsList className="bg-transparent  flex flex-col md:flex-row items-start mb-[10px]  md:mb-0">
+              <TabsList className="bg-transparent  flex flex-col md:flex-row items-start mb-[20px]  md:mb-0  w-full">
                 <TabsTrigger value="panapro-codem" className="font-cuprum ">
                   Bàn cắt gạch Pana Pro (Có đệm)
                 </TabsTrigger>
@@ -191,7 +191,7 @@ export default function Home() {
         <DynamicSectionWrapper titleSection="Các sản phẩm khác" id="cacsanphamkhac">
           <Tabs defaultValue="phukiencatgach">
             <div className="flex  justify-center item-center py-4">
-              <TabsList className="bg-transparent  flex flex-col md:flex-row items-start mb-[40px] md:mb-0">
+              <TabsList className="bg-transparent  flex flex-col md:flex-row items-start mb-[40px] md:mb-0  w-full">
                 <TabsTrigger value="phukiencatgach" className="font-cuprum ">
                   Phụ kiện bàn cắt gạch
                 </TabsTrigger>
@@ -209,7 +209,7 @@ export default function Home() {
 
             <TabsContent value="phukiencatgach">
               <div className="pc-view hidden md:block">
-                <div className="grid mx-auto w-4/6 md:w-full  md:grid-cols-3  gap-8">
+                <div className="grid mx-auto w-4/6 md:w-full  md:grid-cols-3 lg:grid-cols-4 gap-8">
                   {data.phukienbancatgach.map((product, index) => (
                     <Product key={index} title={product.title} linkHref={product.linkHref} imageSrc={product.imageSrc} />
                   ))}
@@ -221,7 +221,7 @@ export default function Home() {
             </TabsContent>
             <TabsContent value="phukienopgach">
               <div className="pc-view hidden md:block">
-                <div className="grid mx-auto w-4/6 md:w-full  md:grid-cols-3  gap-8">
+                <div className="grid mx-auto w-4/6 md:w-full  md:grid-cols-3 lg:grid-cols-4 gap-8">
                   {data.phukienoplatgach.map((product, index) => (
                     <Product key={index} title={product.title} linkHref={product.linkHref} imageSrc={product.imageSrc} />
                   ))}
@@ -233,7 +233,7 @@ export default function Home() {
             </TabsContent>
             <TabsContent value="maytialaser">
               <div className="pc-view hidden md:block">
-                <div className="grid mx-auto w-4/6 md:w-full  md:grid-cols-3  gap-8">
+                <div className="grid mx-auto w-4/6 md:w-full  md:grid-cols-3 lg:grid-cols-4 gap-8">
                   {data.maycanbanglaser.map((product, index) => (
                     <Product key={index} title={product.title} linkHref={product.linkHref} imageSrc={product.imageSrc} />
                   ))}
@@ -245,7 +245,7 @@ export default function Home() {
             </TabsContent>
             <TabsContent value="dungcucamtaypin">
               <div className="pc-view hidden md:block">
-                <div className="grid mx-auto w-4/6 md:w-full  md:grid-cols-3  gap-8">
+                <div className="grid mx-auto w-4/6 md:w-full  md:grid-cols-3 lg:grid-cols-4 gap-8">
                   {data.dungcucamtaypin.map((product, index) => (
                     <Product key={index} title={product.title} linkHref={product.linkHref} imageSrc={product.imageSrc} />
                   ))}
