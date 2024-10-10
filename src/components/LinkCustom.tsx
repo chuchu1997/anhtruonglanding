@@ -1,3 +1,4 @@
+"use client";
 import React from "react";
 import { Icon } from "react-feather";
 import Link from "next/link";
@@ -10,10 +11,15 @@ interface IconComponentProps {
 }
 const LinkComponentCustom = ({ icon: FeatherIcon, href, title, className }: IconComponentProps) => {
   return (
-    <Link href={href} className={`${className} flex items-center gap-2 hover:text-[#86be4c] transition-color duration-150 ease-in-out`}>
+    <div
+      onClick={() => {
+        document.getElementById(href)!.scrollIntoView({ behavior: "smooth" });
+      }}
+      className={`${className} cursor-pointer flex items-center gap-2 hover:text-[#86be4c] transition-color duration-150 ease-in-out`}
+    >
       {FeatherIcon && <FeatherIcon size={14} />}
       <span>{title}</span>
-    </Link>
+    </div>
   );
 };
 export default LinkComponentCustom;

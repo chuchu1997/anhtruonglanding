@@ -13,20 +13,16 @@ import { Sheet, SheetClose, SheetContent, SheetDescription, SheetFooter, SheetHe
 
 const dataMenus = [
   {
-    title: "Trang chủ",
-    href: "/",
-  },
-  {
     title: "Đại lý phân phối Panapro",
-    href: "#bancatgach",
+    href: "bancatgach",
   },
   {
     title: "Đại lý phân phối Ryobipro",
-    href: "#bancatgach",
+    href: "bancatgach",
   },
   {
     title: "Phụ kiện",
-    href: "#cacsanphamkhac",
+    href: "cacsanphamkhac",
   },
 ];
 const Header = () => {
