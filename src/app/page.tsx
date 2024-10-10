@@ -1,46 +1,24 @@
 import dynamic from "next/dynamic";
 
-const DynamicSectionWrapper = dynamic(() => import("@/components/Section"), {});
-
 import { data } from "@/data/data";
-import CarouselBanner from "@/components/CarouselBanner";
 import Image from "next/image";
 
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
-import ProductComponent from "@/components/Product";
-import Link from "next/link";
-import CarouselForProductsMobile from "@/components/CarouselForProductsMobile";
-import { ProductProps } from "@/interfaces";
-const DynamicShapeSale = dynamic(() => import("@/components/ShapeSale"));
 
+import Link from "next/link";
+const DynamicSectionWrapper = dynamic(() => import("@/components/Section"), {});
+
+const DynamicShapeSale = dynamic(() => import("@/components/ShapeSale"));
+const DynamicCarouselBanner = dynamic(() => import("@/components/CarouselBanner"));
+
+import Product from "@/components/Product";
+const DynamicCarouselProductMobile = dynamic(() => import("@/components/CarouselForProductsMobile"));
 export default function Home() {
-  const products: ProductProps[] = [
-    {
-      title: "cà chua s",
-      linkHref: "#",
-      imageSrc: "/landingpage1source/section1/subicon1.png",
-    },
-    {
-      title: "cà chua1",
-      linkHref: "#",
-      imageSrc: "/landingpage1source/section1/subicon1.png",
-    },
-    {
-      title: "cà chua",
-      linkHref: "#",
-      imageSrc: "/landingpage1source/section1/subicon1.png",
-    },
-    {
-      title: "cà chua",
-      linkHref: "#",
-      imageSrc: "/landingpage1source/section1/subicon1.png",
-    },
-  ];
   return (
     <div className="page-container">
       <main className="main">
         {/* <section className="hero-section relative "> */}
-        <CarouselBanner listImages={data.banner} className="h-[400px] md:h-[800px] pt-[80px]" />
+        <DynamicCarouselBanner listImages={data.banner} className="h-[400px] md:h-[800px] pt-[80px]" />
         {/* </section> */}
         <DynamicSectionWrapper titleSection="chứng nhận phân phối" className="bg-[white] ">
           <div className="h-[350px] md:h-[600px] relative">
@@ -70,7 +48,7 @@ export default function Home() {
         </DynamicSectionWrapper>
 
         <DynamicSectionWrapper titleSection="sản phẩm chủ đạo" isFullWidth={true}>
-          <CarouselBanner listImages={data.listSanPhamChuDaoImages} className="h-[250px] md:h-[650px]" />
+          <DynamicCarouselBanner listImages={data.listSanPhamChuDaoImages} className="h-[250px] md:h-[650px]" />
         </DynamicSectionWrapper>
 
         <DynamicSectionWrapper titleSection="bàn cắt gạch panapro (có đệm)" className=" bg-[#fbfbfb]">
@@ -81,7 +59,7 @@ export default function Home() {
                   alt="section_1_images"
                   src="/bancatgach/preview1/11.jpg"
                   quality={100}
-                  priority
+                  sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
                   className="object-cover object-center"
                   fill
                 ></Image>
@@ -146,7 +124,7 @@ export default function Home() {
                   alt="section_1_images"
                   src="/bancatgach/preview1/33.jpg"
                   quality={100}
-                  priority
+                  sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
                   className="object-cover object-center"
                   fill
                 ></Image>
@@ -175,36 +153,36 @@ export default function Home() {
               <div className="pc-view hidden md:block">
                 <div className="grid mx-auto w-4/6 md:w-full  md:grid-cols-3 lg:grid-cols-4 gap-8">
                   {data.productPanaprocodem.map((product, index) => (
-                    <ProductComponent key={index} title={product.title} linkHref={product.linkHref} imageSrc={product.imageSrc} />
+                    <Product key={index} title={product.title} linkHref={product.linkHref} imageSrc={product.imageSrc} />
                   ))}
                 </div>
               </div>
               <div className="mobile-view block md:hidden">
-                <CarouselForProductsMobile products={data.productPanaprocodem} />
+                <DynamicCarouselProductMobile products={data.productPanaprocodem} />
               </div>
             </TabsContent>
             <TabsContent value="panapro-khongdem">
               <div className="pc-view hidden md:block">
                 <div className="grid mx-auto w-4/6 md:w-full  md:grid-cols-3 lg:grid-cols-4 gap-8">
                   {data.productPanaprokhongdem.map((product, index) => (
-                    <ProductComponent key={index} title={product.title} linkHref={product.linkHref} imageSrc={product.imageSrc} />
+                    <Product key={index} title={product.title} linkHref={product.linkHref} imageSrc={product.imageSrc} />
                   ))}
                 </div>
               </div>
               <div className="mobile-view block md:hidden">
-                <CarouselForProductsMobile products={data.productPanaprokhongdem} />
+                <DynamicCarouselProductMobile products={data.productPanaprokhongdem} />
               </div>
             </TabsContent>
             <TabsContent value="ryobi">
               <div className="pc-view hidden md:block">
                 <div className="grid mx-auto w-4/6 md:w-full  md:grid-cols-3 lg:grid-cols-4 gap-8">
                   {data.productRioby.map((product, index) => (
-                    <ProductComponent key={index} title={product.title} linkHref={product.linkHref} imageSrc={product.imageSrc} />
+                    <Product key={index} title={product.title} linkHref={product.linkHref} imageSrc={product.imageSrc} />
                   ))}
                 </div>
               </div>
               <div className="mobile-view block md:hidden">
-                <CarouselForProductsMobile products={data.productRioby} />
+                <DynamicCarouselProductMobile products={data.productRioby} />
               </div>
             </TabsContent>
           </Tabs>
@@ -233,48 +211,48 @@ export default function Home() {
               <div className="pc-view hidden md:block">
                 <div className="grid mx-auto w-4/6 md:w-full  md:grid-cols-3  gap-8">
                   {data.phukienbancatgach.map((product, index) => (
-                    <ProductComponent key={index} title={product.title} linkHref={product.linkHref} imageSrc={product.imageSrc} />
+                    <Product key={index} title={product.title} linkHref={product.linkHref} imageSrc={product.imageSrc} />
                   ))}
                 </div>
               </div>
               <div className="mobile-view block md:hidden">
-                <CarouselForProductsMobile products={data.phukienbancatgach} />
+                <DynamicCarouselProductMobile products={data.phukienbancatgach} />
               </div>
             </TabsContent>
             <TabsContent value="phukienopgach">
               <div className="pc-view hidden md:block">
                 <div className="grid mx-auto w-4/6 md:w-full  md:grid-cols-3  gap-8">
                   {data.phukienoplatgach.map((product, index) => (
-                    <ProductComponent key={index} title={product.title} linkHref={product.linkHref} imageSrc={product.imageSrc} />
+                    <Product key={index} title={product.title} linkHref={product.linkHref} imageSrc={product.imageSrc} />
                   ))}
                 </div>
               </div>
               <div className="mobile-view block md:hidden">
-                <CarouselForProductsMobile products={data.phukienoplatgach} />
+                <DynamicCarouselProductMobile products={data.phukienoplatgach} />
               </div>
             </TabsContent>
             <TabsContent value="maytialaser">
               <div className="pc-view hidden md:block">
                 <div className="grid mx-auto w-4/6 md:w-full  md:grid-cols-3  gap-8">
                   {data.maycanbanglaser.map((product, index) => (
-                    <ProductComponent key={index} title={product.title} linkHref={product.linkHref} imageSrc={product.imageSrc} />
+                    <Product key={index} title={product.title} linkHref={product.linkHref} imageSrc={product.imageSrc} />
                   ))}
                 </div>
               </div>
               <div className="mobile-view block md:hidden">
-                <CarouselForProductsMobile products={data.maycanbanglaser} />
+                <DynamicCarouselProductMobile products={data.maycanbanglaser} />
               </div>
             </TabsContent>
             <TabsContent value="dungcucamtaypin">
               <div className="pc-view hidden md:block">
                 <div className="grid mx-auto w-4/6 md:w-full  md:grid-cols-3  gap-8">
                   {data.dungcucamtaypin.map((product, index) => (
-                    <ProductComponent key={index} title={product.title} linkHref={product.linkHref} imageSrc={product.imageSrc} />
+                    <Product key={index} title={product.title} linkHref={product.linkHref} imageSrc={product.imageSrc} />
                   ))}
                 </div>
               </div>
               <div className="mobile-view block md:hidden">
-                <CarouselForProductsMobile products={data.dungcucamtaypin} />
+                <DynamicCarouselProductMobile products={data.dungcucamtaypin} />
               </div>
             </TabsContent>
           </Tabs>

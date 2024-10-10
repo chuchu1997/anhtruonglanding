@@ -21,7 +21,15 @@ const CarouselForProductsMobile = (props: propsType) => {
           <CarouselItem key={index} className=" relative ">
             <Link href={product.linkHref}>
               <div className="relative  h-[280px]  ">
-                <Image alt={product.title} src={product.imageSrc} fill className="object-cover object-center" quality={100} priority></Image>
+                <Image
+                  sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+                  src={product.imageSrc}
+                  fill
+                  alt={product.title}
+                  priority
+                  quality={100}
+                  className="object-cover object-center"
+                ></Image>
               </div>
               <div className="relative left-0 bottom-[0] right-0  font-cuprum product-info bg-[#cccccc]/30 py-[6px]    ">
                 <h3 className="uppercase  text-center">{product.title}</h3>

@@ -154,7 +154,7 @@ const Header = () => {
     >
       <div className="container mx-auto px-4 py-2 flex justify-between items-center">
         <Link href="/">
-          <Image src="/bancatgach/logo/logo.png" width={120} height={120} quality={100} alt="logo"></Image>
+          <Image src="/bancatgach/logo/logo.png" style={{ width: "auto", height: "auto" }} width={120} height={120} quality={100} alt="logo"></Image>
         </Link>
         <div className="gap-4 hidden md:flex">
           {dataMenus.map((menuItem, index) => (
@@ -167,10 +167,15 @@ const Header = () => {
           ))}
         </div>
         <Sheet>
+          <SheetTitle></SheetTitle>
+
           <SheetTrigger asChild>
             <Menu className="block md:hidden cursor-pointer text-white"></Menu>
           </SheetTrigger>
-          <SheetContent>
+          <SheetContent aria-describedby={"description"}>
+            <SheetHeader>
+              <SheetDescription></SheetDescription>
+            </SheetHeader>
             <div className="mt-[14px]">
               {dataMenus.map((menuItem, index) => (
                 <LinkComponentCustom
