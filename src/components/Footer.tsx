@@ -7,7 +7,7 @@ import { link } from "fs";
 
 const socials = [
   {
-    href: "",
+    href: "https://www.facebook.com/mayxaydungmoi",
     icon: Facebook,
   },
   {
@@ -15,7 +15,7 @@ const socials = [
     icon: Instagram,
   },
   {
-    href: "",
+    href: "https://www.youtube.com/@mayxaydungmoi",
     icon: Youtube,
   },
   {
@@ -160,7 +160,7 @@ const Footer = () => {
       <div className="container mx-auto text-white font-cuprum italic flex flex-col">
         <div className="footer-top flex flex-col justify-center items-center gap-6 ">
           <Link href="/">
-            <Image src="/landingpage1source/logo/logo.png" width={140} height={140} quality={100} alt="logo"></Image>
+            <Image src="/bancatgach/logo/logo.png" width={180} height={180} quality={100} alt="logo"></Image>
           </Link>
           <div className="social-media flex gap-6 mb-[40px]">
             {/* {Array.from({ length: 4 }, (_, i) => (
@@ -169,7 +169,7 @@ const Footer = () => {
               </Link>
             ))} */}
             {socials.map((item, i) => (
-              <Link href={item.href} key={i}>
+              <Link href={item.href} key={i} target="_blank">
                 <item.icon size={18} className="text-white hover:text-[red] transition-all duration-200 ease-in-out"></item.icon>
               </Link>
             ))}

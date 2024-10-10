@@ -12,7 +12,7 @@ interface propsInterface {
 
 const CarouselBanner = ({ listImages, className }: propsInterface) => {
   return (
-    <Carousel className="relative">
+    <Carousel className="relative ">
       <CarouselContent className={`${className}`}>
         {listImages.map((item, index) => {
           return (
@@ -21,7 +21,15 @@ const CarouselBanner = ({ listImages, className }: propsInterface) => {
                 <div className="main-title mb-[15px] font-accent h2 text-[60px] tracking-wide">Thực phẩm hữu cơ {index + 1}</div>
                 <div className="sub-title text-[22px] uppercase tracking-wide ">tốt cho sức khỏe , tốt cho cuộc sống</div>
               </div> */}
-              <Image alt="bannerImage" src={item} fill className="object-cover object-center md:object-top " quality={100} priority></Image>
+              <Image
+                alt="bannerImage"
+                sizes="(max-width: 768px) 100vw, (max-width: 1200px) 30vw"
+                src={item}
+                fill
+                className="object-cover object-center md:object-top "
+                quality={100}
+                priority
+              ></Image>
             </CarouselItem>
           );
         })}

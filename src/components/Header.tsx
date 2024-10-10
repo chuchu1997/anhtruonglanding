@@ -17,20 +17,16 @@ const dataMenus = [
     href: "/",
   },
   {
-    title: "giới thiệu",
-    href: "/",
+    title: "Đại lý phân phối Panapro",
+    href: "#bancatgach",
   },
   {
-    title: "sản phẩm",
-    href: "/",
+    title: "Đại lý phân phối Ryobipro",
+    href: "#bancatgach",
   },
   {
-    title: "liên hệ",
-    href: "/",
-  },
-  {
-    title: "hướng dẫn",
-    href: "/",
+    title: "Phụ kiện",
+    href: "#cacsanphamkhac",
   },
 ];
 const Header = () => {
@@ -42,7 +38,7 @@ const Header = () => {
       const scrollY = window.scrollY;
       // setShowNavbarOnScroll(scrollY < lastScrollY || scrollY < 50);
       // setLastScrollY(scrollY);
-      console.log("SCROLL Y ", scrollY);
+
       if (scrollY > 120) {
         setShowNavbarOnScroll(true);
         setLastScrollY(scrollY);
@@ -184,6 +180,9 @@ const Header = () => {
                   className="text-[14px] font-semibold uppercase my-2"
                 ></LinkComponentCustom>
               ))}
+              <Link target="_blank" href="https://zalo.me/0973926139" className="px-4 py-2 w-2/5 text-center rounded-lg text-white bg-[#86be4c]">
+                Liên hệ
+              </Link>
             </div>
           </SheetContent>
         </Sheet>

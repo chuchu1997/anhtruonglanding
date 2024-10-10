@@ -101,6 +101,7 @@ export default function RootLayout({
 
       <body className={`${jetbrains.variable} ${pacifico.variable}  ${cuprum.variable}`} suppressHydrationWarning={true}>
         <Header />
+        <BlockSidebar />
         {/* <BlockSidebar />
         <DockBottomContact /> */}
         {/* <StairEffect /> */}
