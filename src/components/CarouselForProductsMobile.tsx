@@ -15,12 +15,12 @@ const CarouselForProductsMobile = (props: propsType) => {
   const { products } = props;
 
   return (
-    <Carousel className="mt-[14px] w-4/6 mx-auto shadow-md rounded-lg overflow-hidden">
+    <Carousel className="mt-[14px] w-5/6 mx-auto shadow-md rounded-lg overflow-hidden">
       <CarouselContent className="">
         {products.map((product, index) => (
           <CarouselItem key={index} className=" relative ">
             <Link href={product.linkHref}>
-              <div className="relative  h-[280px]  ">
+              <div className="relative  h-[300px]  ">
                 <Image
                   sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
                   src={product.imageSrc}
