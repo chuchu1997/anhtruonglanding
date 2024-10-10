@@ -19,7 +19,7 @@ const CarouselForProductsMobile = (props: propsType) => {
       <CarouselContent className="">
         {products.map((product, index) => (
           <CarouselItem key={index} className=" relative ">
-            <Link href={product.linkHref}>
+            <Link href={product.linkHref} target="_blank">
               <div className="relative  h-[300px]  ">
                 <Image
                   sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
