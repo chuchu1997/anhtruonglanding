@@ -1,8 +1,9 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
     // output:"export",
-    reactStrictMode: true,
+    reactStrictMode: false,
     images: {
+      dangerouslyAllowSVG: true,
       // path: "/",
       //EDIT PATH /
        formats: ['image/avif', 'image/webp'],
@@ -15,6 +16,11 @@ const nextConfig = {
             protocol: 'https',
             hostname: 'mayxaydungmoi.com',
           },
+          {
+            protocol: 'https',
+            hostname: 'api.dicebear.com',
+          },
+        
         ],
       },
 

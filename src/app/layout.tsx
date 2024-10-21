@@ -98,15 +98,15 @@ export default function RootLayout({
     <html lang="en">
       <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
       <link rel="icon" href="/favicon.ico" sizes="any" />
-
       <body className={`${jetbrains.variable} ${pacifico.variable}  ${cuprum.variable}`} suppressHydrationWarning={true}>
-        <Header />
+        {/* <Header /> */}
+
         {/* <BlockSidebar />
         <DockBottomContact /> */}
         {/* <StairEffect /> */}
         {/* <PageTransition></PageTransition> */}
-        <div>{children}</div>
-        <Footer />
+        <div className="min-h-[500px]">{children}</div>
+        {/* <Footer /> */}
       </body>
     </html>
   );
