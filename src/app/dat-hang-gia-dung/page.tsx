@@ -51,7 +51,68 @@ const DatHangGiaDung = () => {
   };
   return (
     <div>
-      <DynamicSectionWrapper className="">THIS IS PAGE DAT HANG</DynamicSectionWrapper>
+      <DynamicSectionWrapper className="mb-[40px]" titleSection="thông tin sản phẩm">
+        <div className="info-product flex flex-col gap-9">
+          <div className="relative h-[460px] md:h-[1000px] w-full">
+            <Image src="/maymassage/5.webp" fill alt="maymassagecovaigay" className="md:object-contain object-cover"></Image>
+          </div>
+
+          <div className="content-1 ">
+            <strong className="text-[#666666] text-[15px]">Đai đeo massage lưng vai cổ gáy</strong>
+
+            <div className="text-[14px]">
+              <p>
+                Mỏi vai là một triệu chứng thường xảy ra với mọi lứa tuổi, mọi giới... Nguyên nhân có thể là do chơi thể thao, học hành và làm việc
+                quá nhiều...
+              </p>
+              <p>
+                Đặc biệt bệnh rất dễ xảy ra đối với người bắt đầu đến tuổi trung niên, với hệ mạch máu đã giảm tính dẻo dai, đàn hồi. sử dụng đơn giản
+                và gọn nhẹ, chính là giải pháp cho bạn.
+              </p>
+            </div>
+          </div>
+
+          <div className="content-2 ">
+            <strong className="text-[#666666]">Ưu điểm sản phẩm</strong>
+            <div className="text-[14px]">
+              <ul>
+                <li>- Có hiệu quả thư giãn vai/ cơ vùng cổ và làm dịu đau nhức</li>
+                <li>- Phù hợp cho xoa bóp vùng giữa lưng, dưới lưng, bụng, bắp chân và đùi</li>
+                <li>- Cải thiện tuần hoàn và lưu thông mạch máu</li>
+                <li>- Gọn nhẹ và dễ dàng massage ngay khi bạn ở nhà hay ở văn phòng. - Giảm căng thẳng tối đa</li>
+              </ul>
+            </div>
+          </div>
+          <div className="content-3 ">
+            <strong className="text-[#666666]">Thông số kỹ thuật:</strong>
+            <div className="text-[14px]">
+              <ul>
+                <li>- Điện áp: AC 220V-240V</li>
+                <li>- Tần số: 50-60Hz</li>
+                <li>- Công suất: 45W</li>
+                <li>- Kích thước : 140*20 cm</li>
+              </ul>
+            </div>
+          </div>
+          <div className="relative h-[460px] md:h-[1000px] w-full">
+            <Image src="/maymassage/1.png" fill alt="maymassagecovaigay" className="md:object-contain object-cover"></Image>
+          </div>
+
+          <div className="relative h-[500px] md:h-[1000px] w-full">
+            <Image src="/maymassage/2.webp" fill alt="maymassagecovaigay" className="md:object-contain object-cover"></Image>
+          </div>
+
+          <div className="relative  h-[720px] md:h-[1000px] w-full">
+            <Image src="/maymassage/3.png" fill alt="maymassagecovaigay" className="md:object-contain object-cover"></Image>
+          </div>
+          <div className="relative  h-[500px] md:h-[1000px] w-full">
+            <Image src="/maymassage/4.webp" fill alt="maymassagecovaigay" className="md:object-contain object-cover"></Image>
+          </div>
+          <div className="relative h-[460px] md:h-[1000px] w-full">
+            <Image src="/maymassage/6.webp" fill alt="maymassagecovaigay" className="md:object-contain object-cover"></Image>
+          </div>
+        </div>
+      </DynamicSectionWrapper>
 
       <DynamicSectionWrapper className="" id="danhgia" titleSection="đánh giá sản phẩm">
         <div className="comments">

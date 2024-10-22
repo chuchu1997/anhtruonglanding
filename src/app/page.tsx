@@ -41,7 +41,7 @@ export default function Home() {
         {/* <section className="hero-section relative "> */}
         <CarouselBanner listImages={data.banner} className="h-[450px] md:h-[650px]" />
         {/* </section> */}
-        <DynamicSectionWrapper titleSection="giới thiệu" className="bg-[white] ">
+        {/* <DynamicSectionWrapper titleSection="giới thiệu" className="bg-[white] ">
           <div className="grid md:grid-cols-4 gap-2 font-cuprum">
             <div className="grid grid-cols-2 md:grid-cols-1 gap-4">
               <div className="flex flex-col gap-2 items-center">
@@ -111,7 +111,7 @@ export default function Home() {
               </div>
             </div>
           </div>
-        </DynamicSectionWrapper>
+        </DynamicSectionWrapper> */}
         <section className="">
           <CarouselBanner listImages={data.banner} className="h-[300px] md:h-[500px]" />
         </section>

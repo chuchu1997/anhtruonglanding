@@ -14,7 +14,7 @@ const SectionComponent: React.FC<Props> = ({ titleSection, children, id, classNa
   return (
     <section className={`${className} `} id={id}>
       <div className="container mx-auto">
-        <h2 className="capitalize text-[30px] lg:text-[60px] font-accent ">{titleSection}</h2>
+        <h2 className="capitalize text-[30px] lg:text-[60px] font-accent text-center mb-[15px]">{titleSection}</h2>
         <div className="content-section">{children}</div>
       </div>
     </section>

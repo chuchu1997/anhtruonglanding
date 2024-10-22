@@ -4,7 +4,7 @@ export default function DatHangLayout({ children }: { children: React.ReactNode 
   return (
     <section>
       <HeaderDatHang />
-      <div className="relative top-[110px] mb-[210px]"> {children}</div>
+      <div className="relative top-[150px] mb-[250px]"> {children}</div>
       <FooterDatHang />
     </section>
   );
