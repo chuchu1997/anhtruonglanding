@@ -1,16 +1,17 @@
 "use client";
-import React, { useEffect, useState, CSSProperties } from "react";
+import React, { useEffect, useState, CSSProperties, useRef } from "react";
 import { X } from "react-feather";
 import axios from "axios";
 import { Input } from "@/components/ui/input";
-
-import Image from "next/image";
-
-import MoonLoader from "react-spinners/MoonLoader";
+import { Label } from "@/components/ui/label";
+import { RadioGroup, RadioGroupItem } from "@/components/ui/radio-group";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { useForm } from "react-hook-form";
 import { z } from "zod";
-import { Form, FormControl, FormDescription, FormField, FormItem, FormLabel, FormMessage } from "@/components/ui/form";
+import Image from "next/image";
+import { Form, FormControl, FormField, FormItem, FormLabel, FormMessage } from "@/components/ui/form";
+import MoonLoader from "react-spinners/MoonLoader";
+
 interface props {
   className?: string;
   isOpen: boolean;
@@ -41,17 +42,15 @@ interface provinceWardInterface {
 }
 
 const FormSchema = z.object({
-  address: z.string().min(3, {
-    message: "Address must be at least 2 characters.",
+  type: z.enum(["1", "2"], {
+    required_error: "You need to select a notification type.",
   }),
 });
 
 const ModalDatHang = ({ isOpen, onChange, className }: props) => {
   const form = useForm<z.infer<typeof FormSchema>>({
+    defaultValues: { type: "1" },
     resolver: zodResolver(FormSchema),
-    defaultValues: {
-      address: "",
-    },
   });
 
   const [provinceList, setProvinceList] = useState<provinceInterface[]>([]);
@@ -63,6 +62,10 @@ const ModalDatHang = ({ isOpen, onChange, className }: props) => {
   const [selectWard, setSelectWard] = useState<string>("");
 
   let [loading, setLoading] = useState(false);
+
+  const address = useRef<HTMLInputElement | null>(null);
+  const phoneNumber = useRef<HTMLInputElement | null>(null);
+  const username = useRef<HTMLInputElement | null>(null);
 
   const fetchProvince = async () => {
     await axios
@@ -108,16 +111,61 @@ const ModalDatHang = ({ isOpen, onChange, className }: props) => {
       window.alert("Vui lòng chọn phường , xã");
       return false;
     }
-    if (form.getValues().address.trim() == "") {
-      window.alert("Vui lòng nhập địa chỉ của bạn");
+    if (address.current?.value.trim() == "") {
+      window.alert("Vui lòng nhập địa chỉ");
       return false;
     }
+    if (phoneNumber.current?.value.trim() == "") {
+      window.alert("Vui lòng nhập sdt");
+      return false;
+    }
+    if (username.current?.value.trim() == "") {
+      window.alert("Vui lòng nhập tên của anh/chị");
+      return false;
+    }
+
+    // if (form.getValues().address.trim() == "") {
+    //   window.alert("Vui lòng nhập địa chỉ của bạn");
+    //   return false;
+    // }
+    // if (form.getValues().phoneNumber.trim() == "") {
+    //   window.alert("Vui lòng nhập sdt của bạn");
+    //   return false;
+    // }
 
     return validate;
   };
   const handleSubmitForm = async () => {
+    // setLoading(true);
+
     if (validateForm()) {
       setLoading(true);
+
+      const formData = new FormData();
+      let provinceFilter = provinceList.find((provinceItem) => provinceItem.province_id == selectProvince);
+      let districtFilter = provinceDistrictList.find((districtItem) => districtItem.district_id == selectDistrict);
+      let wardFilter = provinceWardList.find((wardItem) => wardItem.ward_id == selectWard);
+      formData.append("province", provinceFilter != null ? provinceFilter.province_name : "");
+      formData.append("district", districtFilter != null ? districtFilter.district_name : "");
+      formData.append("ward", wardFilter != null ? wardFilter.ward_name : "");
+      formData.append("address", address.current ? address.current.value : "");
+      formData.append("phoneNumber", phoneNumber.current ? phoneNumber.current.value : "");
+      formData.append("username", username.current ? username.current.value : "");
+      formData.append("amount", form.getValues().type);
+
+      try {
+        const res = await fetch("/api/contact", {
+          method: "POST",
+
+          body: formData,
+        });
+        const result = await res.json();
+        window.alert(result.message);
+        setLoading(false);
+      } catch (e) {
+        setLoading(false);
+        window.alert("Xảy ra lỗi không thể đặt hàng");
+      }
     }
   };
 
@@ -134,9 +182,9 @@ const ModalDatHang = ({ isOpen, onChange, className }: props) => {
 
     return (
       <div
-        className={`fixed top-0 overflow-y-hidden left-0 flex items-center justify-center z-50 bg-gray-900 bg-opacity-50 w-full h-screen   ${className}`}
+        className={`fixed  top-0 bottom-0 left-0 right-0 h-screen z-50 overflow-hidden   flex items-center justify-center  bg-gray-900 bg-opacity-50  ${className}`}
       >
-        <div className="bg-white   shadow-lg p-6 max-w-md w-full relative h-full overflow-y-auto ">
+        <div className="bg-white  shadow-lg p-6 max-w-md w-full relative h-full overflow-y-auto ">
           <div
             className="absolute right-[12px] top-[5px] bg-[grey] rounded-md p-1 cursor-pointer"
             onClick={() => {
@@ -144,16 +192,43 @@ const ModalDatHang = ({ isOpen, onChange, className }: props) => {
               document.body.style.overflow = "unset";
             }}
           >
-            <X color={"white"}></X>
+            <X color={"white"} size={20}></X>
           </div>
-          <h2 className="text-xl font-bold text-center mb-4 text-[28px] uppercase italic">Thông tin đơn hàng</h2>
+          <h2 className="text-xl font-bold text-center mb-4 text-[24px] uppercase italic">Máy massage cổ vai gáy</h2>
 
           <div className="description-product">
-            <div className="relative h-[320px] w-full mb-4">
-              <Image src="/maymassage/5.webp" alt="image" className="object-cover object-bottom rounded-2xl" fill quality={100}></Image>
+            <div className="relative h-[200px] w-full mb-4">
+              <Image src="/maymassage/5.webp" alt="image" className="object-cover rounded-2xl" fill quality={100}></Image>
             </div>
-            <h2 className="font-bold text-center mb-[20px] capitalize text-[22px] italic">Máy massage cổ vai gáy</h2>
           </div>
+          <Form {...form}>
+            <form className="w-full space-y-6">
+              <FormField
+                control={form.control}
+                name="type"
+                render={({ field }) => (
+                  <FormItem className="space-y-3">
+                    <FormControl>
+                      <RadioGroup onValueChange={field.onChange} defaultValue={field.value} className="flex flex-col space-y-1">
+                        <FormItem className="flex items-center space-x-3 space-y-0">
+                          <FormControl>
+                            <RadioGroupItem value="1" />
+                          </FormControl>
+                          <FormLabel className="font-semibold italic leading-6">Mua 1 máy massage với giá 209.000đ + 20k ship</FormLabel>
+                        </FormItem>
+                        <FormItem className="flex items-center space-x-3 space-y-0">
+                          <FormControl>
+                            <RadioGroupItem value="2" />
+                          </FormControl>
+                          <FormLabel className="font-semibold italic leading-6">Mua 2 máy massage với giá 415.000đ (Miễn phí ship)</FormLabel>
+                        </FormItem>
+                      </RadioGroup>
+                    </FormControl>
+                  </FormItem>
+                )}
+              />
+            </form>
+          </Form>
 
           <div className="select-address my-4 mx-2">
             <form className="max-w-sm mx-auto mb-[10px]">
@@ -184,7 +259,6 @@ const ModalDatHang = ({ isOpen, onChange, className }: props) => {
                 })}
               </select>
             </form>
-
             <div className="province flex items-start gap-4">
               <form className="max-w-sm mx-auto mb-[10px]">
                 <label htmlFor="countries" className="block mb-2 text-sm font-medium text-gray-900 dark:text-white">
@@ -236,28 +310,24 @@ const ModalDatHang = ({ isOpen, onChange, className }: props) => {
                 </select>
               </form>
             </div>
+            <div className="mb-[10px]">
+              <Label>Địa chỉ</Label>
+              <Input type="text" placeholder="Vui lòng nhập địa chỉ" ref={address} />{" "}
+            </div>
 
-            <Form {...form}>
-              <form className="space-y-6">
-                <FormField
-                  control={form.control}
-                  name="address"
-                  render={({ field }) => (
-                    <FormItem>
-                      <FormLabel>Địa chỉ của bạn</FormLabel>
-                      <FormControl>
-                        <Input placeholder="Vui lòng nhập địa chỉ" {...field} autoFocus className="focus-visible:ring-0 " />
-                      </FormControl>
+            <div className="mb-[10px]">
+              <Label>Tên anh/chị</Label>
+              <Input type="text" placeholder="Vui lòng nhập tên của anh/chị" ref={username} />{" "}
+            </div>
+            <div>
+              <Label>SDT</Label>
+              <Input type="number" placeholder="Vui lòng nhập sdt" ref={phoneNumber} />{" "}
+            </div>
 
-                      <FormMessage />
-                    </FormItem>
-                  )}
-                />
-              </form>
-            </Form>
-
-            <div className="mt-[20px] text-[18px] font-bold">Tổng tiền đơn hàng : (209k) + 20k ship</div>
+            {/* <Input key="1213" type="text" placeholder="Nhập giá trị" defaultValue={address} onChange={handleChange} required />
+            <Input key="2zz" type="number" placeholder="Nhập giá trị" defaultValue={phoneNumber} onChange={handleChangePhone} required /> */}
           </div>
+
           <div className="flex justify-center w-full">
             <button
               className="bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-600 w-full font-bold text-[18px] italic"

@@ -198,14 +198,14 @@ const DatHangGiaDung = () => {
             timeComments="1 ngày trước"
             userName="Minh Tuấn"
             numberLikes="4"
-            comment="Không thể tin được, sản phẩm này vượt xa mong đợi của tôi! Chắc chắn sẽ giới thiệu cho bạn bè."
+            comment="Tính ra giá ok mua về ba mẹ còn tưởng đồ đắt tiền ấy."
             userAvatarUrl="https://api.dicebear.com/9.x/personas/svg?seed=Mason"
           ></RenderComment>
           <RenderComment
             timeComments="1 ngày trước"
             userName="Đoàn Trung Hiếu"
             numberLikes="1"
-            comment="Sản phẩm này không chỉ đẹp mà còn rất hiệu quả. Tôi rất thích!"
+            comment="Máy chạy ổn định thích nhất chế độ thứ 3 "
             userAvatarUrl="https://api.dicebear.com/9.x/pixel-art-neutral/svg?seed=Mason"
           ></RenderComment>
           <RenderComment

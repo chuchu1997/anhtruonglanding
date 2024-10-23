@@ -32,9 +32,8 @@ const cuprum = Cuprum({
 <meta property="og:type" content="website"></meta> */
 }
 export const metadata: Metadata = {
-  title: "Bàn Cắt Gạch PanaPro Chất Lượng Cao - Giá Tốt Nhất Trên Thị Trường Và Là Loại Bàn Cắt Gạch Số 1 Tại Việt Nam",
-  description:
-    "Khám phá bộ sưu tập bàn cắt gạch chất lượng cao từ PanaPro và Ryobi. Bàn cắt gạch giá rẻ, chất lượng đảm bảo, phù hợp cho mọi nhu cầu. Mua ngay để nhận ưu đãi!",
+  title: "Cửa hàng gia dụng hiện đại chuyên cung cấp các mặt hàng gia dụng hiện đại cũng phục vụ cho cuộc sống và máy massage",
+  description: "Cửa hàng gia dụng hiện đại chuyên cung cấp các mặt hàng gia dụng hiện đại cũng phục vụ cho cuộc sống và máy massage cổ vai gáy ",
   verification: {
     google: "google-site-verification=s3Gv5MqWmRlLv82jIT0U54-8KIepgNzaFL1EVzzW74g",
   },
@@ -43,8 +42,7 @@ export const metadata: Metadata = {
     locale: "vi_VN",
     type: "website",
     url: "https://bancatgach.com",
-    description:
-      "Công ty TNHH Máy Xây Dựng Mới là công ty cung cấp các loại máy cắt gạch , dụng cụ cầm tay , và các dụng cụ hỗ trợ xây dựng số 1 tại việt nam",
+    description: "Cửa hàng gia dụng hiện đại chuyên cung cấp các mặt hàng gia dụng hiện đại cũng phục vụ cho cuộc sống ",
     siteName: "Bàn cắt gạch",
   },
   robots: {
@@ -56,36 +54,15 @@ export const metadata: Metadata = {
   },
 
   keywords: [
-    "maycatgach",
-    "bancatgach",
-    "bán bàn cắt gạch",
-    "bàn cắt gạch giá rẻ",
-    "bàn cắt gạch chất lượng",
-    "phụ kiện bàn cắt gạch",
-    "hướng dẫn sử dụng bàn cắt gạch",
-    "bàn cắt gạch chuyên nghiệp",
-    "mua bàn cắt gạch online",
-    "địa chỉ bán bàn cắt gạch",
-    "ban cat gach gia re",
-    "ban cat gach chat luong",
-    "phu kien ban cat gach",
-    "mua ban cat gach online",
-    "dia chi ban ban cat gach",
-    "bàn cắt gạch",
-    "máy cắt gạch",
-    "dụng cụ điện cầm tay",
-    "dung cu dien cam tay",
-    "mayxaydung",
-    "máy xây dựng",
-    "mayxaydungmoi",
-    "ban cat gach co dem",
-    "bàn cắt gạch có đệm",
-    "ban cat gach khong dem",
-    "bàn cắt gạch không đệm",
-    "ban cat gach ryobi",
-    "bàn cắt gạch ryobi",
-    "bàn cắt gạch panapro",
-    "ban cat gach panapro",
+    "maymassage",
+    "maymassagecovaigay",
+    "giadungthongminh",
+    "giadung",
+    "giadunghiendai",
+    "nhacua",
+    "linhkiendoisong",
+    "giadungnhabep",
+    "giadungcuocsong",
   ],
 };
 

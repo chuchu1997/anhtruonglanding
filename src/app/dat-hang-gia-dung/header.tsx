@@ -6,7 +6,7 @@ const HeaderDatHang = () => {
   const [isOpen, setIsOpen] = useState(false);
 
   return (
-    <header className="bg-[#134B70] drop-shadow-2xl  fixed top-0 left-0 right-0 z-40 py-6">
+    <header className="bg-[#134B70] drop-shadow-2xl z-20 fixed top-0 z-20 left-0 right-0  py-6 ">
       <div className="header-container container mx-auto flex items-start justify-between">
         <div className="flex flex-col gap-2">
           <p className="text-white font-semibold text-[14px]">
@@ -18,7 +18,6 @@ const HeaderDatHang = () => {
           className="uppercase font-bold text-[16px] rounded-full text-[#EEEEEE]"
           onClick={() => {
             setIsOpen(!isOpen);
-
             document.body.style.overflow = "hidden";
           }}
         >
