@@ -10,9 +10,9 @@ const HeaderDatHang = () => {
       <div className="header-container container mx-auto flex items-start justify-between">
         <div className="flex flex-col gap-2">
           <p className="text-white font-semibold text-[14px]">
-            Giá gốc <span className="line-through">534.000đ</span>
+            Giá gốc <span className="line-through">737.000đ</span>
           </p>
-          <p className="font-bold text-[white] text-[20px] border-2 border-[white] px-2 rounded-xl">Chỉ còn : 209.000đ</p>
+          <p className="font-bold text-[white] text-[20px] border-2 border-[white] px-2 rounded-xl">Chỉ còn :269.000đ</p>
         </div>
         <Button
           className="uppercase font-bold text-[16px] rounded-full text-[#EEEEEE]"

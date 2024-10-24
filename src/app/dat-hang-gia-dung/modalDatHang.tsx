@@ -214,13 +214,13 @@ const ModalDatHang = ({ isOpen, onChange, className }: props) => {
                           <FormControl>
                             <RadioGroupItem value="1" />
                           </FormControl>
-                          <FormLabel className="font-semibold italic leading-6">Mua 1 máy massage với giá 209.000đ + 20k ship</FormLabel>
+                          <FormLabel className="font-semibold italic leading-6">Mua 1 máy massage với giá 269.000đ + 20k ship</FormLabel>
                         </FormItem>
                         <FormItem className="flex items-center space-x-3 space-y-0">
                           <FormControl>
                             <RadioGroupItem value="2" />
                           </FormControl>
-                          <FormLabel className="font-semibold italic leading-6">Mua 2 máy massage với giá 415.000đ (Miễn phí ship)</FormLabel>
+                          <FormLabel className="font-semibold italic leading-6">Mua 2 máy massage với giá 530.000đ (Miễn phí ship)</FormLabel>
                         </FormItem>
                       </RadioGroup>
                     </FormControl>

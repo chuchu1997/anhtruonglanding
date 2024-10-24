@@ -19,7 +19,7 @@ export async function POST(request: Request) {
   }
   console.log("AMOUNT", amount);
   let renderTextForAmount =
-    Number(amount) > 1 ? "Đặt 2 sản phẩm giá 415.000đ (Miễn phí ship) " : "Đặt 1 sản phẩm giá 209.000đ và 20k ship (Tổng 229.000đ)";
+    Number(amount) > 1 ? "Đặt 2 sản phẩm giá 530.000đ (Miễn phí ship) " : "Đặt 1 sản phẩm giá 269.000đ và 20k ship (Tổng 229.000đ)";
   const transporter = nodemailer.createTransport({
     host: "smtp.gmail.com", // Replace with your SMTP server
     port: 465, // Replace with the appropriate port
