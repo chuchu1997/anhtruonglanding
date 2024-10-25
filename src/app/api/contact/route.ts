@@ -25,8 +25,8 @@ export async function POST(request: Request) {
     port: 465, // Replace with the appropriate port
     secure: true, // true for 465, false for other ports
     auth: {
-      user: "giadunghiendai1997@gmail.com", // Your email user
-      pass: "qvmasddhebynepio", // Your email password
+      user: process.env.EMAIL_USER, // Your email user
+      pass: process.env.PASS_APP, // Your email password
     },
   });
   const emailSend = "tuilanguyencuong1997@gmail.com";
