@@ -196,11 +196,11 @@ const ModalDatHang = ({ isOpen, onChange, className }: props) => {
           </div>
           <h2 className="text-xl font-bold text-center mb-4 text-[24px] uppercase italic">Máy massage cổ vai gáy</h2>
 
-          <div className="description-product">
+          {/* <div className="description-product">
             <div className="relative h-[200px] w-full mb-4">
               <Image src="/maymassage/5.webp" priority alt="image" className="object-cover rounded-2xl" fill quality={100}></Image>
             </div>
-          </div>
+          </div> */}
           <Form {...form}>
             <form className="w-full space-y-6">
               <FormField
