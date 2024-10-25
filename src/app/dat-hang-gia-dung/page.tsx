@@ -1,10 +1,12 @@
-import React from "react";
+// "use client";
+// import React, { useEffect } from "react";
 import dynamic from "next/dynamic";
 import { IconThumbUpFilled, IconStarFilled } from "@tabler/icons-react";
 import Image from "next/image";
 
 const DynamicSectionWrapper = dynamic(() => import("@/components/Section"), {});
 
+// 340988835742906
 const DatHangGiaDung = () => {
   interface propsIconStar {
     className?: string;
@@ -17,6 +19,14 @@ const DatHangGiaDung = () => {
     numberLikes: string;
     comment: string;
   }
+  // useEffect(() => {
+  //   import("react-facebook-pixel")
+  //     .then((x) => x.default)
+  //     .then((ReactPixel) => {
+  //       ReactPixel.init("340988835742906"); // facebookPixelId
+  //       ReactPixel.pageView();
+  //     });
+  // }, []);
   const RenderIconStar = (props: propsIconStar) => {
     const { className } = props;
 
