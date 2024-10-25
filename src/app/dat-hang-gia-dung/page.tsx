@@ -54,7 +54,7 @@ const DatHangGiaDung = () => {
       <DynamicSectionWrapper className="mb-[40px]" titleSection="thông tin sản phẩm">
         <div className="info-product flex flex-col gap-9">
           <div className="relative h-[460px] md:h-[1000px] w-full">
-            <Image src="/maymassage/5.webp" fill alt="maymassagecovaigay" className="md:object-contain object-cover"></Image>
+            <Image src="/maymassage/5.webp" fill alt="maymassagecovaigay" className="md:object-contain object-cover" priority></Image>
           </div>
 
           <div className="content-1 ">
@@ -95,15 +95,15 @@ const DatHangGiaDung = () => {
             </div>
           </div>
           <div className="relative h-[460px] md:h-[1000px] w-full">
-            <Image src="/maymassage/1.png" fill alt="maymassagecovaigay" className="md:object-contain object-cover"></Image>
+            <Image priority src="/maymassage/1.png" fill alt="maymassagecovaigay" className="md:object-contain object-cover"></Image>
           </div>
 
           <div className="relative h-[500px] md:h-[1000px] w-full">
-            <Image src="/maymassage/2.webp" fill alt="maymassagecovaigay" className="md:object-contain object-cover"></Image>
+            <Image priority src="/maymassage/2.webp" fill alt="maymassagecovaigay" className="md:object-contain object-cover"></Image>
           </div>
 
           <div className="relative  h-[720px] md:h-[1000px] w-full">
-            <Image src="/maymassage/3.png" fill alt="maymassagecovaigay" className="md:object-contain object-cover"></Image>
+            <Image priority src="/maymassage/3.png" fill alt="maymassagecovaigay" className="md:object-contain object-cover"></Image>
           </div>
           <div className="relative  h-[500px] md:h-[1000px] w-full">
             <Image src="/maymassage/4.webp" fill alt="maymassagecovaigay" className="md:object-contain object-cover"></Image>

@@ -198,7 +198,7 @@ const ModalDatHang = ({ isOpen, onChange, className }: props) => {
 
           <div className="description-product">
             <div className="relative h-[200px] w-full mb-4">
-              <Image src="/maymassage/5.webp" alt="image" className="object-cover rounded-2xl" fill quality={100}></Image>
+              <Image src="/maymassage/5.webp" priority alt="image" className="object-cover rounded-2xl" fill quality={100}></Image>
             </div>
           </div>
           <Form {...form}>
