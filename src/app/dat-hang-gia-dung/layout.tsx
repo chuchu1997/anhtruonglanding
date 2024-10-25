@@ -1,10 +1,11 @@
 import Script from "next/script";
 import FooterDatHang from "./footer";
 import HeaderDatHang from "./header";
+import Head from "next/head";
 export default function DatHangLayout({ children }: { children: React.ReactNode }) {
   return (
     <>
-      <head>
+      <Head>
         <Script
           id="facebook-pixel"
           strategy="afterInteractive"
@@ -31,15 +32,11 @@ export default function DatHangLayout({ children }: { children: React.ReactNode 
           `,
           }}
         />
-        <noscript>
-          <img height="1" width="1" style={{ display: "none" }} src="https://www.facebook.com/tr?id=340988835742906&ev=PageView&noscript=1" />
-        </noscript>
-      </head>
-      <section>
-        <HeaderDatHang />
-        <div className="relative top-[170px] md:top-[150px] mb-[250px] "> {children}</div>
-        <FooterDatHang />
-      </section>
+      </Head>
+
+      <HeaderDatHang />
+      <div className="relative top-[170px] md:top-[150px] mb-[250px] "> {children}</div>
+      <FooterDatHang />
     </>
   );
 }
