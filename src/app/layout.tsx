@@ -38,12 +38,12 @@ export const metadata: Metadata = {
     google: "google-site-verification=s3Gv5MqWmRlLv82jIT0U54-8KIepgNzaFL1EVzzW74g",
   },
   openGraph: {
-    title: "Bàn Cắt Gạch PanaPro - Bàn Cắt Gạch số 1 tại việt nam",
+    title: "Cửa hàng gia dụng hiện đại chuyên cung cấp các mặt hàng gia dụng hiện đại cũng phục vụ cho cuộc sống và máy massage",
     locale: "vi_VN",
     type: "website",
     url: "https://bancatgach.com",
     description: "Cửa hàng gia dụng hiện đại chuyên cung cấp các mặt hàng gia dụng hiện đại cũng phục vụ cho cuộc sống ",
-    siteName: "Bàn cắt gạch",
+    siteName: "giadung",
   },
   robots: {
     index: true,
