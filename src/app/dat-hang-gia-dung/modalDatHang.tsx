@@ -194,7 +194,7 @@ const ModalDatHang = ({ isOpen, onChange, className }: props) => {
           >
             <X color={"white"} size={20}></X>
           </div>
-          <h2 className="text-xl font-bold text-center mb-4 text-[24px] uppercase italic">Máy massage cổ vai gáy</h2>
+          <h2 className="text-xl font-bold text-center mb-4 text-[24px] uppercase italic">Nồi cơm điện mini </h2>
 
           {/* <div className="description-product">
             <div className="relative h-[200px] w-full mb-4">
@@ -214,13 +214,13 @@ const ModalDatHang = ({ isOpen, onChange, className }: props) => {
                           <FormControl>
                             <RadioGroupItem value="1" />
                           </FormControl>
-                          <FormLabel className="font-semibold italic leading-6">Mua 1 máy massage với giá 269.000đ + 20k ship</FormLabel>
+                          <FormLabel className="font-semibold italic leading-6">Mua 1 nồi với giá 269.000đ + 20k ship</FormLabel>
                         </FormItem>
                         <FormItem className="flex items-center space-x-3 space-y-0">
                           <FormControl>
                             <RadioGroupItem value="2" />
                           </FormControl>
-                          <FormLabel className="font-semibold italic leading-6">Mua 2 máy massage với giá 530.000đ (Miễn phí ship)</FormLabel>
+                          <FormLabel className="font-semibold italic leading-6">Mua 2 nồi với giá 530.000đ (Miễn phí ship)</FormLabel>
                         </FormItem>
                       </RadioGroup>
                     </FormControl>

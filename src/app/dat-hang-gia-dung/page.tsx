@@ -64,21 +64,26 @@ const DatHangGiaDung = () => {
       <DynamicSectionWrapper className="mb-[40px]" titleSection="thông tin sản phẩm">
         <div className="info-product flex flex-col gap-9">
           <div className="relative h-[460px] md:h-[1000px] w-full">
-            <Image src="/maymassage/5.webp" fill alt="maymassagecovaigay" className="md:object-contain object-cover" priority></Image>
+            <Image src="/noicomdien/1.jpg" fill alt="maymassagecovaigay" className="md:object-contain object-cover" priority></Image>
           </div>
 
           <div className="content-1 ">
-            <strong className="text-[#666666] text-[15px]">Đai đeo massage lưng vai cổ gáy</strong>
+            <strong className="text-[#666666] text-[15px]">Nồi cơm điện mini đa năng CANFAN</strong>
 
             <div className="text-[14px]">
-              <p>
-                Mỏi vai là một triệu chứng thường xảy ra với mọi lứa tuổi, mọi giới... Nguyên nhân có thể là do chơi thể thao, học hành và làm việc
-                quá nhiều...
-              </p>
-              <p>
-                Đặc biệt bệnh rất dễ xảy ra đối với người bắt đầu đến tuổi trung niên, với hệ mạch máu đã giảm tính dẻo dai, đàn hồi. sử dụng đơn giản
-                và gọn nhẹ, chính là giải pháp cho bạn.
-              </p>
+           
+             <ul>
+              <li>Công suất: Dưới 3L</li>
+              <li>Phương pháp điều khiển: Máy vi tính</li>
+              <li>Chức năng chức năng: Cơm niêu, Đặt trước, Khác</li>
+              <li>Chất liệu lót: Pha lê gốm</li>
+              <li>Điện áp định mức: 220VV</li>
+              <li>Tần số định mức: 50HZHZ</li>
+              <li>Công suất định mức: 300WW</li>
+              <li>Phương pháp sưởi ấm: Làm nóng khung gầm</li>
+         
+
+             </ul>
             </div>
           </div>
 
@@ -86,14 +91,14 @@ const DatHangGiaDung = () => {
             <strong className="text-[#666666]">Ưu điểm sản phẩm</strong>
             <div className="text-[14px]">
               <ul>
-                <li>- Có hiệu quả thư giãn vai/ cơ vùng cổ và làm dịu đau nhức</li>
-                <li>- Phù hợp cho xoa bóp vùng giữa lưng, dưới lưng, bụng, bắp chân và đùi</li>
-                <li>- Cải thiện tuần hoàn và lưu thông mạch máu</li>
-                <li>- Gọn nhẹ và dễ dàng massage ngay khi bạn ở nhà hay ở văn phòng. - Giảm căng thẳng tối đa</li>
+                <li>- Tiện lợi tuyệt đối cho gia đình nhỏ </li>
+                <li>- Có thể nấu mì </li>
+                <li>- Có thể nấu lẩu</li>
+                <li>- Có thể hấp</li>
               </ul>
             </div>
           </div>
-          <div className="content-3 ">
+          {/* <div className="content-3 ">
             <strong className="text-[#666666]">Thông số kỹ thuật:</strong>
             <div className="text-[14px]">
               <ul>
@@ -103,23 +108,23 @@ const DatHangGiaDung = () => {
                 <li>- Kích thước : 140*20 cm</li>
               </ul>
             </div>
-          </div>
+          </div> */}
           <div className="relative h-[460px] md:h-[1000px] w-full">
-            <Image priority src="/maymassage/1.png" fill alt="maymassagecovaigay" className="md:object-contain object-cover"></Image>
+            <Image priority src="/noicomdien/2.jpg" fill alt="maymassagecovaigay" className="md:object-contain object-cover"></Image>
           </div>
 
           <div className="relative h-[500px] md:h-[1000px] w-full">
-            <Image priority src="/maymassage/2.webp" fill alt="maymassagecovaigay" className="md:object-contain object-cover"></Image>
+            <Image priority src="/noicomdien/3.jpg" fill alt="maymassagecovaigay" className="md:object-contain object-cover"></Image>
           </div>
 
           <div className="relative  h-[720px] md:h-[1000px] w-full">
-            <Image priority src="/maymassage/3.png" fill alt="maymassagecovaigay" className="md:object-contain object-cover"></Image>
+            <Image priority src="/noicomdien/4.jpg" fill alt="maymassagecovaigay" className="md:object-contain object-cover"></Image>
           </div>
           <div className="relative  h-[500px] md:h-[1000px] w-full">
-            <Image src="/maymassage/4.webp" fill alt="maymassagecovaigay" className="md:object-contain object-cover"></Image>
+            <Image src="/noicomdien/5.jpg" fill alt="maymassagecovaigay" className="md:object-contain object-cover"></Image>
           </div>
           <div className="relative h-[460px] md:h-[1000px] w-full">
-            <Image src="/maymassage/6.webp" fill alt="maymassagecovaigay" className="md:object-contain object-cover"></Image>
+            <Image src="/noicomdien/6.jpg" fill alt="maymassagecovaigay" className="md:object-contain object-cover"></Image>
           </div>
         </div>
       </DynamicSectionWrapper>
@@ -215,7 +220,7 @@ const DatHangGiaDung = () => {
             timeComments="1 ngày trước"
             userName="Đoàn Trung Hiếu"
             numberLikes="1"
-            comment="Máy chạy ổn định thích nhất chế độ thứ 3 "
+            comment="Máy chạy ổn định  "
             userAvatarUrl="https://api.dicebear.com/9.x/pixel-art-neutral/svg?seed=Mason"
           ></RenderComment>
           <RenderComment
