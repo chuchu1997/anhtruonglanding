@@ -60,37 +60,40 @@ const Header = () => {
         <div className="hidden md:block border-b border-[grey]/60"></div>
 
         {/* HEADER BOTTOM */}
-        <div className="container  mt-[20px] flex justify-between items-center">
-          <Link href="/">
-            <div className="flex flex-col items-center gap-2 text-white">
-              <Image src="/logo.png" width={40} height={40} quality={100} alt="logo"></Image>
-              <h3 className="italic text-[12px]">Gia dụng hiện đại</h3>
-            </div>
-          </Link>
-          <SearchComponent />
-
-          <div className="flex relative items-end gap-2 border border-white p-1 rounded-lg cursor-pointer hover:bg-[#758694] transition-color duration-200 ease-in-out">
-            <ShoppingCart />
-            <span className="hidden md:block">Giỏ hàng</span>
-            <div className="absolute h-6 w-6 rounded-full bg-[red] top-[-15px] right-[-14px] text-center">H</div>
-          </div>
-          {/* <Sheet>
-            <SheetTrigger asChild>
-              <Menu className="block md:hidden cursor-pointer"></Menu>
-            </SheetTrigger>
-            <SheetContent>
-              <div className="mt-[14px]">
-                {dataMenus.map((menuItem, index) => (
-                  <LinkComponentCustom
-                    key={index}
-                    title={menuItem.title}
-                    href={menuItem.href}
-                    className="text-[14px] font-semibold uppercase my-2"
-                  ></LinkComponentCustom>
-                ))}
+        <div className="container  mt-[20px] flex flex-col">
+          <div className="flex justify-between items-center">
+            <Sheet>
+              <SheetTrigger asChild>
+                <Menu className="block md:hidden cursor-pointer" size={30}></Menu>
+              </SheetTrigger>
+              <SheetContent>
+                <div className="mt-[14px]">
+                  {dataMenus.map((menuItem, index) => (
+                    <LinkComponentCustom
+                      key={index}
+                      title={menuItem.title}
+                      href={menuItem.href}
+                      className="text-[14px] font-semibold uppercase my-2"
+                    ></LinkComponentCustom>
+                  ))}
+                </div>
+              </SheetContent>
+            </Sheet>
+            <Link href="/">
+              <div className="flex flex-col items-center gap-2 text-white">
+                <Image src="/logo.png" width={40} height={40} quality={100} alt="logo"></Image>
+                <h3 className="italic text-[12px]">Gia dụng hiện đại</h3>
               </div>
-            </SheetContent>
-          </Sheet> */}
+            </Link>
+            <SearchComponent className="md:block hidden" />
+
+            <div className="flex relative items-end gap-2 border border-white p-1 rounded-lg cursor-pointer hover:bg-[#758694] transition-color duration-200 ease-in-out">
+              <ShoppingCart />
+              <span className="hidden md:block">Giỏ hàng</span>
+              <div className="absolute h-6 w-6 rounded-full bg-[red] top-[-15px] right-[-14px] text-center">H</div>
+            </div>
+          </div>
+          <SearchComponent className="mt-[10px] block md:hidden" />
         </div>
       </div>
     </header>
