@@ -77,11 +77,13 @@ export default function RootLayout({
       <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
       <link rel="icon" href="/favicon.ico" sizes="any" />
       <body className={`${jetbrains.variable} ${pacifico.variable}  ${cuprum.variable}`} suppressHydrationWarning={true}>
-        <GlobalProvider>
+      <div className="min-h-[500px] pt-[40px]">{children}</div>
+        
+        {/* <GlobalProvider>
           <Header />
           <div className="min-h-[500px] pt-[190px]">{children}</div>
-        </GlobalProvider>
-
+        </GlobalProvider> */}
+          
         {/* <BlockSidebar />
         <DockBottomContact /> */}
         {/* <StairEffect /> */}

@@ -99,18 +99,18 @@ const ModalDatHang = ({ isOpen, onChange, className }: props) => {
 
   const validateForm = () => {
     let validate = true;
-    if (selectProvince.trim() == "") {
-      window.alert("Vui lòng chọn tỉnh , thành phố");
-      return false;
-    }
-    if (selectDistrict.trim() == "") {
-      window.alert("Vui lòng chọn quận ,huyện");
-      return false;
-    }
-    if (selectWard.trim() == "") {
-      window.alert("Vui lòng chọn phường , xã");
-      return false;
-    }
+    // if (selectProvince.trim() == "") {
+    //   window.alert("Vui lòng chọn tỉnh , thành phố");
+    //   return false;
+    // }
+    // if (selectDistrict.trim() == "") {
+    //   window.alert("Vui lòng chọn quận ,huyện");
+    //   return false;
+    // }
+    // if (selectWard.trim() == "") {
+    //   window.alert("Vui lòng chọn phường , xã");
+    //   return false;
+    // }
     if (address.current?.value.trim() == "") {
       window.alert("Vui lòng nhập địa chỉ");
       return false;
@@ -145,9 +145,9 @@ const ModalDatHang = ({ isOpen, onChange, className }: props) => {
       let provinceFilter = provinceList.find((provinceItem) => provinceItem.province_id == selectProvince);
       let districtFilter = provinceDistrictList.find((districtItem) => districtItem.district_id == selectDistrict);
       let wardFilter = provinceWardList.find((wardItem) => wardItem.ward_id == selectWard);
-      formData.append("province", provinceFilter != null ? provinceFilter.province_name : "");
-      formData.append("district", districtFilter != null ? districtFilter.district_name : "");
-      formData.append("ward", wardFilter != null ? wardFilter.ward_name : "");
+      // formData.append("province", provinceFilter != null ? provinceFilter.province_name : "");
+      // formData.append("district", districtFilter != null ? districtFilter.district_name : "");
+      // formData.append("ward", wardFilter != null ? wardFilter.ward_name : "");
       formData.append("address", address.current ? address.current.value : "");
       formData.append("phoneNumber", phoneNumber.current ? phoneNumber.current.value : "");
       formData.append("username", username.current ? username.current.value : "");
@@ -231,7 +231,7 @@ const ModalDatHang = ({ isOpen, onChange, className }: props) => {
           </Form>
 
           <div className="select-address my-4 mx-2">
-            <form className="max-w-sm mx-auto mb-[10px]">
+            {/* <form className="max-w-sm mx-auto mb-[10px]">
               <label htmlFor="countries" className="block mb-2 text-sm font-medium text-gray-900 dark:text-white">
                 Chọn Tỉnh,Thành Phố
               </label>
@@ -258,8 +258,8 @@ const ModalDatHang = ({ isOpen, onChange, className }: props) => {
                   );
                 })}
               </select>
-            </form>
-            <div className="province flex items-start gap-4">
+            </form> */}
+            {/* <div className="province flex items-start gap-4">
               <form className="max-w-sm mx-auto mb-[10px]">
                 <label htmlFor="countries" className="block mb-2 text-sm font-medium text-gray-900 dark:text-white">
                   Quận,Huyện
@@ -309,19 +309,19 @@ const ModalDatHang = ({ isOpen, onChange, className }: props) => {
                   })}
                 </select>
               </form>
-            </div>
+            </div> */}
             <div className="mb-[10px]">
               <Label>Địa chỉ</Label>
-              <Input type="text" placeholder="Vui lòng nhập địa chỉ" ref={address} />{" "}
+              <Input className = "font-bold text-black" type="text" placeholder="Vui lòng nhập địa chỉ" ref={address} />{" "}
             </div>
 
             <div className="mb-[10px]">
               <Label>Tên anh/chị</Label>
-              <Input type="text" placeholder="Vui lòng nhập tên của anh/chị" ref={username} />{" "}
+              <Input className = "font-bold text-black" type="text" placeholder="Vui lòng nhập tên của anh/chị" ref={username} />{" "}
             </div>
             <div>
               <Label>SDT</Label>
-              <Input type="number" placeholder="Vui lòng nhập sdt" ref={phoneNumber} />{" "}
+              <Input className = "font-bold text-black" type="number" placeholder="Vui lòng nhập sdt" ref={phoneNumber} />{" "}
             </div>
 
             {/* <Input key="1213" type="text" placeholder="Nhập giá trị" defaultValue={address} onChange={handleChange} required />

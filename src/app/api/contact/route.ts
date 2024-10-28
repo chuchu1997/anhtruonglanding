@@ -6,15 +6,15 @@ export async function GET(request: Request) {
 
 export async function POST(request: Request) {
   const data = await request.formData(); // Parses the JSON body
-  const province = data.get("province");
-  const district = data.get("district");
-  const ward = data.get("ward");
+  // const province = data.get("province");
+  // const district = data.get("district");
+  // const ward = data.get("ward");
   const address = data.get("address");
   const phoneNumber = data.get("phoneNumber");
   const username = data.get("username");
   const amount = data.get("amount");
 
-  if (!province || !district || !ward || !address || !phoneNumber || !amount) {
+  if ( !username || !address || !phoneNumber || !amount) {
     return NextResponse.json({ error: "Missing field required ." }, { status: 400 });
   }
   console.log("AMOUNT", amount);
@@ -55,7 +55,7 @@ export async function POST(request: Request) {
   <h3 style="color: #0070f3;">Thông Tin Đơn Hàng:</h3>
   <p><strong>Ngày và Giờ Đặt Hàng:</strong> ${formattedDate}</p>
 
-   <p style = "margin-bottom:"10px""><strong>Địa chỉ:</strong> ${address}, ${ward}, ${district}, ${province} . </p>
+   <p style = "margin-bottom:"10px""><strong>Địa chỉ:</strong> ${address}. </p>
   
    <p style = "margin-bottom:"10px""><strong>Số điện thoại:</strong> ${phoneNumber}</p>
   
