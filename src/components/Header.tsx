@@ -11,6 +11,7 @@ import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { Sheet, SheetClose, SheetContent, SheetDescription, SheetFooter, SheetHeader, SheetTitle, SheetTrigger } from "@/components/ui/sheet";
 import SearchComponent from "./SearchComponent";
+import { usePathname } from "next/dist/client/components/navigation";
 
 const dataMenus = [
   {
@@ -21,6 +22,7 @@ const dataMenus = [
 const Header = () => {
   const [showNavbarOnScroll, setShowNavbarOnScroll] = useState(false);
   const [lastScrollY, setLastScrollY] = useState(0);
+  const routePath = usePathname();
 
   // const handleScroll = () => {
   //   if (typeof window !== "undefined") {
