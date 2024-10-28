@@ -1,18 +1,14 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+@import "tailwindcss/base";
+
+@import "tailwindcss/components";
+
+@import "tailwindcss/utilities";
 /* html{
     overflow-x:hidden;
 } */
 .sort-dock { 
     @media screen and (max-width: 481px) {
         display: none;
-    }
-}
-.custom-btn-carousel{
-    /* background:red!important; */
-    @media screen and (max-width: 1046px) {
-        display: none!important;
     }
 }
 

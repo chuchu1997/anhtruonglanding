@@ -7,6 +7,7 @@ import Header from "@/components/Header";
 import BlockSidebar from "@/components/BlockSidebar";
 import Footer from "@/components/Footer";
 import DockBottomContact from "@/components/DockBottomContact";
+import { GlobalProvider } from "@/GlobalProvider";
 
 const jetbrains = Open_Sans({
   subsets: ["latin"],
@@ -76,13 +77,16 @@ export default function RootLayout({
       <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
       <link rel="icon" href="/favicon.ico" sizes="any" />
       <body className={`${jetbrains.variable} ${pacifico.variable}  ${cuprum.variable}`} suppressHydrationWarning={true}>
-        {/* <Header /> */}
+        <GlobalProvider>
+          <Header />
+          <div className="min-h-[500px] pt-[190px]">{children}</div>
+        </GlobalProvider>
 
         {/* <BlockSidebar />
         <DockBottomContact /> */}
         {/* <StairEffect /> */}
         {/* <PageTransition></PageTransition> */}
-        <div className="min-h-[500px]">{children}</div>
+
         {/* <Footer /> */}
       </body>
     </html>

@@ -48,7 +48,7 @@ const Carousel = React.forwardRef<HTMLDivElement, React.HTMLAttributes<HTMLDivEl
         ...opts,
         axis: orientation === "horizontal" ? "x" : "y",
       },
-      [Autoplay({ delay: 4000 })]
+      [Autoplay({ delay: 6000 })]
     );
     const [canScrollPrev, setCanScrollPrev] = React.useState(false);
     const [canScrollNext, setCanScrollNext] = React.useState(false);
@@ -169,10 +169,9 @@ const CarouselPrevious = React.forwardRef<HTMLButtonElement, React.ComponentProp
     return (
       <Button
         ref={ref}
-        variant={variant}
         size={size}
         className={cn(
-          "absolute  h-8 w-8 rounded-full custom-btn-carousel  ",
+          "absolute  h-8 w-8   bg-[red] ",
           orientation === "horizontal" ? "-left-12 top-1/2 -translate-y-1/2" : "-top-12 left-1/2 -translate-x-1/2 rotate-90",
           className
         )}
@@ -195,10 +194,9 @@ const CarouselNext = React.forwardRef<HTMLButtonElement, React.ComponentProps<ty
     return (
       <Button
         ref={ref}
-        variant={variant}
         size={size}
         className={cn(
-          "absolute h-8 w-8 rounded-full custom-btn-carousel",
+          "absolute h-8 w-8  custom-btn-carousel",
           orientation === "horizontal" ? "-right-12 top-1/2 -translate-y-1/2" : "-bottom-12 left-1/2 -translate-x-1/2 rotate-90",
           className
         )}
