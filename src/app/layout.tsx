@@ -10,6 +10,8 @@ import DockBottomContact from "@/components/DockBottomContact";
 import { GlobalProvider } from "@/GlobalProvider";
 import Categories from "@/components/Categories";
 import CustomBreadcums from "@/components/CustomBreadcums";
+import MainLayout from "./layout/mainLayout";
+import { Toaster } from "@/components/ui/toaster";
 
 const jetbrains = Open_Sans({
   subsets: ["latin"],
@@ -81,23 +83,8 @@ export default function RootLayout({
       <body className={`${jetbrains.variable} ${pacifico.variable}  ${cuprum.variable}`} suppressHydrationWarning={true}>
         {/* <div className="min-h-[500px] pt-[40px]">{children}</div> */}
 
-        <GlobalProvider>
-          <Header />
-
-          <div className="min-h-[500px] pt-[180px]">
-            {/* <CustomBreadcums /> */}
-            <Categories></Categories>
-
-            {children}
-          </div>
-        </GlobalProvider>
-
-        {/* <BlockSidebar />
-        <DockBottomContact /> */}
-        {/* <StairEffect /> */}
-        {/* <PageTransition></PageTransition> */}
-
-        {/* <Footer /> */}
+        <MainLayout>{children}</MainLayout>
+        <Toaster />
       </body>
     </html>
   );
