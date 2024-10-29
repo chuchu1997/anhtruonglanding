@@ -13,12 +13,8 @@ import { Sheet, SheetClose, SheetContent, SheetDescription, SheetFooter, SheetHe
 import SearchComponent from "./SearchComponent";
 import { usePathname } from "next/dist/client/components/navigation";
 
-const dataMenus = [
-  {
-    title: "Gio hang",
-    href: "/",
-  },
-];
+import { data } from "@/data/data";
+import { CategoryItem } from "./Categories";
 const Header = () => {
   const [showNavbarOnScroll, setShowNavbarOnScroll] = useState(false);
   const [lastScrollY, setLastScrollY] = useState(0);
@@ -68,16 +64,22 @@ const Header = () => {
               <SheetTrigger asChild>
                 <Menu className="block md:hidden cursor-pointer" size={30}></Menu>
               </SheetTrigger>
-              <SheetContent>
-                <div className="mt-[14px]">
-                  {dataMenus.map((menuItem, index) => (
+              <SheetContent className=" overflow-y-auto">
+                <div className="mt-[14px] ">
+                  <div className="grid grid-cols-2 gap-8 ">
+                    {data.categoriesData.map((category) => (
+                      <CategoryItem key={category.title} title={category.title} linkHref={category.linkHref} imageSrc={category.imageSrc} />
+                    ))}
+                  </div>
+
+                  {/* {dataMenus.map((menuItem, index) => (
                     <LinkComponentCustom
                       key={index}
                       title={menuItem.title}
                       href={menuItem.href}
                       className="text-[14px] font-semibold uppercase my-2"
                     ></LinkComponentCustom>
-                  ))}
+                  ))} */}
                 </div>
               </SheetContent>
             </Sheet>

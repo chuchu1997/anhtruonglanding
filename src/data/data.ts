@@ -1,6 +1,51 @@
 export const data = {
   banner: ["/landingpage1source/banner1.jpg", "/landingpage1source/banner2.jpg", "/landingpage1source/banner3.jpg"],
 
+  categoriesData: [
+    {
+      title: "Gia dụng , dụng cụ nhà bếp",
+      imageSrc: "/categories/giadung.webp",
+      linkHref: "gia-dung-nha-bep",
+    },
+
+    {
+      title: "Thời trang phụ kiện",
+      imageSrc: "/categories/thoitrang.webp",
+      linkHref: "",
+    },
+
+    {
+      title: "Dụng cụ làm đẹp",
+      imageSrc: "/categories/lamdep.webp",
+      linkHref: "",
+    },
+
+    {
+      title: "Chăm sóc sức khỏe",
+      imageSrc: "/categories/suckhoe.webp",
+      linkHref: "",
+    },
+    {
+      title: "Đồ chơi trẻ em",
+      imageSrc: "/categories/dochoi.webp",
+      linkHref: "",
+    },
+    {
+      title: "Nhà cửa và đời sống",
+      imageSrc: "/categories/nhacua.webp",
+      linkHref: "",
+    },
+    {
+      title: "Giày dép , túi xách",
+      imageSrc: "/categories/giaydep.webp",
+      linkHref: "",
+    },
+    {
+      title: "Phụ kiện công nghệ",
+      imageSrc: "/categories/phukiencongnghe.webp",
+      linkHref: "",
+    },
+  ],
   previewOneImages: [
     "/bancatgach/preview1/11.jpg",
     "/bancatgach/preview1/1.jpg",

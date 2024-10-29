@@ -8,6 +8,8 @@ import BlockSidebar from "@/components/BlockSidebar";
 import Footer from "@/components/Footer";
 import DockBottomContact from "@/components/DockBottomContact";
 import { GlobalProvider } from "@/GlobalProvider";
+import Categories from "@/components/Categories";
+import CustomBreadcums from "@/components/CustomBreadcums";
 
 const jetbrains = Open_Sans({
   subsets: ["latin"],
@@ -77,13 +79,19 @@ export default function RootLayout({
       <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
       <link rel="icon" href="/favicon.ico" sizes="any" />
       <body className={`${jetbrains.variable} ${pacifico.variable}  ${cuprum.variable}`} suppressHydrationWarning={true}>
-      <div className="min-h-[500px] pt-[40px]">{children}</div>
-        
-        {/* <GlobalProvider>
+        {/* <div className="min-h-[500px] pt-[40px]">{children}</div> */}
+
+        <GlobalProvider>
           <Header />
-          <div className="min-h-[500px] pt-[190px]">{children}</div>
-        </GlobalProvider> */}
-          
+
+          <div className="min-h-[500px] pt-[180px]">
+            {/* <CustomBreadcums /> */}
+            <Categories></Categories>
+
+            {children}
+          </div>
+        </GlobalProvider>
+
         {/* <BlockSidebar />
         <DockBottomContact /> */}
         {/* <StairEffect /> */}
