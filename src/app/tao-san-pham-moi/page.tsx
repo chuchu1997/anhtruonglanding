@@ -57,6 +57,7 @@ const TaoSanPhamMoi = () => {
     },
   });
   async function onSubmit(data: z.infer<typeof FormSchema>) {
+    //TODO: PLEASE ADD MA SAN PHAM !!
     let response = await ProductAPI.createNewProduct(data);
     console.log("RESPONSE", response);
     // toast({
