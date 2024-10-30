@@ -9,10 +9,6 @@ const config = {
       center: true,
       padding: "15px",
       screens: {
-        // sm: "640px",
-        // md: "768px",
-        // lg: "960px",
-        // xl: "1200px",
         sm: "576px",
         md: "768px",
         lg: "960px",
@@ -31,25 +27,39 @@ const config = {
       cuprum: "var(--font-cuprum)",
     },
     extend: {
-      backgroundImage: {
-        "header-image": "url('/header/2.jpg')",
-      },
       colors: {
-        // backgroundFullWeb: "#ffffff",
         primary: "#1c1c22",
         accent: {
           DEFAULT: "#63b8eb",
           hover: "#fff266",
         },
+        sidebar: {
+          DEFAULT: "hsl(var(--sidebar-background))",
+          foreground: "hsl(var(--sidebar-foreground))",
+          primary: "hsl(var(--sidebar-primary))",
+          "primary-foreground": "hsl(var(--sidebar-primary-foreground))",
+          accent: "hsl(var(--sidebar-accent))",
+          "accent-foreground": "hsl(var(--sidebar-accent-foreground))",
+          border: "hsl(var(--sidebar-border))",
+          ring: "hsl(var(--sidebar-ring))",
+        },
       },
       keyframes: {
         "accordion-down": {
-          from: { height: "0" },
-          to: { height: "var(--radix-accordion-content-height)" },
+          from: {
+            height: "0",
+          },
+          to: {
+            height: "var(--radix-accordion-content-height)",
+          },
         },
         "accordion-up": {
-          from: { height: "var(--radix-accordion-content-height)" },
-          to: { height: "0" },
+          from: {
+            height: "var(--radix-accordion-content-height)",
+          },
+          to: {
+            height: "0",
+          },
         },
       },
       animation: {

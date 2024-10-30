@@ -25,6 +25,9 @@ const LoginPage = () => {
           onClick={async () => {
             try {
               let response = await AuthAPI.login({ username: "anhtruong", password: "123" });
+
+              window.localStorage.setItem("access_token", response.data.access_token);
+              window.location.href = "/";
             } catch (e) {
               toast({
                 variant: "destructive",

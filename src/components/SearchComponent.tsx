@@ -17,7 +17,7 @@ const SearchComponent = ({ className }: searchInterface) => {
 
   return (
     <>
-      <div className={`w-full md:w-2/4  text-white relative ${className}`}>
+      <div className={`w-full md:w-2/4  text-white relative  ${className}`}>
         <Input
           placeholder="Tìm kiếm sản phẩm"
           className="text-black"

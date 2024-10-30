@@ -57,31 +57,5 @@ export default function Home() {
       imageSrc: "/mayphunxitapluccao.png",
     },
   ];
-  return (
-    <div className="page-container h-screen  ">
-      <SectionComponent titleSection="sản phẩm hot">
-        <GridLayout className="pc-layout hidden md:grid">
-          {products.map((product) => (
-            <ProductComponent key={product.id} title={product.title} imageSrc={product.imageSrc} linkHref={product.linkHref}></ProductComponent>
-          ))}
-        </GridLayout>
-
-        <GridLayout className="mobile block md:hidden">
-          <CarouselForProductsMobile products={products}></CarouselForProductsMobile>
-        </GridLayout>
-      </SectionComponent>
-      {/* SECTION 2 */}
-      <SectionComponent titleSection="sản phẩm mới" className="mt-[50px]">
-        <GridLayout className="pc-layout hidden md:grid">
-          {products.map((product) => (
-            <ProductComponent key={product.id} title={product.title} imageSrc={product.imageSrc} linkHref={product.linkHref}></ProductComponent>
-          ))}
-        </GridLayout>
-
-        <GridLayout className="mobile block md:hidden">
-          <CarouselForProductsMobile products={products}></CarouselForProductsMobile>
-        </GridLayout>
-      </SectionComponent>
-    </div>
-  );
+  return <div className="page-container h-screen ">THIS IS TEXT</div>;
 }
