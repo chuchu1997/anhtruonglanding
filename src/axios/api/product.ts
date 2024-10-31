@@ -12,13 +12,19 @@ interface createProps {
   masanpham?: string;
 }
 const ProductAPI = {
-  getAllProducts: async () => {
+  getAllProducts: async (currentPage: Number) => {
     return await axios({
       method: "GET",
       url: url,
+      params: { currentPage },
     });
   },
-
+  getProductTotalCount: async () => {
+    return await axios({
+      method: "GET",
+      url: url + "/total-count",
+    });
+  },
   createNewProduct: async ({ masanpham, title, description, price, amount, images, hashtag, dropshipFrom }: createProps) => {
     // console.log("DATA", data.images.length);
     let formData = new FormData();

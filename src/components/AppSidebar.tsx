@@ -11,7 +11,7 @@ import {
   SidebarMenuItem,
 } from "@/components/ui/sidebar";
 import { Calendar, Home, Inbox, Search, Settings } from "react-feather";
-
+import Link from "next/link";
 export function AppSidebar() {
   const items = [
     {
@@ -20,8 +20,8 @@ export function AppSidebar() {
       icon: Home,
     },
     {
-      title: "Inbox",
-      url: "#",
+      title: "Xem tất cả sản phẩm",
+      url: "/san-pham",
       icon: Inbox,
     },
     {
@@ -51,10 +51,12 @@ export function AppSidebar() {
               {items.map((item) => (
                 <SidebarMenuItem key={item.title}>
                   <SidebarMenuButton asChild>
-                    <a href={item.url}>
-                      <item.icon />
-                      <span>{item.title}</span>
-                    </a>
+                    <Link href={item.url}>
+                      <div className="flex items-center gap-4">
+                        <item.icon />
+                        <span>{item.title}</span>
+                      </div>
+                    </Link>
                   </SidebarMenuButton>
                 </SidebarMenuItem>
               ))}

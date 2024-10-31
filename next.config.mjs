@@ -3,6 +3,7 @@ const nextConfig = {
     // output:"export",
     reactStrictMode: false,
     images: {
+      
       dangerouslyAllowSVG: true,
       // path: "/",
       //EDIT PATH /
@@ -24,7 +25,7 @@ const nextConfig = {
             protocol:'https',
             hostname:'xsgames.co'
           }
-        
+          
         ],
       },
 

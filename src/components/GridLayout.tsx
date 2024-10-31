@@ -9,7 +9,7 @@ type Props = {
   className?: string;
 };
 const GridLayout: React.FC<Props> = ({ children, className }) => {
-  return <div className={`mt-[10px] grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-3 gap-8 ${className}`}>{children}</div>;
+  return <div className={`mt-[10px] grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8 ${className}`}>{children}</div>;
 };
 
 export default GridLayout;

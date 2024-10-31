@@ -1,21 +1,22 @@
 "use client";
-import { useEffect, useState } from "react";
 import React from "react";
 
 import Image from "next/image";
-import { Menu, X, Phone, Mail, Clock, Icon, ShoppingCart } from "react-feather";
+import { Menu, X, Phone, Mail, Clock } from "react-feather";
 import Link from "next/link";
 import LinkComponentCustom from "./LinkCustom";
 import { Button } from "@/components/ui/button";
-import { Input } from "@/components/ui/input";
-import { Label } from "@/components/ui/label";
+
 import { Sheet, SheetClose, SheetContent, SheetDescription, SheetFooter, SheetHeader, SheetTitle, SheetTrigger } from "@/components/ui/sheet";
 import SearchComponent from "./SearchComponent";
-import { usePathname } from "next/dist/client/components/navigation";
+
+import { useRouter } from "next/navigation";
 
 import { data } from "@/data/data";
 import { CategoryItem } from "./Categories";
+import { deleteCookie } from "cookies-next";
 const Header = () => {
+  const router = useRouter();
   return (
     <header>
       <div className="py-2 fixed header-top-absolute top-0 z-30 right-0 w-full text-white text-[12px] bg-[#405D72] ">
@@ -44,6 +45,15 @@ const Header = () => {
                     {data.categoriesData.map((category) => (
                       <CategoryItem key={category.title} title={category.title} linkHref={category.linkHref} imageSrc={category.imageSrc} />
                     ))}
+
+                    <Button
+                      onClick={() => {
+                        deleteCookie("access_token");
+                        router.push("/login");
+                      }}
+                    >
+                      Đăng xuất
+                    </Button>
                   </div>
                 </div>
               </SheetContent>

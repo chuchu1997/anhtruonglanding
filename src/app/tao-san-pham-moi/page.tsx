@@ -53,9 +53,6 @@ const FormSchema = z.object({
 const TaoSanPhamMoi = () => {
   const form = useForm<z.infer<typeof FormSchema>>({
     resolver: zodResolver(FormSchema),
-    defaultValues: {
-      dropshipFrom: "",
-    },
   });
   async function onSubmit(data: z.infer<typeof FormSchema>) {
     //TODO: PLEASE ADD MA SAN PHAM !!
