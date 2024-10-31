@@ -28,6 +28,7 @@ const FormSchema = z.object({
       (files) => Array.from(files).every((file) => ALLOWED_IMAGE_TYPES.includes(file.type)),
       "Only these types are allowed .jpg, .jpeg, .png and .webp"
     ),
+  masanpham: z.string({}),
   title: z.string({
     required_error: "Vui lòng chọn danh mục ",
   }),
@@ -60,14 +61,14 @@ const TaoSanPhamMoi = () => {
     //TODO: PLEASE ADD MA SAN PHAM !!
     let response = await ProductAPI.createNewProduct(data);
     console.log("RESPONSE", response);
-    // toast({
-    //   title: "You submitted the following values:",
-    //   description: (
-    //     <pre className="mt-2 w-[340px] rounded-md bg-slate-950 p-4">
-    //       <code className="text-white">{JSON.stringify(data, null, 2)}</code>
-    //     </pre>
-    //   ),
-    // });
+    toast({
+      title: "You submitted the following values:",
+      description: (
+        <pre className="mt-2 w-[340px] rounded-md bg-slate-950 p-4">
+          <code className="text-white">{JSON.stringify(data, null, 2)}</code>
+        </pre>
+      ),
+    });
   }
 
   return (
@@ -105,6 +106,20 @@ const TaoSanPhamMoi = () => {
             )}
           />
 
+          <FormField
+            control={form.control}
+            name="masanpham"
+            render={({ field }) => (
+              <FormItem>
+                <FormLabel>Mã sản phẩm</FormLabel>
+                <FormControl>
+                  <Input onChange={field.onChange} defaultValue={field.value} placeholder="shadcn" />
+                </FormControl>
+
+                <FormMessage />
+              </FormItem>
+            )}
+          />
           <FormField
             control={form.control}
             name="title"

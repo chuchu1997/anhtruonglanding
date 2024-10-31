@@ -5,6 +5,8 @@ interface propsLogin {
 }
 const AuthAPI = {
   login: async ({ username, password }: propsLogin) => {
+    console.log("US", username);
+    console.log("PW", password);
     return await axios({
       method: "POST",
       url: "/auth/login",

@@ -82,8 +82,8 @@ export default function RootLayout({
       <link rel="icon" href="/favicon.ico" sizes="any" />
       <body className={`${jetbrains.variable} ${pacifico.variable}  ${cuprum.variable}`} suppressHydrationWarning={true}>
         {/* <div className="min-h-[500px] pt-[40px]">{children}</div> */}
-
         <MainLayout>{children}</MainLayout>
+
         <Toaster />
       </body>
     </html>

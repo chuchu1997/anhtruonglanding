@@ -9,6 +9,7 @@ interface createProps {
   images: FileList;
   hashtag?: string;
   dropshipFrom?: string;
+  masanpham?: string;
 }
 const ProductAPI = {
   getAllProducts: async () => {
@@ -18,21 +19,18 @@ const ProductAPI = {
     });
   },
 
-  createNewProduct: async ({ title, description, price, amount, images, hashtag, dropshipFrom }: createProps) => {
-    console.log("IMAGES", images);
-
+  createNewProduct: async ({ masanpham, title, description, price, amount, images, hashtag, dropshipFrom }: createProps) => {
     // console.log("DATA", data.images.length);
     let formData = new FormData();
+    formData.append("id", masanpham ?? "");
     formData.append("title", title);
     formData.append("description", description);
     formData.append("categoryID", "");
     for (let i = 0; i < images.length; i++) {
       formData.append("images", images[i]);
     }
-
     if (hashtag) {
       let hashTagExcute = hashtag.split(" ");
-
       for (let i = 0; i < hashTagExcute.length; i++) {
         formData.append("hashtag", hashTagExcute[i]);
       }

@@ -14,7 +14,7 @@ export async function POST(request: Request) {
   const username = data.get("username");
   const amount = data.get("amount");
 
-  if ( !username || !address || !phoneNumber || !amount) {
+  if (!username || !address || !phoneNumber || !amount) {
     return NextResponse.json({ error: "Missing field required ." }, { status: 400 });
   }
   console.log("AMOUNT", amount);
@@ -77,9 +77,8 @@ export async function POST(request: Request) {
     `,
     });
 
-    return NextResponse.json({ message: "Đặt hàng thành công !" });
+    return NextResponse.json({ success: true });
   } catch (error) {
-    console.error("Error sending email:", error);
     return NextResponse.json({ error: "Failed to send email." }, { status: 500 });
   }
 }
