@@ -26,7 +26,7 @@ const CarouselForProductsMobile = (props: propsType) => {
                   <Image
                     placeholder="blur"
                     blurDataURL={"/image_placeholder/1.png"}
-                    src={product.imageSrc}
+                    src="/"
                     fill
                     alt="productimage"
                     quality={100}

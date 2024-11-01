@@ -10,6 +10,8 @@ interface createProps {
   hashtag?: string;
   dropshipFrom?: string;
   masanpham?: string;
+  category: string;
+  bestSelling?: boolean;
 }
 const ProductAPI = {
   getAllProducts: async (currentPage: Number) => {
@@ -25,13 +27,14 @@ const ProductAPI = {
       url: url + "/total-count",
     });
   },
-  createNewProduct: async ({ masanpham, title, description, price, amount, images, hashtag, dropshipFrom }: createProps) => {
+  createNewProduct: async ({ masanpham, title, description, price, amount, images, hashtag, dropshipFrom, category, bestSelling }: createProps) => {
     // console.log("DATA", data.images.length);
     let formData = new FormData();
     formData.append("id", masanpham ?? "");
+    formData.append("bestSelling", bestSelling?.toString() ?? "false");
     formData.append("title", title);
     formData.append("description", description);
-    formData.append("categoryID", "");
+    formData.append("category", category);
     for (let i = 0; i < images.length; i++) {
       formData.append("images", images[i]);
     }

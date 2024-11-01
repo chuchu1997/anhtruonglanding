@@ -9,15 +9,38 @@ import { Label } from "@/components/ui/label";
 import { Select, SelectContent, SelectGroup, SelectItem, SelectLabel, SelectTrigger, SelectValue } from "@/components/ui/select";
 import { Textarea } from "@/components/ui/textarea";
 import { randomUUID } from "crypto";
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { Form, FormControl, FormDescription, FormField, FormItem, FormLabel, FormMessage } from "@/components/ui/form";
-
+import {
+  Dialog,
+  DialogClose,
+  DialogContent,
+  DialogDescription,
+  DialogFooter,
+  DialogHeader,
+  DialogTitle,
+  DialogTrigger,
+} from "@/components/ui/dialog";
 import { v4 as uuidv4 } from "uuid";
 import { toast } from "@/hooks/use-toast";
 import { ProductAPI } from "@/axios/api/product";
+import { CategoryAPI } from "@/axios/api/category";
+import { CategoryProps } from "@/interfaces";
+import { Switch } from "@/components/ui/switch";
 
 const ALLOWED_IMAGE_TYPES = ["image/jpeg", "image/png", "image/webp", "image/jpg"];
 const MAX_IMAGE_SIZE = 5242880; // 5 MB
+
+const FormSchemaCategory = z.object({
+  name: z.string().min(2, {
+    message: "Vui lòng nhập tên danh mục",
+  }),
+  description: z.string({}),
+  parentCategory: z.string({}),
+  // name: z.string({
+  //   required_error: "Vui lòng nhập danh mục ",
+  // }),
+});
 const FormSchema = z.object({
   images: z
     .custom<FileList>((val) => val instanceof FileList, "Required")
@@ -49,13 +72,54 @@ const FormSchema = z.object({
     required_error: "Vui lòng nhập hashtag ",
   }),
   dropshipFrom: z.string({}),
+  bestSelling: z.boolean({}),
 });
 const TaoSanPhamMoi = () => {
+  const [categories, setCategories] = useState<CategoryProps[]>([]);
+
+  useEffect(() => {
+    fetchAllCategories();
+  }, []);
+
+  const fetchAllCategories = async () => {
+    let response = await CategoryAPI.getAllCategory();
+    if (response) {
+      setCategories(response.data);
+    }
+  };
   const form = useForm<z.infer<typeof FormSchema>>({
     resolver: zodResolver(FormSchema),
+    defaultValues: {
+      bestSelling: false,
+    },
   });
+
+  const formCategory = useForm<z.infer<typeof FormSchemaCategory>>({
+    resolver: zodResolver(FormSchemaCategory),
+    defaultValues: {
+      name: "",
+      description: "",
+      parentCategory: "",
+    },
+  });
+
+  async function onSubmitCreateCategory(data: z.infer<typeof FormSchemaCategory>) {
+    let response = await CategoryAPI.createCategory({ name: data.name, description: data.description, parentCategory: data.parentCategory });
+    if (response) {
+      toast({
+        title: "You submitted the following values:",
+        description: (
+          <pre className="mt-2 w-[340px] rounded-md bg-slate-950 p-4">
+            <code className="text-white">{JSON.stringify(data, null, 2)}</code>
+          </pre>
+        ),
+      });
+      await fetchAllCategories();
+    }
+  }
   async function onSubmit(data: z.infer<typeof FormSchema>) {
     //TODO: PLEASE ADD MA SAN PHAM !!
+    console.log("DATA", data);
     let response = await ProductAPI.createNewProduct(data);
     console.log("RESPONSE", response);
     toast({
@@ -71,7 +135,53 @@ const TaoSanPhamMoi = () => {
   return (
     <div className="mt-[10px] p-4  border border-[#cccccc] rounded-lg container mx-auto w-full md:w-6/12 flex flex-col gap-6">
       <h2 className="text-[32px] uppercase font-semibold text-center italic">tạo mới sản phẩm</h2>
+      <div>
+        <Dialog>
+          <DialogTrigger asChild>
+            <Button>Tạo mới danh mục</Button>
+          </DialogTrigger>
+          <DialogContent>
+            <DialogHeader>
+              <DialogTitle>Tạo danh mục mới</DialogTitle>
+              <DialogDescription>Nhập thông tin.</DialogDescription>
+            </DialogHeader>
+            <Form {...formCategory}>
+              <form onSubmit={formCategory.handleSubmit(onSubmitCreateCategory)} className="w-full space-y-6">
+                <FormField
+                  control={formCategory.control}
+                  name="name"
+                  render={({ field }) => (
+                    <FormItem>
+                      <FormLabel>Tên danh mục</FormLabel>
+                      <FormControl>
+                        <Input placeholder="shadcn" {...field} />
+                      </FormControl>
 
+                      <FormMessage />
+                    </FormItem>
+                  )}
+                />
+                <FormField
+                  control={formCategory.control}
+                  name="description"
+                  render={({ field }) => (
+                    <FormItem>
+                      <FormLabel>Mô tả</FormLabel>
+                      <FormControl>
+                        <Input placeholder="shadcn" {...field} />
+                      </FormControl>
+
+                      <FormMessage />
+                    </FormItem>
+                  )}
+                />
+
+                <Button type="submit">Tạo Mới Danh mục</Button>
+              </form>
+            </Form>
+          </DialogContent>
+        </Dialog>
+      </div>
       <Form {...form}>
         <form onSubmit={form.handleSubmit(onSubmit)} className="w-full space-y-6">
           <FormField
@@ -87,12 +197,18 @@ const TaoSanPhamMoi = () => {
                     </SelectTrigger>
                     <SelectContent>
                       <SelectGroup>
-                        <SelectLabel>Category</SelectLabel>
-                        <SelectItem value="apple">Apple</SelectItem>
+                        <SelectLabel>Danh mục</SelectLabel>
+                        <div className="create-category my-4 px-4"></div>
+                        {categories.map((category) => (
+                          <SelectItem value={category._id} key={category._id}>
+                            {category.name}
+                          </SelectItem>
+                        ))}
+                        {/* <SelectItem value="apple">Apple</SelectItem>
                         <SelectItem value="banana">Banana</SelectItem>
                         <SelectItem value="blueberry">Blueberry</SelectItem>
                         <SelectItem value="grapes">Grapes</SelectItem>
-                        <SelectItem value="pineapple">Pineapple</SelectItem>
+                        <SelectItem value="pineapple">Pineapple</SelectItem> */}
                       </SelectGroup>
                     </SelectContent>
                   </Select>
@@ -224,39 +340,26 @@ const TaoSanPhamMoi = () => {
             )}
           />
 
+          <FormField
+            control={form.control}
+            name="bestSelling"
+            render={({ field }) => (
+              <FormItem className="flex flex-row items-center justify-between rounded-lg border p-4">
+                <div className="space-y-0.5">
+                  <FormLabel className="text-base">Sản phẩm bán chạy ?</FormLabel>
+                </div>
+                <FormControl>
+                  <Switch checked={field.value} onCheckedChange={field.onChange} />
+                </FormControl>
+              </FormItem>
+            )}
+          />
+
           <Button type="submit" className="w-full">
             Tạo mới sản phẩm
           </Button>
         </form>
       </Form>
-      {/* <h2 className="text-[32px] uppercase font-semibold text-center italic">tạo mới sản phẩm</h2>
-      <Select>
-        <SelectTrigger className="w-full">
-          <SelectValue placeholder="Chọn loại danh mục" />
-        </SelectTrigger>
-        <SelectContent>
-          <SelectGroup>
-            <SelectLabel>Category</SelectLabel>
-            <SelectItem value="apple">Apple</SelectItem>
-            <SelectItem value="banana">Banana</SelectItem>
-            <SelectItem value="blueberry">Blueberry</SelectItem>
-            <SelectItem value="grapes">Grapes</SelectItem>
-            <SelectItem value="pineapple">Pineapple</SelectItem>
-          </SelectGroup>
-        </SelectContent>
-      </Select>
-      <Input type="text" placeholder="Tên sản phẩm" />
-
-      <Textarea placeholder="Mô tả sản phẩm" />
-
-      <Input type="text" placeholder="Giá sản phẩm " />
-      <Input type="number" placeholder="Số lượng" />
-      <div className="grid w-full max-w-sm items-center gap-1.5">
-        <Label htmlFor="picture">Chọn hình ảnh </Label>
-        <Input id="picture" type="file" multiple accept="image/png, image/gif, image/jpeg, image/webp" />
-      </div>
-
-      <Input required type="text" placeholder="hashtag" /> */}
     </div>
   );
 };

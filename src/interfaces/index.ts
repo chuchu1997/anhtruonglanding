@@ -14,3 +14,10 @@ export type ProductProps = {
   imagesObject: imageProps[];
   dropshipFrom?: string;
 };
+
+export type CategoryProps = {
+  _id: string;
+  name: string;
+  description?: string;
+  parentCategory?: string;
+};
