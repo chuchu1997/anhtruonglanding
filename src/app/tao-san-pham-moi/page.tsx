@@ -133,7 +133,7 @@ const TaoSanPhamMoi = () => {
   }
 
   return (
-    <div className="mt-[10px] p-4  border border-[#cccccc] rounded-lg container mx-auto w-full md:w-6/12 flex flex-col gap-6">
+    <div className="mt-[10px] p-4  border border-[#cccccc] rounded-lg container mx-auto w-full md:w-8/12 flex flex-col gap-6">
       <h2 className="text-[32px] uppercase font-semibold text-center italic">tạo mới sản phẩm</h2>
       <div>
         <Dialog>
@@ -146,7 +146,7 @@ const TaoSanPhamMoi = () => {
               <DialogDescription>Nhập thông tin.</DialogDescription>
             </DialogHeader>
             <Form {...formCategory}>
-              <form onSubmit={formCategory.handleSubmit(onSubmitCreateCategory)} className="w-full space-y-6">
+              <form onSubmit={formCategory.handleSubmit(onSubmitCreateCategory)} className="w-full space-y-6 ">
                 <FormField
                   control={formCategory.control}
                   name="name"
