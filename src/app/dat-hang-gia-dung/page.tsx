@@ -64,29 +64,23 @@ const DatHangGiaDung = () => {
       <DynamicSectionWrapper className="mb-[40px]" titleSection="thông tin sản phẩm">
         <div className="info-product flex flex-col gap-9">
           <div className="relative h-[460px] md:h-[1000px] w-full">
-            <Image src="/noicomdien/1.jpg" fill alt="maymassagecovaigay" className="md:object-contain object-cover" priority></Image>
+            <Image src="/thuoctrihoinach/1.jpg" fill alt="maymassagecovaigay" className="md:object-contain object-cover" priority></Image>
           </div>
 
           <div className="content-1 ">
-            <strong className="text-[#666666] text-[15px]">Nồi cơm điện mini đa năng CANFAN</strong>
+            <strong className="text-[#666666] text-[15px] mb-[10px]">Thuốc điều trị hôi nách và hôi chân ( Được làm bằng thảo dược )</strong>
 
             <div className="text-[14px]">
-           
              <ul>
-              <li>Công suất: Dưới 3L</li>
-              <li>Phương pháp điều khiển: Máy vi tính</li>
-              <li>Chức năng chức năng: Cơm niêu, Đặt trước, Khác</li>
-              <li>Chất liệu lót: Pha lê gốm</li>
-              <li>Điện áp định mức: 220VV</li>
-              <li>Tần số định mức: 50HZHZ</li>
-              <li>Công suất định mức: 300WW</li>
-              <li>Phương pháp sưởi ấm: Làm nóng khung gầm</li>
-         
+              <li>✅ Thành phần hoàn toàn tự nhiên: Được chiết xuất từ các loại thảo dược quý hiếm, an toàn cho làn da, giúp ngăn ngừa mồ hôi và khử mùi hiệu quả mà không gây kích ứng.</li>
+              <li>✅ Hiệu quả tức thì: Chỉ sau 5 ngày sử dụng, bạn sẽ không còn lo lắng về 𝑯𝒐̂𝒊 𝑵𝒂́𝒄𝒉 𝑽𝒂̀ 𝑯𝒐̂𝒊 𝑪𝒉𝒂̂𝒏 , mang lại sự tự tin cho bạn trong mọi hoạt động.</li>
+              <li>✅ Công thức độc quyền: Kết hợp giữa các thành phần thiên nhiên giúp kiểm soát mồ hôi, kháng khuẩn và làm dịu da, mang lại cảm giác thoải mái suốt cả ngày.</li>
+              <li>✅ Dễ sử dụng: Chỉ cần thoa một lượng vừa đủ lên vùng nách, sản phẩm sẽ thẩm thấu nhanh chóng, không để lại vết dơ hay bết dính.</li>
 
              </ul>
             </div>
           </div>
-
+{/* 
           <div className="content-2 ">
             <strong className="text-[#666666]">Ưu điểm sản phẩm</strong>
             <div className="text-[14px]">
@@ -97,7 +91,7 @@ const DatHangGiaDung = () => {
                 <li>- Có thể hấp</li>
               </ul>
             </div>
-          </div>
+          </div> */}
           {/* <div className="content-3 ">
             <strong className="text-[#666666]">Thông số kỹ thuật:</strong>
             <div className="text-[14px]">
@@ -110,14 +104,14 @@ const DatHangGiaDung = () => {
             </div>
           </div> */}
           <div className="relative h-[460px] md:h-[1000px] w-full">
-            <Image priority src="/noicomdien/2.jpg" fill alt="maymassagecovaigay" className="md:object-contain object-cover"></Image>
+            <Image priority src="/thuoctrihoinach/2.jpg" fill alt="maymassagecovaigay" className="md:object-contain object-cover"></Image>
           </div>
 
           <div className="relative h-[500px] md:h-[1000px] w-full">
-            <Image priority src="/noicomdien/3.jpg" fill alt="maymassagecovaigay" className="md:object-contain object-cover"></Image>
+            <Image priority src="/thuoctrihoinach/3.jpg" fill alt="maymassagecovaigay" className="md:object-contain object-cover"></Image>
           </div>
 
-          <div className="relative  h-[720px] md:h-[1000px] w-full">
+          {/* <div className="relative  h-[720px] md:h-[1000px] w-full">
             <Image priority src="/noicomdien/4.jpg" fill alt="maymassagecovaigay" className="md:object-contain object-cover"></Image>
           </div>
           <div className="relative  h-[500px] md:h-[1000px] w-full">
@@ -125,7 +119,7 @@ const DatHangGiaDung = () => {
           </div>
           <div className="relative h-[460px] md:h-[1000px] w-full">
             <Image src="/noicomdien/6.jpg" fill alt="maymassagecovaigay" className="md:object-contain object-cover"></Image>
-          </div>
+          </div> */}
         </div>
       </DynamicSectionWrapper>
 
@@ -206,21 +200,21 @@ const DatHangGiaDung = () => {
             timeComments="1 ngày trước"
             userName="Thúy diễm"
             numberLikes="121"
-            comment="Sản phẩm rất tốt trong tầm giá đã mua 2 lần sẽ ủng hộ tiếp ạ ^^!"
+            comment="Sản phẩm rất tốt đã mua 2 lần sẽ ủng hộ tiếp ạ ^^!"
             userAvatarUrl="https://api.dicebear.com/9.x/shapes/svg?seed=Mason"
           ></RenderComment>
           <RenderComment
             timeComments="1 ngày trước"
             userName="Minh Tuấn"
             numberLikes="4"
-            comment="Tính ra giá ok mua về ba mẹ còn tưởng đồ đắt tiền ấy."
+            comment="Tính ra e bị hôi nhẹ rất khó chịu sau khi dùng 1 lọ thấy đỡ hẵn."
             userAvatarUrl="https://api.dicebear.com/9.x/personas/svg?seed=Mason"
           ></RenderComment>
           <RenderComment
             timeComments="1 ngày trước"
             userName="Đoàn Trung Hiếu"
             numberLikes="1"
-            comment="Máy chạy ổn định  "
+            comment="Mới mua về để dùng thử xem sao nhưng shop tư vấn nhiệt tình  "
             userAvatarUrl="https://api.dicebear.com/9.x/pixel-art-neutral/svg?seed=Mason"
           ></RenderComment>
           <RenderComment
@@ -248,7 +242,7 @@ const DatHangGiaDung = () => {
             timeComments="1 ngày trước"
             userName="Khánh Vân"
             numberLikes="9"
-            comment="Sản phẩm này thực sự đáp ứng được nhu cầu của mình. Rất hài lòng"
+            comment="Loại này uống vô có cảm giác dễ chịu cực "
             userAvatarUrl="https://api.dicebear.com/9.x/fun-emoji/svg?seed=Ryker"
           ></RenderComment>
           <RenderComment

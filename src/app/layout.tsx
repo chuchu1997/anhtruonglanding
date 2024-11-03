@@ -82,11 +82,11 @@ export default function RootLayout({
         {/* <div className="min-h-[500px] pt-[40px]">{children}</div> */}
 
         <GlobalProvider>
-          <Header />
+          {/* <Header /> */}
 
-          <div className="min-h-[500px] pt-[180px]">
+          <div className="min-h-[500px] pt-[0px]">
             {/* <CustomBreadcums /> */}
-            <Categories></Categories>
+            {/* <Categories></Categories> */}
 
             {children}
           </div>

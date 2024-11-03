@@ -12,14 +12,13 @@ export async function POST(request: Request) {
   const address = data.get("address");
   const phoneNumber = data.get("phoneNumber");
   const username = data.get("username");
-  const amount = data.get("amount");
 
-  if ( !username || !address || !phoneNumber || !amount) {
+
+  if ( !username || !address || !phoneNumber) {
     return NextResponse.json({ error: "Missing field required ." }, { status: 400 });
   }
-  console.log("AMOUNT", amount);
-  let renderTextForAmount =
-    Number(amount) > 1 ? "Đặt 2 sản phẩm giá 520.000đ (Miễn phí ship) " : "Đặt 1 sản phẩm giá 269.000đ và 20k ship (Tổng 289.000đ)";
+ 
+
   const transporter = nodemailer.createTransport({
     host: "smtp.gmail.com", // Replace with your SMTP server
     port: 465, // Replace with the appropriate port
@@ -60,14 +59,10 @@ export async function POST(request: Request) {
    <p style = "margin-bottom:"10px""><strong>Số điện thoại:</strong> ${phoneNumber}</p>
   
   <div style="padding: 10px; border: 1px solid #ccc; border-radius: 5px; background-color: #fff;">
-    <h4 style="margin: 0;">Sản Phẩm:</h4>
-    <div style="margin-top: 10px;">
-      <img src="https://dathangsi.vn/upload/products/2024/03/0258-noi-com-dien-canfan.jpg" alt="sanphamdathang" style="width: 100px; height: auto; margin-right: 10px; vertical-align: middle;" />
-    </div>
+  
 
-    <div> <strong style ="margin-bottom:"15px"">Nồi cơm điện mini </strong> </div>
+    <div> <strong style ="margin-bottom:"15px""> Thuốc trị hôi nách </strong> </div>
      
-    <div> <strong style = "color:red">${renderTextForAmount}</strong></div>
      
  
   </div>
