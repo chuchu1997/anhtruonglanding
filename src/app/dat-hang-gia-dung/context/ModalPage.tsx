@@ -67,7 +67,7 @@ const ModalPage: React.FC = () => {
     formData.append("address", data.address);
     formData.append("phoneNumber", data.phonenumber);
     formData.append("username", data.username);
-    // formData.append("amount", form.getValues().type);
+    formData.append("amount",data.amount);
     setLoading(true);
 
     try {
