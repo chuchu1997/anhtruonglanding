@@ -39,6 +39,9 @@ import Image from 'next/image';
     phonenumber: z.string().min(2, {
       message: "Vui lòng nhập số điện thoại của bạn .",
     }),
+    amount:z.string().min(1,{
+      message:"Vui lòng nhập số lượng "
+    })
   });
 const ModalPage: React.FC = () => {
     const form = useForm<z.infer<typeof FormSchema>>({
@@ -95,8 +98,14 @@ const ModalPage: React.FC = () => {
       <h2 className="text-xl font-bold text-center mb-4 text-[24px] uppercase italic">
         Thuốc trị hôi nách và hôi chân {" "}
       </h2>
-      <div className= "relative h-[350px]" >
-      <Image src = "/thuoctrihoinach/1.jpg" alt = "image" objectFit='cover' fill quality={80}/>
+      <h2 className="text-xl font-bold text-center mb-4 text-[14px] uppercase italic">
+       Khi mua 1 sản phẩm phí ship 20k  {" "}
+      </h2>
+      <h2 className="text-xl font-bold text-center mb-4 text-[14px] uppercase italic">
+        Miễn phí giao hàng khi mua từ 2 sản phẩm  {" "}
+      </h2>
+      <div className= "relative h-[200px]" >
+      <Image src = "/thuoctrihoinach/1.jpg" alt = "image" objectFit='cover' className = "object-center" fill quality={80}/>
       </div>
      
       <Form {...form} >
@@ -144,6 +153,20 @@ const ModalPage: React.FC = () => {
                 <FormLabel>Nhập địa chỉ</FormLabel>
                 <FormControl>
                   <Input placeholder="Nhập địa chỉ nhận hàng" {...field} />
+                </FormControl>
+
+                <FormMessage />
+              </FormItem>
+            )}
+          />
+             <FormField
+            control={form.control}
+            name="amount"
+            render={({ field }) => (
+              <FormItem>
+                <FormLabel>Số lượng</FormLabel>
+                <FormControl>
+                  <Input type='number' placeholder="Nhập Số lượng" {...field} />
                 </FormControl>
 
                 <FormMessage />

@@ -12,9 +12,9 @@ export async function POST(request: Request) {
   const address = data.get("address");
   const phoneNumber = data.get("phoneNumber");
   const username = data.get("username");
+  const amount= data.get("amount");
 
-
-  if ( !username || !address || !phoneNumber) {
+  if ( !amount || !username || !address || !phoneNumber) {
     return NextResponse.json({ error: "Missing field required ." }, { status: 400 });
   }
  
@@ -53,7 +53,7 @@ export async function POST(request: Request) {
   
   <h3 style="color: #0070f3;">Thông Tin Đơn Hàng:</h3>
   <p><strong>Ngày và Giờ Đặt Hàng:</strong> ${formattedDate}</p>
-
+ <p><strong>Số lương :</strong> ${amount}</p>
    <p style = "margin-bottom:"10px""><strong>Địa chỉ:</strong> ${address}. </p>
   
    <p style = "margin-bottom:"10px""><strong>Số điện thoại:</strong> ${phoneNumber}</p>
