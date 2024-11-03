@@ -14,7 +14,7 @@ const HeaderDatHang = () => {
       <div className="header-container container mx-auto flex items-end justify-between">
         <div className="flex flex-col gap-2">
        
-          <p className="italic font-bold text-[white] text-[15px] md:text-[20px] border-2 border-[white] px-2 rounded-xl">Chỉ còn :269.000đ</p>
+          <p className="italic font-bold text-[white] text-[15px] md:text-[20px] border-2 border-[white] px-2 rounded-xl">Chỉ còn :189.000đ</p>
         </div>
         <Button
           className="uppercase font-bold text-[15px] md:text-[16px] text-[#EEEEEE]"

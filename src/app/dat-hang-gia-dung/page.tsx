@@ -75,7 +75,7 @@ const DatHangGiaDung = () => {
               <li>✅ Thành phần hoàn toàn tự nhiên: Được chiết xuất từ các loại thảo dược quý hiếm, an toàn cho làn da, giúp ngăn ngừa mồ hôi và khử mùi hiệu quả mà không gây kích ứng.</li>
               <li>✅ Hiệu quả tức thì: Chỉ sau 5 ngày sử dụng, bạn sẽ không còn lo lắng về 𝑯𝒐̂𝒊 𝑵𝒂́𝒄𝒉 𝑽𝒂̀ 𝑯𝒐̂𝒊 𝑪𝒉𝒂̂𝒏 , mang lại sự tự tin cho bạn trong mọi hoạt động.</li>
               <li>✅ Công thức độc quyền: Kết hợp giữa các thành phần thiên nhiên giúp kiểm soát mồ hôi, kháng khuẩn và làm dịu da, mang lại cảm giác thoải mái suốt cả ngày.</li>
-              <li>✅ Dễ sử dụng: Chỉ cần thoa một lượng vừa đủ lên vùng nách, sản phẩm sẽ thẩm thấu nhanh chóng, không để lại vết dơ hay bết dính.</li>
+              <li>✅ Dễ sử dụng: Sau khi tắm xong chỉ cần lấy 1 lát chanh xoa lên vùng bị hôi sau đó thoa bột của sản phẩm vào .</li>
 
              </ul>
             </div>

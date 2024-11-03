@@ -83,111 +83,93 @@ const ModalDatHang = ({ isOpen, onChange, className }: props) => {
 
     return (
 
-      <Form {...form}>
-      <form onSubmit={form.handleSubmit(onSubmit)} className="w-2/3 space-y-6">
-        <FormField
-          control={form.control}
-          name="username"
-          render={({ field }) => (
-            <FormItem>
-              <FormLabel>Username</FormLabel>
-              <FormControl>
-                <Input placeholder="shadcn" {...field} />
-              </FormControl>
-            
-              <FormMessage />
-            </FormItem>
-          )}
-        />
-        <Button type="submit">Submit</Button>
-      </form>
-    </Form>
-      // <div
-      //   className={`fixed  top-0 bottom-0 left-0 right-0 h-screen z-50 overflow-hidden   flex items-center justify-center  bg-gray-900 bg-opacity-50  ${className}`}
-      // >
-      //   <div className="bg-white  shadow-lg p-6 max-w-md w-full relative h-full overflow-y-auto ">
-      //     <div
-      //       className="absolute right-[12px] top-[5px] bg-[grey] rounded-md p-1 cursor-pointer"
-      //       onClick={() => {
-      //         onChange(false);
-      //         document.body.style.overflow = "unset";
-      //       }}
-      //     >
-      //       <X color={"white"} size={20}></X>
-      //     </div>
-      //     <h2 className="text-xl font-bold text-center mb-4 text-[24px] uppercase italic">
-      //       Nồi cơm điện mini{" "}
-      //     </h2>
-      //     <Form {...form} >
-      //       <form
-      //         onSubmit={form.handleSubmit(onSubmit)}
-      //         className="w-full space-y-6"
-      //       >
-      //         <FormField
-      //           control={form.control}
-      //           name="username"
-      //           render={({ field }) => (
-      //             <FormItem>
-      //               <FormLabel>Tên của bạn</FormLabel>
-      //               <FormControl>
-      //                 <Input
-      //                 {...field}
-      //                   placeholder="Vui lòng nhập tên của bạn"
+    
+      <div
+        className={`fixed  top-0 bottom-0 left-0 right-0 h-screen z-50 overflow-hidden   flex items-center justify-center  bg-gray-900 bg-opacity-50  ${className}`}
+      >
+        <div className="bg-white  shadow-lg p-6 max-w-md w-full relative h-full overflow-y-auto ">
+          <div
+            className="absolute right-[12px] top-[5px] bg-[grey] rounded-md p-1 cursor-pointer"
+            onClick={() => {
+              onChange(false);
+              document.body.style.overflow = "unset";
+            }}
+          >
+            <X color={"white"} size={20}></X>
+          </div>
+          <h2 className="text-xl font-bold text-center mb-4 text-[24px] uppercase italic">
+            Nồi cơm điện mini{" "}
+          </h2>
+          <Form {...form} >
+            <form
+              onSubmit={form.handleSubmit(onSubmit)}
+              className="w-full space-y-6"
+            >
+              <FormField
+                control={form.control}
+                name="username"
+                render={({ field }) => (
+                  <FormItem>
+                    <FormLabel>Tên của bạn</FormLabel>
+                    <FormControl>
+                      <Input
+                      {...field}
+                        placeholder="Vui lòng nhập tên của bạn"
                    
-      //                 />
-      //               </FormControl>
+                      />
+                    </FormControl>
 
-      //               <FormMessage />
-      //             </FormItem>
-      //           )}
-      //         />
-      //         <FormField
-      //           control={form.control}
-      //           name="phonenumber"
-      //           render={({ field }) => (
-      //             <FormItem>
-      //               <FormLabel>Số điện thoại</FormLabel>
-      //               <FormControl>
-      //                 <Input placeholder="Nhập số điện thoại" {...field} />
-      //               </FormControl>
+                    <FormMessage />
+                  </FormItem>
+                )}
+              />
+              <FormField
+                control={form.control}
+                name="phonenumber"
+                render={({ field }) => (
+                  <FormItem>
+                    <FormLabel>Số điện thoại</FormLabel>
+                    <FormControl>
+                      <Input placeholder="Nhập số điện thoại" {...field} />
+                    </FormControl>
 
-      //               <FormMessage />
-      //             </FormItem>
-      //           )}
-      //         />
-      //         <FormField
-      //           control={form.control}
-      //           name="address"
-      //           render={({ field }) => (
-      //             <FormItem>
-      //               <FormLabel>Nhập địa chỉ</FormLabel>
-      //               <FormControl>
-      //                 <Input placeholder="Nhập địa chỉ nhận hàng" {...field} />
-      //               </FormControl>
+                    <FormMessage />
+                  </FormItem>
+                )}
+              />
+              <FormField
+                control={form.control}
+                name="address"
+                render={({ field }) => (
+                  <FormItem>
+                    <FormLabel>Nhập địa chỉ</FormLabel>
+                    <FormControl>
+                      <Input placeholder="Nhập địa chỉ nhận hàng" {...field} />
+                    </FormControl>
 
-      //               <FormMessage />
-      //             </FormItem>
-      //           )}
-      //         />
-      //         <Button type="submit" className="w-full">
-      //           Đặt hàng ngay
-      //         </Button>
-      //       </form>
-      //     </Form>
+                    <FormMessage />
+                  </FormItem>
+                )}
+              />
+              <Button type="submit" className="w-full">
+                Đặt hàng ngay
+              </Button>
+            </form>
+          </Form>
       
-      //   </div>
+        </div>
 
-      //   {loading && (
-      //     <div className="fixed z-50 h-screen left-0 right-0 bg-[#eeeeee]/70 flex items-center">
-      //       <MoonLoader
-      //         loading={loading}
-      //         cssOverride={override}
-      //         size={100}
-      //         color="#134B70"
-      //       />
-      //     </div>
-      //   )}
-      // </div>
+        {loading && (
+          <div className="fixed z-50 h-screen left-0 right-0 bg-[#eeeeee]/70 flex items-center">
+            <MoonLoader
+              loading={loading}
+              cssOverride={override}
+              size={100}
+              color="#134B70"
+            />
+          </div>
+        )}
+      </div>
     );
   };
 
