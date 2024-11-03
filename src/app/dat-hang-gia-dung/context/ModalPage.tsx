@@ -95,8 +95,8 @@ const ModalPage: React.FC = () => {
       >
         <X color={"white"} size={20}></X>
       </div>
-      <h2 className="text-xl font-bold text-center mb-4 text-[24px] uppercase italic">
-        Thuốc trị hôi nách và hôi chân {" "}
+      <h2 className="text-xl font-bold text-center mb-2 text-[24px] uppercase italic">
+        Thuốc trị hôi nách{" "}
       </h2>
       <h2 className="text-xl font-bold text-center mb-4 text-[14px] uppercase italic">
        Khi mua 1 sản phẩm phí ship 20k  {" "}
@@ -104,9 +104,9 @@ const ModalPage: React.FC = () => {
       <h2 className="text-xl font-bold text-center mb-4 text-[14px] uppercase italic">
         Miễn phí giao hàng khi mua từ 2 sản phẩm  {" "}
       </h2>
-      <div className= "relative h-[200px]" >
+      {/* <div className= "relative h-[200px]" >
       <Image src = "/thuoctrihoinach/1.jpg" alt = "image" objectFit='cover' className = "object-center" fill quality={80}/>
-      </div>
+      </div> */}
      
       <Form {...form} >
         <form
