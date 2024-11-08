@@ -11,6 +11,11 @@ import ProductComponent from "@/components/Product";
 import Link from "next/link";
 import CarouselForProductsMobile from "@/components/CarouselForProductsMobile";
 import { ProductProps } from "@/interfaces";
+import { Check } from "react-feather";
+import { Button } from "@/components/ui/button";
+import CarouselProducts from "@/components/CarouselProducts";
+import CarouselDisplay2Items from "@/components/CarouselDisplay2Items";
+import { Carousel, CarouselContent, CarouselItem } from "@/components/ui/carousel";
 
 export default function Home() {
   const products: ProductProps[] = [
@@ -39,153 +44,128 @@ export default function Home() {
     <div className="page-container">
       <main className="main">
         {/* <section className="hero-section relative "> */}
-        <CarouselBanner listImages={data.banner} className="h-[450px] md:h-[650px]" />
+        <CarouselBanner listImages={data.banner} className="h-[300px] md:h-[700px]" />
         {/* </section> */}
-        <DynamicSectionWrapper titleSection="giới thiệu" className="bg-[white] ">
-          <div className="grid md:grid-cols-4 gap-2 font-cuprum">
-            <div className="grid grid-cols-2 md:grid-cols-1 gap-4">
-              <div className="flex flex-col gap-2 items-center">
-                <Image
-                  className="object-contain border border-gray-300 rounded-full"
-                  src="/landingpage1source/section1/subicon1.png"
-                  alt="subicon"
-                  width={70}
-                  height={70}
-                />
-
-                <h3 className="font-bold text-[20px] text-[#000000]">100% Tự Nhiên</h3>
-                <p className="text-center text-[16px] text-[#333333]">
-                  We care about what you eat. We want to produce food which nourishes your body and tastes delicious.
-                </p>
-              </div>
-
-              <div className="flex flex-col gap-2 items-center">
-                <Image
-                  className="object-contain border border-gray-300 rounded-full"
-                  src="/landingpage1source/section1/subicon1.png"
-                  alt="subicon"
-                  width={70}
-                  height={70}
-                />
-
-                <h3 className="font-bold  text-[20px] text-[#000000]">100% Tự Nhiên</h3>
-                <p className="text-center text-[16px] text-[#333333]">
-                  We care about what you eat. We want to produce food which nourishes your body and tastes delicious.
-                </p>
-              </div>
+        <DynamicSectionWrapper className="container">
+          <div className="grid grid-cols-1  md:grid-cols-2 gap-4 relative">
+            <div className="left-content relative h-[420px] md:h-[600px] w-full">
+              <Image
+                alt="experience"
+                fill
+                objectFit="contain"
+                src="https://nhathuymachine.com.vn/wp-content/uploads/2024/10/Nhat-Huy-1-1.jpg"
+              ></Image>
             </div>
-            <div className="col-span-1 md:col-span-2">
-              <div className="h-[350px] md:h-[500px] relative">
-                <Image alt="section_1_images" src="/landingpage1source/section1/1.jpg" quality={100} priority className="object-contain" fill></Image>
-              </div>
-            </div>
-            <div className="grid grid-cols-2 md:grid-cols-1 gap-4">
-              <div className="flex flex-col gap-2 items-center">
-                <Image
-                  className="object-contain border border-gray-300 rounded-full"
-                  src="/landingpage1source/section1/subicon1.png"
-                  alt="subicon"
-                  width={70}
-                  height={70}
-                />
+            <div className="right-content flex flex-col gap-8 ">
+              <h2 className=" capitalize text-[20px] text-[#a50000] font-bold inline-block overflow-hidden ">
+                <span className="  relative  after:absolute after:content-[''] after:w-[50px] after:h-[3px] after:bg-[#a50000] after:top-1/2 after:right-[-65px]">
+                  Cung cấp giải pháp
+                </span>
+              </h2>
+              <p className=" text-[25px] capitalize">
+                <span className="text-[#333333] font-bold ">Giải Pháp Tối Ưu </span>
+                <strong className="text-[#a50000] font-bold">Hàng Đầu Cho Ngành </strong>
 
-                <h3 className="font-bold  text-[20px] text-[#000000]">100% Tự Nhiên</h3>
-                <p className="text-center text-[16px] text-[#333333]">
-                  We care about what you eat. We want to produce food which nourishes your body and tastes delicious.
-                </p>
-              </div>
-
-              <div className="flex flex-col gap-2 items-center">
-                <Image
-                  className="object-contain border border-gray-300 rounded-full"
-                  src="/landingpage1source/section1/subicon1.png"
-                  alt="subicon"
-                  width={70}
-                  height={70}
-                />
-
-                <h3 className="font-bold  text-[20px] text-[#000000]">100% Tự Nhiên</h3>
-                <p className="text-center text-[16px] text-[#333333]">
-                  We care about what you eat. We want to produce food which nourishes your body and tastes delicious.
-                </p>
-              </div>
-            </div>
-          </div>
-        </DynamicSectionWrapper>
-        <section className="">
-          <CarouselBanner listImages={data.banner} className="h-[300px] md:h-[500px]" />
-        </section>
-        <DynamicSectionWrapper titleSection="sản phẩm của chúng tôi">
-          <Tabs defaultValue="account">
-            <div className="  flex justify-center item-center py-4">
-              <TabsList className="bg-transparent">
-                <TabsTrigger value="account" className="font-cuprum ">
-                  This is item 1
-                </TabsTrigger>
-                <TabsTrigger value="password" className="font-cuprum">
-                  This is item 2
-                </TabsTrigger>
-              </TabsList>
-            </div>
-
-            <TabsContent value="account">
-              <div className="pc-view hidden md:block">
-                <div className="grid mx-auto w-4/6 md:w-full  md:grid-cols-3 lg:grid-cols-4 gap-8">
-                  {products.map((product, index) => (
-                    <ProductComponent key={index} title={product.title} linkHref={product.linkHref} imageSrc={product.imageSrc} />
-                  ))}
-                </div>
-              </div>
-              <div className="mobile-view block md:hidden">
-                <CarouselForProductsMobile products={products} />
-              </div>
-            </TabsContent>
-            <TabsContent value="password">
-              <div className="pc-view hidden md:block">
-                <div className="grid mx-auto w-4/6 md:w-full  md:grid-cols-3 lg:grid-cols-4 gap-8">
-                  {products.map((product, index) => (
-                    <ProductComponent key={index} title={product.title} linkHref={product.linkHref} imageSrc={product.imageSrc} />
-                  ))}
-                </div>
-              </div>
-              <div className="mobile-view block md:hidden">
-                <CarouselForProductsMobile products={products} />
-              </div>
-            </TabsContent>
-          </Tabs>
-        </DynamicSectionWrapper>
-
-        <DynamicSectionWrapper titleSection="sản phẩm nổi bật" className=" bg-[#fbfbfb]">
-          <div className="grid md:grid-cols-3 gap-8 font-cuprum">
-            <div className="col-span-2">
-              <div className="h-[350px] md:h-[450px] relative">
-                <Image
-                  alt="section_1_images"
-                  src="/landingpage1source/section1/subicon2.png"
-                  quality={100}
-                  priority
-                  className="object-contain"
-                  fill
-                ></Image>
-              </div>
-            </div>
-            <div className="flex flex-col gap-4">
-              {/* <div>123</div> */}
-              <h3 className="text-[24px] md:text-[30px]  font-bold uppercase">Mùng tơi</h3>
-              <p className="text-[16px] md:text-[18px] font-extralight	text-[#595959]">
-                Rau cải bắp hữu cơ (Brassica oleracea nhóm Capitata) là loại rau chủ lực trong họ Cải (còn gọi là họ Thập tự -
-                Brassicaceae/Cruciferae),có xuất xứ từ vùng Địa Trung Hải. Nó là cây thân thảo, sống hai năm, và là một thực vật có hoa thuộc nhóm hai
-                lá mầm với các lá tạo thành một cụm đặc hình gần như hình cầu.Là một loại rau hữu cơ rất dễ nhận biết,khó có thể nhầm lẫn
+                <span className="text-[#333333] font-bold"> dược phẩm</span>
               </p>
-              <Link href="/" className="px-2 py-1 w-[100px] text-center rounded-lg text-white bg-[#86be4c]">
-                Xem chi tiết
-              </Link>
+              <p>
+                Trong hành trình xây dựng uy tín, chất lượng là mục tiêu hàng đầu của chúng tôi. Chúng tôi cam kết cung cấp máy móc và giải pháp tối
+                ưu nhất cho ngành dược phẩm, đảm bảo hiệu quả và độ chính xác cao.
+              </p>
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                <div className="flex flex-col gap-4">
+                  <div className="flex gap-4 items-center">
+                    <Check className="text-[#a50000]" />
+                    <p>Công nghệ tiên tiến.</p>
+                  </div>
+                  <div className="flex gap-4 items-center">
+                    <Check className="text-[#a50000]" />
+                    <p>Công nghệ tiên tiến.</p>
+                  </div>
+                  <div className="flex gap-4 items-center">
+                    <Check className="text-[#a50000]" />
+                    <p>Công nghệ tiên tiến.</p>
+                  </div>
+                </div>
+                <div className="flex flex-col gap-4">
+                  <div className="flex gap-4 items-center">
+                    <Check className="text-[#a50000]" />
+                    <p>Công nghệ tiên tiến.</p>
+                  </div>
+                  <div className="flex gap-4 items-center">
+                    <Check className="text-[#a50000]" />
+                    <p>Công nghệ tiên tiến.</p>
+                  </div>
+                  <div className="flex gap-4 items-center">
+                    <Check className="text-[#a50000]" />
+                    <p>Công nghệ tiên tiến.</p>
+                  </div>
+                </div>
+                <Button className="mt-[20px]">Xem thêm</Button>
+              </div>
             </div>
           </div>
         </DynamicSectionWrapper>
-
-        <section className="">
-          <CarouselBanner listImages={data.banner} className="h-[300px] md:h-[500px]" />
+        <section className="bg-[#4f4f4f]">
+          <DynamicSectionWrapper className=" mx-[100px] relative ">
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-4 ">
+              <div className="flex flex-col gap-4">
+                <h2 className=" capitalize text-[20px] text-[#a50000] font-bold inline-block overflow-hidden ">
+                  <span className="  relative  after:absolute after:content-[''] after:w-[50px] after:h-[3px] after:bg-[#a50000] after:top-1/2 after:right-[-65px]">
+                    Chất lượng là
+                  </span>
+                </h2>
+                <h2 className="capitalize text-[25px] max-w-[250px] text-[white] font-bold leading-9">Mục tiêu hàng đầu của chúng tôi</h2>
+                <p className="text-white">
+                  Trong hành trình xây dựng uy tín, chất lượng là mục tiêu hàng đầu của chúng tôi. Chúng tôi cam kết cung cấp máy móc và giải pháp tối
+                  ưu nhất cho ngành dược phẩm, đảm bảo hiệu quả và độ chính xác cao.
+                </p>
+                <Button className="w-2/6">Liên hệ</Button>
+              </div>
+              <div className=" border border-[red] overflow-hidden col-span-2 ">
+                <Carousel>
+                  <CarouselContent className=" w-full  ">
+                    <CarouselItem className="relative basis-1/3 mr-4">
+                      <div className="h-full w-full bg-white p-4 flex flex-col gap-4">
+                        <div>ICON</div>
+                        <div>title</div>
+                        <div>description</div>
+                        <div className="border-b-2 border-[grey]/40 block"></div>
+                        <div className="text-[black] font-bold">Xem thêm</div>
+                      </div>
+                    </CarouselItem>
+                    <CarouselItem className="relative basis-1/3 mr-4">
+                      <div className="h-full w-full bg-white p-4 flex flex-col gap-4">
+                        <div>ICON</div>
+                        <div>title</div>
+                        <div>description</div>
+                        <div className="border-b-2 border-[grey]/40 block"></div>
+                        <div className="text-[black] font-bold">Xem thêm</div>
+                      </div>
+                    </CarouselItem>
+                    <CarouselItem className="relative basis-1/3 mr-4">
+                      <div className="h-full w-full bg-white p-4 flex flex-col gap-4">
+                        <div>ICON</div>
+                        <div>title</div>
+                        <div>description</div>
+                        <div className="border-b-2 border-[grey]/40 block"></div>
+                        <div className="text-[black] font-bold">Xem thêm</div>
+                      </div>
+                    </CarouselItem>
+                    <CarouselItem className="relative basis-1/3 mr-4">
+                      <div className="h-full w-full bg-white p-4 flex flex-col gap-4">
+                        <div>ICON</div>
+                        <div>title</div>
+                        <div>description</div>
+                        <div className="border-b-2 border-[grey]/40 block"></div>
+                        <div className="text-[black] font-bold">Xem thêm</div>
+                      </div>
+                    </CarouselItem>
+                  </CarouselContent>
+                </Carousel>
+              </div>
+            </div>
+          </DynamicSectionWrapper>
         </section>
       </main>
     </div>

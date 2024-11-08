@@ -10,7 +10,10 @@ interface IconComponentProps {
 }
 const LinkComponentCustom = ({ icon: FeatherIcon, href, title, className }: IconComponentProps) => {
   return (
-    <Link href={href} className={`${className} flex items-center gap-2 hover:text-[#86be4c] transition-color duration-150 ease-in-out`}>
+    <Link
+      href={href}
+      className={`${className} text-[16px] font-bold flex items-center uppercase text-[black] gap-2 hover:text-[#A50000] transition-color duration-150 ease-in-out`}
+    >
       {FeatherIcon && <FeatherIcon size={14} />}
       <span>{title}</span>
     </Link>

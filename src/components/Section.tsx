@@ -12,8 +12,8 @@ type Props = {
 };
 const SectionComponent: React.FC<Props> = ({ titleSection, children, id, className }) => {
   return (
-    <section className={`${className} py-[40px] lg:py-[100px]`} id={id}>
-      <div className="container mx-auto">
+    <section className={`${className}   py-[40px] lg:py-[60px]`} id={id}>
+      <div className="">
         <h2 className="text-center capitalize text-[30px] lg:text-[60px] font-accent mb-[40px]">{titleSection}</h2>
         <div className="content-section">{children}</div>
       </div>

@@ -15,6 +15,10 @@ const nextConfig = {
             protocol: 'https',
             hostname: 'mayxaydungmoi.com',
           },
+          {
+            protocol: 'https',
+            hostname: 'nhathuymachine.com.vn',
+          },
         ],
       },
 

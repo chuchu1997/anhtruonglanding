@@ -14,7 +14,7 @@ const CarouselDisplay2Items = (props: propsType) => {
     <Carousel className="mt-[14px]">
       <CarouselContent className="h-[100px] xl:h-[150px] w-full  ">
         {images.map((image, index) => (
-          <CarouselItem className="relative basis-1/2 lg:basis-1/3 mr-4" key={index}>
+          <CarouselItem className="relative basis-1/3 mr-4" key={index}>
             <Image
               alt="sub_banner"
               src={image}
@@ -27,8 +27,8 @@ const CarouselDisplay2Items = (props: propsType) => {
           </CarouselItem>
         ))}
       </CarouselContent>
-      <CarouselPrevious className="left-[10px]" />
-      <CarouselNext className="right-[10px]" />
+      {/* <CarouselPrevious className="left-[10px]" />
+      <CarouselNext className="right-[10px]" /> */}
     </Carousel>
   );
 };

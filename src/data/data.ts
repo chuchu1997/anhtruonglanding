@@ -1,5 +1,9 @@
 export const data = {
-  banner: ["/landingpage1source/banner1.jpg", "/landingpage1source/banner2.jpg", "/landingpage1source/banner3.jpg"],
+  banner: [
+    "https://nhathuymachine.com.vn/wp-content/uploads/2024/09/Slider-1.jpg",
+    "https://nhathuymachine.com.vn/wp-content/uploads/2024/09/Slider-2.jpg",
+    "https://nhathuymachine.com.vn/wp-content/uploads/2024/09/Slider-3.jpg",
+  ],
 
   previewOneImages: [
     "/bancatgach/preview1/11.jpg",
