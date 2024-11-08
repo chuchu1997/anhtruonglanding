@@ -122,12 +122,20 @@ export default function Home() {
                 </p>
                 <Button className="w-2/6">Liên hệ</Button>
               </div>
-              <div className=" border border-[red] overflow-hidden col-span-2 ">
+              <div className=" overflow-hidden col-span-2 ">
                 <Carousel>
                   <CarouselContent className=" w-full  ">
                     <CarouselItem className="relative basis-1/3 mr-4">
                       <div className="h-full w-full bg-white p-4 flex flex-col gap-4">
-                        <div>ICON</div>
+                        <div>
+                          <Image
+                            src="https://nhathuymachine.com.vn/wp-content/uploads/2024/09/performance-appraisal.png"
+                            alt="img"
+                            width={80}
+                            height={80}
+                            quality={100}
+                          ></Image>
+                        </div>
                         <div>title</div>
                         <div>description</div>
                         <div className="border-b-2 border-[grey]/40 block"></div>
@@ -136,7 +144,15 @@ export default function Home() {
                     </CarouselItem>
                     <CarouselItem className="relative basis-1/3 mr-4">
                       <div className="h-full w-full bg-white p-4 flex flex-col gap-4">
-                        <div>ICON</div>
+                        <div>
+                          <Image
+                            src="https://nhathuymachine.com.vn/wp-content/uploads/2024/09/performance-appraisal.png"
+                            alt="img"
+                            width={80}
+                            height={80}
+                            quality={100}
+                          ></Image>
+                        </div>
                         <div>title</div>
                         <div>description</div>
                         <div className="border-b-2 border-[grey]/40 block"></div>
@@ -145,7 +161,15 @@ export default function Home() {
                     </CarouselItem>
                     <CarouselItem className="relative basis-1/3 mr-4">
                       <div className="h-full w-full bg-white p-4 flex flex-col gap-4">
-                        <div>ICON</div>
+                        <div>
+                          <Image
+                            src="https://nhathuymachine.com.vn/wp-content/uploads/2024/09/performance-appraisal.png"
+                            alt="img"
+                            width={80}
+                            height={80}
+                            quality={100}
+                          ></Image>
+                        </div>
                         <div>title</div>
                         <div>description</div>
                         <div className="border-b-2 border-[grey]/40 block"></div>
@@ -154,7 +178,15 @@ export default function Home() {
                     </CarouselItem>
                     <CarouselItem className="relative basis-1/3 mr-4">
                       <div className="h-full w-full bg-white p-4 flex flex-col gap-4">
-                        <div>ICON</div>
+                        <div>
+                          <Image
+                            src="https://nhathuymachine.com.vn/wp-content/uploads/2024/09/performance-appraisal.png"
+                            alt="img"
+                            width={80}
+                            height={80}
+                            quality={100}
+                          ></Image>
+                        </div>
                         <div>title</div>
                         <div>description</div>
                         <div className="border-b-2 border-[grey]/40 block"></div>
