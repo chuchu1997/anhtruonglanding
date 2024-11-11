@@ -11,10 +11,10 @@ type propsCarousel = {
 };
 const CarouselComponent = ({ className, responsiveTaiwindForItem, listJSXCarouselItem, isShowDot, isShowControlNextAndPrev }: propsCarousel) => {
   return (
-    <Carousel className="relative">
-      <CarouselContent className={`${className}`}>
+    <Carousel className="relative " opts={{ align: "start" }}>
+      <CarouselContent className={`${className}  `}>
         {listJSXCarouselItem.map((jsxItem, index) => (
-          <CarouselItem className={`relative  ${responsiveTaiwindForItem}`} key={index}>
+          <CarouselItem className={`relative   ${responsiveTaiwindForItem}`} key={index}>
             {jsxItem}
           </CarouselItem>
         ))}
