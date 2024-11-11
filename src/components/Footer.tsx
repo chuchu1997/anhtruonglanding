@@ -156,11 +156,17 @@ const footerCenterItems2: footerDescriptionProps[] = [
 
 const Footer = () => {
   return (
-    <div className="bg-[#333333] mt-[50px] pt-[100px] pb-[40px]">
+    <div className="bg-footer-image bg-no-repeat bg-cover bg-[#212529] mt-[50px] pt-[100px] pb-[40px]">
       <div className="container mx-auto text-white font-cuprum italic flex flex-col">
         <div className="footer-top flex flex-col justify-center items-center gap-6 ">
           <Link href="/">
-            <Image src="/landingpage1source/logo/logo.png" width={140} height={140} quality={100} alt="logo"></Image>
+            <Image
+              src="https://nhathuymachine.com.vn/wp-content/uploads/2024/10/LOGO-INOX-300x257.jpg"
+              width={240}
+              height={240}
+              quality={100}
+              alt="logo"
+            ></Image>
           </Link>
           <div className="social-media flex gap-6 mb-[40px]">
             {/* {Array.from({ length: 4 }, (_, i) => (
@@ -192,9 +198,9 @@ const Footer = () => {
         </div>
         <div className="footer-bottom border-t border-[#cccccc] mt-[20px] pt-[20px] flex flex-col justify-center items-center gap-4 text-none md:text-center">
           <ul>
-            <li>© 2024 Máy Xây Dựng Mới Bản quyền thuộc về Công Ty TNHH TM Dụng Cụ Tổng Hợp</li>
-            <li>GPDKKD: Mã số thuế: 0316806043 do sở KH & ĐT TP.HCM cấp ngày 14/04/2021</li>
-            <li>Showroom: 287 Tây Thạnh, P.Tây Thạnh, Q.Tân Phú, TP.Hồ Chí Minh. Điện thoại: 0973 926 139. Email: mayxaydungmoi.co@gmail.com</li>
+            <li>© 2024 Nhất Huy Machine . All rights reserved. Thiết kế website Southteam</li>
+            {/* <li>GPDKKD: Mã số thuế: 0316806043 do sở KH & ĐT TP.HCM cấp ngày 14/04/2021</li>
+            <li>Showroom: 287 Tây Thạnh, P.Tây Thạnh, Q.Tân Phú, TP.Hồ Chí Minh. Điện thoại: 0973 926 139. Email: mayxaydungmoi.co@gmail.com</li> */}
           </ul>
         </div>
       </div>

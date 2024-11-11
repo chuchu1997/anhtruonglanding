@@ -42,7 +42,7 @@ const Header = () => {
       const scrollY = window.scrollY;
       // setShowNavbarOnScroll(scrollY < lastScrollY || scrollY < 50);
       // setLastScrollY(scrollY);
-      console.log("SCROLL Y ", scrollY);
+
       if (scrollY > 120) {
         setShowNavbarOnScroll(true);
         setLastScrollY(scrollY);
@@ -113,7 +113,7 @@ const Header = () => {
           {/* <div className="text-[black]">LANGUAGES</div> */}
           <Sheet>
             <SheetTrigger asChild>
-              <Menu className="block md:hidden cursor-pointer text-[black]"></Menu>
+              <Menu className="block md:hidden cursor-pointer text-accent"></Menu>
             </SheetTrigger>
             <SheetContent>
               <div className="mt-[14px]">
@@ -177,7 +177,7 @@ const Header = () => {
           </div> */}
           <Sheet>
             <SheetTrigger asChild>
-              <Menu className="block md:hidden cursor-pointer text-white"></Menu>
+              <Menu className="cursor-pointer text-accent"></Menu>
             </SheetTrigger>
             <SheetContent>
               <div className="mt-[14px] ">

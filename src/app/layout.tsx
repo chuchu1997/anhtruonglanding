@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Open_Sans, Pacifico, Roboto_Mono, Cuprum } from "next/font/google";
+import { Open_Sans, Pacifico, Roboto_Mono, Cuprum, JetBrains_Mono } from "next/font/google";
 import "./globals.css";
 import Header from "@/components/Header";
 // import PageTransition from "@/components/PageTransition";
@@ -8,9 +8,10 @@ import BlockSidebar from "@/components/BlockSidebar";
 import Footer from "@/components/Footer";
 import DockBottomContact from "@/components/DockBottomContact";
 
-const jetbrains = Open_Sans({
+const jetbrains = JetBrains_Mono({
   subsets: ["latin"],
   variable: "--font-jetbrainsMono",
+  weight: ["100", "200", "300", "400", "500", "600", "700", "800"],
 });
 
 const pacifico = Pacifico({
