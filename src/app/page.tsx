@@ -3,7 +3,6 @@ import dynamic from "next/dynamic";
 const DynamicSectionWrapper = dynamic(() => import("@/components/Section"), {});
 
 import { data } from "@/data/data";
-import CarouselBanner from "@/components/CarouselBanner";
 import Image from "next/image";
 
 import Link from "next/link";
