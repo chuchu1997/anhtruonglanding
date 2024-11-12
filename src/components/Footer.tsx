@@ -1,9 +1,11 @@
+"use client";
 import React from "react";
 import Image from "next/image";
 
 import Link from "next/link";
 import { Facebook, Instagram, Youtube, Twitter, Icon, MapPin, Phone, Mail } from "react-feather";
 import { link } from "fs";
+import { usePathname } from "next/navigation";
 
 const socials = [
   {
@@ -156,7 +158,7 @@ const footerCenterItems2: footerDescriptionProps[] = [
 
 const Footer = () => {
   return (
-    <div className="bg-footer-image bg-no-repeat bg-cover bg-[#212529] mt-[50px] pt-[100px] pb-[40px]">
+    <div className={`bg-footer-image bg-no-repeat bg-cover bg-[#212529] mt-[50px] pt-[100px] pb-[40px]`}>
       <div className="container mx-auto text-white font-cuprum italic flex flex-col">
         <div className="footer-top flex flex-col justify-center items-center gap-6 ">
           <Link href="/">

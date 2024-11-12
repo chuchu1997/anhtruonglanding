@@ -9,10 +9,6 @@ const config = {
       center: true,
       padding: "15px",
       screens: {
-        // sm: "640px",
-        // md: "768px",
-        // lg: "960px",
-        // xl: "1200px",
         sm: "640px",
         md: "768px",
         lg: "960px",
@@ -37,11 +33,9 @@ const config = {
     },
     extend: {
       backgroundImage: {
-        "header-image": "url('/header/2.jpg')",
         "footer-image": "url(https://nhathuymachine.com.vn/wp-content/themes/southteam/img/bg-footer.png)",
       },
       colors: {
-        // backgroundFullWeb: "#ffffff",
         primary: "#1c1c22",
         accent: {
           DEFAULT: "#a50000",
@@ -50,12 +44,20 @@ const config = {
       },
       keyframes: {
         "accordion-down": {
-          from: { height: "0" },
-          to: { height: "var(--radix-accordion-content-height)" },
+          from: {
+            height: "0",
+          },
+          to: {
+            height: "var(--radix-accordion-content-height)",
+          },
         },
         "accordion-up": {
-          from: { height: "var(--radix-accordion-content-height)" },
-          to: { height: "0" },
+          from: {
+            height: "var(--radix-accordion-content-height)",
+          },
+          to: {
+            height: "0",
+          },
         },
       },
       animation: {

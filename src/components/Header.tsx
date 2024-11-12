@@ -10,7 +10,7 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { Sheet, SheetClose, SheetContent, SheetDescription, SheetFooter, SheetHeader, SheetTitle, SheetTrigger } from "@/components/ui/sheet";
-
+import { usePathname } from "next/navigation";
 const dataMenus = [
   {
     title: "Trang chủ",
@@ -36,6 +36,7 @@ const dataMenus = [
 const Header = () => {
   const [showNavbarOnScroll, setShowNavbarOnScroll] = useState(false);
   const [lastScrollY, setLastScrollY] = useState(0);
+  const path = usePathname();
 
   const handleScroll = () => {
     if (typeof window !== "undefined") {
@@ -59,6 +60,7 @@ const Header = () => {
       window.removeEventListener("scroll", handleScroll);
     };
   }, [lastScrollY]);
+
   return (
     <header>
       <div className="header-top-absolute relative top-0 right-0 mt-[0px] text-white text-[12px]">
