@@ -16,11 +16,22 @@ import CountUpEffect from "@/components/CountUpEffect";
 import { Quote } from "lucide-react";
 import GridLayout from "@/components/GridLayout";
 import CarouselComponent from "@/components/CarouselComponent";
+import { TrangChu_API } from "@/axios/layout_api/trang_chu_api";
+export default async function Home() {
+  let banner = "";
+  const fetchBanner = async () => {
+    let response = await TrangChu_API.getBanners();
+    banner = response.data;
+  };
+  await fetchBanner();
 
-export default function Home() {
+  // let data = await fetch("https://api.vercel.app/blog");
+  // let posts = await data.json();
   return (
     <div className="page-container">
       <main className="main">
+        {/* <Image src={banner} alt="ss" width={100} height={100}></Image> */}
+        {/* <RenderBannerTrangChu /> */}
         {/* <CarouselBanner listImages={data.banner} className="h-[300px] md:h-[700px]" /> */}
         <CarouselComponent
           isShowControlNextAndPrev

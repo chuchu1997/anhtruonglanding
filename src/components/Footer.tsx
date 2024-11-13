@@ -157,6 +157,8 @@ const footerCenterItems2: footerDescriptionProps[] = [
 ];
 
 const Footer = () => {
+  const path = usePathname();
+  if (path.includes("admin")) return;
   return (
     <div className={`bg-footer-image bg-no-repeat bg-cover bg-[#212529] mt-[50px] pt-[100px] pb-[40px]`}>
       <div className="container mx-auto text-white font-cuprum italic flex flex-col">

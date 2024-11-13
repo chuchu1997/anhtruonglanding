@@ -1,8 +1,6 @@
-"use client";
 import React from "react";
 import { menuData } from "./menuData";
 import { Label } from "@/components/ui/label";
-import LinkComponentCustom from "@/components/LinkCustom";
 import Link from "next/link";
 
 const Sidebar = () => {

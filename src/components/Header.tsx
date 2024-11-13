@@ -1,7 +1,6 @@
-"use client";
+// "use client";
 import { useEffect, useState } from "react";
 import React from "react";
-
 import Image from "next/image";
 import { Menu, X, Phone, Mail, Clock, Icon, Facebook, Linkedin, Youtube } from "react-feather";
 import Link from "next/link";
@@ -10,7 +9,10 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { Sheet, SheetClose, SheetContent, SheetDescription, SheetFooter, SheetHeader, SheetTitle, SheetTrigger } from "@/components/ui/sheet";
-import { usePathname } from "next/navigation";
+import RenderLogoServerSide from "./RenderLogoServerside";
+import { headers } from "next/headers";
+import HeaderShowWhenScroll from "./HeaderShowWhenScroll";
+
 const dataMenus = [
   {
     title: "Trang chủ",
@@ -34,32 +36,10 @@ const dataMenus = [
   },
 ];
 const Header = () => {
-  const [showNavbarOnScroll, setShowNavbarOnScroll] = useState(false);
-  const [lastScrollY, setLastScrollY] = useState(0);
-  const path = usePathname();
+  const headersList = headers();
+  const header_url = headersList.get("x-url") || "";
 
-  const handleScroll = () => {
-    if (typeof window !== "undefined") {
-      const scrollY = window.scrollY;
-      // setShowNavbarOnScroll(scrollY < lastScrollY || scrollY < 50);
-      // setLastScrollY(scrollY);
-
-      if (scrollY > 120) {
-        setShowNavbarOnScroll(true);
-        setLastScrollY(scrollY);
-      } else {
-        setShowNavbarOnScroll(false);
-        setLastScrollY(scrollY);
-      }
-    }
-  };
-
-  useEffect(() => {
-    window.addEventListener("scroll", handleScroll);
-    return () => {
-      window.removeEventListener("scroll", handleScroll);
-    };
-  }, [lastScrollY]);
+  if (header_url.includes("admin")) return;
 
   return (
     <header>
@@ -103,21 +83,17 @@ const Header = () => {
         {/* HEADER center */}
         <div className="container md:mt-[20px] flex justify-between items-center">
           <Link href="/" className="relative w-[200px] md:w-[280px] h-[60px]">
-            <Image
-              src="https://nhathuymachine.com.vn/wp-content/uploads/2024/10/LOGO-NHAT-HUY.png"
-              fill
-              objectFit="contain"
-              quality={100}
-              priority
-              alt="logo"
-            ></Image>
+            <RenderLogoServerSide />
           </Link>
           {/* <div className="text-[black]">LANGUAGES</div> */}
           <Sheet>
             <SheetTrigger asChild>
               <Menu className="block md:hidden cursor-pointer text-accent"></Menu>
             </SheetTrigger>
-            <SheetContent>
+            <SheetContent side={"left"} aria-describedby="undefined">
+              <SheetTitle></SheetTitle>
+              <SheetDescription></SheetDescription>
+
               <div className="mt-[14px]">
                 {dataMenus.map((menuItem, index) => (
                   <LinkComponentCustom
@@ -150,54 +126,7 @@ const Header = () => {
         </div>
       </div>
 
-      {/* THIS IS NAVBAR ONSCROLLL  */}
-      <div
-        className={`fixed z-50 top-0 left-0 w-full bg-[white] shadow-md transition-transform duration-300 ${
-          showNavbarOnScroll ? "translate-y-0" : "-translate-y-full"
-        }`}
-      >
-        <div className="container mx-auto p-2 flex justify-between items-center">
-          <Link href="/" className="relative w-[200px] md:w-[280px] h-[60px]">
-            <Image
-              src="https://nhathuymachine.com.vn/wp-content/uploads/2024/10/LOGO-NHAT-HUY.png"
-              fill
-              objectFit="contain"
-              quality={100}
-              priority
-              alt="logo"
-            ></Image>
-          </Link>
-          {/* <div className="gap-4 hidden md:flex">
-            {dataMenus.map((menuItem, index) => (
-              <LinkComponentCustom
-                key={index}
-                title={menuItem.title}
-                href={menuItem.href}
-                className="text-[14px] font-semibold uppercase text-white"
-              ></LinkComponentCustom>
-            ))}
-          </div> */}
-          <Sheet>
-            <SheetTrigger asChild>
-              <Menu className="cursor-pointer text-accent"></Menu>
-            </SheetTrigger>
-            <SheetContent>
-              <div className="mt-[14px] ">
-                {dataMenus.map((menuItem, index) => (
-                  <LinkComponentCustom
-                    key={index}
-                    title={menuItem.title}
-                    href={menuItem.href}
-                    className="text-[14px] font-semibold uppercase my-2"
-                  ></LinkComponentCustom>
-                ))}
-              </div>
-            </SheetContent>
-          </Sheet>
-        </div>
-      </div>
-      {/* THIS IS NAVBAR ONSCROLLL  */}
-      {/* THIS IS NAVBAR ONSCROLLL  */}
+      <HeaderShowWhenScroll />
     </header>
   );
 };

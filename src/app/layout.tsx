@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import { Open_Sans, Pacifico, Roboto_Mono, Cuprum, JetBrains_Mono } from "next/font/google";
-import "../globals.css";
+import "./globals.css";
 
 import Header from "@/components/Header";
 // import PageTransition from "@/components/PageTransition";
