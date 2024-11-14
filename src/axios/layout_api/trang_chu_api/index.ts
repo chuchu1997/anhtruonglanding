@@ -1,4 +1,5 @@
 import axiosInstance from "@/axios";
+import { CreateBannerInterface } from "@/interfaces";
 const url = "/layout/trang-chu";
 export const TrangChu_API = {
   getBanners: async () => {
@@ -7,14 +8,12 @@ export const TrangChu_API = {
       url: `${url}/banners`,
     });
   },
-  updateBanner: async (files: FileList) => {
-    let formData = new FormData();
-    // formData.append('images',)
-    Array.from(files).forEach((file) => formData.append("images", file));
+
+  createBanner: async ({ imageListDescription }: { imageListDescription: CreateBannerInterface[] }) => {
     return axiosInstance({
-      method: "GET",
+      method: "POST",
       url: `${url}/banners`,
-      data: formData,
+      data: imageListDescription,
     });
   },
 };

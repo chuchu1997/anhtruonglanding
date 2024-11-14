@@ -1,65 +1,116 @@
 "use client";
 import { Button } from "@/components/ui/button";
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { PenTool, PlusCircle, Trash } from "react-feather";
 import Image from "next/image";
 import { Label } from "@/components/ui/label";
 import { Input } from "@/components/ui/input";
+import { TrangChu_API } from "@/axios/layout_api/trang_chu_api";
+import { CreateBannerInterface } from "@/interfaces";
+import { v4 as uuidv4 } from "uuid";
+import { IMAGE_API } from "@/axios/image_api";
 
 const TrangChuEdit = () => {
-  const [selectedFiles, setSelectedFiles] = useState<FileList>();
-
+  const [selectedFiles, setSelectedFiles] = useState<FileList | null>();
+  const [imageListDescription, setImageListDescription] = useState<CreateBannerInterface[]>([]);
   const onChooseNewBanner = (event: any) => {
     if (event.target.files) {
+      let fileL: FileList = event.target.files;
+      // setImageListDescription([]);
+      setSelectedFiles(null);
+      Array.from(fileL).forEach((file, index) => {
+        setImageListDescription((prevItem) => [
+          ...prevItem,
+          {
+            id: uuidv4(),
+            title: "",
+            description: "",
+            imagePath: URL.createObjectURL(file),
+          },
+        ]);
+      });
+
       setSelectedFiles(event.target.files);
     }
   };
+  const fetchBanners = async () => {
+    setImageListDescription([]);
+    setSelectedFiles(null);
+    let res = await TrangChu_API.getBanners();
+    setImageListDescription(res.data);
+    console.log("RES", res);
+  };
+  useEffect(() => {
+    fetchBanners();
+  }, []);
   return (
     <div className="flex flex-col gap-8">
       <div className="bg-[#ffffff] rounded-md shadow-md p-4 flex flex-col gap-4">
         <h3>Chỉnh sửa banner:</h3>
-        {/* <div className="flex flex-wrap justify-center gap-4 overflow-hidden">
-          <div className="relative h-[300px] w-[700px] group ">
-            <Image src="http://localhost:5000/image/logo.webp" alt="logo" objectFit="cover" fill></Image>
-
-            <div className="group-hover:top-1/2 absolute top-[-50px] transition-top duration-300 left-1/2 -translate-x-1/2 -translate-y-1/2 flex gap-4">
-              <Button size="icon" className="w-2/5 p-4 group mx-auto">
-                <PenTool size={30} className="group-hover:text-white" />
-              </Button>
-              <Button size="icon" className="w-2/5 p-4 group mx-auto">
-                <Trash size={30} className="group-hover:text-white" />
-              </Button>
-            </div>
-          </div>
-        </div>
-        <div className="flex flex-wrap justify-center gap-4 overflow-hidden">
-          <div className="relative h-[300px] w-[700px] group ">
-            <Image src="http://localhost:5000/image/logo.webp" alt="logo" objectFit="cover" fill></Image>
-            <div className="group-hover:top-1/2 absolute top-[-50px] transition-top duration-300 left-1/2 -translate-x-1/2 -translate-y-1/2 flex gap-4">
-              <Button size="icon" className="w-2/5 p-4 group mx-auto">
-                <PenTool size={30} className="group-hover:text-white" />
-              </Button>
-              <Button size="icon" className="w-2/5 p-4 group mx-auto">
-                <Trash size={30} className="group-hover:text-white" />
-              </Button>
-            </div>
-          </div>
-        </div> */}
-        <div className="flex items-end w-full max-w-md  gap-1.5">
+        {/* <div className="flex items-end w-full max-w-md  gap-1.5">
           <div>
             <Label htmlFor="picture">Thêm mới banner</Label>
-            <Input id="picture" type="file" accept="image/*" multiple onChange={onChooseNewBanner} />
+            <Input id="picture" type="file" accept="image/*" multiple onChange={(event) => onChooseNewBanner(event)} />
           </div>
-          <Button disabled={selectedFiles ? false : true}>Tạo mới banner</Button>
-        </div>
+        </div> */}
         <div className="flex flex-col gap-4">
           <h3>Xem trước hình ảnh :</h3>
-          <div className="flex flex-col items-center gap-4">
-            {Array.from(selectedFiles || []).map((item, index) => (
-              <Image key={index} src={URL.createObjectURL(item)} alt="img" width={500} height={100} className="cover"></Image>
+          <div className="grid grid-cols-1 md:grid-cols-3  gap-4 w-full   mx-auto">
+            {imageListDescription.map((item, index) => (
+              <div className="flex flex-col items-center gap-4 shadow-md p-4 w-1/2 relative " key={index}>
+                <div className="absolute top-0 right-[10px]">
+                  {/* <Button>Thay đổi hình ảnh</Button> */}
+                  <Button>Xóa Banner</Button>
+                </div>
+                <Image key={index} src={item.imagePath} alt="img" width={300} height={100} className="cover"></Image>
+                <div>
+                  <Label>Tiêu đề chính</Label>
+                  <Input
+                    type="text"
+                    placeholder="tiêu đề chính"
+                    defaultValue={imageListDescription[index].title}
+                    onChange={(event) => {
+                      imageListDescription[index].title = event.target.value;
+                    }}
+                  ></Input>
+                </div>
+                <div>
+                  <Label>Mô tả </Label>
+                  <Input
+                    type="text"
+                    placeholder="mô tả"
+                    defaultValue={imageListDescription[index].description}
+                    onChange={(event) => {
+                      imageListDescription[index].description = event.target.value;
+                    }}
+                  ></Input>
+                </div>
+              </div>
             ))}
           </div>
-
+          <Button
+            className="w-full md:w-2/6 mx-auto"
+            disabled={selectedFiles || imageListDescription.length > 0 ? false : true}
+            onClick={async () => {
+              if (selectedFiles) {
+                console.log("SELECTED FILE", selectedFiles);
+                let res = await IMAGE_API.uploadImages({ imageFiles: selectedFiles });
+                if (res) {
+                  res.data.map((image: any, index: number) => {
+                    imageListDescription[index].imagePath = image.path;
+                  });
+                }
+                let res2 = await TrangChu_API.createBanner({ imageListDescription: imageListDescription });
+                console.log("RES 2 ", res2);
+              } else {
+                console.log("CALL THIS", imageListDescription);
+                //UPDATE DATA BANNER
+              }
+              await fetchBanners();
+            }}
+          >
+            Áp dụng chỉnh sửa
+          </Button>
           {/* <Image src = ""></Image> */}
         </div>
       </div>
