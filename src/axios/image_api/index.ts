@@ -1,5 +1,5 @@
 import axiosInstance from "@/axios";
-import { CreateBannerInterface } from "@/interfaces";
+import { BannerItemInterface } from "@/interfaces";
 const url = "/image";
 export const IMAGE_API = {
   uploadImages: async ({ imageFiles }: { imageFiles: FileList }) => {

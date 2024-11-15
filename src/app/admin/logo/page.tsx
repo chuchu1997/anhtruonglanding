@@ -5,6 +5,7 @@ import Image from "next/image";
 import { Button } from "@/components/ui/button";
 import { Label } from "@/components/ui/label";
 import { Input } from "@/components/ui/input";
+import EditBanner from "../trang-chu/components/banner/modals/editBanner";
 const LogoPageEdit = () => {
   const [logo, setLogo] = useState("");
   const [file, setFile] = useState<File>();
@@ -49,6 +50,7 @@ const LogoPageEdit = () => {
           Lưu thay đổi
         </Button>
       </div>
+
       <p>( Nếu chưa thấy logo update thì anh/chị tắt trình duyệt rồi mở lại vì trình duyệt lưu logo vào cache )</p>
     </div>
   );

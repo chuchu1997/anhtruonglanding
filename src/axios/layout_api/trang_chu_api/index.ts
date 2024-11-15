@@ -1,5 +1,5 @@
 import axiosInstance from "@/axios";
-import { CreateBannerInterface } from "@/interfaces";
+import { BannerItemInterface } from "@/interfaces";
 const url = "/layout/trang-chu";
 export const TrangChu_API = {
   getBanners: async () => {
@@ -9,11 +9,18 @@ export const TrangChu_API = {
     });
   },
 
-  createBanner: async ({ imageListDescription }: { imageListDescription: CreateBannerInterface[] }) => {
+  createBanner: async ({ imageListDescription }: { imageListDescription: BannerItemInterface[] }) => {
     return axiosInstance({
       method: "POST",
       url: `${url}/banners`,
       data: imageListDescription,
+    });
+  },
+  updateBanner: async (imageUpdate: BannerItemInterface) => {
+    return axiosInstance({
+      method: "PATCH",
+      url: `${url}/banners/${imageUpdate._id}`,
+      data: imageUpdate,
     });
   },
 };

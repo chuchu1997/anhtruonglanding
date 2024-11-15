@@ -6,13 +6,15 @@ import Image from "next/image";
 import { Label } from "@/components/ui/label";
 import { Input } from "@/components/ui/input";
 import { TrangChu_API } from "@/axios/layout_api/trang_chu_api";
-import { CreateBannerInterface } from "@/interfaces";
+import { BannerItemInterface } from "@/interfaces";
 import { v4 as uuidv4 } from "uuid";
 import { IMAGE_API } from "@/axios/image_api";
+import AdminBanner from "./components/banner/banner";
+import EditBanner from "./components/banner/modals/editBanner";
 
 const TrangChuEdit = () => {
   const [selectedFiles, setSelectedFiles] = useState<FileList | null>();
-  const [imageListDescription, setImageListDescription] = useState<CreateBannerInterface[]>([]);
+  const [imageListDescription, setImageListDescription] = useState<BannerItemInterface[]>([]);
   const onChooseNewBanner = (event: any) => {
     if (event.target.files) {
       let fileL: FileList = event.target.files;
@@ -29,7 +31,6 @@ const TrangChuEdit = () => {
           },
         ]);
       });
-
       setSelectedFiles(event.target.files);
     }
   };
@@ -40,33 +41,31 @@ const TrangChuEdit = () => {
     setImageListDescription(res.data);
     console.log("RES", res);
   };
-  useEffect(() => {
-    fetchBanners();
-  }, []);
+  // useEffect(() => {
+  //   fetchBanners();
+  // }, []);
   return (
     <div className="flex flex-col gap-8">
       <div className="bg-[#ffffff] rounded-md shadow-md p-4 flex flex-col gap-4">
-        <h3>Chỉnh sửa banner:</h3>
+        <AdminBanner />
+
         {/* <div className="flex items-end w-full max-w-md  gap-1.5">
           <div>
             <Label htmlFor="picture">Thêm mới banner</Label>
             <Input id="picture" type="file" accept="image/*" multiple onChange={(event) => onChooseNewBanner(event)} />
           </div>
         </div> */}
-        <div className="flex flex-col gap-4">
+        {/* <div className="flex flex-col gap-4">
           <h3>Xem trước hình ảnh :</h3>
           <div className="grid grid-cols-1 md:grid-cols-3  gap-4 w-full   mx-auto">
             {imageListDescription.map((item, index) => (
-              <div className="flex flex-col items-center gap-4 shadow-md p-4 w-1/2 relative " key={index}>
-                <div className="absolute top-0 right-[10px]">
-                  {/* <Button>Thay đổi hình ảnh</Button> */}
-                  <Button>Xóa Banner</Button>
-                </div>
+              <div className="flex flex-col items-center gap-4 shadow-md p-4  relative " key={index}>
                 <Image key={index} src={item.imagePath} alt="img" width={300} height={100} className="cover"></Image>
                 <div>
                   <Label>Tiêu đề chính</Label>
                   <Input
                     type="text"
+                    disabled
                     placeholder="tiêu đề chính"
                     defaultValue={imageListDescription[index].title}
                     onChange={(event) => {
@@ -77,6 +76,7 @@ const TrangChuEdit = () => {
                 <div>
                   <Label>Mô tả </Label>
                   <Input
+                    disabled
                     type="text"
                     placeholder="mô tả"
                     defaultValue={imageListDescription[index].description}
@@ -111,8 +111,8 @@ const TrangChuEdit = () => {
           >
             Áp dụng chỉnh sửa
           </Button>
-          {/* <Image src = ""></Image> */}
-        </div>
+       
+        </div> */}
       </div>
       <div className="bg-[#ffffff] rounded-md shadow-md p-4">1</div>
       <div className="bg-[#ffffff] rounded-md shadow-md p-4">1</div>

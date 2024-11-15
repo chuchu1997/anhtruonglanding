@@ -7,7 +7,7 @@ export type ProductProps = {
   imageSrc: string;
 };
 
-export type CreateBannerInterface = {
+export type BannerItemInterface = {
   _id?: string;
   id: string;
   title: string;
