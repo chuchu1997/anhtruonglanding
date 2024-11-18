@@ -9,18 +9,36 @@ export const TrangChu_API = {
     });
   },
 
-  createBanner: async ({ imageListDescription }: { imageListDescription: BannerItemInterface[] }) => {
+  createBanner: async ({ title, description, file }: { title: string; description: string; file: File }) => {
+    let formData = new FormData();
+    formData.append("title", title), formData.append("description", description), formData.append("image", file);
+    // formData.append('title')
     return axiosInstance({
       method: "POST",
       url: `${url}/banners`,
-      data: imageListDescription,
+      data: formData,
     });
   },
-  updateBanner: async (imageUpdate: BannerItemInterface) => {
+  updateBanner: async (objectUpdate: BannerItemInterface, file?: File | null) => {
+    let formData = new FormData();
+    formData.append("title", objectUpdate.title);
+    formData.append("_id", objectUpdate._id ?? "");
+    formData.append("description", objectUpdate.description);
+    formData.append("imagePath", objectUpdate.imagePath);
+    if (file) {
+      formData.append("image", file);
+    }
     return axiosInstance({
       method: "PATCH",
-      url: `${url}/banners/${imageUpdate._id}`,
-      data: imageUpdate,
+      url: `${url}/banners/${objectUpdate._id}`,
+      data: formData,
+    });
+  },
+  deleteBanner: async (id: string) => {
+    console.log("ID", id);
+    return axiosInstance({
+      method: "DELETE",
+      url: `${url}/banners/${id}`,
     });
   },
 };

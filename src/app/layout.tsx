@@ -8,6 +8,7 @@ import Header from "@/components/Header";
 import BlockSidebar from "@/components/BlockSidebar";
 import Footer from "@/components/Footer";
 import DockBottomContact from "@/components/DockBottomContact";
+import { Toaster } from "@/components/ui/toaster";
 
 const jetbrains = JetBrains_Mono({
   subsets: ["latin"],
@@ -102,6 +103,7 @@ export default function RootLayout({
       <link rel="icon" href="/favicon.ico" sizes="any" />
 
       <body className={`${jetbrains.variable} ${pacifico.variable}  ${cuprum.variable}`} suppressHydrationWarning={true}>
+        <Toaster />
         <Header />
 
         <div>{children}</div>

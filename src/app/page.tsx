@@ -10,45 +10,26 @@ import Link from "next/link";
 import { Check } from "react-feather";
 import { Button } from "@/components/ui/button";
 
-import { Carousel, CarouselContent, CarouselDots, CarouselItem, CarouselNext, CarouselPrevious } from "@/components/ui/carousel";
 import HeadingComponent from "@/components/HeadingComponent";
 import CountUpEffect from "@/components/CountUpEffect";
 import { Quote } from "lucide-react";
 import GridLayout from "@/components/GridLayout";
 import CarouselComponent from "@/components/CarouselComponent";
-import { TrangChu_API } from "@/axios/layout_api/trang_chu_api";
-export default async function Home() {
-  let banner = "";
-  const fetchBanner = async () => {
-    let response = await TrangChu_API.getBanners();
-    banner = response.data;
-  };
-  await fetchBanner();
 
+import Loading from "@/components/Loading";
+
+const BannerMaster = dynamic(() => import("@/layoutMasterComponent/bannerMaster"), {
+  loading: () => <Loading />, // Show spinner while the widget is loading
+  ssr: false, // Disable SSR, load only on client-side
+});
+
+export default async function Home() {
   // let data = await fetch("https://api.vercel.app/blog");
   // let posts = await data.json();
   return (
     <div className="page-container">
       <main className="main">
-        {/* <Image src={banner} alt="ss" width={100} height={100}></Image> */}
-        {/* <RenderBannerTrangChu /> */}
-        {/* <CarouselBanner listImages={data.banner} className="h-[300px] md:h-[700px]" /> */}
-        <CarouselComponent
-          isShowControlNextAndPrev
-          isShowDot
-          className="h-[300px] md:h-[700px]"
-          listJSXCarouselItem={data.banner.map((image, index) => (
-            <div>
-              <div className="hidden md:block  text-banner absolute text-center text-white z-10 top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2">
-                <div className="main-title mb-[15px] font-accent h2 text-[60px] tracking-wide">Image test {index + 1}</div>
-                <div className="sub-title text-[22px] uppercase tracking-wide ">Description test </div>
-              </div>
-              <Image alt="bannerImage" src={image} fill className="object-cover object-right md:object-center" quality={100} priority></Image>
-            </div>
-          ))}
-          responsiveTaiwindForItem=""
-        ></CarouselComponent>
-
+        <BannerMaster />
         <DynamicSectionWrapper className="container">
           <HeadingComponent subTitle="Cung cấp giải pháp" mainTitle="Giải pháp tối ưu hàng đầu cho ngành dược phẩm"></HeadingComponent>
 

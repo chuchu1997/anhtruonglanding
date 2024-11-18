@@ -9,7 +9,7 @@ export type ProductProps = {
 
 export type BannerItemInterface = {
   _id?: string;
-  id: string;
+
   title: string;
   description: string;
   imagePath: string;
