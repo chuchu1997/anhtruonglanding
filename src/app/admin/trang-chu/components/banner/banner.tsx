@@ -6,6 +6,8 @@ import { BannerItemInterface } from "@/interfaces";
 import React, { useState, useEffect } from "react";
 import Image from "next/image";
 import EditBanner from "./modals/editBanner";
+import { Button } from "@/components/ui/button";
+import CreateBanner from "./modals/createBanners";
 
 const AdminBanner = () => {
   // ****  Functions *****
@@ -31,6 +33,7 @@ const AdminBanner = () => {
   return (
     <div className="flex flex-col gap-4">
       <h3>Hình ảnh banner hiện tại</h3>
+      <CreateBanner />
 
       <div className="grid grid-cols-1 md:grid-cols-3  gap-4 w-full   mx-auto">
         {banners.map((item, index) => (
