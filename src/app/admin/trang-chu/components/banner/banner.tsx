@@ -17,9 +17,7 @@ const AdminBanner = () => {
     // setImageListDescription([]);
     // setSelectedFiles(null);
     setBanners([]);
-
     let response = await TrangChu_API.getBanners();
-    console.log("RES 12", response);
     if (response) {
       setBanners(response.data);
     }

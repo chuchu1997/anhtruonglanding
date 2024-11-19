@@ -1,5 +1,5 @@
 import axiosInstance from "@/axios";
-import { BannerItemInterface } from "@/interfaces";
+import { BannerItemInterface, Section01Interface } from "@/interfaces";
 const url = "/layout/trang-chu";
 export const TrangChu_API = {
   getBanners: async () => {
@@ -35,10 +35,20 @@ export const TrangChu_API = {
     });
   },
   deleteBanner: async (id: string) => {
-    console.log("ID", id);
     return axiosInstance({
       method: "DELETE",
       url: `${url}/banners/${id}`,
     });
+  },
+
+  getSection01: async () => {
+    return axiosInstance({
+      method: "GET",
+      url: `${url}/section01`,
+    });
+  },
+  updateSection01: async (data: Section01Interface, imageFile?: File | null) => {
+    console.log("DATA", data);
+    console.log("image", imageFile);
   },
 };
