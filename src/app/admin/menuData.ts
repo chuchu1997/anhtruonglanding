@@ -50,31 +50,31 @@ export const menuData = [
     items: [
       {
         title: "Trang chủ",
-        link: "/admin/trang-chu",
+        link: "/admin/trang-chu/seo",
       },
       {
         title: "Giới thiệu",
-        link: "/admin/gioi-thieu",
+        link: "/admin/gioi-thieu/seo",
       },
       {
         title: "Sản phẩm",
-        link: "/admin/san-pham",
+        link: "/admin/san-pham/seo",
       },
       {
         title: "dịch vụ",
-        link: "/admin/dich-vu",
+        link: "/admin/dich-vu/seo",
       },
       {
         title: "tin tức",
-        link: "/admin/tin-tuc",
+        link: "/admin/tin-tuc/seo",
       },
       {
         title: "tuyển dụng",
-        link: "/admin/tuyen-dung",
+        link: "/admin/tuyen-dung/seo",
       },
       {
         title: "liên hệ",
-        link: "/admin/lien-he",
+        link: "/admin/lien-he/seo",
       },
     ],
   },
