@@ -1,8 +1,9 @@
 import axios from "axios";
 
 // Create a custom axios instance
+
 const axiosInstance = axios.create({
-  baseURL: "http://localhost:5000",
+  baseURL: process.env.NEXT_PUBLIC_API_URL,
   timeout: 10000,
 });
 axiosInstance.interceptors.request.use(
