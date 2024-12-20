@@ -12,15 +12,26 @@ import Link from "next/link";
 
 import dynamic from "next/dynamic";
 
-const DynamicSectionTitle = dynamic(() => import("@/components/SectionTitle"), {});
+const DynamicSectionTitle = dynamic(
+  () => import("@/components/SectionTitle"),
+  {}
+);
 const DynamicPhoto = dynamic(() => import("@/components/Photo"), {});
 
 const DynamicServices = dynamic(() => import("@/components/Services"), {});
 
-const DynamicCarouselProducts = dynamic(() => import("@/components/CarouselProducts"), {});
-const DynamicCarouselBanner = dynamic(() => import("@/components/CarouselBanner"));
+const DynamicCarouselProducts = dynamic(
+  () => import("@/components/CarouselProducts"),
+  {}
+);
+const DynamicCarouselBanner = dynamic(
+  () => import("@/components/CarouselBanner")
+);
 
-const DynamicRenderContentForSection = dynamic(() => import("@/components/RenderContentForSection"), {});
+const DynamicRenderContentForSection = dynamic(
+  () => import("@/components/RenderContentForSection"),
+  {}
+);
 const DynamicNews = dynamic(() => import("@/components/News"), {});
 import { data } from "@/data/data";
 import CarouselBanner from "@/components/CarouselBanner";
@@ -59,13 +70,34 @@ export default function Home() {
           <DynamicSectionTitle title="Các Chứng Chỉ Và Đối Tác " />
 
           <div className="certicate relative h-[300px] xl:h-[500px] w-full mt-[20px] ">
-            <Image src="/certicate/certicate.jpg" alt="ccs" fill style={{ objectFit: "contain" }} quality={60} priority></Image>
+            <Image
+              src="/certicate/certicate.jpg"
+              alt="ccs"
+              fill
+              style={{ objectFit: "contain" }}
+              quality={60}
+              priority
+            ></Image>
           </div>
           <div className="certicate relative h-[180px] xl:h-[300px] w-full mt-[20px] ">
-            <Image src="/certicate/2.jpg" alt="ccs" fill style={{ objectFit: "contain" }} quality={80} priority></Image>
+            <Image
+              src="/certicate/2.jpg"
+              alt="ccs"
+              fill
+              style={{ objectFit: "contain" }}
+              quality={80}
+              priority
+            ></Image>
           </div>
           <div className="ccs relative h-[80px] w-full ">
-            <Image src="/ccs/ccs.jpg" alt="ccs" fill style={{ objectFit: "contain" }} quality={60} priority></Image>
+            <Image
+              src="/ccs/ccs.jpg"
+              alt="ccs"
+              fill
+              style={{ objectFit: "contain" }}
+              quality={60}
+              priority
+            ></Image>
           </div>
         </section>
 
@@ -82,33 +114,55 @@ export default function Home() {
         <DynamicCarouselProducts listImages={data.listHotProductsImage} />
       </section>
 
-      <section id="phaohathuy" className="container my-8 h-full mx-auto mt-[40px] xl:mt-[80px] ">
+      <section
+        id="phaohathuy"
+        className="container my-8 h-full mx-auto mt-[40px] xl:mt-[80px] "
+      >
         <DynamicSectionTitle title="Phao Túi Khí Hạ Thủy " />
         <DynamicRenderContentForSection listItems={data.tuikhihathuyItems} />
       </section>
-      <section id="demchongvacau" className="container my-8 h-full mx-auto mt-[40px] xl:mt-[80px] ">
+      <section
+        id="demchongvacau"
+        className="container my-8 h-full mx-auto mt-[40px] xl:mt-[80px] "
+      >
         <DynamicSectionTitle title="Đệm Chống Va Cầu Cảng " />
-        <DynamicRenderContentForSection listItems={data.demchongvacaucangItems} />
+        <DynamicRenderContentForSection
+          listItems={data.demchongvacaucangItems}
+        />
       </section>
 
-      <section id="rubberfender" className="container my-8 h-full mx-auto mt-[40px] xl:mt-[80px] ">
+      <section
+        id="rubberfender"
+        className="container my-8 h-full mx-auto mt-[40px] xl:mt-[80px] "
+      >
         <DynamicSectionTitle title="Đệm Chống Va Tàu " />
         <DynamicRenderContentForSection listItems={data.demchongvatauItems} />
       </section>
-      <section id="mayphunxitapluccao" className="container my-8 h-full mx-auto mt-[40px] xl:mt-[80px] ">
+      <section
+        id="mayphunxitapluccao"
+        className="container my-8 h-full mx-auto mt-[40px] xl:mt-[80px] "
+      >
         <DynamicSectionTitle title="Máy Phun Xịt Áp Lực Cao " />
-        <DynamicRenderContentForSection listItems={data.mayphunxitapluccaoItems} />
+        <DynamicRenderContentForSection
+          listItems={data.mayphunxitapluccaoItems}
+        />
       </section>
       {/* THAY = CHO THUE  */}
       {/* <section className="container my-8 h-full mx-auto mt-[40px] xl:mt-[80px] ">
         <SectionTitle title="Hộp Số Tàu Thủy" />
         <RenderContentForSection listItems={hopsotauthuyItems} />
       </section> */}
-      <section id="neo" className="container my-8 h-full mx-auto mt-[40px] xl:mt-[80px] ">
+      <section
+        id="neo"
+        className="container my-8 h-full mx-auto mt-[40px] xl:mt-[80px] "
+      >
         <DynamicSectionTitle title="Neo Và Xích Neo Tàu Thủy" />
         <DynamicRenderContentForSection listItems={data.neotauItems} />
       </section>
-      <section id="dichvuchothue" className="container my-8 h-full mx-auto mt-[40px] xl:mt-[80px] ">
+      <section
+        id="dichvuchothue"
+        className="container my-8 h-full mx-auto mt-[40px] xl:mt-[80px] "
+      >
         <DynamicSectionTitle title="Dịch Vụ Cho Thuê Túi Khí" />
         <DynamicCarouselBanner listImages={data.listDichVuChoThueImages} />
 
@@ -130,6 +184,9 @@ export default function Home() {
 
       <section className="container my-8 h-full mx-auto mt-[40px] xl:mt-[80px] ">
         <DynamicSectionTitle title="Các dự án tiêu biểu" />
+        <p className="font-bold text-center py-4 text-[18px]">
+          Thương Hiệu Cầm Tay: Bosch - Makita - Dong cheng - Dewalt - Ken
+        </p>
         <DynamicNews />
       </section>
     </main>
