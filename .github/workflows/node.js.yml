@@ -1,31 +1,31 @@
-# This workflow will do a clean installation of node dependencies, cache/restore them, build the source code and run tests across different versions of node
-# For more information see: https://docs.github.com/en/actions/automating-builds-and-tests/building-and-testing-nodejs
-
-name: Node.js CI
+name: Docker Image CI
 
 on:
   push:
-    branches: [ "master" ]
+    branches: ["master"]
   pull_request:
-    branches: [ "master" ]
+    branches: ["master"]
 
 jobs:
-  build:
-
+  build-and-push:
     runs-on: ubuntu-latest
 
-    strategy:
-      matrix:
-        node-version: [18.x, 20.x, 22.x]
-        # See supported Node.js release schedule at https://nodejs.org/en/about/releases/
-
     steps:
-    - uses: actions/checkout@v4
-    - name: Use Node.js ${{ matrix.node-version }}
-      uses: actions/setup-node@v4
-      with:
-        node-version: ${{ matrix.node-version }}
-        cache: 'npm'
-    - run: npm ci
-    - run: npm run build --if-present
-    - run: pm2 restart all
+      # 1. Checkout mã nguồn
+      - name: Checkout code
+        uses: actions/checkout@v2 # Lấy mã nguồn từ repository
+
+      # 2. Đăng nhập vào DockerHub
+      - name: Log in to DockerHub
+        uses: docker/login-action@v2
+        with:
+          username: ${{ secrets.DOCKER_USERNAME }} # Tên người dùng DockerHub từ secrets
+          password: ${{ secrets.DOCKER_PASSWORD }} # Mật khẩu DockerHub từ secrets
+
+      # 3. Build Docker image
+      - name: Build Docker image
+        run: docker build -t tuilanguyencuong/phaohathuy:latest . # Xây dựng Docker image từ Dockerfile
+
+      # 4. Push Docker image lên DockerHub
+      - name: Push Docker image
+        run: docker push tuilanguyencuong/phaohathuy:latest # Đẩy image lên DockerHub
