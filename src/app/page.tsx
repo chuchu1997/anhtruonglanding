@@ -189,6 +189,7 @@ export default function Home() {
         </p> */}
         <DynamicNews />
       </section>
+      <div>SSS</div>
     </main>
   );
 }
