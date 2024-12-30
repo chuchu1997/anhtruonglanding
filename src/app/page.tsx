@@ -189,7 +189,7 @@ export default function Home() {
         </p> */}
         <DynamicNews />
       </section>
-      <div>THIS IS TEST UPDATE CICD ^^^ !!</div>
+      <div>THIS IS TEST UPDATE CICD ^^^^^ !!</div>
     </main>
   );
 }
