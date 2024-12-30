@@ -2,6 +2,7 @@
 import React from "react";
 import { Button } from "./ui/button";
 import Image from "next/image";
+//THIS IS TEST !!
 const DockBottomContact = () => {
   return (
     <div className="bg-transparent fixed bottom-0 left-0 right-0 z-50  block sm:hidden ">
@@ -12,7 +13,14 @@ const DockBottomContact = () => {
             window.location.href = "tel://0869229639";
           }}
         >
-          <Image src="/phonecall.png" alt="phone" width={30} height={30} quality={40} priority />
+          <Image
+            src="/phonecall.png"
+            alt="phone"
+            width={30}
+            height={30}
+            quality={40}
+            priority
+          />
           <span className="ml-4"> 086 9229 639</span>
         </Button>
         <Button
@@ -21,7 +29,14 @@ const DockBottomContact = () => {
             window.location.href = "https://zalo.me/0869229639";
           }}
         >
-          <Image src="/zalo.png" alt="zalo" width={30} height={30} quality={40} priority />
+          <Image
+            src="/zalo.png"
+            alt="zalo"
+            width={30}
+            height={30}
+            quality={40}
+            priority
+          />
 
           <span className="ml-4"> zalo tư vấn</span>
         </Button>
