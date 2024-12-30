@@ -24,7 +24,7 @@ const CarouselProducts = (props: propsInterface) => {
       //   Autoplay({
       //     delay: 4000,
       //   }),
-      // ]}s
+      // ]}s1
     >
       <CarouselContent className="h-[160px] xl:h-[350px] ">
         {listImages.map((item, index) => {
