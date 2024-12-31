@@ -186,7 +186,7 @@ export default function Home() {
         <DynamicSectionTitle title="Các dự án tiêu biểu" />
         {/* <p className="font-bold text-center py-4 text-[18px]">
           Thương Hiệu Cầm Tay: Bosch - Makita - Dong cheng - Dewalt - Ken this is empty !!
-        </p> */}
+        </p>  11*/}
         <DynamicNews />
       </section>
     </main>
