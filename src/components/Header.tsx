@@ -8,9 +8,9 @@ const Header = () => {
     <header className="py-2 xl:py-4 text-white border-b border-red bg-gradient-to-r from-black to-blue-500">
       <div className="container mx-auto flex justify-between items-center gap-10">
         <Link href="/" className="flex flex-col justify-center  gap-4 ">
-          <div className="w-[80px] h-[80px] md:w-[100px] md:h-[100px] mix-blend-lighten relative">
+          <div className="w-[90px] h-[90px] md:w-[140px] md:h-[140px] mix-blend-lighten relative">
             <Image
-              src="/logotuikhi.png"
+              src="/logo.png"
               priority
               quality={100}
               fill
@@ -24,7 +24,7 @@ const Header = () => {
           {/* <h1 className="font-bold  leading-8 text-[14px] xl:text-[16px] lg:w-[340px] xl:w-[380px]">
             Đại Diện Độc Quyền Shandong Longao Rubber Tại Việt Nam
           </h1> */}
-          <h1 className="font-bold  leading-8 text-[16px] xl:text-[18px] ">Đại Diện Độc Quyền Shandong Longao Rubber Tại Việt Nam</h1>
+          <h1 className="font-bold  leading-8 text-[16px] xl:text-[18px] ">Đại Diện Độc Quyền Nhà Máy Shandong Airbag Tại Việt Nam</h1>
           {/* <p className="text-[12px] md:text-[14px]">Đại Diện Phân Phối Độc Quyền Shandong Longao Rubber Tại Việt Nam</p> */}
         </div>
         <Nav />
