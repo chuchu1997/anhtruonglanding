@@ -1,14 +1,17 @@
 export const data = {
-  listBannerImages: ["/mainBanner/3.png", "/mainBanner/4.png", "/mainBanner/6.png", "/mainBanner/7.png", "/mainBanner/8.png", "/mainBanner/9.png"],
+  listBannerImages: ["/mainBanner/1.png", "/mainBanner/2.png", "/mainBanner/3.png", "/mainBanner/4.png", "/mainBanner/5.png", "/mainBanner/6.png","/mainBanner/7.png"],
+ 
+ 
+ 
   listHotProductsImage: [
-    "/sanphamnoibat/1.png",
     "/sanphamnoibat/2.png",
     "/sanphamnoibat/3.png",
     "/sanphamnoibat/4.png",
     "/sanphamnoibat/5.png",
     "/sanphamnoibat/6.png",
+
   ],
-  listDichVuChoThueImages: ["/dichvuchothuetuikhi/7.png", "/dichvuchothuetuikhi/8.png", "/dichvuchothuetuikhi/9.png", "/dichvuchothuetuikhi/10.png"],
+  listDichVuChoThueImages: ["/dichvuchothuetuikhi/1.png", "/dichvuchothuetuikhi/2.png", "/dichvuchothuetuikhi/3.png", "/dichvuchothuetuikhi/4.png"],
   tuikhihathuyItems: [
     {
       title: "Túi khí trục vớt tàu D 2m x 14m",

@@ -21,7 +21,7 @@ const jetbrains = Open_Sans({
 <meta property="og:type" content="website"></meta> */
 }
 export const metadata: Metadata = {
-  title: "Phao hạ thuỷ sà lan - Đêm chống va (Fender) tại Việt Nam.",
+  title: "Phao hạ thuỷ - Đệm chống va (0869229639) tại Việt Nam.",
   description:
     "Công ty TNHH TM XNK Biển Đông - Túi khí Biển Đông là nhà cung cấp giải pháp Phao túi khí hạ thuỷ – Đệm chống va (Fender) – Đệm chống va cầu cảng cho ngành Đóng tàu và Hàng hải Việt Nam.",
   verification: {

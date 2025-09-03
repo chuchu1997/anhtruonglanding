@@ -1,14 +1,4 @@
 import Image from "next/image";
-import { Button } from "@/components/ui/button";
-import { Package } from "react-feather";
-import Photo from "@/components/Photo";
-import Services from "@/components/Services";
-import SectionTitle from "@/components/SectionTitle";
-import CarouselProducts from "@/components/CarouselProducts";
-
-import RenderContentForSection from "@/components/RenderContentForSection";
-import News from "@/components/News";
-import Link from "next/link";
 
 import dynamic from "next/dynamic";
 
@@ -39,29 +29,7 @@ export default function Home() {
   return (
     <main className="landing-page">
       <section className="container my-4 h-full mx-auto ">
-        {/* <div className="gap-4 flex flex-col md:flex-row justify-between items-center xl:pt-8 xl:pb-24">
-          <div className="text-center xl:text-left order-2 xl:order-none pb-4">
-            <h1 className="h2 mb-6 ">
-              Công ty TNHH TM XNK 11
-              <br />
-              <span className="text-accent ">Biển Đông</span>
-            </h1>
-            <p className="max-w-[500px] mb-8 text-black/80">
-              Nhà cung cấp giải pháp Phao túi khí hạ thuỷ Đệm chống va (Fender) – Đệm chống va cầu cảng cho ngành Đóng tàu và Hàng hải Việt Nam.
-            </p>
-            <div className="action-btn flex flex-col xl:flex-row items-center gap-8">
-              <Link href="tel:0869229639">
-                <Button variant={"outline"} size={"lg"} className="uppercase flex items-center gap-2">
-                  <span>Tư vấn</span>
-                  <Package />
-                </Button>
-              </Link>
-            </div>
-          </div>
-          <div className="order-1 xl:order-none mb-8 xl:mb-0">
-            <DynamicPhoto />
-          </div>
-        </div> */}
+    
         <section className="container my-8 h-full mx-auto  ">
           <CarouselBanner listImages={data.listBannerImages} />
         </section>
@@ -184,9 +152,7 @@ export default function Home() {
 
       <section className="container my-8 h-full mx-auto mt-[40px] xl:mt-[80px] ">
         <DynamicSectionTitle title="Các dự án tiêu biểu" />
-        {/* <p className="font-bold text-center py-4 text-[18px]">
-          Thương Hiệu Cầm Tay: Bosch - Makita - Dong cheng - Dewalt - Ken this is empty !!
-        </p>  11 11 111 2 22222*/}
+  
         <DynamicNews />
       </section>
     </main>

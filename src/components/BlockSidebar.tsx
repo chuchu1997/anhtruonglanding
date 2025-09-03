@@ -6,8 +6,9 @@ import { AlignLeft, AlignRight } from "react-feather";
 
 const items = [
   // },
-  { title: "Chat Zalo", icon: "/zalo.png", href: "http://zalo.me/0869229639" },
-  { title: "Gọi điện", icon: "/phonecall.png", href: "tel:0869229639" },
+  { title: "Chat Zalo", icon: "/contacts/zalo.png", href: "http://zalo.me/0869229639" },
+    { title: "Facebook", icon: "/contacts/mess.png", href: "https://www.facebook.com/phaohathuybiendong" },
+  { title: "Gọi điện 0869229639", icon: "/contacts/phone.png", href: "tel:0869229639" },
   // { title: "Messager", icon: "/messager.jpg" },
 ];
 const BlockSidebar = () => {

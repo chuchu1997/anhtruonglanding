@@ -8,7 +8,7 @@ const Footer = () => {
     <div className="bg-[#45526E] text-white">
       <div className="footer-top bg-red grid grid-cols-1 md:grid-cols-2 xl:grid-cols-2 container mx-auto py-10 gap-8 items-start">
         <div className="flex flex-col md:flex-row items-center text-[14px] gap-4  ">
-          <Image src="/logo.png" width={140} height={140} alt="logo-footer" style={{ objectFit: "contain" }} quality={60} priority></Image>
+          <Image src="/logo.png" width={180} height={180} alt="logo-footer" style={{ objectFit: "contain" }} quality={60} priority></Image>
           <div>
             <div className="text-[14px] xl:text-[16px]">CÔNG TY TNHH TM XNK BIỂN ĐÔNG</div>
             <ul className="text-[12px] xl:text-[14px] list-disc ml-4">
@@ -43,10 +43,10 @@ const Footer = () => {
             <Link href="https://www.facebook.com/phaohathuybiendong">
               <Image src="/socials/facebook.png" alt="social" width={28} height={28}></Image>
             </Link>
-            <Link href="">
+            <Link href="https://www.youtube.com/@phaohathuyshandongairbag">
               <Image src="/socials/youtube.png" alt="social" width={28} height={28}></Image>
             </Link>
-            <Link href="">
+            <Link href="https://www.tiktok.com/@phaohathuyshandongairbag">
               <Image src="/socials/tiktok.png" alt="social" width={28} height={28}></Image>
             </Link>
           </div>
