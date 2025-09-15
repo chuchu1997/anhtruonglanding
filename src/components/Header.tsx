@@ -8,7 +8,7 @@ const Header = () => {
     <header className="py-2 xl:py-4 text-white border-b border-red bg-gradient-to-r from-black to-blue-500">
       <div className="container mx-auto flex justify-between items-center gap-10">
         <Link href="/" className="flex flex-col justify-center  gap-4 ">
-          <div className="w-[90px] h-[90px] md:w-[140px] md:h-[140px] mix-blend-lighten relative">
+          <div className="w-[70px] h-[70px] md:w-[120px] md:h-[120px] mix-blend-lighten relative">
             <Image
               src="/logo.png"
               priority
