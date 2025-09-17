@@ -60,7 +60,7 @@ export default function Home() {
               alt="ccs"
               fill
               style={{ objectFit: "contain" }}
-              quality={80}
+              quality={60}
              
             ></Image>
           </div>
