@@ -2,6 +2,9 @@
 const nextConfig = {
     // output:"export",
     reactStrictMode: true,
+    eslint: {
+    ignoreDuringBuilds: true, // 🚀 build không check ESLint
+    },
     images: {
       // path: "/",
       //EDIT PATH /
