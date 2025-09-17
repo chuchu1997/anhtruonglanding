@@ -1,35 +1,46 @@
 import Image from "next/image";
 
-import dynamic from "next/dynamic";
+// import dynamic from "next/dynamic";
 
-const DynamicSectionTitle = dynamic(
-  () => import("@/components/SectionTitle"),
-  {ssr:false}
-);
-const DynamicPhoto = dynamic(() => import("@/components/Photo"), {
-  ssr:false
-});
+// const SectionTitle = dynamic(
+//   () => import("@/components/SectionTitle"),
+//   {ssr:false}
+// );
 
-const DynamicServices = dynamic(() => import("@/components/Services"), {
-  ssr:false
-});
+import SectionTitle from "@/components/SectionTitle";
 
-const DynamicCarouselProducts = dynamic(
-  () => import("@/components/CarouselProducts"),
-  {
-    ssr:false
-  }
-);
-const DynamicCarouselBanner = dynamic(() => import("@/components/CarouselBanner"), {
-  ssr: false,
-});
-const DynamicRenderContentForSection = dynamic(
-  () => import("@/components/RenderContentForSection"),
-  {
-    ssr:false
-  }
-);
-const DynamicNews = dynamic(() => import("@/components/News"), {});
+// const DynamicPhoto = dynamic(() => import("@/components/Photo"), {
+//   ssr:false
+// });
+
+// const DynamicServices = dynamic(() => import("@/components/Services"), {
+//   ssr:false
+// });
+
+import DynamicServices from  "@/components/Services";
+
+import DynamicCarouselProducts from "@/components/CarouselProducts";
+
+// const DynamicCarouselProducts = dynamic(
+//   () => import("@/components/CarouselProducts"),
+//   {
+//     ssr:false
+//   }
+// );
+import DynamicCarouselBanner from "@/components/CarouselBanner";
+
+// const DynamicCarouselBanner = dynamic(() => import("@/components/CarouselBanner"), {
+//   ssr: false,
+// });
+import DynamicRenderContentForSection from "@/components/RenderContentForSection";
+// const DynamicRenderContentForSection = dynamic(
+//   () => import("@/components/RenderContentForSection"),
+//   {
+//     ssr:false
+//   }
+// );
+import DynamicNews from "@/components/News";
+// const DynamicNews = dynamic(() => import("@/components/News"), {});
 import { data } from "@/data/data";
 import CarouselBanner from "@/components/CarouselBanner";
 export default function Home() {
@@ -42,7 +53,7 @@ export default function Home() {
         </section>
 
         <section className="container my-8 h-full mx-auto mt-[20px] xl:mt-[80px] ">
-          <DynamicSectionTitle title="Các Chứng Chỉ Và Đối Tác " />
+          <SectionTitle title="Các Chứng Chỉ Và Đối Tác " />
 
           <div className="certicate relative h-[300px] xl:h-[500px] w-full mt-[20px] ">
             <Image
@@ -50,7 +61,7 @@ export default function Home() {
               alt="ccs"
               fill
               style={{ objectFit: "contain" }}
-              quality={60}
+              quality={80}
           
             ></Image>
           </div>
@@ -60,7 +71,7 @@ export default function Home() {
               alt="ccs"
               fill
               style={{ objectFit: "contain" }}
-              quality={60}
+            quality={80}
              
             ></Image>
           </div>
@@ -70,7 +81,7 @@ export default function Home() {
               alt="ccs"
               fill
               style={{ objectFit: "contain" }}
-              quality={60}
+              quality={80}
             
             ></Image>
           </div>
@@ -81,11 +92,11 @@ export default function Home() {
         </div> */}
       </section>
       <section className=" container my-8 h-full mx-auto mt-[40px] xl:mt-[80px] ">
-        <DynamicSectionTitle title="Các Sản Phẩm Chủ Đạo Của Công Ty " />
+        <SectionTitle title="Các Sản Phẩm Chủ Đạo Của Công Ty " />
         <DynamicServices />
       </section>
       <section className="container my-8 h-full mx-auto mt-[40px] xl:mt-[80px] ">
-        <DynamicSectionTitle title="Các Sản Phẩm Nổi Bật " />
+        <SectionTitle title="Các Sản Phẩm Nổi Bật " />
         <DynamicCarouselProducts listImages={data.listHotProductsImage} />
       </section>
 
@@ -93,14 +104,14 @@ export default function Home() {
         id="phaohathuy"
         className="container my-8 h-full mx-auto mt-[40px] xl:mt-[80px] "
       >
-        <DynamicSectionTitle title="Phao Túi Khí Hạ Thủy " />
+        <SectionTitle title="Phao Túi Khí Hạ Thủy " />
         <DynamicRenderContentForSection listItems={data.tuikhihathuyItems} />
       </section>
       <section
         id="demchongvacau"
         className="container my-8 h-full mx-auto mt-[40px] xl:mt-[80px] "
       >
-        <DynamicSectionTitle title="Đệm Chống Va Cầu Cảng " />
+        <SectionTitle title="Đệm Chống Va Cầu Cảng " />
         <DynamicRenderContentForSection
           listItems={data.demchongvacaucangItems}
         />
@@ -110,14 +121,14 @@ export default function Home() {
         id="rubberfender"
         className="container my-8 h-full mx-auto mt-[40px] xl:mt-[80px] "
       >
-        <DynamicSectionTitle title="Đệm Chống Va Tàu " />
+        <SectionTitle title="Đệm Chống Va Tàu " />
         <DynamicRenderContentForSection listItems={data.demchongvatauItems} />
       </section>
       <section
         id="mayphunxitapluccao"
         className="container my-8 h-full mx-auto mt-[40px] xl:mt-[80px] "
       >
-        <DynamicSectionTitle title="Máy Phun Xịt Áp Lực Cao " />
+        <SectionTitle title="Máy Phun Xịt Áp Lực Cao " />
         <DynamicRenderContentForSection
           listItems={data.mayphunxitapluccaoItems}
         />
@@ -131,21 +142,21 @@ export default function Home() {
         id="neo"
         className="container my-8 h-full mx-auto mt-[40px] xl:mt-[80px] "
       >
-        <DynamicSectionTitle title="Neo Và Xích Neo Tàu Thủy" />
+        <SectionTitle title="Neo Và Xích Neo Tàu Thủy" />
         <DynamicRenderContentForSection listItems={data.neotauItems} />
       </section>
       <section
         id="dichvuchothue"
         className="container my-8 h-full mx-auto mt-[40px] xl:mt-[80px] "
       >
-        <DynamicSectionTitle title="Dịch Vụ Cho Thuê Túi Khí" />
+        <SectionTitle title="Dịch Vụ Cho Thuê Túi Khí" />
         <DynamicCarouselBanner listImages={data.listDichVuChoThueImages} />
 
         {/* <RenderContentForSection listItems={neotauItems} /> */}
       </section>
 
       <section className="container my-8 h-full mx-auto mt-[40px] xl:mt-[80px] ">
-        <DynamicSectionTitle title="Video sản phẩm" />
+        <SectionTitle title="Video sản phẩm" />
         <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mt-[18px]">
           <video controls aria-label="Video player" className="h-full w-full">
             <source src={"/youtubeVideo/1.mp4"} type="video/mp4" />
@@ -158,7 +169,7 @@ export default function Home() {
       </section>
 
       <section className="container my-8 h-full mx-auto mt-[40px] xl:mt-[80px] ">
-        <DynamicSectionTitle title="Các dự án tiêu biểu" />
+        <SectionTitle title="Các dự án tiêu biểu" />
   
         <DynamicNews />
       </section>

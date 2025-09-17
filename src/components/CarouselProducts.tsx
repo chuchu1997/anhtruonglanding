@@ -36,7 +36,7 @@ const CarouselProducts = (props: propsInterface) => {
                 fill
                 className="object-contain"
                 quality={90}
-                priority
+             
               ></Image>
             </CarouselItem>
           );
