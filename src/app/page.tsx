@@ -4,23 +4,30 @@ import dynamic from "next/dynamic";
 
 const DynamicSectionTitle = dynamic(
   () => import("@/components/SectionTitle"),
-  {}
+  {ssr:false}
 );
-const DynamicPhoto = dynamic(() => import("@/components/Photo"), {});
+const DynamicPhoto = dynamic(() => import("@/components/Photo"), {
+  ssr:false
+});
 
-const DynamicServices = dynamic(() => import("@/components/Services"), {});
+const DynamicServices = dynamic(() => import("@/components/Services"), {
+  ssr:false
+});
 
 const DynamicCarouselProducts = dynamic(
   () => import("@/components/CarouselProducts"),
-  {}
+  {
+    ssr:false
+  }
 );
-const DynamicCarouselBanner = dynamic(
-  () => import("@/components/CarouselBanner")
-);
-
+const DynamicCarouselBanner = dynamic(() => import("@/components/CarouselBanner"), {
+  ssr: false,
+});
 const DynamicRenderContentForSection = dynamic(
   () => import("@/components/RenderContentForSection"),
-  {}
+  {
+    ssr:false
+  }
 );
 const DynamicNews = dynamic(() => import("@/components/News"), {});
 import { data } from "@/data/data";
@@ -44,7 +51,7 @@ export default function Home() {
               fill
               style={{ objectFit: "contain" }}
               quality={60}
-              priority
+          
             ></Image>
           </div>
           <div className="certicate relative h-[180px] xl:h-[300px] w-full mt-[20px] ">
@@ -54,7 +61,7 @@ export default function Home() {
               fill
               style={{ objectFit: "contain" }}
               quality={80}
-              priority
+             
             ></Image>
           </div>
           <div className="ccs relative h-[80px] w-full ">
@@ -64,7 +71,7 @@ export default function Home() {
               fill
               style={{ objectFit: "contain" }}
               quality={60}
-              priority
+            
             ></Image>
           </div>
         </section>
